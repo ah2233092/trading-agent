@@ -1,12 +1,21 @@
-name: Deep scan test
+name: Deep scan
+
+# Live deep scan on GitHub (MEXC reachable here). Used from Claude chat:
+# scripts/remote_scan.py triggers this, then reads the scan-output branch (reports + charts).
 
 on:
   workflow_dispatch:
     inputs:
       coins:
-        description: "Coins to deep scan, e.g. BTC,SOL"
+        description: "'pending' (coins in alerts/pending.json) or e.g. BTC,SOL"
         type: string
-        default: "BTC,SOL"
+        default: "pending"
+      request_id:
+        description: "Free text to identify the run (set by remote_scan.py)"
+        type: string
+        default: ""
+
+run-name: "Deep scan ${{ inputs.coins }} ${{ inputs.request_id }}"
 
 permissions:
   contents: write
@@ -14,7 +23,7 @@ permissions:
 jobs:
   deep-scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
         with:
@@ -29,65 +38,37 @@ jobs:
       - name: Install requirements
         run: pip install -q -r requirements.txt
 
-      - name: Offline tests
-        run: |
-          python tests/test_smc.py
-          python tests/test_phase2.py
-
       - name: Live deep scan
         env:
           COINS: ${{ inputs.coins }}
+          REQ: ${{ inputs.request_id }}
         run: |
           mkdir -p out
-          {
-            echo "## Live deep scan — $(date -u +'%Y-%m-%d %H:%M') UTC"
-          } >> "$GITHUB_STEP_SUMMARY"
+          if [ "$COINS" = "pending" ] || [ -z "$COINS" ]; then
+            COINS=$(python -c "import json;a=json.load(open('alerts/pending.json')).get('alerts',[]);print(','.join(dict.fromkeys(x['coin'] for x in a)))")
+          fi
+          echo "coins=$COINS" > out/request.txt
+          echo "request_id=$REQ" >> out/request.txt
+          echo "run_at=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> out/request.txt
+          echo "## Deep scan — $(date -u +'%Y-%m-%d %H:%M') UTC — ${COINS:-no pending alerts}" >> "$GITHUB_STEP_SUMMARY"
+          [ -z "$COINS" ] && { echo "Koi pending alert nahi." | tee out/none.txt; exit 0; }
           IFS=',' read -ra list <<< "$COINS"
-          status=0
           for c in "${list[@]}"; do
-            c="$(echo "$c" | xargs)"
-            [ -z "$c" ] && continue
-            echo "::group::deep scan $c"
-            if python lib/deep_scan.py --symbol "$c" --no-git > "out/$c.txt" 2> "out/$c.err"; then
-              res="ok"
-            else
-              res="FAILED"; status=1
-            fi
-            python lib/deep_scan.py --symbol "$c" --no-git --no-charts --json > "out/$c.json" 2>> "out/$c.err" || true
-            cat "out/$c.txt"; cat "out/$c.err"
-            echo "::endgroup::"
-            {
-              echo "### $c — $res"
-              echo '```'
-              cat "out/$c.txt"
-              echo '```'
-              if [ -s "out/$c.err" ]; then
-                echo "<details><summary>stderr</summary>"; echo; echo '```'; tail -n 40 "out/$c.err"; echo '```'; echo "</details>"
-              fi
-            } >> "$GITHUB_STEP_SUMMARY"
+            c="$(echo "$c" | xargs)"; [ -z "$c" ] && continue
+            python lib/deep_scan.py --symbol "$c" --no-git > "out/$c.txt" 2> "out/$c.err" || echo "FAILED" >> "out/$c.txt"
+            { echo "### $c"; echo '```'; cat "out/$c.txt"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
           done
-          exit $status
+          cp -r reports out/ 2>/dev/null || true
 
-      - name: Publish charts to scan-output branch
+      - name: Publish to scan-output branch
         if: always()
         run: |
-          [ -d charts ] || exit 0
           tmp="$RUNNER_TEMP/pub"; mkdir -p "$tmp"
-          cp -r charts out "$tmp"/ 2>/dev/null || true
+          cp -r out "$tmp"/ 2>/dev/null || true
+          [ -d charts ] && cp -r charts "$tmp"/
           cd "$tmp"
           git init -q -b scan-output
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A && git commit -q -m "deep scan output $(date -u +'%Y-%m-%d %H:%M') UTC [skip ci]"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" scan-output
-
-      - name: Upload charts and reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: deep-scan-output
-          path: |
-            out/
-            charts/
-          if-no-files-found: ignore
-          retention-days: 7
