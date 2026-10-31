@@ -149,7 +149,7 @@ def row_from_report(rep: dict, rows: list[dict], cfg: dict, now: datetime) -> di
         "score": score.get("total") if isinstance(score, dict) else score,
         "valid_until": iso_utc(now + timedelta(hours=hours)),
     }
-    if plan and decision == "TRADE":
+    if plan and decision in ("TRADE", "B-TRADE"):
         tps = plan.get("tps") or [plan.get("tp1"), plan.get("tp2"), plan.get("tp3")]
         row.update(entry=plan.get("entry"), sl=plan.get("sl"), tp1=tps[0] if len(tps) > 0 else "",
                    tp2=tps[1] if len(tps) > 1 else "", tp3=tps[2] if len(tps) > 2 else "",

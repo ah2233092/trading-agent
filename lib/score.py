@@ -31,6 +31,23 @@ GRADE = {"A+": 1.0, "A": 0.8, "B": 0.55}
 MIN_SAMPLE = 30
 
 
+SOFT_PREFIXES = ("score ", "outside killzone")
+
+
+def _soft(block: str) -> bool:
+    """Blocks that only lower confidence (a B-plan is still possible)."""
+    return block.startswith(SOFT_PREFIXES)
+
+
+def _decision(blocks: list[str], cfg: dict, total: float) -> str:
+    if not blocks:
+        return "TRADE"
+    if (cfg_get(cfg, "allow_b_plan", False) and all(_soft(b) for b in blocks)
+            and total >= float(cfg_get(cfg, "b_plan_min_score", 60))):
+        return "B-TRADE"
+    return "NO TRADE"
+
+
 def compute_score(inp: dict, cfg: dict | None = None) -> dict:
     """inp keys: direction, bias, setup, futures, session, news, stats, plan."""
     cfg = cfg or load_config()
@@ -129,7 +146,7 @@ def compute_score(inp: dict, cfg: dict | None = None) -> dict:
     if total < threshold:
         blocks.append(f"score {total:g} < {threshold:g}")
     return {"total": total, "threshold": threshold, "news": news, "breakdown": parts,
-            "blocks": blocks, "decision": "TRADE" if not blocks else "NO TRADE",
+            "blocks": blocks, "decision": _decision(blocks, cfg, total), "soft_blocks": [b for b in blocks if _soft(b)],
             "max_without_news": round(sum(float(w.get(k, 0)) for k in w) - float(w.get("news", 0)), 1)}
 
 

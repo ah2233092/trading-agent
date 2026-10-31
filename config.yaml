@@ -65,8 +65,11 @@ news_block_hours: 2
 
 # --- Live entry rule (from the Oct 2026 backtest) ---
 entry_mode: market_in_killzone   # market entry from the current price, only in London / NY killzones
-max_trades_per_day: 2
-max_losses_per_day: 2            # stop for the day after 2 stop-losses
+max_trades_per_day: 0            # 0 = no maximum (Rans: trades jitni marzi)
+min_signals_per_day: 2           # 2 killzone digests a day with the top 2 coins
+allow_b_plan: true               # plan ok but score / killzone short -> 🟡 B-PLAN instead of NO TRADE
+b_plan_min_score: 60
+max_losses_per_day: 3            # safety: stop for the day after 3 stop-losses
 
 # --- Risk ---
 account_balance: 20

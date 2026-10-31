@@ -166,7 +166,7 @@ def daily_limits(cfg: dict, now) -> dict:
            "max_losses": max_losses, "blocked": False, "reason": None}
     if len(losses) >= max_losses:
         out.update(blocked=True, reason=f"aaj {len(losses)} loss ho chuke — aaj ke liye trading band (kal phir)")
-    elif len(trades) >= max_trades:
+    elif max_trades > 0 and len(trades) >= max_trades:
         out.update(blocked=True, reason=f"aaj ki {len(trades)} trades ho chuki (max {max_trades}/din)")
     return out
 
@@ -274,7 +274,7 @@ def analyze_symbol(symbol: str, cfg: dict | None = None, news: str | None = None
         "futures": fut, "plan": plan, "stats": stats, "score": score, "score_inputs": score_inputs,
         "charts": chart_paths, "news": news or "pending", "news_note": None,
     }
-    report["no_trade_reasons"] = no_trade_reasons(report) if score["decision"] != "TRADE" else []
+    report["no_trade_reasons"] = no_trade_reasons(report) if score["decision"] == "NO TRADE" else []
     report["answer"] = format_answer(report, cfg)
     report = jsonable(report)
     if save:
@@ -334,7 +334,7 @@ def what_to_watch(rep: dict) -> str:
 def format_answer(rep: dict, cfg: dict | None = None) -> str:
     cfg = cfg or load_config()
     pair = rep["pair"]
-    if rep["decision"] != "TRADE":
+    if rep["decision"] == "NO TRADE":
         return "\n".join([f"❌ NO TRADE — {pair}",
                           "Wajah: " + "; ".join(rep.get("no_trade_reasons") or no_trade_reasons(rep)),
                           f"Kya dekhna hai: {what_to_watch(rep)}"])
@@ -363,6 +363,9 @@ def format_answer(rep: dict, cfg: dict | None = None) -> str:
     head = ["⚠️ PROVISIONAL — news-check abhi baqi hai (phir: python lib/deep_scan.py --finalize "
             f"{rep.get('report_path') or 'reports/' + rep['coin'] + '/latest.json'} --news clear|caution|block)"] \
         if provisional else []
+    if rep["decision"] == "B-TRADE":
+        soft = "; ".join(sc.get("soft_blocks") or [])
+        head.append(f"🟡 B-PLAN (kam confidence: {soft}). Chaho to risk aadha ($0.5) rakho.")
     return "\n".join(head + [
         f"{emoji} {side} — {pair} (1H) | Setup: {s['model']} — {s['name']} ({s['grade']})",
         f"Score: {sc['total']:g}/100",
@@ -414,7 +417,7 @@ def finalize(path: str, news: str, note: str | None = None, cfg: dict | None = N
     rep["score_inputs"]["news"] = news
     rep["score"] = compute_score(rep["score_inputs"], cfg)
     rep["decision"] = rep["score"]["decision"]
-    rep["no_trade_reasons"] = no_trade_reasons(rep) if rep["decision"] != "TRADE" else []
+    rep["no_trade_reasons"] = no_trade_reasons(rep) if rep["decision"] == "NO TRADE" else []
     rep["answer"] = format_answer(rep, cfg)
     text = json.dumps(rep, indent=1, ensure_ascii=False)
     Path(path).write_text(text, encoding="utf-8")
@@ -439,7 +442,7 @@ def close_alerts(coin: str | None = None, status: str | None = None, push: bool 
             latest = REPORTS / a.get("coin", "?") / "latest.json"
             try:
                 rep = json.loads(latest.read_text(encoding="utf-8"))
-                st = "trade" if rep.get("decision") == "TRADE" else \
+                st = "trade" if rep.get("decision") in ("TRADE", "B-TRADE") else \
                     "expired" if (rep.get("alert") or {}).get("status") == "expired" else "no_trade"
             except (FileNotFoundError, json.JSONDecodeError):
                 st = "handled"

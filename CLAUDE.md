@@ -78,6 +78,15 @@ The Telegram bot is notifications only. Rans usually comes to Claude chat for th
    `python lib/deep_scan.py --finalize scan_output/out/reports/<COIN>/latest.json --news clear|caution|block --news-note "..."`.
 3. `python lib/journal.py add --from scan_output/out/reports/<COIN>/latest.json`,
    `python lib/deep_scan.py --close-alerts --coin <COIN> --no-git`, commit `alerts/` + `journal/`, push to `main`.
+4. **Fallback if GitHub / MEXC data fails:** use Rans's Chrome (Claude in Chrome) and TradingView —
+   `https://www.tradingview.com/chart/?symbol=MEXC:<COIN>USDT.P` — switch 1D / 4H / 1H / 15m, take screenshots,
+   read structure, OB/FVG, liquidity and levels visually, and build the plan with
+   `python lib/risk.py --symbol <COIN> --side long|short --entry .. --sl .. --tp a,b,c` (offline math). Label the answer
+   "manual (TradingView)" because the live score/backtest checks did not run.
+
+Decisions: `TRADE` (all checks pass), `B-TRADE` (🟡 B-plan: plan ok but only score / killzone short, score ≥ 60),
+`NO TRADE`. No maximum trades per day; stop after `max_losses_per_day` stop-losses; 2 digests a day guarantee
+at least 2 coins to scan.
 
 ## Roadmap
 - Phase 1: project setup, data layer, watchman scanner, Telegram, GitHub Actions, alerts, SessionStart hook

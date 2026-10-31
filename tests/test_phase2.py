@@ -216,7 +216,7 @@ def test_score_blocks():
     assert "news block" in compute_score(_inputs(news="block"), CFG)["blocks"]
     weak = compute_score(_inputs(setup={"model": "C", "grade": "B", "quality": {}, "displacement": {}},
                                  futures={"verdict": "against"}, session={}, news="pending", stats=None), CFG)
-    assert weak["decision"] == "NO TRADE" and weak["total"] < 75
+    assert weak["decision"] != "TRADE" and weak["total"] < 75
     rej = compute_score(_inputs(plan={"ok": False, "rejects": ["TP1 blocked"]}), CFG)
     assert rej["decision"] == "NO TRADE"
 

@@ -10,6 +10,8 @@
 | Har ghante | Journal ki open trades auto-check: TP/SL hit par Telegram message | Apne MEXC par bhi SL/TP lagao |
 | Itwaar 20:30 | Hafte ka report Telegram par | Parho, mujhe bhejo to tuning karenge |
 
+Agar GitHub ya MEXC data mein masla ho: main aapke Chrome mein TradingView (MEXC:COINUSDT.P) khol kar charts dekh ke analysis karunga.
+
 ## Method (sab kuch ek saath, professional order)
 1. **HTF bias** — 1D + 4H market structure (BOS/CHoCH), EMA 20/50/200, 4H premium/discount, PDH/PDL/PWH/PWL, monthly open.
 2. **BTC filter** — BTC dump ho to altcoin longs band.
@@ -23,7 +25,9 @@
 ## Paisa aur risk ($20 account)
 - Har trade par risk **$1** (SL hit = −$1). Isolated margin, leverage system batata hai (liquidation SL se door).
 - Jeetne wali trade: TP1 par kam se kam ~$2, TP2/TP3 tak $3–5.
-- **Din mein max 2 trades.** **2 SL ho jayen to us din band.**
+- **Trades ki koi maximum limit nahi.** Roz kam se kam 2 coins (digests) scan honge.
+- Deep scan ke 3 jawab: 🟢/🔴 **TRADE** (sab checks pass) · 🟡 **B-PLAN** (plan theek, lekin score ya killzone kam — risk aadha rakhna behtar) · ❌ **NO TRADE**.
+- Safety: **3 SL ek din mein ho jayen to us din band.**
 - Har trade se pehle chat mein deep scan; bina scan ke trade nahi.
 
 ## Sachi baat (backtest, 22 coins, ~2.3 saal ka data)
