@@ -12,7 +12,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from lib.config import fix_console  # noqa: E402
-from lib.notify import _creds, get_updates, send_telegram  # noqa: E402
+from lib.notify import _creds, _post, get_updates, send_telegram  # noqa: E402
 
 
 def show_chat_ids() -> int:
@@ -20,7 +20,18 @@ def show_chat_ids() -> int:
     if not token:
         print("❌ TELEGRAM_BOT_TOKEN missing. .env file mein token daalo pehle.")
         return 1
+    me = _post("getMe", token)
+    if not me:
+        print("❌ Token kaam nahi kar raha (Telegram ne reject kiya). Secret mein token dobara sahi paste karo.")
+        return 1
+    bot = (me.get("result") or {}).get("username", "?")
+    print(f"✅ Token sahi hai — bot: @{bot}")
+    hook = _post("getWebhookInfo", token) or {}
+    if (hook.get("result") or {}).get("url"):
+        _post("deleteWebhook", token)
+        print("(webhook hata diya taake messages mil sakein)")
     updates = get_updates()
+    print(f"Bot ko mile messages: {len(updates)}")
     chats = {}
     for u in updates:
         msg = u.get("message") or u.get("channel_post") or u.get("my_chat_member") or {}
