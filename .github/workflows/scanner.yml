@@ -1,0 +1,100 @@
+name: Watchman scanner
+
+on:
+  schedule:
+    - cron: "2 * * * *"        # every hour at minute 2 (UTC), right after the 1H close
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (print only: no Telegram, no commit)"
+        type: boolean
+        default: false
+      coins:
+        description: "Optional: limit coins, e.g. SOL,ETH"
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: watchman-scanner-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  AGENT_DIR: "."                # the agent is the repo root
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: ${{ env.AGENT_DIR }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install requirements
+        run: pip install -q -r requirements.txt
+
+      - name: Connectivity check (MEXC first, fallback exchange if blocked)
+        run: python scripts/check_exchange.py --github
+
+      - name: Run watchman scan
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          COINS: ${{ inputs.coins }}
+        run: |
+          args=()
+          if [ -n "$COINS" ]; then args+=(--coins "$COINS"); fi
+          if [ "$DRY_RUN" = "true" ]; then
+            python scanner/run_scan.py --dry-run "${args[@]}"
+          else
+            python scanner/run_scan.py --save-result "$RUNNER_TEMP/scan_result.json" "${args[@]}"
+          fi
+
+      - name: Commit alerts (only if changed)
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          if [ -z "$(git status --porcelain -- alerts)" ]; then
+            echo "No alert changes — nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          msg="watchman: alerts $(date -u +'%Y-%m-%d %H:%M') UTC [skip ci]"
+          git add alerts
+          git commit -q -m "$msg"
+          branch="$GITHUB_REF_NAME"
+          for i in 1 2 3 4; do
+            if git push -q origin "HEAD:$branch"; then
+              echo "Alerts pushed to $branch."
+              exit 0
+            fi
+            echo "Push rejected — pull --rebase and retry ($i/4)"
+            if ! git pull -q --rebase origin "$branch"; then
+              # conflict (e.g. a deep scan edited pending.json at the same time):
+              # take the remote files and re-apply only this run's new alerts
+              git rebase --abort || true
+              git fetch -q origin "$branch"
+              git reset -q --hard "origin/$branch"
+              python scanner/run_scan.py --apply "$RUNNER_TEMP/scan_result.json"
+              git add alerts
+              git diff --cached --quiet || git commit -q -m "$msg"
+            fi
+            sleep $((i * 3))
+          done
+          echo "::error::Could not push alerts after 4 tries"
+          exit 1

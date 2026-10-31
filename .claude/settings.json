@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python scripts/session_start.py || python3 scripts/session_start.py || py scripts/session_start.py",
+            "timeout": 20
+          }
+        ]
+      }
+    ]
+  }
+}

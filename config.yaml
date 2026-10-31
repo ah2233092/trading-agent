@@ -1,0 +1,69 @@
+# ===== Trading Agent config =====
+
+exchange: mexc
+market_type: swap            # USDT-M perpetual futures
+quote: USDT
+# Used only when the main exchange is unreachable (e.g. GitHub's US runners
+# blocked). Same coins, same USDT-M perpetual symbols, public data only.
+fallback_exchanges: [gate, bitget, kucoinfutures, okx]
+
+# --- Coin universe ---
+universe:
+  mode: top_volume           # top_volume or fixed
+  top_n: 30
+  fixed: [BTC, ETH, SOL, XRP, BNB, DOGE, ADA, AVAX, LINK, SUI]
+  exclude: []
+  min_24h_volume_usd: 20000000
+  max_spread_pct: 0.08
+
+# --- Timeframes ---
+timeframes:
+  bias: [1d, 4h]
+  setup: 1h
+  entry: 15m
+
+# --- Watchman scanner (Stage 1) ---
+scanner:
+  min_alert_score: 60        # light score needed to send a Telegram alert
+  max_alerts_per_run: 3
+  coin_cooldown_hours: 6
+  swing_length: 5
+  volume_spike_mult: 2.0
+  near_poi_pct: 0.6          # price within this % of an HTF OB/FVG/key level
+  fresh_candles: 3           # sweep / BOS / CHoCH counts as "fresh" within the last N closed 1H candles
+  pending_expire_hours: 24   # pending alerts older than this move to alerts/history as "expired"
+alert_max_age_hours: 3
+
+# --- Deep scan (Stage 2) ---
+min_trade_score: 75
+score_weights:
+  htf_bias: 25
+  smc_setup: 25
+  entry_precision: 15
+  displacement_volume: 10
+  futures_data: 10
+  session_timing: 5
+  news: 5
+  backtest_edge: 5
+btc_dump_pct: 2.0            # BTC 1H drop % that blocks alt longs
+funding_extreme: 0.05        # % per funding period
+news_block_hours: 2
+
+# --- Risk ---
+account_balance: 20
+risk_per_trade_usd: 1.0
+risk_per_trade_pct: 5
+max_margin_per_trade: 8
+max_leverage: 20
+margin_mode: isolated
+min_rr_tp1: 2.0
+min_rr_final: 3.0
+tp1_close_pct: 50
+sl_atr_buffer: 0.3
+liq_buffer_pct: 1.5
+plan_valid_hours: 6
+
+# --- Notifications ---
+telegram:
+  enabled: true              # token + chat id come from env: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+timezone_display: Asia/Karachi

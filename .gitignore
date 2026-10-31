@@ -1,0 +1,19 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Secrets (real values live in .env locally and GitHub Secrets in the cloud)
+.env
+
+# Generated output
+charts/*
+!charts/.gitkeep
+data/cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
