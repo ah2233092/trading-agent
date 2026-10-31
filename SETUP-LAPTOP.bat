@@ -71,7 +71,7 @@ set "VPY=%DIR%\.venv\Scripts\python.exe"
 
 rem ---- 5. .env ----
 echo [3/6] Telegram settings...
-"%VPY%" scripts\fill_env.py --chat-id <chat-id>
+"%VPY%" scripts\fill_env.py
 if errorlevel 1 (
   pause
   exit /b 1
