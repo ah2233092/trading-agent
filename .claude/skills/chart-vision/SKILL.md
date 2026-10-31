@@ -8,8 +8,12 @@ description: Render candlestick charts with SMC markings (OB, FVG, liquidity, BO
 ## Render
 `python lib/chart.py --symbol <COIN>/USDT:USDT --tf 1d,4h,1h,15m --marks auto --plan <optional plan.json>`
 
+`--plan` takes a plan JSON or a deep-scan report (its `plan` is used). The deep-scan engine renders these
+automatically — paths are in `report.charts`.
+
 Saves PNGs to `charts/<COIN>/<timestamp>_<tf>.png` (dark theme, last 150 candles, volume panel) with:
-- OB boxes (green/red), FVG boxes (translucent), liquidity lines (dashed) with labels
+- OB boxes (green/red), FVG boxes (translucent), breaker boxes (purple, dashed), liquidity lines (dashed:
+  PDH/PDL/PWH/PWL/MO, EQH/EQL, Asia high/low) with labels
 - BOS/CHoCH labels at the break, swing points
 - Premium/discount 50% line of the 4H range
 - If a plan exists: entry zone, SL, TP1/TP2/TP3 and liquidation lines

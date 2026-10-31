@@ -7,7 +7,12 @@ description: Build the exact futures trade numbers — entry, structure-based st
 
 All math in `lib/risk.py`. Never compute these numbers by hand.
 
-`python lib/risk.py --symbol <COIN>/USDT:USDT --side long --entry <p> --sl <p> --tp <p1,p2,p3>`
+`python lib/risk.py --symbol <COIN>/USDT:USDT --side long --entry <p> --sl <p> --tp <p1,p2,p3> [--order limit|market] --json`
+
+In a deep scan the engine builds the plan itself (`plan_from_setup`): entry = POI middle (limit; market only
+when price is in the POI with a 15m CHoCH), SL = beyond the setup's structure (`sl_ref` / POI edge) + ATR buffer,
+TPs = opposing liquidity (PDH/PWH/EQH, 1H/4H swings, opposing 4H OB/FVG, 1H FVG, 4H range, 1D swings, Asia range)
+one tick in front of the level. Missing targets fall back to R multiples and are labelled as such.
 
 ## Inputs (config.yaml)
 - `account_balance` (start: 20 USDT)
@@ -25,9 +30,13 @@ All math in `lib/risk.py`. Never compute these numbers by hand.
    - TP3 = major HTF liquidity (runner).
    - If TP1 is blocked by a level before `min_rr_tp1` → reject the trade.
 4. **Position size**: qty = risk_usd / |entry − SL| (fees included), rounded to contract step.
-5. **Leverage**: lowest leverage that fits the margin into `max_margin_per_trade`, capped at `max_leverage`.
-6. **Liquidation check**: estimated isolated liquidation price (with maintenance margin rate) must be beyond the SL by at least `liq_buffer_pct`. If not → lower leverage, add margin or reject.
-7. **Fees**: show net reward after round-trip fees.
+5. **Leverage**: lowest leverage that fits the margin into `max_margin_per_trade`, capped at `max_leverage`
+   and at the highest leverage whose liquidation still clears the SL. If the full-risk size does not fit, the size
+   is cut (risk below target, noted). Below the exchange minimum size → reject.
+6. **Liquidation check**: isolated linear estimate `long: entry·(1−1/L)/(1−mmr−taker)`,
+   `short: entry·(1+1/L)/(1+mmr+taker)`; must be beyond the SL by at least `liq_buffer_pct`.
+7. **Fees**: entry = maker (limit) or taker (market), SL = taker, TPs = maker. Net reward per TP is for the full
+   position closed at that TP; `net_reward_partial_usd` uses the 50% / 25% / 25% schedule.
 
 ## Output
 ```

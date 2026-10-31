@@ -1,19 +1,17 @@
-# Setup — Phase 1 (Rans ke liye, step by step)
+# Setup (Rans ke liye, step by step)
 
 > Commands mein `python` likha hai. **Mac** par `python3` likho, **Windows** par `python` (ya `py`).
 > Saari commands `trading-agent` folder ke andar chalani hain.
 
 ## 0. Laptop par folder lao + Python setup
 
-**Code kahan hai:** GitHub repo `ah2233092/Mr`, folder `trading-agent/`.
-Repo bara hai (videos), is liye sirf yeh folder download karo:
+**Code kahan hai:** private repo `ah2233092/trading-agent`, branch `main`.
 
 ```bash
-git clone --filter=blob:none --sparse https://github.com/ah2233092/Mr.git
-cd Mr
-git sparse-checkout set trading-agent
+git clone https://github.com/ah2233092/trading-agent.git
 cd trading-agent
 ```
+Pehle se clone hai to sirf: `git checkout main` aur `git pull`.
 
 Virtual environment + packages (ek hi command, OS khud detect karti hai):
 
@@ -94,3 +92,19 @@ python lib/smc.py all --symbol SOL --tf 4h       # SMC read (structure, OB, FVG,
 python lib/data.py --check                       # MEXC + fallback exchanges connectivity
 python tests/test_smc.py                         # offline tests
 ```
+
+## Phase 2 — laptop par check (Part A + live tests)
+1. `git pull` → `python scripts/setup_venv.py` (Windows: `py scripts\setup_venv.py`) → venv activate.
+2. `.env` mein token + chat id khud paste karo (`.env.example` dekho).
+3. `python scripts/test_data.py` — universe + candles aane chahiye.
+4. `python scripts/test_telegram.py` — phone par "✅ Trading agent connected".
+5. Naya `claude` session kholo — shuru mein "📬 pending alerts" ya "📭 Koi pending alert nahi." nazar aana chahiye.
+6. Offline tests: `python tests/test_smc.py` aur `python tests/test_phase2.py` (sab PASS).
+7. Live deep scan:
+   ```bash
+   python lib/deep_scan.py --symbol BTC --json
+   python lib/deep_scan.py --symbol SOL
+   ```
+   Charts `charts/SOL/` mein, report `reports/SOL/latest.json` mein.
+8. Claude Code mein `/deep-scan SOL` → charts, news, final answer → journal:
+   `python lib/journal.py add --from reports/SOL/latest.json` aur `python lib/journal.py report --period day`.

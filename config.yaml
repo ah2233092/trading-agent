@@ -34,6 +34,17 @@ scanner:
   pending_expire_hours: 24   # pending alerts older than this move to alerts/history as "expired"
 alert_max_age_hours: 3
 
+# --- SMC details (Stage 2) ---
+smc:
+  ltf_swing_length: 3        # 15m swing length for the LTF CHoCH confirmation
+  setup_lookback_1h: 36      # model A: look back N 1H candles for sweep -> CHoCH
+  poi_tap_lookback_1h: 8     # model B: 4H POI must be tapped within the last N 1H candles
+  ltf_lookback_15m: 32       # 15m confirmation window (32 x 15m = 8h)
+  killzones_utc:             # [start_hour, end_hour) UTC
+    asia: [0, 6]
+    london: [7, 10]
+    new_york: [12, 15]
+
 # --- Deep scan (Stage 2) ---
 min_trade_score: 75
 score_weights:
@@ -47,6 +58,8 @@ score_weights:
   backtest_edge: 5
 btc_dump_pct: 2.0            # BTC 1H drop % that blocks alt longs
 funding_extreme: 0.05        # % per funding period
+long_short_extreme: 2.5      # L/S account ratio above this (or below 1/this) = crowded
+futures_data_fallbacks: [binanceusdm, bybit, okx]   # for OI history / L/S ratio (MEXC has none)
 news_block_hours: 2
 
 # --- Risk ---

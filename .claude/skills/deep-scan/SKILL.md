@@ -7,36 +7,40 @@ description: Main trading command. Use when Rans runs /deep-scan, says a Telegra
 
 Usage: `/deep-scan` (all pending alerts) or `/deep-scan SOL` (one coin, with or without an alert).
 
+The engine `lib/deep_scan.py` runs the script part of every skill in one go and saves a JSON report.
+You add what scripts cannot do: look at the charts, check the news, and judge.
+
 ## Step 0 — Pick the coins
 1. `git pull` to get the newest alerts.
-2. Read `alerts/pending.json`. If Rans named a coin, use only that coin.
-3. For each alert, note its age. If older than `alert_max_age_hours` (config.yaml), first check that the trigger (sweep / level / BOS) is still valid at current price. If it is gone, mark it `expired` and report it in one line.
-4. If several coins are pending, do a quick first pass and deep-scan the strongest first.
+2. One coin: `python lib/deep_scan.py --symbol SOL --json`
+   All pending: `python lib/deep_scan.py --all-pending --json` (strongest light score first).
+3. Alerts older than `alert_max_age_hours` are re-validated by the engine (`report.alert.status`:
+   `fresh` / `revalidated` / `expired`). If `expired`, report it in one line and skip the coin.
 
-## Step 1 — Run the skills in this exact order
-For each coin:
-1. **htf-bias** → direction allowed (LONG / SHORT / NONE). If NONE → NO TRADE, stop.
-2. **smc-ict-analysis** → setup type, POI zone, structure, liquidity targets.
-3. **chart-vision** → render the 1D, 4H, 1H (and 15m for entry refinement) charts and look at them. Confirm or reject what the numbers say.
-4. **futures-data** → funding, OI, long/short ratio. Flag crowding/trap risk.
-5. **news-check** → any event that blocks the trade in the next hours.
-6. **risk-leverage** → entry, SL, TP1/TP2/TP3, size, leverage, liquidation.
-7. **backtest stats** → read `backtest/results/setup_stats.json` (and journal stats) for the win rate and average R of this setup type.
+## Step 1 — What the engine already did (read it from the report)
+1. **htf-bias** → `report.bias` (direction LONG / SHORT / NONE + reasons). NONE → NO TRADE.
+2. **smc-ict-analysis** → `report.setup` (model A/B/C/D, POI, grade A+/A/B/reject, quality flags, pending notes).
+3. **chart-vision** → PNGs in `report.charts` (1D, 4H, 1H, 15m) with the plan drawn on them.
+4. **futures-data** → `report.futures` (funding, OI, L/S, liquidity, verdict for this side).
+5. **risk-leverage** → `report.plan` (entry, SL, TP1/2/3, size, leverage, liquidation, fees) — or rejects.
+6. **backtest stats** → `report.stats` from `backtest/results/setup_stats.json` (None = not enough data yet).
+7. **score** → `report.score` (breakdown per category, blocks, decision). News is still `pending`.
 
-## Step 2 — Confluence score (0–100)
-Score with `lib/score.py`, weights from `config.yaml`. Typical weights:
-- HTF bias alignment (1D + 4H + BTC) — 25
-- Clean SMC setup (sweep + displacement + OB/FVG in discount/premium) — 25
-- Entry precision (OTE / LTF CHoCH confirmation) — 15
-- Volume / displacement quality — 10
-- Futures data supportive (no crowd trap, funding ok) — 10
-- Session / killzone timing — 5
-- News clear — 5
-- Backtest edge of this setup type — 5
+## Step 2 — Your part
+1. **Look at the charts** (chart-vision skill): open every PNG in `report.charts` with Read. If the picture
+   rejects the setup (choppy, no real sweep, chasing, wall right above entry) → NO TRADE with that reason.
+   If you want a different SL/TP, recompute with `python lib/risk.py ... --json` — never by hand.
+2. **News** (news-check skill): WebSearch / WebFetch for the coin + macro calendar.
+3. **Finalize** with the news verdict (re-scores and rebuilds the final answer):
+   `python lib/deep_scan.py --finalize <report.report_path> --news clear|caution|block --news-note "<one line>" --json`
 
-Score < `min_trade_score` → **NO TRADE**.
+Score weights (config.yaml `score_weights`): HTF bias 25, SMC setup 25, entry precision 15,
+displacement/volume 10, futures data 10, session/killzone 5, news 5, backtest edge 5.
+Score < `min_trade_score` or any hard block → **NO TRADE**.
 
 ## Step 3 — Final answer (Roman Urdu, this exact format)
+Use `report.answer` from the finalized report. You may rewrite the 🧠 Wajah bullets in better words
+(add what you saw on the charts and in the news) but never change a number.
 
 ```
 🟢 LONG / 🔴 SHORT — COIN/USDT (1H) | Setup: <type>
@@ -69,7 +73,9 @@ Or:
 Wajah: <1–3 short reasons>
 Kya dekhna hai: <what would make it a trade>
 ```
+A report that still says `⚠️ PROVISIONAL` has not been finalized — never present it as the final answer.
 
 ## Step 4 — Bookkeeping
-- Log every plan (and every NO TRADE) with `trade-journal`.
-- Move handled alerts to `alerts/history/YYYY-MM-DD.json`, commit and push.
+- Journal every plan and every NO TRADE: `python lib/journal.py add --from <report.report_path>`
+- Move handled alerts to history and push: `python lib/deep_scan.py --close-alerts --coin SOL`
+  (status taken from the latest report: trade / no_trade / expired).

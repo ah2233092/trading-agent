@@ -19,7 +19,8 @@ Engine: `backtest/engine.py` (uses the same `lib/` detection code as live scans 
 - Split data: build on the first 70%, verify on the last 30% (out-of-sample). Report both.
 
 ## Output
-Save `backtest/results/setup_stats.json` and a summary:
+Save to `backtest/results/setup_stats.json` under `setups.<type>.backtest` (keep the `journal` keys that
+`lib/journal.py` writes) and print a summary:
 ```
 Setup | Trades | Win% | Avg R | Profit factor | Max DD (R) | OOS Win%
 A     | ...

@@ -35,22 +35,34 @@ You are Rans's professional crypto futures analyst. Rans trades **MEXC USDT-M pe
 
 ## Key files
 - `config.yaml` — coins, timeframes, thresholds, risk settings
-- `lib/` — data, indicators, SMC detection, charts, risk math (shared by scanner and skills)
+- `lib/` — data, indicators, SMC detection, bias, charts, futures, risk math, score, journal, deep-scan engine
+- `reports/` — deep-scan JSON reports (local, not committed)
 - `scanner/` — Stage 1 watchman
 - `alerts/` — pending + history
 - `journal/trades.csv` — trade journal
 - `backtest/` — backtest engine and results
 
-## Phase 1 tools (built)
-- `python lib/data.py --symbol SOL/USDT:USDT --tf 1d,4h,1h --limit 500` — closed candles (cached in `data/cache/`)
-- `python lib/data.py --universe` / `--check` — scan universe / exchange connectivity
-- `python lib/smc.py <swings|structure|fvg|ob|liquidity|sweeps|pd|all> --symbol SOL --tf 4h [--json]`
-- `python lib/indicators.py --symbol SOL --tf 1h` — EMA 20/50/200, ATR, RSI, volume ratio, body ratio
-- `python scanner/run_scan.py [--dry-run] [--coins SOL,ETH]` — watchman light scan
+## Tools (built)
+Every script has `--json`. Symbols accept `SOL`, `SOL/USDT` or `SOL/USDT:USDT`.
+- Data: `python lib/data.py --symbol SOL --tf 1d,4h,1h --limit 500` (closed candles, cache in `data/cache/`),
+  `--universe`, `--check`
+- Indicators: `python lib/indicators.py --symbol SOL --tf 1h`
+- SMC: `python lib/smc.py <swings|structure|fvg|ob|breakers|liquidity|sweeps|pd|ote|all> --symbol SOL --tf 4h`,
+  `python lib/smc.py setup --symbol SOL --side long` (model A/B/C/D + grade), `python lib/smc.py killzones --symbol SOL`
+- HTF bias: `python lib/bias.py --symbol SOL --json`
+- Charts: `python lib/chart.py --symbol SOL --tf 1d,4h,1h,15m --marks auto [--plan report.json]` → `charts/<COIN>/`
+- Futures: `python lib/futures.py --symbol SOL --side long --json` (MEXC + Binance/Bybit/OKX fallbacks)
+- Risk: `python lib/risk.py --symbol SOL --side long --entry .. --sl .. --tp a,b,c --json`
+- Score: `python lib/score.py --report reports/SOL/latest.json [--news clear] --json`
+- Journal: `python lib/journal.py add|update|autocheck|report|list` (`journal/trades.csv`)
+- **Deep scan engine**: `python lib/deep_scan.py --symbol SOL --json` / `--all-pending` /
+  `--finalize <report> --news clear|caution|block` / `--close-alerts [--coin SOL]` → reports in `reports/<COIN>/`
+- Watchman: `python scanner/run_scan.py [--dry-run] [--coins SOL,ETH]`
+- Tests (offline): `python tests/test_smc.py`, `python tests/test_phase2.py`
 - Alerts: `alerts/pending.json` = `{"alerts": [...]}`; each alert has `id, coin, symbol, pair, direction_hint,
-  triggers, trigger_labels, light_score, price, candle_time, created_at (UTC), created_at_pkt, exchange, context, btc`.
-  History files: `alerts/history/YYYY-MM-DD.json` (same shape, plus `status`, `closed_at`).
-- `alert.exchange` tells which exchange's data the watchman used (MEXC, or a fallback if MEXC was blocked).
+  triggers, trigger_labels, light_score, price, candle_time, created_at (UTC), created_at_pkt, exchange, context,
+  levels, btc`. History: `alerts/history/YYYY-MM-DD.json` (same shape + `status`, `closed_at`).
+- Setup stats: `backtest/results/setup_stats.json` → `setups.<A|B|C|D>.journal` (Phase 2) / `.backtest` (Phase 3).
 - Setup steps for Rans: `SETUP.md`.
 
 ## Roadmap

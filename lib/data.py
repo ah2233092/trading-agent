@@ -284,6 +284,15 @@ def get_ohlcv(symbol: str, tf: str = "1h", limit: int = 300, use_cache: bool = T
     return out
 
 
+DEEP_LIMITS = {"1d": 400, "4h": 300, "1h": 400, "15m": 300}
+
+
+def get_frames(symbol: str, limits: dict | None = None, ex: ccxt.Exchange | None = None) -> dict:
+    """{tf: DataFrame} for the deep-scan timeframes (1D/4H/1H/15m by default)."""
+    limits = limits or DEEP_LIMITS
+    return {tf: get_ohlcv(symbol, tf, n, ex=ex) for tf, n in limits.items()}
+
+
 # ------------------------------------------------------------ connectivity --
 
 def check_exchange(ex_id: str, symbol: str = "BTC/USDT:USDT") -> tuple[bool, str, float]:
