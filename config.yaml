@@ -68,20 +68,20 @@ entry_mode: market_in_killzone   # market entry from the current price, only in 
 max_trades_per_day: 0            # 0 = no maximum (Rans: trades jitni marzi)
 min_signals_per_day: 2           # 2 killzone digests a day with the top 2 coins
 allow_b_plan: true               # plan ok but score / killzone short -> 🟡 B-PLAN instead of NO TRADE
-b_plan_min_score: 60
+b_plan_min_score: 50           # more B-plans -> at least 2 trade options a day
 max_losses_per_day: 3            # safety: stop for the day after 3 stop-losses
 
 # --- Risk ---
 account_balance: 20
-risk_per_trade_usd: 1.0
-risk_per_trade_pct: 5
-max_margin_per_trade: 8
+risk_per_trade_usd: 2.0     # Rans chose $2 risk -> ~$6 per winning trade
+risk_per_trade_pct: 10
+max_margin_per_trade: 10
 max_leverage: 20
 margin_mode: isolated
 min_rr_tp1: 3.0            # Rans: har jeetne wali trade min $3 (risk $1 x 3R)
 min_rr_final: 4.0
 tp1_close_pct: 100         # poori position TP1 par close -> profit pakka >= $3
-min_profit_usd: 3.0        # plan rejected if TP1 net profit (after fees) < $3
+min_profit_usd: 5.0        # plan rejected if TP1 net profit (after fees) < $5 (3R on $2 risk ~ $6)
 sl_atr_buffer: 0.3
 liq_buffer_pct: 1.5
 plan_valid_hours: 6

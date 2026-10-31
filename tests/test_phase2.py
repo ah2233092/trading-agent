@@ -21,7 +21,8 @@ from lib.score import compute_score  # noqa: E402
 
 CFG = load_config()
 # tests pin the classic risk settings (live config may differ)
-CFG.update(min_rr_tp1=2.0, min_rr_final=3.0, tp1_close_pct=50, min_profit_usd=0)
+CFG.update(min_rr_tp1=2.0, min_rr_final=3.0, tp1_close_pct=50, min_profit_usd=0, risk_per_trade_usd=1.0,
+           risk_per_trade_pct=5, max_margin_per_trade=8, b_plan_min_score=60)
 SPEC = ContractSpec("TEST/USDT:USDT", contract_size=0.1, min_qty=1, qty_step=1, tick_size=0.01,
                     maker_fee=0.0, taker_fee=0.0002, mmr=0.004, max_leverage=200, source="test")
 
