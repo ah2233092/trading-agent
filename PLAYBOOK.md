@@ -4,8 +4,8 @@
 | Waqt (PKT) | Kya hota hai | Aapko kya karna hai |
 |---|---|---|
 | Har ghante, :02 par | Watchman 22 coins scan karta hai (1D/4H/1H/15m, SMC/ICT, BTC filter, risk plan). Sirf jab trade **ready** ho: "🟢 Trade ban rahi hai" | Claude chat mein likho: "SOL scan karo" |
-| 12:06 | 📋 London killzone digest — top 2 coins (har din, lazmi) | Chat mein: "scan karo" |
-| 17:06 | 📋 New York killzone digest — top 2 coins (har din, lazmi) | Chat mein: "scan karo" |
+| 12:06–12:12 | 📋 London killzone digest — top 2 coins (har din, lazmi) | Chat mein: "scan karo" |
+| 17:06–17:12 | 📋 New York killzone digest — top 2 coins (har din, lazmi) | Chat mein: "scan karo" |
 | 12:00–15:00, 17:00–20:00 | Trade lene ka waqt (killzones) | Sirf in ghanton mein entry |
 | Har ghante | Journal ki open trades auto-check: TP/SL hit par Telegram message | Apne MEXC par bhi SL/TP lagao |
 | Itwaar 20:30 | Hafte ka report Telegram par | Parho, mujhe bhejo to tuning karenge |
