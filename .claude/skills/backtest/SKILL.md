@@ -8,7 +8,18 @@ description: Backtest the SMC/ICT setup types and the watchman scanner rules on 
 Engine: `backtest/engine.py` (uses the same `lib/` detection code as live scans — no separate logic).
 
 ## Run
-`python backtest/engine.py --coins config --tf 1h --from 2024-01-01 --to today --setups A,B,C,D`
+1. History: GitHub "Backtest data" workflow (MEXC history → `history-data` branch), or locally
+   `python backtest/history.py --coins config --from 2024-06-01` → `data/history/<COIN>/{1d,4h,1h,15m}.csv.gz` + `spec.json`.
+   MEXC keeps 15m candles for only ~12 months, so the main backtest period starts ~12 months back.
+2. `python backtest/engine.py --coins config --from 2025-11-10 --workers 2` (or `--coins BTC,ETH,SOL`).
+   `TA_HISTORY_DIR=/path/to/history` if the history is not in `data/history/`.
+3. Outputs in `backtest/results/`: `latest_report.md`, `summary.json`, `trades_<date>.csv`, `equity_curve.png`,
+   `setup_stats.json` (`setups.<X>.backtest` — out-of-sample numbers when OOS has ≥ 30 trades, else all data).
+4. Tests: `python tests/test_backtest.py`.
+
+Assumptions: news = clear, futures data = neutral (no history), backtest_edge neutral; every candidate plan is
+recorded with its score, so the report shows results per score bucket. Same-setup re-detections within 24h are skipped;
+one trade per coin at a time.
 
 ## Rules
 - Walk forward candle by candle; a candle's data is used only after it closes (no look-ahead).

@@ -227,7 +227,8 @@ def simulate(c: dict, fr: Frames, cfg: dict, spec: risk.ContractSpec) -> dict:
     if outcome is None:  # data ended while open
         pnl += remaining * sgn * (cl[-1] - fill_px)
         outcome = "open" if got == 0 else f"tp{got}"
-    r = (pnl - fees) / dist if dist else 0.0
+    risk_dist = abs(fill_px - sl) or dist  # market fills: R on the real distance
+    r = (pnl - fees) / risk_dist if risk_dist else 0.0
     return {"outcome": outcome, "r": round(float(r), 3), "filled": True, "tp_hits": got,
             "fill_time": idx[fill_i], "exit_time": exit_time,
             "hours": round((exit_time - idx[fill_i]).total_seconds() / 3600, 1)}

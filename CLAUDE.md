@@ -63,7 +63,21 @@ Every script has `--json`. Symbols accept `SOL`, `SOL/USDT` or `SOL/USDT:USDT`.
   triggers, trigger_labels, light_score, price, candle_time, created_at (UTC), created_at_pkt, exchange, context,
   levels, btc`. History: `alerts/history/YYYY-MM-DD.json` (same shape + `status`, `closed_at`).
 - Setup stats: `backtest/results/setup_stats.json` → `setups.<A|B|C|D>.journal` (Phase 2) / `.backtest` (Phase 3).
+- **Backtest (Phase 3)**: history via the "Backtest data" workflow (MEXC → `history-data` branch; 15m only
+  goes back ~12 months) or `python backtest/history.py --coins config --from 2024-06-01`; run
+  `python backtest/engine.py --coins config --from 2025-11-10 --workers 2` (set `TA_HISTORY_DIR` if the
+  history is elsewhere). Writes `backtest/results/latest_report.md`, `summary.json`, `trades_<date>.csv`,
+  `equity_curve.png` and `setup_stats.json` (`setups.<X>.backtest`, OOS numbers first). Tests: `python tests/test_backtest.py`.
 - Setup steps for Rans: `SETUP.md`.
+
+## Chat mode (Claude chat in the cloud — MEXC blocked there)
+The Telegram bot is notifications only. Rans usually comes to Claude chat for the deep scan:
+1. `python scripts/remote_scan.py` (pending alerts) or `--coins SOL` → runs the "Deep scan" workflow on GitHub,
+   fetches `scan_output/out/<COIN>.txt`, `scan_output/out/reports/<COIN>/latest.json` and `scan_output/charts/<COIN>/*.png`.
+2. Look at the 4H/1H charts, run the news check (WebSearch), then
+   `python lib/deep_scan.py --finalize scan_output/out/reports/<COIN>/latest.json --news clear|caution|block --news-note "..."`.
+3. `python lib/journal.py add --from scan_output/out/reports/<COIN>/latest.json`,
+   `python lib/deep_scan.py --close-alerts --coin <COIN> --no-git`, commit `alerts/` + `journal/`, push to `main`.
 
 ## Roadmap
 - Phase 1: project setup, data layer, watchman scanner, Telegram, GitHub Actions, alerts, SessionStart hook
