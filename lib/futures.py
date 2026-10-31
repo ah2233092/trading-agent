@@ -50,19 +50,43 @@ def _oi_value(row: dict) -> float | None:
     return None
 
 
+
+_DEAD: set[str] = set()   # fallback exchanges that are unreachable from this network (skip for this run)
+_SWAP_ONLY = {"okx": ["swap"], "bybit": ["linear"], "binanceusdm": ["linear"]}
+
+
+def _ready(ex) -> bool:
+    """Load swap markets once, quietly. Unreachable exchanges are skipped for the rest of the run."""
+    if ex.id in _DEAD:
+        return False
+    if ex.markets:
+        return True
+    types = _SWAP_ONLY.get(ex.id)
+    if types and isinstance(ex.options.get("fetchMarkets"), dict):
+        ex.options["fetchMarkets"]["types"] = types
+    if ex.id != "mexc":
+        ex.timeout = 8000
+    try:
+        ex.load_markets()
+        return True
+    except Exception as e:
+        _DEAD.add(ex.id)
+        log.info("%s not reachable from this network, skipping (%s)", ex.id, str(e)[:120])
+        return False
+
+
 def fetch_oi_history(symbol: str, exchanges: list) -> dict:
     """OI change over the last 1H and 4H (1H buckets) from the first exchange that has it."""
-    from lib.data import call
 
     for ex in exchanges:
         if not ex.has.get("fetchOpenInterestHistory"):
             continue
         try:
-            if not ex.markets:
-                call(ex.load_markets, retries=2)
+            if not _ready(ex):
+                continue
             if symbol not in ex.markets:
                 continue
-            rows = call(ex.fetch_open_interest_history, symbol, "1h", None, 6, retries=2)
+            rows = ex.fetch_open_interest_history(symbol, "1h", None, 6)
             vals = [v for v in (_oi_value(r) for r in rows) if v]
             if len(vals) < 2:
                 continue
@@ -76,17 +100,16 @@ def fetch_oi_history(symbol: str, exchanges: list) -> dict:
 
 
 def fetch_long_short(symbol: str, exchanges: list) -> dict:
-    from lib.data import call
 
     for ex in exchanges:
         if not ex.has.get("fetchLongShortRatioHistory"):
             continue
         try:
-            if not ex.markets:
-                call(ex.load_markets, retries=2)
+            if not _ready(ex):
+                continue
             if symbol not in ex.markets:
                 continue
-            rows = call(ex.fetch_long_short_ratio_history, symbol, "1h", None, 5, retries=2)
+            rows = ex.fetch_long_short_ratio_history(symbol, "1h", None, 5)
             vals = [float(r["longShortRatio"]) for r in rows if r.get("longShortRatio") is not None]
             if vals:
                 return {"source": ex.id, "ratio": round(vals[-1], 3),
