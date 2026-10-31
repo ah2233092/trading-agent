@@ -158,7 +158,11 @@ def simulate(c: dict, fr: Frames, cfg: dict, spec: risk.ContractSpec) -> dict:
     dist = abs(entry - sl)
     rest = 1 - tp1_close
     shares = [tp1_close] + [rest / (len(tps) - 1)] * (len(tps) - 1) if len(tps) > 1 else [1.0]
-    tf = "15m" if "15m" in fr.full and len(fr.after("15m", c["time"])) else "1h"
+    tf = "1h"
+    if "15m" in fr.full:
+        f15 = fr.after("15m", c["time"])
+        if len(f15) and f15.index[0] - c["time"] <= pd.Timedelta(hours=1):
+            tf = "15m"  # 15m history covers this moment
     fut = fr.after(tf, c["time"])
     t0 = c["time"]
     expiry = t0 + pd.Timedelta(hours=valid_h)
