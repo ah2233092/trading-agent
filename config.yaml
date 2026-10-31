@@ -12,7 +12,8 @@ universe:
   mode: top_volume           # top_volume or fixed
   top_n: 30
   fixed: [BTC, ETH, SOL, XRP, BNB, DOGE, ADA, AVAX, LINK, SUI]
-  exclude: []
+  exclude: [XAU, XAUT, PAXG, XAG, SILVER, GOLD, OIL, USOIL, UKOIL, NATGAS]   # not crypto (gold/silver/oil)
+  exclude_suffixes: [STOCK]   # tokenized stocks like MUSTOCK
   min_24h_volume_usd: 20000000
   max_spread_pct: 0.08
 

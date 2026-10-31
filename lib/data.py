@@ -159,6 +159,7 @@ def get_universe(cfg: dict | None = None, coins: list[str] | None = None) -> lis
     mk = markets(ex)
     uni = cfg_get(cfg, "universe", {}) or {}
     exclude = {str(c).upper() for c in (uni.get("exclude") or [])}
+    ex_suffix = tuple(str(x).upper() for x in (uni.get("exclude_suffixes") or []))
 
     tickers = call(ex.fetch_tickers)
     rows = {s: _ticker_row(s, t) for s, t in tickers.items() if s in mk and is_usdt_perp(mk[s], quote)}
@@ -183,6 +184,8 @@ def get_universe(cfg: dict | None = None, coins: list[str] | None = None) -> lis
     out = []
     for r in rows.values():
         if r["coin"] in exclude or r["coin"] in STABLE_BASES:
+            continue
+        if ex_suffix and str(r["coin"]).upper().endswith(ex_suffix):
             continue
         if r["quote_volume"] < min_vol:
             continue
