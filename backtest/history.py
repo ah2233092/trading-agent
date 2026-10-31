@@ -59,9 +59,9 @@ def fetch_range(ex, symbol: str, tf: str, since_ms: int, until_ms: int) -> pd.Da
         batch = data.call(ex.fetch_ohlcv, symbol, tf, since=cur, limit=limit)
         if not batch:
             empty += 1
-            if empty >= 3:
-                break
-            cur += limit * dur  # gap (e.g. before listing) — jump ahead
+            if rows and empty >= 3:
+                break  # data ended after real candles
+            cur += limit * dur  # no data yet (before listing / beyond the exchange's history) — jump ahead
             continue
         empty = 0
         rows += batch
