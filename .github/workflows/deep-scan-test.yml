@@ -9,7 +9,7 @@ on:
         default: "BTC,SOL"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   deep-scan:
@@ -67,6 +67,19 @@ jobs:
             } >> "$GITHUB_STEP_SUMMARY"
           done
           exit $status
+
+      - name: Publish charts to scan-output branch
+        if: always()
+        run: |
+          [ -d charts ] || exit 0
+          tmp="$RUNNER_TEMP/pub"; mkdir -p "$tmp"
+          cp -r charts out "$tmp"/ 2>/dev/null || true
+          cd "$tmp"
+          git init -q -b scan-output
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -q -m "deep scan output $(date -u +'%Y-%m-%d %H:%M') UTC [skip ci]"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" scan-output
 
       - name: Upload charts and reports
         if: always()
