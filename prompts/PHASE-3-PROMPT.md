@@ -1,5 +1,7 @@
 # PHASE 3 — Backtest engine + real win rates per setup
 
+First run `git pull` on `main` to get the latest fixes, and use the `.venv` Python for every command.
+
 Read `CLAUDE.md`, `config.yaml`, the `backtest` skill (`.claude/skills/backtest/SKILL.md`) and the existing code in `lib/` (especially `smc.py`, `bias.py`, `risk.py`, `score.py`, `journal.py`, `deep_scan.py`) and `scanner/` first. Phases 1 and 2 are done and live on `main` of `ah2233092/trading-agent`. Talk to me in Roman Urdu while you work.
 
 Goal: find out, with real historical MEXC futures data, how each setup type (A/B/C/D) and the watchman scanner actually perform — win rate, average R, profit factor, drawdown — so `/deep-scan` shows a real "📊 win rate" instead of "not enough data yet", and so we can tune the system.
