@@ -59,8 +59,8 @@ score_weights:
   backtest_edge: 5
 btc_dump_pct: 2.0            # BTC 1H drop % that blocks alt longs
 funding_extreme: 0.05        # % per funding period
-long_short_extreme: 2.5      # L/S account ratio above this (or below 1/this) = crowded
-futures_data_fallbacks: [binanceusdm, bybit, okx]   # for OI history / L/S ratio (MEXC has none)
+long_short_extreme: 3.0      # L/S account ratio above this (or below 1/this) = crowded
+futures_data_fallbacks: [okx, binanceusdm, bybit]   # for OI history / L/S ratio (MEXC has none)
 news_block_hours: 2
 
 # --- Risk ---
