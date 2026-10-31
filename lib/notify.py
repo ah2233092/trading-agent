@@ -44,7 +44,7 @@ def _post(method: str, token: str, retries: int = 3, **kwargs) -> dict | None:
     url = API.format(token=token, method=method)
     for attempt in range(1, retries + 1):
         try:
-            r = requests.post(url, timeout=20, **kwargs)
+            r = requests.post(url, timeout=(8, 12), **kwargs)
             data = r.json() if r.headers.get("content-type", "").startswith("application/json") else {}
             if r.status_code == 200 and data.get("ok"):
                 return data
