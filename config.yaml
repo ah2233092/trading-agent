@@ -81,3 +81,8 @@ plan_valid_hours: 6
 telegram:
   enabled: true              # token + chat id come from env: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 timezone_display: Asia/Karachi
+
+# --- Backtest (Phase 3) ---
+backtest:
+  slippage_pct: 0.02         # extra cost on market fills / stop exits
+  max_hold_hours: 168        # close a trade at market after 7 days

@@ -11,10 +11,11 @@ __pycache__/
 charts/*
 !charts/.gitkeep
 data/cache/
+data/history/
+reports/
 
 # OS / editor
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
-reports/
