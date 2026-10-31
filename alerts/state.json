@@ -1,3 +1,6 @@
 {
-  "cooldowns": {}
+  "cooldowns": {
+    "XRP/USDT:USDT": "2026-10-31T14:35:40Z",
+    "AVAX/USDT:USDT": "2026-10-31T14:35:40Z"
+  }
 }

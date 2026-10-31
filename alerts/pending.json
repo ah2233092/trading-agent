@@ -1,3 +1,122 @@
 {
-  "alerts": []
+  "alerts": [
+    {
+      "id": "20261031-1435-XRP",
+      "coin": "XRP",
+      "symbol": "XRP/USDT:USDT",
+      "pair": "XRP/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "near 4H FVG"
+      ],
+      "light_score": 30,
+      "price": 1.2482,
+      "candle_time": "2026-10-31T13:00:00Z",
+      "created_at": "2026-10-31T14:35:40Z",
+      "created_at_pkt": "2026-10-31 19:35 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 1.3443,
+          "range_low": 1.1994,
+          "equilibrium": 1.27185,
+          "price": 1.2492,
+          "pct": 34.4,
+          "zone": "discount",
+          "from_time": "2026-10-28T20:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 30
+      },
+      "levels": {},
+      "btc": {
+        "price": 77477.2,
+        "change_1h_pct": -0.04,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-10-31T13:00:00Z"
+      },
+      "ready": {
+        "symbol": "XRP/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 67.5,
+        "side": "short",
+        "model": "B",
+        "grade": "A+",
+        "score": 92.5,
+        "market_rr": 0.61,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.6 from current price"
+      },
+      "kind": "digest",
+      "status": "pending"
+    },
+    {
+      "id": "20261031-1435-AVAX",
+      "coin": "AVAX",
+      "symbol": "AVAX/USDT:USDT",
+      "pair": "AVAX/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "in 4H FVG"
+      ],
+      "light_score": 35,
+      "price": 8.508,
+      "candle_time": "2026-10-31T13:00:00Z",
+      "created_at": "2026-10-31T14:35:40Z",
+      "created_at_pkt": "2026-10-31 19:35 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 9.16,
+          "range_low": 7.999,
+          "equilibrium": 8.5795,
+          "price": 8.45,
+          "pct": 38.8,
+          "zone": "discount",
+          "from_time": "2026-10-28T20:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 77477.2,
+        "change_1h_pct": -0.04,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-10-31T13:00:00Z"
+      },
+      "ready": {
+        "symbol": "AVAX/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 63.5,
+        "side": "short",
+        "model": "C",
+        "grade": "A+",
+        "score": 83.5,
+        "market_rr": 0.85,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.9 from current price"
+      },
+      "kind": "digest",
+      "status": "pending"
+    }
+  ]
 }

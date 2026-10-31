@@ -51,7 +51,8 @@
           "low_sample": false
         },
         "period": "2025-11-10 \u2192 2026-10-31"
-      }
+      },
+      "journal": null
     },
     "B": {
       "backtest": {
@@ -104,7 +105,8 @@
           "low_sample": false
         },
         "period": "2025-11-10 \u2192 2026-10-31"
-      }
+      },
+      "journal": null
     },
     "C": {
       "backtest": {
@@ -157,7 +159,8 @@
           "low_sample": true
         },
         "period": "2025-11-10 \u2192 2026-10-31"
-      }
+      },
+      "journal": null
     },
     "D": {
       "backtest": {
@@ -210,7 +213,8 @@
           "low_sample": false
         },
         "period": "2025-11-10 \u2192 2026-10-31"
-      }
+      },
+      "journal": null
     }
   },
   "backtest_meta": {
@@ -245,5 +249,6 @@
     "candidates": 11987,
     "errors": 0,
     "assumptions": "news clear, futures neutral, fees+slippage, SL first in same candle, 15m fills"
-  }
+  },
+  "updated_at": "2026-10-31T14:36:03Z"
 }
