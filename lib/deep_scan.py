@@ -140,6 +140,37 @@ def build_levels(side: str, frames: dict, bias: dict, cfg: dict, price: float) -
     return out
 
 
+# ---------------------------------------------------------- daily limits --
+
+def daily_limits(cfg: dict, now) -> dict:
+    """Max trades per day and stop after N losses (Pakistan day), from journal/trades.csv."""
+    from lib.config import display_tz
+    from lib.journal import load as load_journal
+
+    max_trades = int(cfg_get(cfg, "max_trades_per_day", 2))
+    max_losses = int(cfg_get(cfg, "max_losses_per_day", 2))
+    tz = display_tz(cfg)
+    today = now.astimezone(tz).date()
+
+    def day(x):
+        try:
+            return store.parse_iso(x).astimezone(tz).date()
+        except Exception:
+            return None
+
+    rows = load_journal()
+    trades = [r for r in rows if day(r.get("created_at")) == today
+              and r.get("status") not in ("no_trade", "skipped", "cancelled", "expired")]
+    losses = [r for r in rows if r.get("status") == "sl" and day(r.get("closed_at") or r.get("created_at")) == today]
+    out = {"trades_today": len(trades), "losses_today": len(losses), "max_trades": max_trades,
+           "max_losses": max_losses, "blocked": False, "reason": None}
+    if len(losses) >= max_losses:
+        out.update(blocked=True, reason=f"aaj {len(losses)} loss ho chuke — aaj ke liye trading band (kal phir)")
+    elif len(trades) >= max_trades:
+        out.update(blocked=True, reason=f"aaj ki {len(trades)} trades ho chuki (max {max_trades}/din)")
+    return out
+
+
 # --------------------------------------------------------------- analysis --
 
 def analyze_symbol(symbol: str, cfg: dict | None = None, news: str | None = None, charts: bool = True,
@@ -191,7 +222,7 @@ def analyze_symbol(symbol: str, cfg: dict | None = None, news: str | None = None
         log.warning("futures data failed: %s", e)
         fut = {"verdict": None, "reason": None, "liquidity": {"ok": True}, "text": f"Futures data unavailable ({e})"}
 
-    # 4) risk plan
+    # 4) risk plan — live rule: inside a killzone enter at market from the current price
     plan, spec = None, None
     if side and setup.get("model"):
         try:
@@ -199,7 +230,10 @@ def analyze_symbol(symbol: str, cfg: dict | None = None, news: str | None = None
         except Exception as e:
             spec = risk.ContractSpec(symbol, source=f"default — live spec failed: {e}")
         levels = build_levels(side, frames, bias, cfg, price)
-        plan = risk.plan_from_setup(side, setup, levels, setup.get("atr_1h") or 0, spec, cfg, price)
+        plan_setup = setup
+        if cfg_get(cfg, "entry_mode", "limit") == "market_in_killzone" and session.get("in_killzone"):
+            plan_setup = dict(setup, state="in_zone", ltf=dict(setup.get("ltf") or {}, confirmed=True))
+        plan = risk.plan_from_setup(side, plan_setup, levels, setup.get("atr_1h") or 0, spec, cfg, price)
 
     # 5) setup stats
     stats = read_setup_stats(setup.get("model"))
@@ -214,6 +248,7 @@ def analyze_symbol(symbol: str, cfg: dict | None = None, news: str | None = None
         "news": news or "pending",
         "stats": stats,
         "plan": {"ok": plan.get("ok"), "rejects": plan.get("rejects")} if plan else None,
+        "limits": daily_limits(cfg, now),
     }
     score = compute_score(score_inputs, cfg)
 
@@ -260,6 +295,7 @@ def no_trade_reasons(rep: dict) -> list[str]:
         out.append(f"setup {setup['model']} quality kam (grade reject)")
     if plan and not plan.get("ok"):
         out += plan.get("rejects", [])[:2]
+    out = [b for b in score["blocks"] if b.startswith(("outside killzone", "aaj"))] + out
     out += [b for b in score["blocks"] if b.startswith("score") or b == "news block"]
     seen, res = set(), []
     for r in out:
@@ -290,6 +326,8 @@ def what_to_watch(rep: dict) -> str:
             tips.append("blocking level ke paar 1H close, ya POI ke andar behtar entry")
         if rep["news"] == "block":
             tips.append("news event guzarne ka intezar")
+        if any(b.startswith("outside killzone") for b in rep["score"]["blocks"]):
+            tips.insert(0, "killzone (London 12:00 PKT / New York 17:00 PKT) mein dobara scan")
     return "; ".join(dict.fromkeys(tips)) or "agla watchman alert"
 
 

@@ -3,6 +3,7 @@
     python scanner/run_scan.py                  # real run: write alerts + Telegram
     python scanner/run_scan.py --dry-run        # print only (no Telegram, no file writes)
     python scanner/run_scan.py --coins SOL,ETH  # limit the universe
+    python scanner/run_scan.py --digest london  # killzone digest: top 2 coins, always sends a message
 
 Workflow helpers (used by GitHub Actions to survive push races):
     --save-result PATH   also write this run's new alerts to PATH
@@ -25,11 +26,14 @@ from lib import data  # noqa: E402
 from lib.notify import is_configured, send_telegram  # noqa: E402
 from scanner import store  # noqa: E402
 from scanner.light_score import btc_context, score_coin  # noqa: E402
+from scanner import ready as readiness  # noqa: E402
 
 log = logging.getLogger("scan")
 BTC = "BTC/USDT:USDT"
 LIMIT_4H = 300   # ~50 days: 4H structure, OBs, FVGs, PDH/PDL/PWH/PWL
 LIMIT_1H = 400   # ~16 days: covers the full previous week for 1H sweeps
+LIMIT_1D, LIMIT_15M = 400, 300
+KZ_PKT = {"london": "12:00–15:00 PKT", "newyork": "17:00–20:00 PKT"}
 
 
 def build_alert(res: dict, now, cfg: dict, exchange: str, btc: dict | None) -> dict:
@@ -51,6 +55,8 @@ def build_alert(res: dict, now, cfg: dict, exchange: str, btc: dict | None) -> d
         "context": res["context"],
         "levels": trigger_levels(res),
         "btc": btc,
+        "ready": res.get("ready_info"),
+        "kind": res.get("alert_kind", "watch"),
         "status": "pending",
     }
 
@@ -67,9 +73,40 @@ def trigger_levels(res: dict) -> dict:
     return out
 
 
+def _line(a: dict) -> str:
+    r = a.get("ready") or {}
+    side = (r.get("side") or a.get("direction_hint") or "").upper()
+    bits = [side] if side else []
+    if r.get("model"):
+        bits.append(f"setup {r['model']}")
+    if r.get("score") is not None:
+        bits.append(f"score {r['score']:g}")
+    return f"{a['pair']} — {', '.join(bits)}" if bits else a["pair"]
+
+
 def telegram_text(alerts: list[dict]) -> str:
-    pairs = ", ".join(a["pair"] for a in alerts)
-    return f"⚡ Setup ban sakta hai: {pairs}\nClaude Code kholo aur /deep-scan chalao."
+    lines = ["🟢 Trade ban rahi hai:"] + [f"• {_line(a)}" for a in alerts]
+    coin = alerts[0]["coin"]
+    lines += ["", f"Claude chat mein aa kar likho: \"{coin} scan karo\"",
+              "Main deep scan + news check karke final entry / SL / TP dunga.",
+              "⏳ Mauqa ~1–2 ghante valid hai."]
+    return "\n".join(lines)
+
+
+def digest_text(name: str, picks: list[dict]) -> str:
+    title = {"london": "London", "newyork": "New York"}.get(name, name)
+    lines = [f"📋 {title} killzone shuru ({KZ_PKT.get(name, '')})"]
+    if picks:
+        lines.append("Aaj ke top coins:")
+        for i, a in enumerate(picks, 1):
+            r = a.get("ready") or {}
+            tag = "✅ ready" if r.get("ready") else "👀 dekhna hai"
+            lines.append(f"{i}. {_line(a)} ({tag})")
+        lines += ["", "Claude chat mein likho: \"scan karo\" — main dono coins ka deep scan karunga."]
+    else:
+        lines += ["Abhi kisi coin par achha setup nahi. Aaj trade na lena hi behtar.",
+                  "Strong setup bana to foran alert aayega."]
+    return "\n".join(lines)
 
 
 def write_step_summary(lines: list[str]) -> None:
@@ -83,12 +120,14 @@ def write_step_summary(lines: list[str]) -> None:
 
 
 def print_table(results: list[dict], kept_ids: set[str]) -> None:
-    print(f"\n{'#':>2}  {'PAIR':<14} {'SCORE':>5}  {'HINT':<5} {'PRICE':>14}  TRIGGERS")
+    print(f"\n{'#':>2}  {'PAIR':<14} {'LIGHT':>5}  {'SIDE':<5} {'SETUP':<6} {'SCORE':>5}  STATUS")
     for i, r in enumerate(results, 1):
         mark = " ⚡" if r["symbol"] in kept_ids else ""
-        note = " (BTC dump: longs blocked)" if r.get("btc_blocked") else ""
-        print(f"{i:>2}  {data.pretty(r['symbol']):<14} {r['score']:>5}  {r['direction']:<5} "
-              f"{r['price']:>14.8g}  {' + '.join(r['trigger_labels']) or '-'}{note}{mark}")
+        ri = r.get("ready_info") or {}
+        setup = f"{ri.get('model') or '-'}{ri.get('grade') or ''}"
+        sc = f"{ri['score']:g}" if ri.get("score") is not None else "-"
+        print(f"{i:>2}  {data.pretty(r['symbol']):<14} {r['score']:>5}  {r['direction']:<5} {setup:<6} {sc:>5}  "
+              f"{ri.get('why', '-')}{mark}")
 
 
 def apply_file(path: str, cfg: dict) -> None:
@@ -107,6 +146,8 @@ def main() -> int:
     ap.add_argument("--coins", help="comma list, e.g. SOL,ETH")
     ap.add_argument("--save-result", help="write this run's new alerts to this JSON file")
     ap.add_argument("--apply", help="re-apply alerts from a --save-result file and exit")
+    ap.add_argument("--digest", choices=["london", "newyork"],
+                    help="killzone digest: always send the top coins (min 2 alerts a day)")
     args = ap.parse_args()
     cfg = load_config()
 
@@ -115,7 +156,6 @@ def main() -> int:
         return 0
 
     sc = cfg_get(cfg, "scanner", {}) or {}
-    min_score = int(sc.get("min_alert_score", 60))
     max_alerts = int(sc.get("max_alerts_per_run", 3))
     cooldown_h = float(sc.get("coin_cooldown_hours", 6))
     expire_h = float(sc.get("pending_expire_hours", 24))
@@ -142,31 +182,63 @@ def main() -> int:
     except Exception as e:
         log.warning("BTC context failed (%s) — BTC filter off this run", e)
 
+    import pandas as pd
+    from lib import risk as risk_mod
+
+    t_now = pd.Timestamp(now).tz_convert("UTC")
+    btc_frames = None
+    try:
+        btc_frames = {"4h": ohlcv(BTC, "4h", LIMIT_4H), "1h": ohlcv(BTC, "1h", LIMIT_1H)}
+    except Exception as e:
+        log.warning("BTC frames failed: %s", e)
+
     results, errors = [], []
     for row in universe:
         sym = row["symbol"]
         try:
-            res = score_coin(ohlcv(sym, "4h", LIMIT_4H), ohlcv(sym, "1h", LIMIT_1H), btc, cfg)
+            h4, h1 = ohlcv(sym, "4h", LIMIT_4H), ohlcv(sym, "1h", LIMIT_1H)
+            res = score_coin(h4, h1, btc, cfg)
             res["symbol"] = sym
+            try:
+                fr = {"1d": ohlcv(sym, "1d", LIMIT_1D), "4h": h4, "1h": h1, "15m": ohlcv(sym, "15m", LIMIT_15M)}
+                spec = risk_mod.get_spec(sym, ex)
+                bf = None if sym == BTC else btc_frames
+                res["ready_info"] = readiness.check(sym, fr, bf, t_now, cfg, spec)
+            except Exception as e:
+                log.warning("%s ready-check failed: %s", sym, str(e)[:200])
+                res["ready_info"] = {"candidate": False, "ready": False, "rank": 0.0, "why": f"error: {e}"}
+            ri = res["ready_info"]
+            if ri.get("side"):
+                res["direction"] = ri["side"].upper()
+            res["rank"] = ri.get("rank", 0) + res["score"] / 10
             results.append(res)
         except Exception as e:
             errors.append(sym)
             log.warning("%s skipped: %s: %s", sym, type(e).__name__, str(e)[:200])
 
-    results.sort(key=lambda r: r["score"], reverse=True)
+    results.sort(key=lambda r: r["rank"], reverse=True)
     state = store.load_state()
-    candidates = [r for r in results if r["score"] >= min_score and r["direction"] != "NONE"]
-    fresh = [r for r in candidates if not store.in_cooldown(state, r["symbol"], now, cooldown_h)]
-    kept = fresh[:max_alerts]
+    if args.digest:
+        candidates = [r for r in results if r["ready_info"].get("candidate")]
+        for r in candidates:
+            r["alert_kind"] = "digest"
+        kept = candidates[:2]
+    else:
+        candidates = [r for r in results if r["ready_info"].get("ready")]
+        for r in candidates:
+            r["alert_kind"] = "ready"
+        fresh = [r for r in candidates if not store.in_cooldown(state, r["symbol"], now, cooldown_h)]
+        kept = fresh[:max_alerts]
     alerts = [build_alert(r, now, cfg, ex.id, btc) for r in kept]
 
     sent = False
     if args.dry_run:
         print_table(results, {r["symbol"] for r in kept})
-        print(f"\nMin score {min_score} | candidates {len(candidates)} | "
-              f"in cooldown {len(candidates) - len(fresh)} | would alert {len(alerts)}")
-        if alerts:
-            print("\nTelegram preview (not sent — dry run):\n" + telegram_text(alerts))
+        print(f"\nMode {'digest ' + args.digest if args.digest else 'hourly (ready setups only)'} | "
+              f"candidates {len(candidates)} | would alert {len(alerts)}")
+        msg = digest_text(args.digest, alerts) if args.digest else (telegram_text(alerts) if alerts else "")
+        if msg:
+            print("\nTelegram preview (not sent — dry run):\n" + msg)
     else:
         # always called: also expires stale pending alerts (writes only on change)
         res = store.add_alerts(alerts, now, cooldown_h, expire_h)
@@ -175,14 +247,16 @@ def main() -> int:
         if args.save_result:
             with open(args.save_result, "w", encoding="utf-8") as f:
                 json.dump({"alerts": alerts}, f, ensure_ascii=False, indent=1)
-        if alerts:
+        if args.digest:
+            sent = send_telegram(digest_text(args.digest, alerts))
+        elif alerts:
             sent = send_telegram(telegram_text(alerts))
 
     dur = time.time() - t0
     names = ", ".join(a["coin"] for a in alerts) or "-"
     if args.dry_run:
         tg = "dry-run"
-    elif not alerts:
+    elif not alerts and not args.digest:
         tg = "-"
     elif sent:
         tg = "sent"
@@ -197,9 +271,11 @@ def main() -> int:
     write_step_summary([
         f"### Watchman scan — {now:%Y-%m-%d %H:%M} UTC ({fmt_local(now, cfg, with_date=False)})",
         f"`{summary}`", "",
-        "| Pair | Score | Hint | Triggers |", "|---|---:|---|---|",
+        "| Pair | Light | Side | Setup | Score | Status |", "|---|---:|---|---|---:|---|",
         *[f"| {data.pretty(r['symbol'])} | {r['score']} | {r['direction']} | "
-          f"{' + '.join(r['trigger_labels']) or '-'} |" for r in top],
+          f"{(r.get('ready_info') or {}).get('model') or '-'}{(r.get('ready_info') or {}).get('grade') or ''} | "
+          f"{(r.get('ready_info') or {}).get('score', '-')} | {(r.get('ready_info') or {}).get('why', '-')} |"
+          for r in top],
     ])
     if universe and len(errors) == len(universe):
         log.error("every coin failed — data source problem")

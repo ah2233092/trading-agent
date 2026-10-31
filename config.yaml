@@ -63,6 +63,11 @@ long_short_extreme: 3.0      # L/S account ratio above this (or below 1/this) = 
 futures_data_fallbacks: [okx, binanceusdm, bybit]   # for OI history / L/S ratio (MEXC has none)
 news_block_hours: 2
 
+# --- Live entry rule (from the Oct 2026 backtest) ---
+entry_mode: market_in_killzone   # market entry from the current price, only in London / NY killzones
+max_trades_per_day: 2
+max_losses_per_day: 2            # stop for the day after 2 stop-losses
+
 # --- Risk ---
 account_balance: 20
 risk_per_trade_usd: 1.0

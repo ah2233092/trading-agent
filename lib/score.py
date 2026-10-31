@@ -113,6 +113,14 @@ def compute_score(inp: dict, cfg: dict | None = None) -> dict:
         n = (stats or {}).get("trades") or 0
         add("backtest_edge", 0.5, f"not enough data yet ({n} trades)")
 
+    # Live entry rule (backtest: only market entries inside London / NY killzones were profitable)
+    if cfg_get(cfg, "entry_mode", "limit") == "market_in_killzone" and sess and not sess.get("in_killzone"):
+        blocks.append("outside killzone — trade sirf London 12:00–15:00 PKT ya New York 17:00–20:00 PKT mein")
+
+    lim = inp.get("limits") or {}
+    if lim.get("blocked"):
+        blocks.append(lim.get("reason") or "daily limit reached")
+
     if plan is not None and not plan.get("ok"):
         blocks.append("risk plan rejected: " + "; ".join(plan.get("rejects") or []))
 

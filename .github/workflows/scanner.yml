@@ -3,6 +3,9 @@ name: Watchman scanner
 on:
   schedule:
     - cron: "2 * * * *"        # every hour at minute 2 (UTC), right after the 1H close
+    - cron: "6 7 * * *"        # London killzone digest — 12:06 PKT
+    - cron: "6 12 * * *"       # New York killzone digest — 17:06 PKT
+    - cron: "30 15 * * 0"      # Sunday 20:30 PKT weekly report
   workflow_dispatch:
     inputs:
       dry_run:
@@ -12,6 +15,11 @@ on:
       coins:
         description: "Optional: limit coins, e.g. SOL,ETH"
         type: string
+        default: ""
+      digest:
+        description: "Send a killzone digest instead of the hourly scan"
+        type: choice
+        options: ["", "london", "newyork"]
         default: ""
       test_telegram:
         description: "Only send a Telegram test message (no scan)"
@@ -74,33 +82,53 @@ jobs:
         if: ${{ inputs.test_telegram != true && inputs.find_chat_id != true }}
         run: python scripts/check_exchange.py --github
 
+      - name: Weekly report
+        if: ${{ github.event.schedule == '30 15 * * 0' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/journal_check.py --report week
+
       - name: Run watchman scan
-        if: ${{ inputs.test_telegram != true && inputs.find_chat_id != true }}
+        if: ${{ inputs.test_telegram != true && inputs.find_chat_id != true && github.event.schedule != '30 15 * * 0' }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DRY_RUN: ${{ inputs.dry_run }}
           COINS: ${{ inputs.coins }}
+          DIGEST: ${{ inputs.digest }}
+          SCHED: ${{ github.event.schedule }}
         run: |
           args=()
           if [ -n "$COINS" ]; then args+=(--coins "$COINS"); fi
+          if [ "$SCHED" = "6 7 * * *" ]; then DIGEST=london; fi
+          if [ "$SCHED" = "6 12 * * *" ]; then DIGEST=newyork; fi
+          if [ -n "$DIGEST" ]; then args+=(--digest "$DIGEST"); fi
           if [ "$DRY_RUN" = "true" ]; then
             python scanner/run_scan.py --dry-run "${args[@]}"
           else
             python scanner/run_scan.py --save-result "$RUNNER_TEMP/scan_result.json" "${args[@]}"
           fi
 
+      - name: Track journal trades (TP / SL hits)
+        if: ${{ inputs.dry_run != true && inputs.test_telegram != true && inputs.find_chat_id != true }}
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/journal_check.py
+
       - name: Commit alerts (only if changed)
         if: ${{ inputs.dry_run != true && inputs.test_telegram != true && inputs.find_chat_id != true }}
         run: |
-          if [ -z "$(git status --porcelain -- alerts)" ]; then
+          if [ -z "$(git status --porcelain -- alerts journal backtest/results/setup_stats.json)" ]; then
             echo "No alert changes — nothing to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           msg="watchman: alerts $(date -u +'%Y-%m-%d %H:%M') UTC [skip ci]"
-          git add alerts
+          git add alerts journal backtest/results/setup_stats.json
           git commit -q -m "$msg"
           branch="$GITHUB_REF_NAME"
           for i in 1 2 3 4; do
