@@ -31,7 +31,7 @@ import pandas as pd
 
 from backtest import history
 from lib import risk, smc
-from lib.bias import BTC, analyze_bias
+from lib.bias import analyze_bias
 from lib.config import ROOT, cfg_get, load_config
 from lib.data import DEEP_LIMITS, to_symbol
 from lib.score import compute_score
