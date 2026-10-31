@@ -2,7 +2,7 @@ name: Watchman scanner
 
 on:
   schedule:
-    - cron: "2 * * * *"        # every hour at minute 2 (UTC), right after the 1H close
+    - cron: "2 * * * *"        # every hour at minute 2 (UTC), right after the 1H close (schedule owner: ah2233092)
     - cron: "6 7 * * *"        # London killzone digest — 12:06 PKT
     - cron: "6 12 * * *"       # New York killzone digest — 17:06 PKT
     - cron: "30 15 * * 0"      # Sunday 20:30 PKT weekly report
