@@ -10,7 +10,9 @@ No look-ahead: a swing at candle i is only *known* at candle i + length
 CLI:
     python lib/smc.py structure --symbol SOL/USDT:USDT --tf 4h
     python lib/smc.py all --symbol SOL --tf 1h --limit 300 [--json]
-    (commands: swings, structure, fvg, ob, liquidity, sweeps, pd, all)
+    python lib/smc.py setup --symbol SOL --side long [--json]   # entry model A/B/C/D + grade
+    python lib/smc.py killzones --symbol SOL                    # session + Asia range
+    (commands: swings, structure, fvg, ob, liquidity, sweeps, pd, ote, breakers, killzones, setup, all)
 """
 from __future__ import annotations
 
@@ -435,11 +437,429 @@ def premium_discount(df: pd.DataFrame, length: int = 5, swings: list[dict] | Non
     }
 
 
+# ------------------------------------------------------------ displacement --
+
+def displacement_flags(df: pd.DataFrame, body_mult: float = DISPLACEMENT_MULT, n: int = 20) -> pd.DataFrame:
+    """Per candle: body >= body_mult x avg body (previous n) AND volume > avg volume (previous n)."""
+    stats = candle_stats(df, n)
+    vol_avg = df["volume"].rolling(n, min_periods=n).mean().shift(1)
+    out = pd.DataFrame(index=df.index)
+    out["direction"] = stats["direction"]
+    out["body_ratio"] = stats["body_ratio"]
+    out["vol_ratio"] = df["volume"] / vol_avg.replace(0, np.nan)
+    out["body_ok"] = (stats["body_ratio"] >= body_mult).fillna(False)
+    out["vol_ok"] = (df["volume"] > vol_avg).fillna(False)
+    out["displacement"] = out["body_ok"] & out["vol_ok"]
+    return out
+
+
+def displacements(df: pd.DataFrame, lookback: int = 50, body_mult: float = DISPLACEMENT_MULT) -> list[dict]:
+    """Displacement candles in the last `lookback` candles (newest last)."""
+    fl = displacement_flags(df, body_mult)
+    n = len(df)
+    out = []
+    for i in range(max(0, n - lookback), n):
+        if fl["displacement"].iloc[i]:
+            out.append({"idx": i, "time": _t(df.index[i]),
+                        "direction": "bullish" if fl["direction"].iloc[i] > 0 else "bearish",
+                        "body_ratio": round(float(fl["body_ratio"].iloc[i]), 2),
+                        "vol_ratio": round(float(fl["vol_ratio"].iloc[i]), 2)})
+    return out
+
+
+def leg_has_displacement(df: pd.DataFrame, start: int, end: int, direction: str,
+                         flags: pd.DataFrame | None = None) -> dict:
+    """Does candles start..end (inclusive) contain a displacement candle in `direction`?"""
+    fl = displacement_flags(df) if flags is None else flags
+    want = 1 if direction in ("bullish", "LONG") else -1
+    start, end = max(0, start), min(len(df) - 1, end)
+    body = vol = False
+    for i in range(start, end + 1):
+        if fl["direction"].iloc[i] != want:
+            continue
+        if fl["displacement"].iloc[i]:
+            return {"displacement": True, "body_only": False, "idx": i, "time": _t(df.index[i])}
+        body = body or bool(fl["body_ok"].iloc[i])
+        vol = vol or bool(fl["vol_ok"].iloc[i])
+    return {"displacement": False, "body_only": body, "idx": None, "time": None}
+
+
+# --------------------------------------------------------------------- OTE --
+
+def impulse_leg(df: pd.DataFrame, length: int = 5, structure: dict | None = None) -> dict | None:
+    """Last impulse leg: origin (extreme before the last BOS/CHoCH) -> extreme after the break."""
+    st = structure or market_structure(df, length)
+    ev = st.get("last_event")
+    if not ev:
+        return None
+    h, l = df["high"].to_numpy(), df["low"].to_numpy()
+    s, j = ev["swing_idx"], ev["idx"]
+    if ev["direction"] == "bullish":
+        m = s + int(np.argmin(l[s:j + 1]))
+        e = j + int(np.argmax(h[j:]))
+        lo, hi = float(l[m]), float(h[e])
+    else:
+        m = s + int(np.argmax(h[s:j + 1]))
+        e = j + int(np.argmin(l[j:]))
+        hi, lo = float(h[m]), float(l[e])
+    return {"direction": ev["direction"], "break_type": ev["type"], "break_idx": j,
+            "start_idx": m, "start_time": _t(df.index[m]), "end_idx": e, "end_time": _t(df.index[e]),
+            "low": _f(lo), "high": _f(hi)}
+
+
+def ote_zone(df: pd.DataFrame, length: int = 5, structure: dict | None = None,
+             fib_lo: float = 0.62, fib_hi: float = 0.79) -> dict | None:
+    """Optimal trade entry: 0.62-0.79 retracement of the last impulse leg (0.705 = sweet spot)."""
+    leg = impulse_leg(df, length, structure)
+    if not leg or leg["high"] <= leg["low"]:
+        return None
+    hi, lo = leg["high"], leg["low"]
+    rng = hi - lo
+    h, l = df["high"].to_numpy(), df["low"].to_numpy()
+    price = float(df["close"].iloc[-1])
+    after = slice(leg["end_idx"] + 1, len(df))
+    if leg["direction"] == "bullish":
+        top, bottom, sweet = hi - fib_lo * rng, hi - fib_hi * rng, hi - 0.705 * rng
+        retrace = (hi - price) / rng * 100
+        touched = bool((l[after] <= top).any())
+        invalid = bool((l[after] < lo).any())
+    else:
+        bottom, top, sweet = lo + fib_lo * rng, lo + fib_hi * rng, lo + 0.705 * rng
+        retrace = (price - lo) / rng * 100
+        touched = bool((h[after] >= bottom).any())
+        invalid = bool((h[after] > hi).any())
+    return dict(leg, top=_f(top), bottom=_f(bottom), sweet=_f(sweet), price=_f(price),
+                retrace_pct=round(retrace, 1), in_ote=bool(bottom <= price <= top),
+                touched=touched, invalid=invalid)
+
+
+# ----------------------------------------------------------------- breakers --
+
+def breaker_blocks(df: pd.DataFrame, length: int = 5, structure: dict | None = None,
+                   obs: list[dict] | None = None) -> list[dict]:
+    """Failed order blocks that flipped after a CHoCH.
+
+    A bullish OB that price closed through, with a bearish CHoCH after the OB
+    formed, becomes a bearish breaker (resistance) — and vice versa.
+    status: fresh / tapped (retested) / invalid (closed back through it).
+    """
+    st = structure or market_structure(df, length)
+    obs = order_blocks(df, length, st) if obs is None else obs
+    h, l, c = df["high"].to_numpy(), df["low"].to_numpy(), df["close"].to_numpy()
+    n = len(df)
+    out = []
+    for ob in obs:
+        if ob["status"] != "broken":
+            continue
+        b = ob["broken_idx"]
+        flip = "bearish" if ob["direction"] == "bullish" else "bullish"
+        ch = next((e for e in st["events"] if e["type"] == "CHoCH" and e["direction"] == flip
+                   and ob["break_idx"] < e["idx"] <= b + 2 * length), None)
+        if not ch:
+            continue
+        top, bottom = ob["top"], ob["bottom"]
+        status, touch = "fresh", None
+        for x in range(max(b, ch["idx"]) + 1, n):
+            if flip == "bearish":
+                if c[x] > top:
+                    status = "invalid"
+                    break
+                if touch is None and h[x] >= bottom:
+                    status, touch = "tapped", x
+            else:
+                if c[x] < bottom:
+                    status = "invalid"
+                    break
+                if touch is None and l[x] <= top:
+                    status, touch = "tapped", x
+        out.append({"kind": "breaker", "direction": flip, "top": top, "bottom": bottom,
+                    "mid": _f((top + bottom) / 2), "idx": ob["idx"], "time": ob["time"],
+                    "broken_idx": b, "choch_idx": ch["idx"], "choch_time": ch["time"],
+                    "status": status, "first_touch_idx": touch})
+    return out
+
+
+# ---------------------------------------------------------------- sessions --
+
+KILLZONES_UTC = {"asia": (0, 6), "london": (7, 10), "new_york": (12, 15)}
+
+
+def _zones(cfg: dict | None) -> dict:
+    z = ((cfg or {}).get("smc") or {}).get("killzones_utc") or {}
+    out = dict(KILLZONES_UTC)
+    out.update({k: tuple(v) for k, v in z.items()})
+    return out
+
+
+def session_info(now: pd.Timestamp | None = None, cfg: dict | None = None) -> dict:
+    """Which ICT killzone is active (London / New York, UTC) and when the next one starts."""
+    now = pd.Timestamp.now(tz="UTC") if now is None else pd.Timestamp(now).tz_convert("UTC")
+    zones = _zones(cfg)
+    hour = now.hour + now.minute / 60
+    active = next((k for k in ("london", "new_york") if zones[k][0] <= hour < zones[k][1]), None)
+    starts = []
+    for day in (0, 1):
+        base = now.normalize() + pd.Timedelta(days=day)
+        for k in ("london", "new_york"):
+            t = base + pd.Timedelta(hours=zones[k][0])
+            if t > now:
+                starts.append((t, k))
+    nxt_t, nxt = min(starts)
+    return {"now_utc": _t(now), "in_killzone": active is not None, "killzone": active,
+            "next_killzone": nxt, "next_start_utc": _t(nxt_t),
+            "hours_to_next": round((nxt_t - now).total_seconds() / 3600, 2),
+            "zones_utc": {k: list(v) for k, v in zones.items()}}
+
+
+def asia_range(df: pd.DataFrame, cfg: dict | None = None) -> dict | None:
+    """High/low of the latest Asia session (default 00:00-06:00 UTC) and whether it was swept."""
+    if len(df) == 0:
+        return None
+    a0, a1 = _zones(cfg)["asia"]
+    last = df.index[-1]
+    day = last.normalize()
+    start = day + pd.Timedelta(hours=a0)
+    if last < start:
+        day -= pd.Timedelta(days=1)
+        start = day + pd.Timedelta(hours=a0)
+    end = day + pd.Timedelta(hours=a1)
+    seg = df[(df.index >= start) & (df.index < end)]
+    if not len(seg):
+        return None
+    hi, lo = float(seg["high"].max()), float(seg["low"].min())
+    after = df[df.index >= end]
+    return {"start_utc": _t(start), "end_utc": _t(end), "high": _f(hi), "low": _f(lo),
+            "complete": bool(last >= end - (df.index[1] - df.index[0] if len(df) > 1 else pd.Timedelta(0))),
+            "swept_high": bool((after["high"] > hi).any()), "swept_low": bool((after["low"] < lo).any())}
+
+
+# ------------------------------------------------------ 15m confirmation --
+
+def ltf_confirmation(df15: pd.DataFrame, direction: str, poi: dict | None = None,
+                     length: int = 3, lookback: int = 32) -> dict:
+    """LTF CHoCH in the trade direction after price tapped the HTF POI.
+
+    direction: LONG/SHORT. poi: {"top", "bottom"} (optional — without it any
+    fresh CHoCH in the window counts). The CHoCH must come after the tap, and
+    price must not have closed through the far side of the POI before it.
+    """
+    want = "bullish" if direction in ("LONG", "bullish") else "bearish"
+    res = {"confirmed": False, "tap_idx": None, "tap_time": None, "choch": None, "reason": ""}
+    if df15 is None or len(df15) < 3 * length + 5:
+        res["reason"] = "not enough 15m data"
+        return res
+    st = market_structure(df15, length)
+    h, l, c = df15["high"].to_numpy(), df15["low"].to_numpy(), df15["close"].to_numpy()
+    n = len(df15)
+    w0 = max(0, n - lookback)
+    tap = w0
+    if poi:
+        top, bottom = poi["top"], poi["bottom"]
+        tap = next((x for x in range(w0, n) if l[x] <= top and h[x] >= bottom), None)
+        if tap is None:
+            res["reason"] = "price has not tapped the POI on 15m"
+            return res
+        res.update(tap_idx=tap, tap_time=_t(df15.index[tap]))
+    ch = next((e for e in reversed(st["events"]) if e["type"] == "CHoCH" and e["direction"] == want
+               and e["idx"] > tap), None)
+    if not ch:
+        res["reason"] = "no 15m CHoCH yet after the tap"
+        return res
+    if poi:
+        seg = c[tap:ch["idx"] + 1]
+        failed = (seg < poi["bottom"]).any() if want == "bullish" else (seg > poi["top"]).any()
+        if failed:
+            res["reason"] = "price closed through the POI before the CHoCH"
+            return res
+    res.update(confirmed=True, choch=ch, reason=f"15m CHoCH at {ch['level']} ({ch['time']})")
+    return res
+
+
+# ------------------------------------------------------ setup classifier --
+
+MODEL_NAMES = {
+    "A": "Sweep + CHoCH + FVG/OB retest",
+    "B": "HTF POI tap + 15m CHoCH",
+    "C": "BOS continuation + OTE retrace",
+    "D": "Breaker retest",
+}
+
+
+def _overlap(a: dict, b: dict) -> dict | None:
+    top, bottom = min(a["top"], b["top"]), max(a["bottom"], b["bottom"])
+    return {"top": top, "bottom": bottom} if top > bottom else None
+
+
+def _zone(kind: str, z: dict, source: str) -> dict:
+    return {"kind": kind, "top": _f(z["top"]), "bottom": _f(z["bottom"]),
+            "mid": _f((z["top"] + z["bottom"]) / 2), "source": source, "time": z.get("time")}
+
+
+def _state(price: float, poi: dict, want: str) -> str:
+    """in_zone / waiting (price on the right side, retest pending) / failed (beyond the far side)."""
+    if poi["bottom"] <= price <= poi["top"]:
+        return "in_zone"
+    if want == "bullish":
+        return "waiting" if price > poi["top"] else "failed"
+    return "waiting" if price < poi["bottom"] else "failed"
+
+
+def classify_setup(direction: str, df4: pd.DataFrame, df1: pd.DataFrame, df15: pd.DataFrame | None = None,
+                   length: int = 5, ltf_length: int = 3, cfg: dict | None = None) -> dict:
+    """Pick the entry model for `direction` (LONG/SHORT) and grade it A+ / A / B / reject.
+
+    A  1H sweep -> CHoCH/BOS -> FVG/OB formed in that leg, price at or above it (retest)
+    B  price tapped a 4H OB/FVG recently + 15m CHoCH confirmation
+    C  1H BOS continuation, price retracing into the OTE (0.62-0.79) of the impulse leg
+    D  1H breaker block retest
+    Quality points: 4H trend aligned, POI in discount/premium, displacement (body + volume),
+    confluence (OB+FVG / OTE / 4H POI overlap), 15m confirmation. 4+ = A+, 3 = A, 2 = B, else reject.
+    """
+    sc = ((cfg or {}).get("smc") or {})
+    lb_a = int(sc.get("setup_lookback_1h", 36))
+    lb_tap = int(sc.get("poi_tap_lookback_1h", 8))
+    lb_15 = int(sc.get("ltf_lookback_15m", 32))
+    want = "bullish" if direction == "LONG" else "bearish"
+    out = {"direction": direction, "model": None, "name": None, "grade": "reject", "poi": None,
+           "sl_ref": None, "state": None, "quality": {}, "reasons": [], "candidates": [], "pending": []}
+    if direction not in ("LONG", "SHORT"):
+        out["reasons"].append("no direction from HTF bias")
+        return out
+
+    h1, l1 = df1["high"].to_numpy(), df1["low"].to_numpy()
+    n1 = len(df1)
+    price = float(df1["close"].iloc[-1])
+    atr1 = float(atr(df1).iloc[-1])
+    st4 = market_structure(df4, length)
+    pd4 = premium_discount(df4, length, st4["swings"])
+    sw1 = find_swings(df1, length)
+    st1 = market_structure(df1, length, sw1)
+    obs1 = order_blocks(df1, length, st1)
+    fvgs1 = fair_value_gaps(df1)
+    flags1 = displacement_flags(df1)
+    n4 = len(df4)
+    htf_pois = [_zone("4H OB", o, "4H") for o in order_blocks(df4, length, st4)
+                if o["direction"] == want and o["status"] != "broken"]
+    htf_pois += [_zone("4H FVG", g, "4H") for g in fair_value_gaps(df4)
+                 if g["direction"] == want and g["status"] != "filled" and g["idx"] >= n4 - 120]
+    ote = ote_zone(df1, length, st1)
+    out.update(price=_f(price), atr_1h=_f(atr1), ote=ote, trend_4h=st4["trend"], trend_1h=st1["trend"],
+               premium_discount_4h=pd4)
+    cands = []
+
+    # --- A: sweep -> CHoCH/BOS -> FVG/OB retest
+    for sw in liquidity_sweeps(df1, length, lb_a, sw1):
+        if sw["direction"] != want:
+            continue
+        ev = next((e for e in st1["events"] if e["direction"] == want and sw["idx"] < e["idx"] <= sw["idx"] + 24), None)
+        if not ev:
+            continue
+        zones = [_zone("1H OB", o, "1H") for o in obs1 if o["direction"] == want and o["break_idx"] == ev["idx"]
+                 and o["status"] != "broken" and o["idx"] >= sw["idx"] - length]
+        gaps = [_zone("1H FVG", g, "1H") for g in fvgs1 if g["direction"] == want and g["status"] != "filled"
+                and sw["idx"] < g["idx"] <= ev["idx"] + 1]
+        if not zones and not gaps:
+            continue
+        poi, overlap = (zones or gaps)[0], False
+        if zones and gaps:
+            ov = _overlap(zones[0], gaps[0])
+            if ov:
+                poi, overlap = _zone("1H OB+FVG", dict(ov, time=zones[0]["time"]), "1H"), True
+        state = _state(price, poi, want)
+        if state == "failed":
+            continue
+        disp = leg_has_displacement(df1, sw["idx"], ev["idx"], want, flags1)
+        cands.append({"model": "A", "poi": poi, "state": state, "overlap": overlap, "displacement": disp,
+                      "sl_ref": sw["wick"], "detail": {"sweep": sw, "break": ev}})
+        break
+
+    # --- B: 4H POI tap + 15m CHoCH
+    for poi in htf_pois:
+        win = range(max(0, n1 - lb_tap), n1)
+        tapped = any(l1[x] <= poi["top"] and h1[x] >= poi["bottom"] for x in win)
+        if not tapped or _state(price, poi, want) == "failed":
+            continue
+        ltf = ltf_confirmation(df15, direction, poi, ltf_length, lb_15) if df15 is not None else \
+            {"confirmed": False, "reason": "no 15m data"}
+        if not ltf["confirmed"]:
+            out["pending"].append(f"B: {poi['kind']} {poi['bottom']}–{poi['top']} tapped, waiting: {ltf['reason']}")
+            continue
+        seg_lo = slice(max(0, n1 - lb_tap), n1)
+        ext = float(l1[seg_lo].min()) if want == "bullish" else float(h1[seg_lo].max())
+        sl_ref = min(ext, poi["bottom"]) if want == "bullish" else max(ext, poi["top"])
+        disp = leg_has_displacement(df15, ltf["tap_idx"], ltf["choch"]["idx"], want)
+        cands.append({"model": "B", "poi": poi, "state": _state(price, poi, want), "overlap": False,
+                      "displacement": disp, "sl_ref": sl_ref, "ltf": ltf, "detail": {"ltf": ltf}})
+        break
+
+    # --- C: BOS continuation + OTE retrace
+    last = st1["last_event"]
+    if ote and last and last["type"] == "BOS" and last["direction"] == want and st1["trend"] == want and not ote["invalid"]:
+        poi = _zone("1H OTE", ote, "1H")
+        state = _state(price, poi, want)
+        if state != "failed":
+            disp = leg_has_displacement(df1, ote["start_idx"], ote["end_idx"], want, flags1)
+            cands.append({"model": "C", "poi": poi, "state": state, "overlap": False, "displacement": disp,
+                          "sl_ref": ote["low"] if want == "bullish" else ote["high"], "detail": {"ote": ote}})
+
+    # --- D: breaker retest
+    for br in reversed(breaker_blocks(df1, length, st1, obs1)):
+        if br["direction"] != want or br["status"] == "invalid":
+            continue
+        poi = _zone("1H breaker", br, "1H")
+        state = _state(price, poi, want)
+        dist = 0 if state == "in_zone" else min(abs(price - poi["top"]), abs(price - poi["bottom"]))
+        if state == "failed" or dist > 2 * atr1:
+            continue
+        disp = leg_has_displacement(df1, br["broken_idx"], br["choch_idx"], want, flags1)
+        sl_ref = br["bottom"] if want == "bullish" else br["top"]
+        cands.append({"model": "D", "poi": poi, "state": state, "overlap": False, "displacement": disp,
+                      "sl_ref": sl_ref, "detail": {"breaker": br}})
+        break
+
+    # --- grade every candidate
+    for cd in cands:
+        poi = cd["poi"]
+        if cd["model"] != "B" and df15 is not None:
+            cd["ltf"] = ltf_confirmation(df15, direction, poi, ltf_length, lb_15)
+        ltf_ok = bool(cd.get("ltf", {}).get("confirmed"))
+        pd_ok = bool(pd4 and ((want == "bullish" and poi["mid"] < pd4["equilibrium"]) or
+                              (want == "bearish" and poi["mid"] > pd4["equilibrium"])))
+        confl = cd["overlap"] or bool(ote and cd["model"] != "C" and _overlap(poi, ote)) or \
+            any(_overlap(poi, z) for z in htf_pois if cd["model"] != "B")
+        q = {"htf_aligned": st4["trend"] == want, "pd_ok": pd_ok,
+             "displacement": bool(cd["displacement"]["displacement"]), "confluence": bool(confl),
+             "ltf_confirmed": ltf_ok}
+        pts = sum(q.values())
+        cd["quality"] = q
+        cd["grade"] = "A+" if pts >= 4 else "A" if pts == 3 else "B" if pts == 2 else "reject"
+        dist = 0.0 if cd["state"] == "in_zone" else min(abs(price - poi["top"]), abs(price - poi["bottom"]))
+        cd["distance_atr"] = round(dist / atr1, 2) if atr1 else None
+        cd["name"] = MODEL_NAMES[cd["model"]]
+
+    rank = {"A+": 0, "A": 1, "B": 2, "reject": 3}
+    cands.sort(key=lambda z: (rank[z["grade"]], z["model"]))
+    out["candidates"] = cands
+    if not cands:
+        out["reasons"].append("no A/B/C/D entry model found on 1H/15m for this direction")
+        return out
+    best = cands[0]
+    out.update(model=best["model"], name=best["name"], grade=best["grade"], poi=best["poi"],
+               sl_ref=_f(best["sl_ref"]), state=best["state"], quality=best["quality"],
+               ltf=best.get("ltf"), displacement=best["displacement"], distance_atr=best["distance_atr"])
+    q = best["quality"]
+    out["reasons"] = [f"{k.replace('_', ' ')}: {'yes' if v else 'no'}" for k, v in q.items()]
+    if best["grade"] == "reject":
+        out["reasons"].insert(0, "setup quality too low (fewer than 2 quality points)")
+    return out
+
+
 # ----------------------------------------------------------------- summary --
 
 def analyze(df: pd.DataFrame, length: int = 5, sweep_lookback: int = 3) -> dict:
     sw = find_swings(df, length)
     st = market_structure(df, length, sw)
+    obs = order_blocks(df, length, st)
     return {
         "symbol": df.attrs.get("symbol"),
         "tf": df.attrs.get("tf"),
@@ -448,10 +868,14 @@ def analyze(df: pd.DataFrame, length: int = 5, sweep_lookback: int = 3) -> dict:
         "structure": {k: v for k, v in st.items() if k != "swings"},
         "swings": sw,
         "fvgs": fair_value_gaps(df),
-        "order_blocks": order_blocks(df, length, st),
+        "order_blocks": obs,
+        "breakers": breaker_blocks(df, length, st, obs),
         "liquidity": liquidity_pools(df, length, sw),
         "sweeps": liquidity_sweeps(df, length, sweep_lookback, sw),
         "premium_discount": premium_discount(df, length, sw),
+        "ote": ote_zone(df, length, st),
+        "displacements": displacements(df, lookback=30),
+        "asia_range": asia_range(df),
     }
 
 
@@ -496,6 +920,38 @@ def _print_human(cmd: str, res: dict, df: pd.DataFrame) -> None:
         if pdz:
             print(f"\nDealing range {pdz['range_low']} – {pdz['range_high']} (EQ {pdz['equilibrium']}): "
                   f"price in {pdz['zone'].upper()} ({pdz['pct']}%)")
+    if cmd in ("ote", "all") and res.get("ote"):
+        o = res["ote"]
+        print(f"\nOTE ({o['direction']} leg {o['low']} – {o['high']}): zone {o['bottom']} – {o['top']} "
+              f"(sweet {o['sweet']}), retrace {o['retrace_pct']}%, in OTE: {o['in_ote']}, invalid: {o['invalid']}")
+    if cmd in ("breakers", "all"):
+        print("\nBreaker blocks (not invalid):")
+        live = [b for b in res.get("breakers", []) if b["status"] != "invalid"]
+        for b in live[-4:]:
+            print(f"  {b['time']}  {b['direction']:<8} {b['bottom']} – {b['top']}  {b['status']} (CHoCH {b['choch_time']})")
+        if not live:
+            print("  none")
+    if cmd == "all":
+        d = res.get("displacements") or []
+        print(f"\nDisplacement candles (last 30): {len(d)}" +
+              (f" — latest {d[-1]['direction']} {d[-1]['time']} body x{d[-1]['body_ratio']} vol x{d[-1]['vol_ratio']}" if d else ""))
+        ar = res.get("asia_range")
+        if ar:
+            print(f"Asia range {ar['low']} – {ar['high']} (swept high {ar['swept_high']}, low {ar['swept_low']})")
+
+
+def _print_setup(r: dict) -> None:
+    print(f"Setup {r['direction']}: model {r['model'] or '-'} {r['name'] or ''} | grade {r['grade']}")
+    if r.get("poi"):
+        p = r["poi"]
+        print(f"  POI {p['kind']} {p['bottom']} – {p['top']} (state {r['state']}, {r.get('distance_atr')} ATR away)")
+        print(f"  SL reference {r['sl_ref']}")
+    for x in r["reasons"]:
+        print(f"  - {x}")
+    for x in r.get("pending", []):
+        print(f"  … {x}")
+    for c in r.get("candidates", [])[1:]:
+        print(f"  alt: {c['model']} {c['name']} grade {c['grade']} POI {c['poi']['bottom']} – {c['poi']['top']}")
 
 
 def _main() -> None:
@@ -505,17 +961,32 @@ def _main() -> None:
     fix_console()
     ap = argparse.ArgumentParser(description="SMC detectors")
     ap.add_argument("cmd", nargs="?", default="all",
-                    choices=["swings", "structure", "fvg", "ob", "liquidity", "sweeps", "pd", "all"])
+                    choices=["swings", "structure", "fvg", "ob", "liquidity", "sweeps", "pd", "ote",
+                             "breakers", "killzones", "setup", "all"])
     ap.add_argument("--symbol", required=True)
     ap.add_argument("--tf", default="1h", help="one or more, e.g. 4h,1h")
     ap.add_argument("--limit", type=int, default=300)
     ap.add_argument("--length", type=int, help="swing length (default: config scanner.swing_length)")
+    ap.add_argument("--side", choices=["long", "short"], help="for `setup`: direction to classify")
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args()
     cfg = load_config()
     length = a.length or int(cfg_get(cfg, "scanner.swing_length", 5))
+    sym = to_symbol(a.symbol)
+    if a.cmd == "killzones":
+        res = {"session": session_info(cfg=cfg), "asia_range": asia_range(get_ohlcv(sym, "1h", 48), cfg)}
+        print(json.dumps(res, indent=1, default=str))
+        return
+    if a.cmd == "setup":
+        if not a.side:
+            ap.error("setup needs --side long|short")
+        res = classify_setup(a.side.upper(), get_ohlcv(sym, "4h", 300), get_ohlcv(sym, "1h", 400),
+                             get_ohlcv(sym, "15m", 300), length,
+                             int(cfg_get(cfg, "smc.ltf_swing_length", 3)), cfg)
+        print(json.dumps(res, indent=1, default=str)) if a.json else _print_setup(res)
+        return
     for tf in [t.strip() for t in a.tf.split(",") if t.strip()]:
-        df = get_ohlcv(to_symbol(a.symbol), tf, a.limit)
+        df = get_ohlcv(sym, tf, a.limit)
         res = analyze(df, length)
         if a.json:
             print(json.dumps(res, indent=1, default=str))

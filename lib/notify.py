@@ -102,5 +102,8 @@ if __name__ == "__main__":
 
     fix_console()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
+    if any(a in ("-h", "--help") for a in sys.argv[1:]):
+        print('usage: python lib/notify.py "message text"   (sends to TELEGRAM_CHAT_ID)')
+        sys.exit(0)
     msg = " ".join(sys.argv[1:]) or "Test message from trading agent"
     print("sent" if send_telegram(msg) else "NOT sent")

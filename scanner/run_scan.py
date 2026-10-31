@@ -49,9 +49,22 @@ def build_alert(res: dict, now, cfg: dict, exchange: str, btc: dict | None) -> d
         "created_at_pkt": fmt_local(now, cfg),
         "exchange": exchange,
         "context": res["context"],
+        "levels": trigger_levels(res),
         "btc": btc,
         "status": "pending",
     }
+
+
+def trigger_levels(res: dict) -> dict:
+    """Prices that made each trigger fire — used later to re-validate old alerts."""
+    out = {}
+    for t in res.get("trigger_details", []):
+        d = t.get("detail") or {}
+        if t["key"] == "sweep":
+            out["sweep_level"], out["sweep_wick"] = d.get("level"), d.get("wick")
+        elif t["key"] == "structure":
+            out["structure_level"] = d.get("level")
+    return out
 
 
 def telegram_text(alerts: list[dict]) -> str:
