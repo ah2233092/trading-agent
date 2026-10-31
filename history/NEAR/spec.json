@@ -1,0 +1,12 @@
+{
+ "symbol": "NEAR/USDT:USDT",
+ "contract_size": 1.0,
+ "min_qty": 1.0,
+ "qty_step": 1.0,
+ "tick_size": 0.001,
+ "maker_fee": 0.0,
+ "taker_fee": 0.0002,
+ "mmr": 0.004,
+ "max_leverage": 200.0,
+ "source": "mexc live"
+}

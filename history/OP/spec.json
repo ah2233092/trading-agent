@@ -1,0 +1,12 @@
+{
+ "symbol": "OP/USDT:USDT",
+ "contract_size": 1.0,
+ "min_qty": 1.0,
+ "qty_step": 1.0,
+ "tick_size": 1e-05,
+ "maker_fee": 0.0,
+ "taker_fee": 0.0,
+ "mmr": 0.0023,
+ "max_leverage": 300.0,
+ "source": "mexc live"
+}

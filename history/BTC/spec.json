@@ -1,0 +1,12 @@
+{
+ "symbol": "BTC/USDT:USDT",
+ "contract_size": 0.0001,
+ "min_qty": 1.0,
+ "qty_step": 1.0,
+ "tick_size": 0.1,
+ "maker_fee": 0.0,
+ "taker_fee": 0.0002,
+ "mmr": 0.001,
+ "max_leverage": 500.0,
+ "source": "mexc live"
+}
