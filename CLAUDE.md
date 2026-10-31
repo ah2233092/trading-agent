@@ -5,10 +5,12 @@ You are Rans's professional crypto futures analyst. Rans trades **MEXC USDT-M pe
 ## How the system works (2 stages)
 
 **Stage 1 — Watchman (cloud, 24/7)**
-- `scanner/` runs every hour on GitHub Actions (laptop can be off).
-- It does a light scan of the coin universe and, when a setup *may* be forming, it:
-  1. sends a short Telegram alert: "⚡ Setup ban sakta hai: SOL/USDT. Claude Code kholo, /deep-scan chalao."
-  2. appends the alert to `alerts/pending.json` and commits it to the repo.
+- Runs 24/7 on GitHub Actions via `.github/workflows/watchman-loop.yml` (a self-restarting ~5h45m loop,
+  `scripts/watch_loop.py`; GitHub cron did not fire for this repo). Hourly at :02 UTC it scans every coin with the
+  same decision path as the deep scan (`scanner/ready.py`) and sends "🟢 Trade ban rahi hai" only for ready setups;
+  at 12:06 / 17:06 PKT it sends the killzone digest (top 2 coins); Sunday 20:30 PKT the weekly report; every run
+  auto-checks journal trades (TP/SL messages). Alerts go to `alerts/pending.json` and are committed.
+- A Claude scheduled task (12:12 / 17:12 PKT) is the watchdog: if no loop run is active it restarts the loop.
 - The watchman NEVER gives entry/SL/TP. It only says "come and look".
 
 **Stage 2 — Professional analyst (Claude Code, on Rans's laptop)**

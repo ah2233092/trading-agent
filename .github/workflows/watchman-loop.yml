@@ -1,0 +1,61 @@
+name: Watchman loop
+
+# 24/7 watchman without cron: each run loops ~5h45m (hourly scans at :02 UTC, killzone digests at
+# 12:06 and 17:06 PKT, Sunday weekly report), then starts the next run itself.
+# Stop it: cancel the running "Watchman loop" run (a cancelled run does not restart itself).
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_now:
+        description: "Run one scan right away"
+        type: choice
+        options: [none, hourly, london, newyork]
+        default: none
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: watchman-loop
+  cancel-in-progress: false
+
+jobs:
+  loop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 358
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install requirements
+        run: pip install -q -r requirements.txt
+
+      - name: Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Watch (≈5h45m)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_NOW: ${{ inputs.run_now }}
+        run: |
+          args=(--hours 5.75)
+          if [ -n "$RUN_NOW" ] && [ "$RUN_NOW" != "none" ]; then args+=(--now "$RUN_NOW"); fi
+          python scripts/watch_loop.py "${args[@]}"
+
+      - name: Start the next loop
+        if: ${{ !cancelled() }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run watchman-loop.yml --ref main -R "${{ github.repository }}"

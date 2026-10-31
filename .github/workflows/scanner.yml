@@ -1,11 +1,8 @@
 name: Watchman scanner
 
+# Manual / test runs. The 24/7 schedule lives in watchman-loop.yml (GitHub cron did not fire for this repo).
+
 on:
-  schedule:
-    - cron: "2 * * * *"        # every hour at minute 2 (UTC), right after the 1H close (schedule owner: ah2233092)
-    - cron: "6 7 * * *"        # London killzone digest — 12:06 PKT
-    - cron: "6 12 * * *"       # New York killzone digest — 17:06 PKT
-    - cron: "30 15 * * 0"      # Sunday 20:30 PKT weekly report
   workflow_dispatch:
     inputs:
       dry_run:
@@ -83,14 +80,14 @@ jobs:
         run: python scripts/check_exchange.py --github
 
       - name: Weekly report
-        if: ${{ github.event.schedule == '30 15 * * 0' }}
+        if: ${{ false }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/journal_check.py --report week
 
       - name: Run watchman scan
-        if: ${{ inputs.test_telegram != true && inputs.find_chat_id != true && github.event.schedule != '30 15 * * 0' }}
+        if: ${{ inputs.test_telegram != true && inputs.find_chat_id != true }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
