@@ -372,8 +372,9 @@ def format_answer(rep: dict, cfg: dict | None = None) -> str:
         "",
         f"📍 Entry: {_g(p['entry'])} ({p['order']}, zone {_g(min(p['entry_zone']))}–{_g(max(p['entry_zone']))})",
         f"🛑 Stop Loss: {_g(p['sl'])}  ({p['sl_pct']:.2f}%)",
-        f"🎯 TP1: {_g(tps[0])} (1:{rr[0]:g}) → {t1}% close, SL entry par",
-        f"🎯 TP2: {_g(tps[1])} (1:{rr[1]:g})",
+        (f"🎯 TP1: {_g(tps[0])} (1:{rr[0]:g}) → poori position close (profit ${nets[0]:.2f})" if t1 >= 100 else
+         f"🎯 TP1: {_g(tps[0])} (1:{rr[0]:g}) → {t1}% close, SL entry par"),
+        f"🎯 TP2: {_g(tps[1])} (1:{rr[1]:g})" + (" — optional (agar hold karna ho)" if t1 >= 100 else ""),
         f"🎯 TP3: {_g(tps[2])} (1:{rr[2]:g}) — runner / {tname}",
         "",
         f"⚙️ Leverage: {p['leverage']}x (Isolated) | Margin: ${p['margin_usd']:.2f}",

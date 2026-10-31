@@ -183,6 +183,9 @@ def build_plan(side: str, entry: float, sl: float, tps: list[float], spec: Contr
     for t in tps:
         gross = qty * abs(t - entry)
         rewards.append(gross - entry_fee - qty * t * fee_tp)
+    min_profit = float(cfg_get(cfg, "min_profit_usd", 0) or 0)
+    if min_profit and rewards and rewards[0] < min_profit:
+        rejects.append(f"TP1 profit only ${rewards[0]:.2f} (< ${min_profit:g} minimum)")
     # partial schedule: tp1_close at TP1, rest split between the later TPs, SL to entry after TP1
     rest = 1 - tp1_close
     shares = [tp1_close] + ([rest / (len(tps) - 1)] * (len(tps) - 1) if len(tps) > 1 else [])

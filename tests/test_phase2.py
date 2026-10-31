@@ -20,6 +20,8 @@ from lib.risk import ContractSpec, build_plan, choose_targets, liquidation_price
 from lib.score import compute_score  # noqa: E402
 
 CFG = load_config()
+# tests pin the classic risk settings (live config may differ)
+CFG.update(min_rr_tp1=2.0, min_rr_final=3.0, tp1_close_pct=50, min_profit_usd=0)
 SPEC = ContractSpec("TEST/USDT:USDT", contract_size=0.1, min_qty=1, qty_step=1, tick_size=0.01,
                     maker_fee=0.0, taker_fee=0.0002, mmr=0.004, max_leverage=200, source="test")
 

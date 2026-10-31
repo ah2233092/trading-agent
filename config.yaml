@@ -78,9 +78,10 @@ risk_per_trade_pct: 5
 max_margin_per_trade: 8
 max_leverage: 20
 margin_mode: isolated
-min_rr_tp1: 2.0
-min_rr_final: 3.0
-tp1_close_pct: 50
+min_rr_tp1: 3.0            # Rans: har jeetne wali trade min $3 (risk $1 x 3R)
+min_rr_final: 4.0
+tp1_close_pct: 100         # poori position TP1 par close -> profit pakka >= $3
+min_profit_usd: 3.0        # plan rejected if TP1 net profit (after fees) < $3
 sl_atr_buffer: 0.3
 liq_buffer_pct: 1.5
 plan_valid_hours: 6
