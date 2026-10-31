@@ -13,6 +13,10 @@ on:
         description: "Optional: limit coins, e.g. SOL,ETH"
         type: string
         default: ""
+      test_telegram:
+        description: "Only send a Telegram test message (no scan)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -47,10 +51,19 @@ jobs:
       - name: Install requirements
         run: pip install -q -r requirements.txt
 
+      - name: Telegram test
+        if: ${{ inputs.test_telegram == true }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/test_telegram.py
+
       - name: Connectivity check (MEXC first, fallback exchange if blocked)
+        if: ${{ inputs.test_telegram != true }}
         run: python scripts/check_exchange.py --github
 
       - name: Run watchman scan
+        if: ${{ inputs.test_telegram != true }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -66,7 +79,7 @@ jobs:
           fi
 
       - name: Commit alerts (only if changed)
-        if: ${{ inputs.dry_run != true }}
+        if: ${{ inputs.dry_run != true && inputs.test_telegram != true }}
         run: |
           if [ -z "$(git status --porcelain -- alerts)" ]; then
             echo "No alert changes — nothing to commit."
