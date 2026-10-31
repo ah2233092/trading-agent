@@ -17,6 +17,10 @@ on:
         description: "Only send a Telegram test message (no scan)"
         type: boolean
         default: false
+      find_chat_id:
+        description: "Only show the Telegram chat id of people who messaged the bot (no scan)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -51,6 +55,14 @@ jobs:
       - name: Install requirements
         run: pip install -q -r requirements.txt
 
+      - name: Find Telegram chat id
+        if: ${{ inputs.find_chat_id == true }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          python scripts/test_telegram.py --chat-id | tee chat_id.txt || true
+          { echo "### Telegram chat id"; echo '```'; cat chat_id.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Telegram test
         if: ${{ inputs.test_telegram == true }}
         env:
@@ -59,11 +71,11 @@ jobs:
         run: python scripts/test_telegram.py
 
       - name: Connectivity check (MEXC first, fallback exchange if blocked)
-        if: ${{ inputs.test_telegram != true }}
+        if: ${{ inputs.test_telegram != true && inputs.find_chat_id != true }}
         run: python scripts/check_exchange.py --github
 
       - name: Run watchman scan
-        if: ${{ inputs.test_telegram != true }}
+        if: ${{ inputs.test_telegram != true && inputs.find_chat_id != true }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -79,7 +91,7 @@ jobs:
           fi
 
       - name: Commit alerts (only if changed)
-        if: ${{ inputs.dry_run != true && inputs.test_telegram != true }}
+        if: ${{ inputs.dry_run != true && inputs.test_telegram != true && inputs.find_chat_id != true }}
         run: |
           if [ -z "$(git status --porcelain -- alerts)" ]; then
             echo "No alert changes — nothing to commit."
