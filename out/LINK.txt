@@ -1,0 +1,40 @@
+❌ NO TRADE — LINK/USDT
+Wajah: outside killzone — trade sirf London 12:00–15:00 PKT ya New York 17:00–20:00 PKT mein; TP1 blocked by 4H bullish FVG at 11.443 (only 1:0.44); score 56.2 < 65
+Kya dekhna hai: killzone (London 12:00 PKT / New York 17:00 PKT) mein dobara scan; blocking level ke paar 1H close, ya POI ke andar behtar entry
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 11.522
+4H: bearish — range 10.26–12.011, price in premium (77.4%)
+BTC: neutral
+Key levels: PDH 11.946, PDL 11.307, PWH 12.802, PWL 11.232, MO 11.653
+Setup: B HTF POI tap + 15m CHoCH grade A
+Funding: 0.0100% (normal, crowd: none) [mexc]
+OI: 1H +0.24%, 4H +0.04% → OI flat — no new positioning [okx]
+L/S ratio: 1.707 (balanced) [okx]
+Liquidity: 24h vol $136.5M, spread 0.009%
+Verdict: neutral (nothing unusual)
+Entry 11.615 | SL 12.002 (3.33%, 1 R)
+TP1 10.71 (1:2.34) | TP2 10.261 (1:3.5) | TP3 7.883 (1:9.64)
+Qty 51 contracts | Notional $59.24 | Leverage 6x isolated | Margin $9.87
+Liquidation ≈ 13.517 (SL se 12.62% door) ✅
+Risk $2.00 | Net reward TP1 $4.60 / TP2 $6.89 / TP3 $19.02 (fees ke baad)
+❌ TP1 blocked by 4H bullish FVG at 11.443 (only 1:0.44)
+Score: 56.2/100 (min 65) → NO TRADE
+  htf_bias              21.2 / 25   1D + 4H aligned; BTC neutral
+  smc_setup             20.0 / 25   model B (HTF POI tap + 15m CHoCH) grade A
+  entry_precision        9.0 / 15   15m CHoCH yes, confluence no
+  displacement_volume    0.0 / 10   no displacement
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         1.0 / 5    outside killzones
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    47 trades, win 23.4%, avg R -0.181
+  ✖ outside killzone — trade sirf London 12:00–15:00 PKT ya New York 17:00–20:00 PKT mein
+  ✖ risk plan rejected: TP1 blocked by 4H bullish FVG at 11.443 (only 1:0.44)
+  ✖ score 56.2 < 65
+Alert 20261101-1206-LINK: expired (age 4.29h)
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/LINK/20261101-1623_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/LINK/20261101-1623_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/LINK/20261101-1623_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/LINK/20261101-1623_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/LINK/20261101T1623.json
