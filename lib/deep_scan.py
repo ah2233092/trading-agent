@@ -110,7 +110,9 @@ def build_levels(side: str, frames: dict, bias: dict, cfg: dict, price: float) -
     k = bias.get("key_levels") or {}
     for name in (("PDH", "PWH") if long else ("PDL", "PWL")):
         add(name, k.get(name), "key")
-    add("MO", k.get("MO"), "key")
+    # a brand-new monthly open (first 2 days of the month) sits at the current price — not a real level yet
+    if frames["1h"].index[-1].day > 2:
+        add("MO", k.get("MO"), "key")
     for tf, sw_strength in (("1h", "minor"), ("4h", "htf")):
         pools = smc.liquidity_pools(frames[tf], length)
         for p in pools["buy_side" if long else "sell_side"]:
