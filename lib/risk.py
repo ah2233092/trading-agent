@@ -260,8 +260,12 @@ def choose_targets(side: str, entry: float, sl: float, levels: list[dict], cfg: 
         p = x.get("price")
         if p is None or sgn * (p - entry) <= 0:
             continue
-        if any(abs(p - y["price"]) / p < 0.001 for y in lv):
-            continue  # duplicate within 0.1 %
+        dup = next((y for y in lv if abs(p - y["price"]) / p < 0.001), None)
+        if dup:  # duplicate within 0.1 %: keep one entry with the strongest strength
+            rank = {"key": 3, "htf": 2, "minor": 1}
+            if rank.get(x.get("strength"), 0) > rank.get(dup.get("strength"), 0):
+                dup.update(name=x.get("name"), strength=x.get("strength"))
+            continue
         lv.append(dict(x, r=abs(p - entry) / dist))
     lv.sort(key=lambda x: x["r"])
     out = {"tp": [], "blocked_by": None, "fallback": []}
