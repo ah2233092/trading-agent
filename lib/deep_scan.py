@@ -236,6 +236,7 @@ def analyze_symbol(symbol: str, cfg: dict | None = None, news: str | None = None
         if cfg_get(cfg, "entry_mode", "limit") == "market_in_killzone" and session.get("in_killzone"):
             plan_setup = dict(setup, state="in_zone", ltf=dict(setup.get("ltf") or {}, confirmed=True))
         plan = risk.plan_from_setup(side, plan_setup, levels, setup.get("atr_1h") or 0, spec, cfg, price)
+        plan["levels_considered"] = sorted(levels, key=lambda x: abs(x["price"] - price))[:15]
 
     # 5) setup stats
     stats = read_setup_stats(setup.get("model"))
