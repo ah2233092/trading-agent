@@ -1,3 +1,5 @@
 id,created_at,coin,side,setup_type,score,entry,sl,tp1,tp2,tp3,leverage,risk_usd,status,exit_price,pnl_usd,r_multiple,notes,symbol,grade,order,valid_until,qty,filled_at,closed_at
 20261031-1437-AVAX,2026-10-31T14:37:19Z,AVAX,short,C,78.5,8.508,9.105,7.172,7.017,6.109,,,no_trade,,,,TP1 blocked by PDL at 7.999 (only 1:0.85),AVAX/USDT:USDT,A+,,2026-10-31T20:37:19Z,,,
 20261031-1437-XRP,2026-10-31T14:37:19Z,XRP,short,B,85.0,1.2482,1.2803,0.9841,0.952,0.9199,,,no_trade,,,,TP1 blocked by PDL at 1.1994 (only 1:1.52),XRP/USDT:USDT,A+,,2026-10-31T20:37:19Z,,,
+20261101-0712-XRP,2026-11-01T07:12:56Z,XRP,short,B,81.2,1.2537,1.2797,0.9841,0.9581,0.9321,,,no_trade,,,,TP1 blocked by PWL at 1.2535 (only 1:0.01),XRP/USDT:USDT,A+,,2026-11-01T13:12:56Z,,,
+20261101-0712-LSK,2026-11-01T07:12:56Z,LSK,long,C,82.7,0.23364,0.19651,0.40242,0.48161,2.38076,,,no_trade,,,,TP1 blocked by 4H bearish FVG at 0.25218 (only 1:0.50),LSK/USDT:USDT,A+,,2026-11-01T13:12:56Z,,,

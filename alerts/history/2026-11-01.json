@@ -1,0 +1,120 @@
+{
+  "alerts": [
+    {
+      "id": "20261101-0706-XRP",
+      "coin": "XRP",
+      "symbol": "XRP/USDT:USDT",
+      "pair": "XRP/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "in 4H FVG"
+      ],
+      "light_score": 35,
+      "price": 1.2537,
+      "candle_time": "2026-11-01T06:00:00Z",
+      "created_at": "2026-11-01T07:06:00Z",
+      "created_at_pkt": "2026-11-01 12:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 1.3443,
+          "range_low": 1.1994,
+          "equilibrium": 1.27185,
+          "price": 1.2496,
+          "pct": 34.6,
+          "zone": "discount",
+          "from_time": "2026-10-28T20:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 30
+      },
+      "levels": {},
+      "btc": {
+        "price": 77974.1,
+        "change_1h_pct": 0.13,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-01T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "XRP/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 54.4,
+        "side": "short",
+        "model": "B",
+        "grade": "A+",
+        "score": 88.7,
+        "market_rr": 10.37,
+        "killzone": true,
+        "plan_ok": false,
+        "why": "risk plan rejected"
+      },
+      "kind": "digest",
+      "status": "handled",
+      "closed_at": "2026-11-01T07:12:57Z"
+    },
+    {
+      "id": "20261101-0706-LSK",
+      "coin": "LSK",
+      "symbol": "LSK/USDT:USDT",
+      "pair": "LSK/USDT",
+      "direction_hint": "LONG",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 0.23364,
+      "candle_time": "2026-11-01T06:00:00Z",
+      "created_at": "2026-11-01T07:06:00Z",
+      "created_at_pkt": "2026-11-01 12:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bullish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 0.31787,
+          "range_low": 0.16285,
+          "equilibrium": 0.24036,
+          "price": 0.2301,
+          "pct": 43.4,
+          "zone": "discount",
+          "from_time": "2026-10-29T00:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 77974.1,
+        "change_1h_pct": 0.13,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-01T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "LSK/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 50.4,
+        "side": "long",
+        "model": "C",
+        "grade": "A+",
+        "score": 82.7,
+        "market_rr": 4.55,
+        "killzone": true,
+        "plan_ok": false,
+        "why": "risk plan rejected"
+      },
+      "kind": "digest",
+      "status": "handled",
+      "closed_at": "2026-11-01T07:12:57Z"
+    }
+  ]
+}
