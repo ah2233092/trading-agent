@@ -19,12 +19,13 @@ Agar GitHub ya MEXC data mein masla ho: main aapke Chrome mein TradingView (MEXC
 4. **Chart vision** — 1D/4H/1H/15m charts dekh kar confirm.
 5. **Futures data** — funding, open interest, long/short ratio (crowd trap check).
 6. **News** — coin news, token unlocks, CPI/FOMC/NFP; bari news 2 ghante ke andar ho to trade band.
-7. **Entry rule (backtest se)** — sirf **London / New York killzone** mein, **market entry** current price se, aur TP1 kam se kam **1:3** ho (~$6 profit).
-8. **Risk** — SL structure ke peeche, TP1 / TP2 / TP3 liquidity par. TP1 par poori position close.
+7. **Entry rule (backtest se)** — sirf **London / New York killzone** mein, **market entry** current price se, aur TP1 kam se kam **1:2** ho. Profit fixed nahi — setup jitna achha, target utna door.
+8. **Risk** — SL structure ke peeche, TP1 / TP2 / TP3 liquidity par. TP1 par aadhi position close + SL entry par, baqi TP2/TP3 tak (bara profit).
 
 ## Paisa aur risk ($20 account)
 - Har trade par risk **$2** (SL hit = −$2). Isolated margin, leverage system batata hai (liquidation SL se door).
-- **Har jeetne wali trade ~$6 profit (kam se kam $5):** TP1 kam se kam 1:3 par, aur poori position TP1 par close. Plan mein TP1 ka profit $5 se kam ho to system trade reject karta hai. TP2/TP3 optional hain.
+- **Profit aur SL fixed nahi:** SL structure ke hisaab se, risk ~$2 tak. TP1 ≥ 1:2 (~$4+), TP2/TP3 par $6–10+ jab setup achha ho.
+- Sirf wohi level trade cancel karta hai jo 1R ke andar raasta rok raha ho.
 - **Trades ki koi maximum limit nahi.** Roz kam se kam 2 trade options (12:06 aur 17:06 digests) — B-plan bhi milenge.
 - Deep scan ke 3 jawab: 🟢/🔴 **TRADE** (sab checks pass) · 🟡 **B-PLAN** (plan theek, lekin score ya killzone kam — risk aadha rakhna behtar) · ❌ **NO TRADE**.
 - Safety: **3 SL ek din mein ho jayen to us din band.**

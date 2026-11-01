@@ -265,7 +265,12 @@ def choose_targets(side: str, entry: float, sl: float, levels: list[dict], cfg: 
         lv.append(dict(x, r=abs(p - entry) / dist))
     lv.sort(key=lambda x: x["r"])
     out = {"tp": [], "blocked_by": None, "fallback": []}
-    blocker = next((x for x in lv if x["r"] < min_rr1 and x.get("strength") in ("key", "htf")), None)
+    # a strong level counts as a blocker only when it sits clearly in the way (blocker_min_r .. blocker_max_r);
+    # a level right at the entry (price is testing it) or beyond blocker_max_r does not cancel the trade
+    b_min = float(cfg_get(cfg, "blocker_min_r", 0.0))
+    b_max = float(cfg_get(cfg, "blocker_max_r", min_rr1))
+    blocker = next((x for x in lv if b_min <= x["r"] < min(b_max, min_rr1)
+                    and x.get("strength") in ("key", "htf")), None)
     if blocker:
         out["blocked_by"] = blocker
     beyond = [x for x in lv if x["r"] >= min_rr1]
