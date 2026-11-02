@@ -113,6 +113,67 @@
       },
       "kind": "ready",
       "status": "pending"
+    },
+    {
+      "id": "20261102-1402-ETH",
+      "coin": "ETH",
+      "symbol": "ETH/USDT:USDT",
+      "pair": "ETH/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "near_poi",
+        "volume"
+      ],
+      "trigger_labels": [
+        "in 4H FVG + PDH",
+        "volume x3.2"
+      ],
+      "light_score": 68,
+      "price": 2286.55,
+      "candle_time": "2026-11-02T13:00:00Z",
+      "created_at": "2026-11-02T14:02:00Z",
+      "created_at_pkt": "2026-11-02 19:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 2391.3,
+          "range_low": 2173.15,
+          "equilibrium": 2282.225,
+          "price": 2285.83,
+          "pct": 51.7,
+          "zone": "premium",
+          "from_time": "2026-10-28T20:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 38
+      },
+      "levels": {},
+      "btc": {
+        "price": 77904.6,
+        "change_1h_pct": 0.16,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-02T13:00:00Z"
+      },
+      "ready": {
+        "symbol": "ETH/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 165.0,
+        "side": "short",
+        "model": "B",
+        "grade": "A+",
+        "score": 78.7,
+        "market_rr": 2.8,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "pending"
     }
   ]
 }
