@@ -1,3 +1,118 @@
 {
-  "alerts": []
+  "alerts": [
+    {
+      "id": "20261102-1302-DOGE",
+      "coin": "DOGE",
+      "symbol": "DOGE/USDT:USDT",
+      "pair": "DOGE/USDT",
+      "direction_hint": "LONG",
+      "triggers": [
+        "volume"
+      ],
+      "trigger_labels": [
+        "volume x2.7"
+      ],
+      "light_score": 23,
+      "price": 0.07523,
+      "candle_time": "2026-11-02T12:00:00Z",
+      "created_at": "2026-11-02T13:02:02Z",
+      "created_at_pkt": "2026-11-02 18:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bullish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 0.08147,
+          "range_low": 0.07216,
+          "equilibrium": 0.076815,
+          "price": 0.07538,
+          "pct": 34.6,
+          "zone": "discount",
+          "from_time": "2026-10-29T16:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 77779.3,
+        "change_1h_pct": -0.1,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-02T12:00:00Z"
+      },
+      "ready": {
+        "symbol": "DOGE/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 170.2,
+        "side": "long",
+        "model": "A",
+        "grade": "A+",
+        "score": 80.3,
+        "market_rr": 5.47,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "pending"
+    },
+    {
+      "id": "20261102-1302-LINK",
+      "coin": "LINK",
+      "symbol": "LINK/USDT:USDT",
+      "pair": "LINK/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 11.305,
+      "candle_time": "2026-11-02T12:00:00Z",
+      "created_at": "2026-11-02T13:02:02Z",
+      "created_at_pkt": "2026-11-02 18:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 11.946,
+          "range_low": 10.26,
+          "equilibrium": 11.103,
+          "price": 11.274,
+          "pct": 60.1,
+          "zone": "premium",
+          "from_time": "2026-10-30T00:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 77779.3,
+        "change_1h_pct": -0.1,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-02T12:00:00Z"
+      },
+      "ready": {
+        "symbol": "LINK/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 163.5,
+        "side": "short",
+        "model": "D",
+        "grade": "A+",
+        "score": 78.7,
+        "market_rr": 2.05,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "pending"
+    }
+  ]
 }
