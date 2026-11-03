@@ -390,6 +390,7 @@ def format_answer(rep: dict, cfg: dict | None = None) -> str:
         f"⚙️ Leverage: {p['leverage']}x (Isolated) | Margin: ${p['margin_usd']:.2f}",
         f"💀 Liquidation: {_g(p['liquidation'])} {'✅' if p['liq_ok'] else '❌'} SL se {p['liq_beyond_sl_pct']:.2f}% door",
         f"💵 Risk: ${p['risk_usd']:.2f} | Reward: TP1 ${nets[0]:.2f} / TP2 ${nets[1]:.2f} / TP3 ${nets[2]:.2f}",
+        *user_size_lines(p, cfg),
         f"📊 Is setup ka win rate: {wr}",
         "",
         "🧠 Wajah:",
@@ -404,6 +405,26 @@ def format_answer(rep: dict, cfg: dict | None = None) -> str:
         f"❌ Invalidation: 1H candle close {_g(p['sl'])} ke {inv_dir} (POI fail)",
         f"⏳ Valid until: {valid} (entry na mile to cancel)",
     ])
+
+
+def user_size_lines(p: dict, cfg: dict) -> list[str]:
+    """Numbers for Rans's own sizing (user_sizing in config): loss at SL, profit at each TP, liquidation check."""
+    us = cfg_get(cfg, "user_sizing", {}) or {}
+    m, lev = float(us.get("margin_usd") or 0), float(us.get("leverage") or 0)
+    if not (m and lev and p.get("entry")):
+        return []
+    notional = m * lev
+    e, sl = float(p["entry"]), float(p["sl"])
+    sl_pct = abs(e - sl) / e
+    loss = notional * sl_pct
+    profs = [notional * abs(float(t) - e) / e for t in p["tps"]]
+    liq_pct = 1 / lev - 0.005  # isolated, ~0.5% maintenance margin
+    out = [f"👤 Aapke size par (${m:g} × {lev:g}x = ${notional:.0f}): SL loss −${loss:.2f} | "
+           f"TP1 +${profs[0]:.2f} / TP2 +${profs[1]:.2f} / TP3 +${profs[2]:.2f}"]
+    if sl_pct >= liq_pct * 0.9:
+        safe = max(1, int(0.9 / (sl_pct + 0.005)))
+        out.append(f"⚠️ {lev:g}x par liquidation SL se PEHLE aa sakta hai — is trade mein leverage max {safe}x rakho")
+    return out
 
 
 # ------------------------------------------------------------ persistence --
