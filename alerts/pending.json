@@ -174,6 +174,134 @@
       },
       "kind": "ready",
       "status": "pending"
+    },
+    {
+      "id": "20261103-0706-ZEC",
+      "coin": "ZEC",
+      "symbol": "ZEC/USDT:USDT",
+      "pair": "ZEC/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "sweep",
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "1H sweep of PDL",
+        "near 4H FVG + PDL"
+      ],
+      "light_score": 78,
+      "price": 1131.36,
+      "candle_time": "2026-11-03T06:00:00Z",
+      "created_at": "2026-11-03T07:06:00Z",
+      "created_at_pkt": "2026-11-03 12:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 1297.6,
+          "range_low": 1127.17,
+          "equilibrium": 1212.385,
+          "price": 1136.01,
+          "pct": 5.2,
+          "zone": "discount",
+          "from_time": "2026-10-30T00:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {
+        "sweep_level": 1127.17,
+        "sweep_wick": 1120.63
+      },
+      "btc": {
+        "price": 76555.1,
+        "change_1h_pct": -0.1,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-03T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "ZEC/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 61.8,
+        "side": "short",
+        "model": "C",
+        "grade": "A+",
+        "score": 83.5,
+        "market_rr": 0.04,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.0 from current price"
+      },
+      "kind": "digest",
+      "status": "pending"
+    },
+    {
+      "id": "20261103-0706-TAO",
+      "coin": "TAO",
+      "symbol": "TAO/USDT:USDT",
+      "pair": "TAO/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "sweep",
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "1H sweep of PDL",
+        "near PDL"
+      ],
+      "light_score": 78,
+      "price": 221.42,
+      "candle_time": "2026-11-03T06:00:00Z",
+      "created_at": "2026-11-03T07:06:00Z",
+      "created_at_pkt": "2026-11-03 12:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 262.41,
+          "range_low": 219.7,
+          "equilibrium": 241.055,
+          "price": 223.56,
+          "pct": 9.0,
+          "zone": "discount",
+          "from_time": "2026-10-28T20:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {
+        "sweep_level": 220.78,
+        "sweep_wick": 220.4
+      },
+      "btc": {
+        "price": 76555.1,
+        "change_1h_pct": -0.1,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-03T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "TAO/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 59.3,
+        "side": "short",
+        "model": "C",
+        "grade": "A",
+        "score": 78.5,
+        "market_rr": 0.05,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.0 from current price"
+      },
+      "kind": "digest",
+      "status": "pending"
     }
   ]
 }
