@@ -73,7 +73,7 @@ max_losses_per_day: 3            # safety: stop for the day after 3 stop-losses
 
 # --- Rans's own sizing (shown in every answer) ---
 user_sizing:
-  margin_usd: 15          # full balance as margin
+  margin_usd: 24          # full balance as margin
   leverage: 20
 
 # --- Risk ---
