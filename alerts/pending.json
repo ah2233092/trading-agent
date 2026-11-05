@@ -1,124 +1,6 @@
 {
   "alerts": [
     {
-      "id": "20261104-1206-SUI",
-      "coin": "SUI",
-      "symbol": "SUI/USDT:USDT",
-      "pair": "SUI/USDT",
-      "direction_hint": "LONG",
-      "triggers": [
-        "near_poi"
-      ],
-      "trigger_labels": [
-        "in 4H FVG"
-      ],
-      "light_score": 40,
-      "price": 0.9101,
-      "candle_time": "2026-11-04T11:00:00Z",
-      "created_at": "2026-11-04T12:06:00Z",
-      "created_at_pkt": "2026-11-04 17:06 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bullish",
-        "trend_1h": "bullish",
-        "premium_discount_4h": {
-          "range_high": 0.9194,
-          "range_low": 0.8262,
-          "equilibrium": 0.8728,
-          "price": 0.9101,
-          "pct": 90.0,
-          "zone": "premium",
-          "from_time": "2026-10-30T00:00:00Z"
-        },
-        "pd_bonus": 5,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 78453.2,
-        "change_1h_pct": -0.17,
-        "dump": false,
-        "trend_1h": "bullish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-04T11:00:00Z"
-      },
-      "ready": {
-        "symbol": "SUI/USDT:USDT",
-        "candidate": true,
-        "ready": false,
-        "rank": 62.0,
-        "side": "long",
-        "model": "A",
-        "grade": "A+",
-        "score": 80.3,
-        "market_rr": 0.92,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "TP1 only 1:0.9 from current price"
-      },
-      "kind": "digest",
-      "status": "pending"
-    },
-    {
-      "id": "20261104-1206-HYPE",
-      "coin": "HYPE",
-      "symbol": "HYPE/USDT:USDT",
-      "pair": "HYPE/USDT",
-      "direction_hint": "SHORT",
-      "triggers": [
-        "near_poi"
-      ],
-      "trigger_labels": [
-        "in 4H FVG"
-      ],
-      "light_score": 35,
-      "price": 86.499,
-      "candle_time": "2026-11-04T11:00:00Z",
-      "created_at": "2026-11-04T12:06:00Z",
-      "created_at_pkt": "2026-11-04 17:06 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bearish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 87.928,
-          "range_low": 80.647,
-          "equilibrium": 84.2875,
-          "price": 86.499,
-          "pct": 80.4,
-          "zone": "premium",
-          "from_time": "2026-11-03T00:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 78453.2,
-        "change_1h_pct": -0.17,
-        "dump": false,
-        "trend_1h": "bullish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-04T11:00:00Z"
-      },
-      "ready": {
-        "symbol": "HYPE/USDT:USDT",
-        "candidate": true,
-        "ready": false,
-        "rank": 61.7,
-        "side": "short",
-        "model": "D",
-        "grade": "A+",
-        "score": 79.7,
-        "market_rr": 0.93,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "TP1 only 1:0.9 from current price"
-      },
-      "kind": "digest",
-      "status": "pending"
-    },
-    {
       "id": "20261105-0702-XLM",
       "coin": "XLM",
       "symbol": "XLM/USDT:USDT",
@@ -283,6 +165,124 @@
         "killzone": true,
         "plan_ok": true,
         "why": "TP1 only 1:0.1 from current price"
+      },
+      "kind": "digest",
+      "status": "pending"
+    },
+    {
+      "id": "20261105-1206-INJ",
+      "coin": "INJ",
+      "symbol": "INJ/USDT:USDT",
+      "pair": "INJ/USDT",
+      "direction_hint": "LONG",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "near PWH"
+      ],
+      "light_score": 35,
+      "price": 8.33,
+      "candle_time": "2026-11-05T11:00:00Z",
+      "created_at": "2026-11-05T12:06:00Z",
+      "created_at_pkt": "2026-11-05 17:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bullish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 8.594,
+          "range_low": 6.82,
+          "equilibrium": 7.707,
+          "price": 8.33,
+          "pct": 85.1,
+          "zone": "premium",
+          "from_time": "2026-11-02T08:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 80389.8,
+        "change_1h_pct": 0.14,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bullish",
+        "candle_time": "2026-11-05T11:00:00Z"
+      },
+      "ready": {
+        "symbol": "INJ/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 62.1,
+        "side": "long",
+        "model": "C",
+        "grade": "A+",
+        "score": 83.5,
+        "market_rr": 0.19,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.2 from current price"
+      },
+      "kind": "digest",
+      "status": "pending"
+    },
+    {
+      "id": "20261105-1206-NVIDIA",
+      "coin": "NVIDIA",
+      "symbol": "NVIDIA/USDT:USDT",
+      "pair": "NVIDIA/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "near 4H FVG"
+      ],
+      "light_score": 30,
+      "price": 198.76,
+      "candle_time": "2026-11-05T11:00:00Z",
+      "created_at": "2026-11-05T12:06:00Z",
+      "created_at_pkt": "2026-11-05 17:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 211.34,
+          "range_low": 197.32,
+          "equilibrium": 204.33,
+          "price": 198.76,
+          "pct": 10.3,
+          "zone": "discount",
+          "from_time": "2026-11-02T20:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 80389.8,
+        "change_1h_pct": 0.14,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bullish",
+        "candle_time": "2026-11-05T11:00:00Z"
+      },
+      "ready": {
+        "symbol": "NVIDIA/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 61.4,
+        "side": "short",
+        "model": "A",
+        "grade": "A+",
+        "score": 79.7,
+        "market_rr": 0.75,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.8 from current price"
       },
       "kind": "digest",
       "status": "pending"
