@@ -1,0 +1,123 @@
+{
+  "alerts": [
+    {
+      "id": "20261104-0714-ADA",
+      "coin": "ADA",
+      "symbol": "ADA/USDT:USDT",
+      "pair": "ADA/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 0.1907,
+      "candle_time": "2026-11-04T06:00:00Z",
+      "created_at": "2026-11-04T07:14:15Z",
+      "created_at_pkt": "2026-11-04 12:14 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 0.1969,
+          "range_low": 0.1822,
+          "equilibrium": 0.18955,
+          "price": 0.1855,
+          "pct": 22.4,
+          "zone": "discount",
+          "from_time": "2026-10-30T00:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 77970.4,
+        "change_1h_pct": 0.32,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-04T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "ADA/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 170.3,
+        "side": "short",
+        "model": "A",
+        "grade": "A+",
+        "score": 92.5,
+        "market_rr": 2.0,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "digest",
+      "status": "expired",
+      "closed_at": "2026-11-05T08:02:00Z"
+    },
+    {
+      "id": "20261104-0714-ZEC",
+      "coin": "ZEC",
+      "symbol": "ZEC/USDT:USDT",
+      "pair": "ZEC/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "sweep"
+      ],
+      "trigger_labels": [
+        "1H sweep of PDH"
+      ],
+      "light_score": 40,
+      "price": 1271.39,
+      "candle_time": "2026-11-04T06:00:00Z",
+      "created_at": "2026-11-04T07:14:15Z",
+      "created_at_pkt": "2026-11-04 12:14 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 1284.42,
+          "range_low": 1120.63,
+          "equilibrium": 1202.525,
+          "price": 1186.73,
+          "pct": 40.4,
+          "zone": "discount",
+          "from_time": "2026-11-02T04:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {
+        "sweep_level": 1244.77,
+        "sweep_wick": 1258.62
+      },
+      "btc": {
+        "price": 77970.4,
+        "change_1h_pct": 0.32,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-04T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "ZEC/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 165.7,
+        "side": "short",
+        "model": "B",
+        "grade": "A",
+        "score": 76.5,
+        "market_rr": 3.75,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "digest",
+      "status": "expired",
+      "closed_at": "2026-11-05T08:02:00Z"
+    }
+  ]
+}
