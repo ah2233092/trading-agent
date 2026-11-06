@@ -1,0 +1,60 @@
+{
+  "alerts": [
+    {
+      "id": "20261105-0702-XLM",
+      "coin": "XLM",
+      "symbol": "XLM/USDT:USDT",
+      "pair": "XLM/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 0.16752,
+      "candle_time": "2026-11-05T06:00:00Z",
+      "created_at": "2026-11-05T07:02:00Z",
+      "created_at_pkt": "2026-11-05 12:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 0.17096,
+          "range_low": 0.15699,
+          "equilibrium": 0.163975,
+          "price": 0.16775,
+          "pct": 77.0,
+          "zone": "premium",
+          "from_time": "2026-11-02T00:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 80622.4,
+        "change_1h_pct": 0.32,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bullish",
+        "candle_time": "2026-11-05T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "XLM/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 166.0,
+        "side": "short",
+        "model": "B",
+        "grade": "A+",
+        "score": 82.7,
+        "market_rr": 2.31,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-06T07:02:00Z"
+    }
+  ]
+}

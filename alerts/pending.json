@@ -1,61 +1,6 @@
 {
   "alerts": [
     {
-      "id": "20261105-0702-XLM",
-      "coin": "XLM",
-      "symbol": "XLM/USDT:USDT",
-      "pair": "XLM/USDT",
-      "direction_hint": "SHORT",
-      "triggers": [],
-      "trigger_labels": [],
-      "light_score": 0,
-      "price": 0.16752,
-      "candle_time": "2026-11-05T06:00:00Z",
-      "created_at": "2026-11-05T07:02:00Z",
-      "created_at_pkt": "2026-11-05 12:02 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bearish",
-        "trend_1h": "bullish",
-        "premium_discount_4h": {
-          "range_high": 0.17096,
-          "range_low": 0.15699,
-          "equilibrium": 0.163975,
-          "price": 0.16775,
-          "pct": 77.0,
-          "zone": "premium",
-          "from_time": "2026-11-02T00:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 80622.4,
-        "change_1h_pct": 0.32,
-        "dump": false,
-        "trend_1h": "bullish",
-        "trend_4h": "bullish",
-        "candle_time": "2026-11-05T06:00:00Z"
-      },
-      "ready": {
-        "symbol": "XLM/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 166.0,
-        "side": "short",
-        "model": "B",
-        "grade": "A+",
-        "score": 82.7,
-        "market_rr": 2.31,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "ready",
-      "status": "pending"
-    },
-    {
       "id": "20261105-0706-XLM",
       "coin": "XLM",
       "symbol": "XLM/USDT:USDT",
@@ -344,6 +289,65 @@
         "grade": "A",
         "score": 69.7,
         "market_rr": 3.39,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "pending"
+    },
+    {
+      "id": "20261106-0702-QNT",
+      "coin": "QNT",
+      "symbol": "QNT/USDT:USDT",
+      "pair": "QNT/USDT",
+      "direction_hint": "LONG",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "in 4H FVG"
+      ],
+      "light_score": 40,
+      "price": 189.21,
+      "candle_time": "2026-11-06T06:00:00Z",
+      "created_at": "2026-11-06T07:02:00Z",
+      "created_at_pkt": "2026-11-06 12:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bullish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 211.23,
+          "range_low": 185.4,
+          "equilibrium": 198.315,
+          "price": 189.81,
+          "pct": 17.1,
+          "zone": "discount",
+          "from_time": "2026-11-04T00:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 75670.0,
+        "change_1h_pct": 0.0,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bullish",
+        "candle_time": "2026-11-06T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "QNT/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 167.7,
+        "side": "long",
+        "model": "B",
+        "grade": "A+",
+        "score": 86.5,
+        "market_rr": 2.23,
         "killzone": true,
         "plan_ok": true,
         "why": "ready"
