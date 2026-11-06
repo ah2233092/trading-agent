@@ -1,0 +1,38 @@
+❌ NO TRADE — XRP/USDT
+Wajah: setup C quality kam (grade reject); score 33.7 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 1.0492
+4H: bearish — range 1.1771–1.3422, price in discount (12.2%)
+BTC: neutral
+Key levels: PDH 1.3274, PDL 1.1993, PWH 1.3443, PWL 1.1994, MO 1.2513
+Setup: C BOS continuation + OTE retrace grade reject
+Funding: 0.0100% (normal, crowd: none) [mexc]
+OI: 1H +0.16%, 4H -1.74% → OI flat — no new positioning [okx]
+L/S ratio: 3.604 (longs crowded (contrarian warning)) [okx]
+Liquidity: 24h vol $475.6M, spread 0.008%
+Verdict: neutral (nothing unusual)
+Entry 1.2092 | SL 1.2265 (1.43%, 1 R)
+TP1 0.9841 (1:13.05) | TP2 0.9668 (1:14.05) | TP3 0.9496 (1:15.05)
+Qty 114 contracts | Notional $137.85 | Leverage 14x isolated | Margin $9.85
+Liquidation ≈ 1.2924 (SL se 5.37% door) ✅
+Risk $1.99 | Net reward TP1 $25.67 / TP2 $27.64 / TP3 $29.60 (fees ke baad)
+ℹ️ no liquidity level for TP2,3 — R-multiple used
+Score: 33.7/100 (min 65) → NO TRADE
+  htf_bias              21.2 / 25   1D + 4H aligned; BTC neutral
+  smc_setup              0.0 / 25   setup graded reject
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume    0.0 / 10   no displacement
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          2.5 / 5    not enough data yet (28 trades)
+  ✖ no valid SMC setup
+  ✖ score 33.7 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/XRP/20261106-1318_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/XRP/20261106-1318_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/XRP/20261106-1318_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/XRP/20261106-1318_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/XRP/20261106T1318.json

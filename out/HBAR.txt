@@ -1,0 +1,36 @@
+❌ NO TRADE — HBAR/USDT
+Wajah: confluence kam
+Kya dekhna hai: agla watchman alert
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.08314
+4H: bearish — range 0.06658–0.07401, price in discount (28.0%)
+BTC: neutral
+Key levels: PDH 0.07353, PDL 0.06658, PWH 0.07809, PWL 0.06598, MO 0.07181
+Setup: B HTF POI tap + 15m CHoCH grade A+
+Funding: 0.0086% (normal, crowd: none) [mexc]
+OI: 1H -0.06%, 4H -0.21% → OI flat — no new positioning [okx]
+L/S ratio: 2.01 (balanced) [okx]
+Liquidity: 24h vol $10.0M, spread 0.015% ❌
+Verdict: against (low volume / wide spread)
+Entry 0.07043 | SL 0.07223 (2.55%, 1 R)
+TP1 0.06659 (1:2.14) | TP2 0.06599 (1:2.48) | TP3 0.06425 (1:3.45)
+Qty 1114 contracts | Notional $78.46 | Leverage 8x isolated | Margin $9.81
+Liquidation ≈ 0.07892 (SL se 9.27% door) ✅
+Risk $2.00 | Net reward TP1 $4.28 / TP2 $4.95 / TP3 $6.89 (fees ke baad)
+Score: 76.2/100 (min 65) → NO TRADE
+  htf_bias              21.2 / 25   1D + 4H aligned; BTC neutral
+  smc_setup             25.0 / 25   model B (HTF POI tap + 15m CHoCH) grade A+
+  entry_precision       15.0 / 15   15m CHoCH yes, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    47 trades, win 23.4%, avg R -0.181
+  ✖ coin fails volume / spread filter
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/HBAR/20261106-1319_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/HBAR/20261106-1319_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/HBAR/20261106-1319_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/HBAR/20261106-1319_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/HBAR/20261106T1318.json

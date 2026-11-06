@@ -1,0 +1,37 @@
+❌ NO TRADE — NEAR/USDT
+Wajah: setup D quality kam (grade reject); score 36.2 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 5.58
+4H: bearish — range 3.626–4.271, price in discount (16.9%)
+BTC: neutral
+Key levels: PDH 4.076, PDL 3.626, PWH 4.811, PWL 3.906, MO 4.432
+Setup: D Breaker retest grade reject
+Funding: 0.0100% (normal, crowd: none) [mexc]
+OI: 1H +0.02%, 4H +0.61% → OI flat — no new positioning [okx]
+L/S ratio: 2.069 (balanced) [okx]
+Liquidity: 24h vol $71.7M, spread 0.027%
+Verdict: supportive (new shorts (price + OI agree))
+Entry 3.756 | SL 3.82 (1.70%, 1 R)
+TP1 3.627 (1:2.02) | TP2 1.781 (1:30.86) | TP3 1.564 (1:34.25)
+Qty 30 contracts | Notional $112.68 | Leverage 12x isolated | Margin $9.39
+Liquidation ≈ 4.052 (SL se 6.07% door) ✅
+Risk $1.94 | Net reward TP1 $3.87 / TP2 $59.25 / TP3 $65.76 (fees ke baad)
+Score: 36.2/100 (min 65) → NO TRADE
+  htf_bias              21.2 / 25   1D + 4H aligned; BTC neutral
+  smc_setup              0.0 / 25   setup graded reject
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume    0.0 / 10   no displacement
+  futures_data          10.0 / 10   supportive — new shorts (price + OI agree)
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    52 trades, win 17.3%, avg R -0.271
+  ✖ no valid SMC setup
+  ✖ score 36.2 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/NEAR/20261106-1317_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/NEAR/20261106-1317_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/NEAR/20261106-1317_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/NEAR/20261106-1317_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/NEAR/20261106T1317.json

@@ -1,0 +1,39 @@
+❌ NO TRADE — LTC/USDT
+Wajah: TP1 blocked by PDL at 51.03 (only 1:0.57)
+Kya dekhna hai: blocking level ke paar 1H close, ya POI ke andar behtar entry
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 59.4
+4H: bearish — range 51.03–57.04, price in discount (32.9%)
+BTC: neutral
+Key levels: PDH 56.46, PDL 51.03, PWH 59.8, PWL 52.82, MO 55.72
+Setup: B HTF POI tap + 15m CHoCH grade A+
+Funding: 0.0051% (normal, crowd: none) [mexc]
+OI: 1H -0.16%, 4H -0.49% → OI flat — no new positioning [okx]
+L/S ratio: 2.936 (balanced) [okx]
+Liquidity: 24h vol $8.0M, spread 0.038% ❌
+Verdict: against (low volume / wide spread)
+Entry 52.78 | SL 55.87 (5.85%, 1 R)
+TP1 43.36 (1:3.05) | TP2 39.26 (1:4.38) | TP3 36.17 (1:5.38)
+Qty 64 contracts | Notional $33.78 | Leverage 4x isolated | Margin $8.44
+Liquidation ≈ 65.7 (SL se 17.59% door) ✅
+Risk $1.99 | Net reward TP1 $6.02 / TP2 $8.65 / TP3 $10.62 (fees ke baad)
+❌ TP1 blocked by PDL at 51.03 (only 1:0.57)
+ℹ️ no liquidity level for TP3 — R-multiple used
+Score: 76.2/100 (min 65) → NO TRADE
+  htf_bias              21.2 / 25   1D + 4H aligned; BTC neutral
+  smc_setup             25.0 / 25   model B (HTF POI tap + 15m CHoCH) grade A+
+  entry_precision       15.0 / 15   15m CHoCH yes, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    47 trades, win 23.4%, avg R -0.181
+  ✖ coin fails volume / spread filter
+  ✖ risk plan rejected: TP1 blocked by PDL at 51.03 (only 1:0.57)
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/LTC/20261106-1316_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/LTC/20261106-1316_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/LTC/20261106-1316_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/LTC/20261106-1316_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/LTC/20261106T1316.json

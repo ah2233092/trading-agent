@@ -1,0 +1,57 @@
+⚠️ PROVISIONAL — news-check abhi baqi hai (phir: python lib/deep_scan.py --finalize reports/AAVE/latest.json --news clear|caution|block)
+🔴 SHORT — AAVE/USDT (1H) | Setup: B — HTF POI tap + 15m CHoCH (A+)
+Score: 66.8/100
+
+📍 Entry: 130.62 (market, zone 131.52–132.08)
+🛑 Stop Loss: 132.67  (1.57%)
+🎯 TP1: 122.36 (1:4.03) → 50% close, SL entry par
+🎯 TP2: 115.29 (1:7.48)
+🎯 TP3: 113.25 (1:8.47) — runner / 1D swing low
+
+⚙️ Leverage: 13x (Isolated) | Margin: $9.75
+💀 Liquidation: 140.11 ✅ SL se 5.61% door
+💵 Risk: $1.99 | Reward: TP1 $8.01 / TP2 $14.87 / TP3 $16.85
+👤 Aapke size par ($24 × 20x = $480): SL loss −$7.53 | TP1 +$30.35 / TP2 +$56.33 / TP3 +$63.83
+📊 Is setup ka win rate: 23.4% (47 trades backtest (out-of-sample)) | Avg R: -0.181
+
+🧠 Wajah:
+- HTF: SHORT — 1D bullish, 4H bearish, price 4H premium (51.2%), BTC neutral
+- SMC: HTF POI tap + 15m CHoCH — POI 4H FVG 131.52–132.08, htf aligned, pd ok, displacement, ltf confirmed
+- Futures data: neutral (nothing unusual)
+- News: abhi check nahi hui (news-check)
+
+❌ Invalidation: 1H candle close 132.67 ke upar (POI fail)
+⏳ Valid until: 2026-11-07 00:15 PKT (entry na mile to cancel)
+
+--- details ---
+HTF BIAS: SHORT (strong POIs only)
+1D: bullish — last BOS 103.71
+4H: bearish — range 122.35–136.89, price in premium (51.2%)
+BTC: neutral
+Key levels: PDH 133.84, PDL 122.35, PWH 140.99, PWL 115.28, MO 133.76
+Setup: B HTF POI tap + 15m CHoCH grade A+
+Funding: 0.0100% (normal, crowd: none) [mexc]
+OI: 1H +0.04%, 4H -1.61% → OI flat — no new positioning [okx]
+L/S ratio: 1.608 (balanced) [okx]
+Liquidity: 24h vol $26.5M, spread 0.008%
+Verdict: neutral (nothing unusual)
+Entry 130.62 | SL 132.67 (1.57%, 1 R)
+TP1 122.36 (1:4.03) | TP2 115.29 (1:7.48) | TP3 113.25 (1:8.47)
+Qty 97 contracts | Notional $126.70 | Leverage 13x isolated | Margin $9.75
+Liquidation ≈ 140.11 (SL se 5.61% door) ✅
+Risk $1.99 | Net reward TP1 $8.01 / TP2 $14.87 / TP3 $16.85 (fees ke baad)
+Score: 66.8/100 (min 65) → TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup             25.0 / 25   model B (HTF POI tap + 15m CHoCH) grade A+
+  entry_precision        9.0 / 15   15m CHoCH yes, confluence no
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    47 trades, win 23.4%, avg R -0.181
+Alert 20261106-1206-AAVE: fresh (age 1.15h)
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/AAVE/20261106-1315_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/AAVE/20261106-1315_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/AAVE/20261106-1315_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/AAVE/20261106-1315_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/AAVE/20261106T1315.json

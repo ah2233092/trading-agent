@@ -1,0 +1,32 @@
+❌ NO TRADE — LINK/USDT
+Wajah: koi A/B/C/D entry model nahi bana; score 25.3 < 65
+Kya dekhna hai: 4H OB 10.623–11.041 tapped, waiting: no 15m CHoCH yet after the tap; 1H par liquidity sweep + CHoCH, ya 4H POI tap + 15m CHoCH
+
+--- details ---
+HTF BIAS: LONG (strong POIs only)
+1D: bearish — last BOS 11.522
+4H: bullish — range 10.501–11.795, price in discount (28.4%)
+BTC: neutral
+Key levels: PDH 11.652, PDL 10.501, PWH 12.011, PWL 10.26, MO 11.653
+Setup: -  grade reject
+Funding: 0.0077% (normal, crowd: none) [mexc]
+OI: 1H +0.12%, 4H -1.51% → OI flat — no new positioning [okx]
+L/S ratio: 2.114 (balanced) [okx]
+Liquidity: 24h vol $181.6M, spread 0.009%
+Verdict: neutral (nothing unusual)
+Score: 25.3/100 (min 65) → NO TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup              0.0 / 25   no valid entry model
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume    0.0 / 10   no displacement
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          2.5 / 5    not enough data yet (0 trades)
+  ✖ no valid SMC setup
+  ✖ score 25.3 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/LINK/20261106-1316_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/LINK/20261106-1316_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/LINK/20261106-1316_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/LINK/20261106-1316_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/LINK/20261106T1316.json

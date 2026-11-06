@@ -1,0 +1,58 @@
+⚠️ PROVISIONAL — news-check abhi baqi hai (phir: python lib/deep_scan.py --finalize reports/UNI/latest.json --news clear|caution|block)
+🟡 B-PLAN (kam confidence: score 57.8 < 65). Chaho to risk aadha ($0.5) rakho.
+🔴 SHORT — UNI/USDT (1H) | Setup: D — Breaker retest (A)
+Score: 57.8/100
+
+📍 Entry: 6.948 (market, zone 7.012–7.147)
+🛑 Stop Loss: 7.181  (3.35%)
+🎯 TP1: 6.252 (1:2.99) → 50% close, SL entry par
+🎯 TP2: 5.805 (1:4.91)
+🎯 TP3: 3.17 (1:16.21) — runner / 1D swing low
+
+⚙️ Leverage: 6x (Isolated) | Margin: $9.84
+💀 Liquidation: 8.074 ✅ SL se 12.43% door
+💵 Risk: $1.98 | Reward: TP1 $5.92 / TP2 $9.72 / TP3 $32.11
+👤 Aapke size par ($24 × 20x = $480): SL loss −$16.10 | TP1 +$48.08 / TP2 +$78.96 / TP3 +$261.00
+📊 Is setup ka win rate: 17.3% (52 trades backtest (all data)) | Avg R: -0.271
+
+🧠 Wajah:
+- HTF: SHORT — 1D bullish, 4H bearish, price 4H discount (31.4%), BTC neutral
+- SMC: Breaker retest — POI 1H breaker 7.012–7.147, htf aligned, confluence, ltf confirmed
+- Futures data: neutral (nothing unusual)
+- News: abhi check nahi hui (news-check)
+
+❌ Invalidation: 1H candle close 7.181 ke upar (POI fail)
+⏳ Valid until: 2026-11-07 00:18 PKT (entry na mile to cancel)
+
+--- details ---
+HTF BIAS: SHORT (strong POIs only)
+1D: bullish — last BOS 6.736
+4H: bearish — range 6.61–7.822, price in discount (31.4%)
+BTC: neutral
+Key levels: PDH 7.817, PDL 6.61, PWH 7.518, PWL 6.251, MO 7.085
+Setup: D Breaker retest grade A
+Funding: 0.0100% (normal, crowd: none) [mexc]
+OI: 1H +0.01%, 4H +0.07% → OI flat — no new positioning [okx]
+L/S ratio: 2.574 (balanced) [okx]
+Liquidity: 24h vol $42.5M, spread 0.029%
+Verdict: neutral (nothing unusual)
+Entry 6.948 | SL 7.181 (3.35%, 1 R)
+TP1 6.252 (1:2.99) | TP2 5.805 (1:4.91) | TP3 3.17 (1:16.21)
+Qty 85 contracts | Notional $59.06 | Leverage 6x isolated | Margin $9.84
+Liquidation ≈ 8.074 (SL se 12.43% door) ✅
+Risk $1.98 | Net reward TP1 $5.92 / TP2 $9.72 / TP3 $32.11 (fees ke baad)
+Score: 57.8/100 (min 65) → B-TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup             20.0 / 25   model D (Breaker retest) grade A
+  entry_precision       15.0 / 15   15m CHoCH yes, confluence yes
+  displacement_volume    0.0 / 10   no displacement
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    52 trades, win 17.3%, avg R -0.271
+  ✖ score 57.8 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/UNI/20261106-1318_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/UNI/20261106-1318_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/UNI/20261106-1318_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/UNI/20261106-1318_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/UNI/20261106T1318.json

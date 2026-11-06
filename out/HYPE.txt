@@ -1,0 +1,56 @@
+⚠️ PROVISIONAL — news-check abhi baqi hai (phir: python lib/deep_scan.py --finalize reports/HYPE/latest.json --news clear|caution|block)
+🔴 SHORT — HYPE/USDT (1H) | Setup: C — BOS continuation + OTE retrace (A)
+Score: 69.7/100
+
+📍 Entry: 81.747 (limit, zone 81.0884–82.4057)
+🛑 Stop Loss: 84.316  (3.14%)
+🎯 TP1: 76.569 (1:2.02) → 50% close, SL entry par
+🎯 TP2: 74.955 (1:2.64)
+🎯 TP3: 51.109 (1:11.93) — runner / 1D swing low
+
+⚙️ Leverage: 6x (Isolated) | Margin: $9.54
+💀 Liquidation: 94.878 ✅ SL se 12.53% door
+💵 Risk: $1.81 | Reward: TP1 $3.62 / TP2 $4.75 / TP3 $21.45
+👤 Aapke size par ($24 × 20x = $480): SL loss −$15.08 | TP1 +$30.40 / TP2 +$39.88 / TP3 +$179.90
+📊 Is setup ka win rate: 25.0% (28 trades backtest (all data) — low sample) | Avg R: -0.11
+
+🧠 Wajah:
+- HTF: SHORT — 1D bearish, 4H bearish, price 4H discount (18.4%), BTC neutral
+- SMC: BOS continuation + OTE retrace — POI 1H OTE 81.0884–82.4057, htf aligned, displacement, confluence
+- Futures data: neutral (nothing unusual)
+- News: abhi check nahi hui (news-check)
+
+❌ Invalidation: 1H candle close 84.316 ke upar (POI fail)
+⏳ Valid until: 2026-11-07 00:16 PKT (entry na mile to cancel)
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 89.677
+4H: bearish — range 76.284–88.88, price in discount (18.4%)
+BTC: neutral
+Key levels: PDH 84.886, PDL 76.284, PWH 97.276, PWL 74.954, MO 88.055
+Setup: C BOS continuation + OTE retrace grade A
+Funding: 0.0050% (normal, crowd: none) [mexc]
+OI: 1H +0.14%, 4H +0.28% → OI flat — no new positioning [okx]
+L/S ratio: 2.589 (balanced) [okx]
+Liquidity: 24h vol $74.5M, spread 0.001%
+Verdict: neutral (nothing unusual)
+Entry 81.747 | SL 84.316 (3.14%, 1 R)
+TP1 76.569 (1:2.02) | TP2 74.955 (1:2.64) | TP3 51.109 (1:11.93)
+Qty 7 contracts | Notional $57.22 | Leverage 6x isolated | Margin $9.54
+Liquidation ≈ 94.878 (SL se 12.53% door) ✅
+Risk $1.81 | Net reward TP1 $3.62 / TP2 $4.75 / TP3 $21.45 (fees ke baad)
+Score: 69.7/100 (min 65) → TRADE
+  htf_bias              21.2 / 25   1D + 4H aligned; BTC neutral
+  smc_setup             20.0 / 25   model C (BOS continuation + OTE retrace) grade A
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          2.5 / 5    not enough data yet (28 trades)
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/HYPE/20261106-1316_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/HYPE/20261106-1316_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/HYPE/20261106-1316_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/HYPE/20261106-1316_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/HYPE/20261106T1316.json

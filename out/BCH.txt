@@ -1,0 +1,37 @@
+❌ NO TRADE — BCH/USDT
+Wajah: score 62.3 < 65
+Kya dekhna hai: 4H FVG 269.31–272.51 tapped, waiting: no 15m CHoCH yet after the tap; POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT (strong POIs only)
+1D: bullish — last BOS 191.85
+4H: bearish — range 261.5–291.33, price in discount (20.9%)
+BTC: neutral
+Key levels: PDH 291.33, PDL 266.3, PWH 305, PWL 263.14, MO 285.87
+Setup: A Sweep + CHoCH + FVG/OB retest grade A+
+Funding: -0.0039% (normal, crowd: none) [mexc]
+OI: 1H +0.56%, 4H -0.17% → new longs (healthy up move) [okx]
+L/S ratio: 3.032 (longs crowded (contrarian warning)) [okx]
+Liquidity: 24h vol $7.0M, spread 0.037% ❌
+Verdict: against (low volume / wide spread)
+Entry 289.6 | SL 292.6 (1.04%, 1 R)
+TP1 266.31 (1:7.76) | TP2 263.15 (1:8.82) | TP3 256.39 (1:11.07)
+Qty 65 contracts | Notional $188.24 | Leverage 19x isolated | Margin $9.91
+Liquidation ≈ 303.57 (SL se 3.75% door) ✅
+Risk $1.99 | Net reward TP1 $15.14 / TP2 $17.19 / TP3 $21.59 (fees ke baad)
+Score: 62.3/100 (min 65) → NO TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup             25.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A+
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  ✖ coin fails volume / spread filter
+  ✖ score 62.3 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/BCH/20261106-1318_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/BCH/20261106-1318_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/BCH/20261106-1318_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/BCH/20261106-1318_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/BCH/20261106T1318.json

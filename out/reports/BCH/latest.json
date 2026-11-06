@@ -1,0 +1,819 @@
+{
+ "symbol": "BCH/USDT:USDT",
+ "coin": "BCH",
+ "pair": "BCH/USDT",
+ "exchange": "mexc",
+ "created_at": "2026-11-06T13:18:50Z",
+ "created_at_pkt": "2026-11-06 18:18 PKT",
+ "valid_until": "2026-11-06T19:18:50Z",
+ "price": 268.84,
+ "last_1h_candle": "2026-11-06T12:00:00Z",
+ "alert": null,
+ "direction": "SHORT",
+ "decision": "NO TRADE",
+ "bias": {
+  "symbol": "BCH/USDT:USDT",
+  "direction": "SHORT",
+  "strong_poi_only": true,
+  "pd_ok": false,
+  "reasons": [
+   "1D bullish vs 4H bearish — only SHORT from strong POIs",
+   "price in 4H discount (20.9%) — wait for a premium POI, do not chase",
+   "EMA stack bearish on 4H"
+  ],
+  "d1": {
+   "trend": "bullish",
+   "last_bos": {
+    "type": "BOS",
+    "direction": "bearish",
+    "level": 191.85,
+    "swing_idx": 251,
+    "swing_time": "2026-06-10T00:00:00Z",
+    "idx": 265,
+    "time": "2026-06-24T00:00:00Z",
+    "close": 190.4
+   },
+   "last_choch": {
+    "type": "CHoCH",
+    "direction": "bullish",
+    "level": 291.18,
+    "swing_idx": 384,
+    "swing_time": "2026-10-21T00:00:00Z",
+    "idx": 390,
+    "time": "2026-10-27T00:00:00Z",
+    "close": 296.09
+   },
+   "ema": {
+    "price": 272.54,
+    "ema20": 281.8932357305,
+    "above_ema20": false,
+    "slope20_pct": -0.922,
+    "ema50": 279.5759743198,
+    "above_ema50": false,
+    "slope50_pct": -0.117,
+    "ema200": 304.1844609185,
+    "above_ema200": false,
+    "slope200_pct": -0.436,
+    "stack": "mixed"
+   }
+  },
+  "h4": {
+   "trend": "bearish",
+   "last_bos": {
+    "type": "BOS",
+    "direction": "bearish",
+    "level": 266.0,
+    "swing_idx": 285,
+    "swing_time": "2026-11-04T00:00:00Z",
+    "idx": 298,
+    "time": "2026-11-06T04:00:00Z",
+    "close": 264.59
+   },
+   "last_choch": {
+    "type": "CHoCH",
+    "direction": "bearish",
+    "level": 273.0,
+    "swing_idx": 277,
+    "swing_time": "2026-11-02T16:00:00Z",
+    "idx": 285,
+    "time": "2026-11-04T00:00:00Z",
+    "close": 269.57
+   },
+   "ema": {
+    "price": 267.72,
+    "ema20": 276.8485712659,
+    "above_ema20": false,
+    "slope20_pct": -1.352,
+    "ema50": 279.66374086,
+    "above_ema50": false,
+    "slope50_pct": -0.655,
+    "ema200": 281.578189344,
+    "above_ema200": false,
+    "slope200_pct": -0.183,
+    "stack": "bearish"
+   },
+   "range": {
+    "range_high": 291.33,
+    "range_low": 261.5,
+    "equilibrium": 276.415,
+    "price": 267.72,
+    "pct": 20.9,
+    "zone": "discount",
+    "from_time": "2026-11-04T00:00:00Z"
+   }
+  },
+  "btc": {
+   "price": 76005.5,
+   "change_1h_pct": -0.14,
+   "dump": false,
+   "pump": false,
+   "trend_1h": "bullish",
+   "trend_4h": "bearish",
+   "fresh_bearish_break": false,
+   "fresh_bullish_break": false,
+   "for_long": "neutral",
+   "for_short": "neutral"
+  },
+  "btc_for_direction": "neutral",
+  "key_levels": {
+   "PDH": 291.33,
+   "PDL": 266.3,
+   "PWH": 305.0,
+   "PWL": 263.14,
+   "day_start": "2026-11-06T00:00:00Z",
+   "week_start": "2026-11-02T00:00:00Z",
+   "MO": 285.87
+  },
+  "text": "HTF BIAS: SHORT (strong POIs only)\n1D: bullish — last BOS 191.85\n4H: bearish — range 261.5–291.33, price in discount (20.9%)\nBTC: neutral\nKey levels: PDH 291.33, PDL 266.3, PWH 305, PWL 263.14, MO 285.87"
+ },
+ "setup": {
+  "direction": "SHORT",
+  "model": "A",
+  "name": "Sweep + CHoCH + FVG/OB retest",
+  "grade": "A+",
+  "poi": {
+   "kind": "1H OB",
+   "top": 291.33,
+   "bottom": 287.87,
+   "mid": 289.6,
+   "source": "1H",
+   "time": "2026-11-05T11:00:00Z"
+  },
+  "sl_ref": 286.45,
+  "state": "waiting",
+  "quality": {
+   "htf_aligned": true,
+   "pd_ok": true,
+   "displacement": true,
+   "confluence": true,
+   "ltf_confirmed": false
+  },
+  "reasons": [
+   "htf aligned: yes",
+   "pd ok: yes",
+   "displacement: yes",
+   "confluence: yes",
+   "ltf confirmed: no"
+  ],
+  "candidates": [
+   {
+    "model": "A",
+    "poi": {
+     "kind": "1H OB",
+     "top": 291.33,
+     "bottom": 287.87,
+     "mid": 289.6,
+     "source": "1H",
+     "time": "2026-11-05T11:00:00Z"
+    },
+    "state": "waiting",
+    "overlap": false,
+    "displacement": {
+     "displacement": true,
+     "body_only": false,
+     "idx": 377,
+     "time": "2026-11-05T14:00:00Z"
+    },
+    "sl_ref": 286.45,
+    "detail": {
+     "sweep": {
+      "direction": "bearish",
+      "level_name": "swing_high",
+      "level": 285.79,
+      "idx": 370,
+      "time": "2026-11-05T07:00:00Z",
+      "age": 29,
+      "wick": 286.45,
+      "close": 285.01,
+      "depth": 0.66,
+      "depth_atr": 0.21,
+      "rank": 1
+     },
+     "break": {
+      "type": "CHoCH",
+      "direction": "bearish",
+      "level": 278.89,
+      "swing_idx": 364,
+      "swing_time": "2026-11-05T01:00:00Z",
+      "idx": 379,
+      "time": "2026-11-05T16:00:00Z",
+      "close": 278.01
+     }
+    },
+    "ltf": {
+     "confirmed": false,
+     "tap_idx": null,
+     "tap_time": null,
+     "choch": null,
+     "reason": "price has not tapped the POI on 15m"
+    },
+    "quality": {
+     "htf_aligned": true,
+     "pd_ok": true,
+     "displacement": true,
+     "confluence": true,
+     "ltf_confirmed": false
+    },
+    "grade": "A+",
+    "distance_atr": 4.51,
+    "name": "Sweep + CHoCH + FVG/OB retest"
+   },
+   {
+    "model": "C",
+    "poi": {
+     "kind": "1H OTE",
+     "top": 275.5225,
+     "bottom": 272.505,
+     "mid": 274.01375,
+     "source": "1H",
+     "time": null
+    },
+    "state": "waiting",
+    "overlap": false,
+    "displacement": {
+     "displacement": true,
+     "body_only": false,
+     "idx": 393,
+     "time": "2026-11-06T06:00:00Z"
+    },
+    "sl_ref": 279.25,
+    "ltf": {
+     "confirmed": false,
+     "tap_idx": 268,
+     "tap_time": "2026-11-06T05:15:00Z",
+     "choch": null,
+     "reason": "price closed through the POI before the CHoCH"
+    },
+    "quality": {
+     "htf_aligned": true,
+     "pd_ok": false,
+     "displacement": true,
+     "confluence": true,
+     "ltf_confirmed": false
+    },
+    "grade": "A",
+    "distance_atr": 0.87,
+    "name": "BOS continuation + OTE retrace"
+   }
+  ],
+  "pending": [
+   "B: 4H FVG 269.31–272.51 tapped, waiting: no 15m CHoCH yet after the tap"
+  ],
+  "price": 268.84,
+  "atr_1h": 4.2194303116,
+  "ote": {
+   "direction": "bearish",
+   "break_type": "BOS",
+   "break_idx": 394,
+   "start_idx": 387,
+   "start_time": "2026-11-06T00:00:00Z",
+   "end_idx": 394,
+   "end_time": "2026-11-06T07:00:00Z",
+   "low": 261.5,
+   "high": 279.25,
+   "top": 275.5225,
+   "bottom": 272.505,
+   "sweet": 274.01375,
+   "price": 268.84,
+   "retrace_pct": 41.4,
+   "in_ote": false,
+   "touched": false,
+   "invalid": false
+  },
+  "trend_4h": "bearish",
+  "trend_1h": "bearish",
+  "premium_discount_4h": {
+   "range_high": 291.33,
+   "range_low": 261.5,
+   "equilibrium": 276.415,
+   "price": 267.72,
+   "pct": 20.9,
+   "zone": "discount",
+   "from_time": "2026-11-04T00:00:00Z"
+  },
+  "ltf": {
+   "confirmed": false,
+   "tap_idx": null,
+   "tap_time": null,
+   "choch": null,
+   "reason": "price has not tapped the POI on 15m"
+  },
+  "displacement": {
+   "displacement": true,
+   "body_only": false,
+   "idx": 377,
+   "time": "2026-11-05T14:00:00Z"
+  },
+  "distance_atr": 4.51
+ },
+ "session": {
+  "now_utc": "2026-11-06T13:18:50Z",
+  "in_killzone": true,
+  "killzone": "new_york",
+  "next_killzone": "london",
+  "next_start_utc": "2026-11-07T07:00:00Z",
+  "hours_to_next": 17.69,
+  "zones_utc": {
+   "asia": [
+    0,
+    6
+   ],
+   "london": [
+    7,
+    10
+   ],
+   "new_york": [
+    12,
+    15
+   ]
+  }
+ },
+ "asia_range": {
+  "start_utc": "2026-11-06T00:00:00Z",
+  "end_utc": "2026-11-06T06:00:00Z",
+  "high": 279.25,
+  "low": 272.51,
+  "complete": true,
+  "swept_high": false,
+  "swept_low": true
+ },
+ "futures": {
+  "symbol": "BCH/USDT:USDT",
+  "side": "short",
+  "funding": {
+   "source": "mexc",
+   "current_pct": -0.0039,
+   "history_pct": [
+    0.0082,
+    -0.002,
+    0.002,
+    0.0078,
+    0.0072,
+    0.01,
+    0.01,
+    0.003
+   ],
+   "interval": "8h",
+   "next_funding_utc": "2026-11-06T16:00:00.000Z",
+   "level": "normal",
+   "crowd": "none"
+  },
+  "open_interest": {
+   "source": "okx",
+   "latest": 909992.6999999998,
+   "change_1h_pct": 0.56,
+   "change_4h_pct": -0.17,
+   "reading_1h": "new longs (healthy up move)",
+   "reading_4h": "OI flat — no new positioning",
+   "mexc_now": 90620.19
+  },
+  "long_short": {
+   "source": "okx",
+   "ratio": 3.032,
+   "prev": 3.001,
+   "note": "longs crowded (contrarian warning)"
+  },
+  "liquidity": {
+   "quote_volume_24h": 6970252.7765,
+   "spread_pct": 0.0375,
+   "ok": false,
+   "source": "mexc"
+  },
+  "price_change": {
+   "1h_pct": 0.418,
+   "4h_pct": 1.098
+  },
+  "verdicts": {
+   "long": {
+    "verdict": "against",
+    "reason": "low volume / wide spread"
+   },
+   "short": {
+    "verdict": "against",
+    "reason": "low volume / wide spread"
+   }
+  },
+  "verdict": "against",
+  "reason": "low volume / wide spread",
+  "text": "Funding: -0.0039% (normal, crowd: none) [mexc]\nOI: 1H +0.56%, 4H -0.17% → new longs (healthy up move) [okx]\nL/S ratio: 3.032 (longs crowded (contrarian warning)) [okx]\nLiquidity: 24h vol $7.0M, spread 0.037% ❌\nVerdict: against (low volume / wide spread)"
+ },
+ "plan": {
+  "ok": true,
+  "rejects": [],
+  "notes": [
+   "market entry blocked (TP1 blocked by 4H range low at 261.5 (only 1:0.31)) — LIMIT order at the POI instead"
+  ],
+  "side": "short",
+  "order": "limit",
+  "entry": 289.6,
+  "sl": 292.6,
+  "tps": [
+   266.31,
+   263.15,
+   256.39
+  ],
+  "sl_pct": 1.036,
+  "rr": [
+   7.76,
+   8.82,
+   11.07
+  ],
+  "contracts": 65.0,
+  "qty": 0.65,
+  "notional_usd": 188.24,
+  "leverage": 19,
+  "max_safe_leverage": 20,
+  "margin_usd": 9.9074,
+  "margin_mode": "isolated",
+  "liquidation": 303.57,
+  "liq_beyond_sl_pct": 3.75,
+  "liq_ok": true,
+  "risk_target_usd": 2.0,
+  "risk_usd": 1.988,
+  "fees_usd": {
+   "entry": 0.0,
+   "sl_exit": 0.038
+  },
+  "net_reward_usd": [
+   15.1385,
+   17.1925,
+   21.5865
+  ],
+  "net_reward_partial_usd": 17.264,
+  "partial_schedule": [
+   50,
+   25,
+   25
+  ],
+  "spec": {
+   "symbol": "BCH/USDT:USDT",
+   "contract_size": 0.01,
+   "min_qty": 1.0,
+   "qty_step": 1.0,
+   "tick_size": 0.01,
+   "maker_fee": 0.0,
+   "taker_fee": 0.0002,
+   "mmr": 0.004,
+   "max_leverage": 200.0,
+   "source": "mexc live"
+  },
+  "text": "Entry 289.6 | SL 292.6 (1.04%, 1 R)\nTP1 266.31 (1:7.76) | TP2 263.15 (1:8.82) | TP3 256.39 (1:11.07)\nQty 65 contracts | Notional $188.24 | Leverage 19x isolated | Margin $9.91\nLiquidation ≈ 303.57 (SL se 3.75% door) ✅\nRisk $1.99 | Net reward TP1 $15.14 / TP2 $17.19 / TP3 $21.59 (fees ke baad)",
+  "entry_zone": [
+   287.87,
+   291.33
+  ],
+  "targets": [
+   {
+    "name": "PDL",
+    "level": 266.3,
+    "strength": "key"
+   },
+   {
+    "name": "PWL",
+    "level": 263.14,
+    "strength": "key"
+   },
+   {
+    "name": "4H swing low",
+    "level": 256.38,
+    "strength": "htf"
+   }
+  ],
+  "levels_considered": [
+   {
+    "name": "PDL",
+    "price": 266.3,
+    "strength": "key"
+   },
+   {
+    "name": "1H PDL",
+    "price": 266.3,
+    "strength": "key"
+   },
+   {
+    "name": "4H PDL",
+    "price": 266.3,
+    "strength": "key"
+   },
+   {
+    "name": "PWL",
+    "price": 263.14,
+    "strength": "key"
+   },
+   {
+    "name": "1H PWL",
+    "price": 263.14,
+    "strength": "key"
+   },
+   {
+    "name": "4H PWL",
+    "price": 263.14,
+    "strength": "key"
+   },
+   {
+    "name": "1D swing low",
+    "price": 263.14,
+    "strength": "htf"
+   },
+   {
+    "name": "1H swing low",
+    "price": 261.5,
+    "strength": "minor"
+   },
+   {
+    "name": "4H range low",
+    "price": 261.5,
+    "strength": "htf"
+   },
+   {
+    "name": "4H swing low",
+    "price": 256.38,
+    "strength": "htf"
+   },
+   {
+    "name": "1D swing low",
+    "price": 256.38,
+    "strength": "htf"
+   },
+   {
+    "name": "4H bullish OB",
+    "price": 255.46,
+    "strength": "htf"
+   },
+   {
+    "name": "1D swing low",
+    "price": 212.9,
+    "strength": "htf"
+   },
+   {
+    "name": "1D swing low",
+    "price": 199.9,
+    "strength": "htf"
+   },
+   {
+    "name": "1D swing low",
+    "price": 180.94,
+    "strength": "htf"
+   }
+  ]
+ },
+ "stats": {
+  "trades": 78,
+  "candidates": 841,
+  "fill_rate": 9.3,
+  "win_rate": 29.5,
+  "sl_rate": 70.5,
+  "avg_r": 0.078,
+  "expectancy_r": 0.078,
+  "total_r": 6.05,
+  "profit_factor": 1.11,
+  "max_dd_r": 13.97,
+  "max_losing_streak": 9,
+  "avg_hours": 21.0,
+  "trades_per_week": 1.55,
+  "low_sample": false,
+  "source": "backtest (all data)",
+  "sample_size": 78,
+  "oos": {
+   "trades": 22,
+   "candidates": 284,
+   "fill_rate": 7.7,
+   "win_rate": 18.2,
+   "sl_rate": 81.8,
+   "avg_r": -0.589,
+   "expectancy_r": -0.589,
+   "total_r": -12.95,
+   "profit_factor": 0.3,
+   "max_dd_r": 13.97,
+   "max_losing_streak": 6,
+   "avg_hours": 14.4,
+   "trades_per_week": 1.68,
+   "low_sample": true
+  },
+  "in_sample": {
+   "trades": 56,
+   "candidates": 557,
+   "fill_rate": 10.1,
+   "win_rate": 33.9,
+   "sl_rate": 66.1,
+   "avg_r": 0.339,
+   "expectancy_r": 0.339,
+   "total_r": 19.0,
+   "profit_factor": 1.49,
+   "max_dd_r": 13.03,
+   "max_losing_streak": 9,
+   "avg_hours": 23.6,
+   "trades_per_week": 1.59,
+   "low_sample": false
+  },
+  "period": "2025-11-10 → 2026-10-31"
+ },
+ "score": {
+  "total": 62.3,
+  "threshold": 65.0,
+  "news": "pending",
+  "breakdown": [
+   {
+    "category": "htf_bias",
+    "weight": 25.0,
+    "fraction": 0.51,
+    "points": 12.8,
+    "reason": "4H only (1D disagrees); BTC neutral"
+   },
+   {
+    "category": "smc_setup",
+    "weight": 25.0,
+    "fraction": 1.0,
+    "points": 25.0,
+    "reason": "model A (Sweep + CHoCH + FVG/OB retest) grade A+"
+   },
+   {
+    "category": "entry_precision",
+    "weight": 15.0,
+    "fraction": 0.4,
+    "points": 6.0,
+    "reason": "15m CHoCH no, confluence yes"
+   },
+   {
+    "category": "displacement_volume",
+    "weight": 10.0,
+    "fraction": 1.0,
+    "points": 10.0,
+    "reason": "displacement candle with volume"
+   },
+   {
+    "category": "futures_data",
+    "weight": 10.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "against — low volume / wide spread"
+   },
+   {
+    "category": "session_timing",
+    "weight": 5.0,
+    "fraction": 1.0,
+    "points": 5.0,
+    "reason": "inside new_york killzone"
+   },
+   {
+    "category": "news",
+    "weight": 5.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "not checked yet (run news-check)"
+   },
+   {
+    "category": "backtest_edge",
+    "weight": 5.0,
+    "fraction": 0.7,
+    "points": 3.5,
+    "reason": "78 trades, win 29.5%, avg R 0.078"
+   }
+  ],
+  "blocks": [
+   "coin fails volume / spread filter",
+   "score 62.3 < 65"
+  ],
+  "decision": "NO TRADE",
+  "soft_blocks": [
+   "score 62.3 < 65"
+  ],
+  "max_without_news": 95.0
+ },
+ "score_inputs": {
+  "direction": "SHORT",
+  "bias": {
+   "d1": {
+    "trend": "bullish"
+   },
+   "btc_for_direction": "neutral"
+  },
+  "setup": {
+   "model": "A",
+   "name": "Sweep + CHoCH + FVG/OB retest",
+   "grade": "A+",
+   "quality": {
+    "htf_aligned": true,
+    "pd_ok": true,
+    "displacement": true,
+    "confluence": true,
+    "ltf_confirmed": false
+   },
+   "displacement": {
+    "displacement": true,
+    "body_only": false,
+    "idx": 377,
+    "time": "2026-11-05T14:00:00Z"
+   }
+  },
+  "futures": {
+   "verdict": "against",
+   "reason": "low volume / wide spread",
+   "liquidity": {
+    "quote_volume_24h": 6970252.7765,
+    "spread_pct": 0.0375,
+    "ok": false,
+    "source": "mexc"
+   }
+  },
+  "session": {
+   "now_utc": "2026-11-06T13:18:50Z",
+   "in_killzone": true,
+   "killzone": "new_york",
+   "next_killzone": "london",
+   "next_start_utc": "2026-11-07T07:00:00Z",
+   "hours_to_next": 17.69,
+   "zones_utc": {
+    "asia": [
+     0,
+     6
+    ],
+    "london": [
+     7,
+     10
+    ],
+    "new_york": [
+     12,
+     15
+    ]
+   }
+  },
+  "news": "pending",
+  "stats": {
+   "trades": 78,
+   "candidates": 841,
+   "fill_rate": 9.3,
+   "win_rate": 29.5,
+   "sl_rate": 70.5,
+   "avg_r": 0.078,
+   "expectancy_r": 0.078,
+   "total_r": 6.05,
+   "profit_factor": 1.11,
+   "max_dd_r": 13.97,
+   "max_losing_streak": 9,
+   "avg_hours": 21.0,
+   "trades_per_week": 1.55,
+   "low_sample": false,
+   "source": "backtest (all data)",
+   "sample_size": 78,
+   "oos": {
+    "trades": 22,
+    "candidates": 284,
+    "fill_rate": 7.7,
+    "win_rate": 18.2,
+    "sl_rate": 81.8,
+    "avg_r": -0.589,
+    "expectancy_r": -0.589,
+    "total_r": -12.95,
+    "profit_factor": 0.3,
+    "max_dd_r": 13.97,
+    "max_losing_streak": 6,
+    "avg_hours": 14.4,
+    "trades_per_week": 1.68,
+    "low_sample": true
+   },
+   "in_sample": {
+    "trades": 56,
+    "candidates": 557,
+    "fill_rate": 10.1,
+    "win_rate": 33.9,
+    "sl_rate": 66.1,
+    "avg_r": 0.339,
+    "expectancy_r": 0.339,
+    "total_r": 19.0,
+    "profit_factor": 1.49,
+    "max_dd_r": 13.03,
+    "max_losing_streak": 9,
+    "avg_hours": 23.6,
+    "trades_per_week": 1.59,
+    "low_sample": false
+   },
+   "period": "2025-11-10 → 2026-10-31"
+  },
+  "plan": {
+   "ok": true,
+   "rejects": []
+  },
+  "limits": {
+   "trades_today": 1,
+   "losses_today": 0,
+   "max_trades": 0,
+   "max_losses": 3,
+   "blocked": false,
+   "reason": null
+  }
+ },
+ "charts": {
+  "1d": "/home/runner/work/trading-agent/trading-agent/charts/BCH/20261106-1318_1d.png",
+  "4h": "/home/runner/work/trading-agent/trading-agent/charts/BCH/20261106-1318_4h.png",
+  "1h": "/home/runner/work/trading-agent/trading-agent/charts/BCH/20261106-1318_1h.png",
+  "15m": "/home/runner/work/trading-agent/trading-agent/charts/BCH/20261106-1318_15m.png"
+ },
+ "news": "pending",
+ "news_note": null,
+ "no_trade_reasons": [
+  "score 62.3 < 65"
+ ],
+ "answer": "❌ NO TRADE — BCH/USDT\nWajah: score 62.3 < 65\nKya dekhna hai: 4H FVG 269.31–272.51 tapped, waiting: no 15m CHoCH yet after the tap; POI par 15m CHoCH confirmation",
+ "report_path": "/home/runner/work/trading-agent/trading-agent/reports/BCH/20261106T1318.json"
+}

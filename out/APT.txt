@@ -1,0 +1,33 @@
+❌ NO TRADE — APT/USDT
+Wajah: koi A/B/C/D entry model nahi bana; score 28.7 < 65
+Kya dekhna hai: 4H FVG 0.6032–0.6332 tapped, waiting: no 15m CHoCH yet after the tap; 1H par liquidity sweep + CHoCH, ya 4H POI tap + 15m CHoCH
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.6837
+4H: bearish — range 0.5685–0.6605, price in discount (47.7%)
+BTC: neutral
+Key levels: PDH 0.6502, PDL 0.5685, PWH 0.7211, PWL 0.5748, MO 0.6326
+Setup: -  grade reject
+Funding: 0.0063% (normal, crowd: none) [mexc]
+OI: 1H -0.62%, 4H -1.24% → short covering (weaker up move) [okx]
+L/S ratio: 2.418 (balanced) [okx]
+Liquidity: 24h vol $7.7M, spread 0.016% ❌
+Verdict: against (low volume / wide spread)
+Score: 28.7/100 (min 65) → NO TRADE
+  htf_bias              21.2 / 25   1D + 4H aligned; BTC neutral
+  smc_setup              0.0 / 25   no valid entry model
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume    0.0 / 10   no displacement
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          2.5 / 5    not enough data yet (0 trades)
+  ✖ no valid SMC setup
+  ✖ coin fails volume / spread filter
+  ✖ score 28.7 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/APT/20261106-1315_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/APT/20261106-1315_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/APT/20261106-1315_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/APT/20261106-1315_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/APT/20261106T1315.json

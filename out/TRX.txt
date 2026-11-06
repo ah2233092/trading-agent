@@ -1,0 +1,37 @@
+❌ NO TRADE — TRX/USDT
+Wajah: confluence kam
+Kya dekhna hai: agla watchman alert
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.33834
+4H: bearish — range 0.31546–0.32447, price in discount (29.6%)
+BTC: neutral
+Key levels: PDH 0.31988, PDL 0.31546, PWH 0.36528, PWL 0.30076, MO 0.30344
+Setup: B HTF POI tap + 15m CHoCH grade A
+Funding: 0.0089% (normal, crowd: none) [mexc]
+OI: 1H +0.03%, 4H -0.44% → OI flat — no new positioning [okx]
+L/S ratio: 1.919 (balanced) [okx]
+Liquidity: 24h vol $2.0M, spread 0.003% ❌
+Verdict: against (low volume / wide spread)
+Entry 0.31796 | SL 0.31931 (0.42%, 1 R)
+TP1 0.31514 (1:2.09) | TP2 0.312 (1:4.41) | TP3 0.30077 (1:12.73)
+Qty 62 contracts | Notional $197.14 | Leverage 20x isolated | Margin $9.86
+Liquidation ≈ 0.33246 (SL se 4.12% door) ✅
+Risk $0.92 | Net reward TP1 $1.71 / TP2 $3.66 / TP3 $10.62 (fees ke baad)
+ℹ️ size cut to fit $10 margin at max safe leverage 20x — risk below target
+Score: 65.2/100 (min 65) → NO TRADE
+  htf_bias              21.2 / 25   1D + 4H aligned; BTC neutral
+  smc_setup             20.0 / 25   model B (HTF POI tap + 15m CHoCH) grade A
+  entry_precision        9.0 / 15   15m CHoCH yes, confluence no
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    47 trades, win 23.4%, avg R -0.181
+  ✖ coin fails volume / spread filter
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/TRX/20261106-1318_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/TRX/20261106-1318_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/TRX/20261106-1318_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/TRX/20261106-1318_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/TRX/20261106T1318.json

@@ -1,0 +1,780 @@
+{
+ "symbol": "INJ/USDT:USDT",
+ "coin": "INJ",
+ "pair": "INJ/USDT",
+ "exchange": "mexc",
+ "created_at": "2026-11-06T13:16:37Z",
+ "created_at_pkt": "2026-11-06 18:16 PKT",
+ "valid_until": "2026-11-06T19:16:37Z",
+ "price": 8.247,
+ "last_1h_candle": "2026-11-06T12:00:00Z",
+ "alert": {
+  "id": "20261106-0706-INJ",
+  "age_h": 6.18,
+  "hint": "LONG",
+  "light_score": 0,
+  "triggers": [],
+  "status": "expired",
+  "checks": [],
+  "light_score_now": 35,
+  "hint_now": "SHORT",
+  "price_now": 8.247
+ },
+ "direction": "LONG",
+ "decision": "TRADE",
+ "bias": {
+  "symbol": "INJ/USDT:USDT",
+  "direction": "LONG",
+  "strong_poi_only": false,
+  "pd_ok": false,
+  "reasons": [
+   "1D and 4H both bullish",
+   "price in 4H premium (76.0%) — wait for a discount POI, do not chase",
+   "EMA stack bullish on 1D, 4H"
+  ],
+  "d1": {
+   "trend": "bullish",
+   "last_bos": {
+    "type": "BOS",
+    "direction": "bullish",
+    "level": 6.721,
+    "swing_idx": 341,
+    "swing_time": "2026-09-08T00:00:00Z",
+    "idx": 352,
+    "time": "2026-09-19T00:00:00Z",
+    "close": 7.927
+   },
+   "last_choch": {
+    "type": "CHoCH",
+    "direction": "bullish",
+    "level": 8.323,
+    "swing_idx": 369,
+    "swing_time": "2026-10-06T00:00:00Z",
+    "idx": 378,
+    "time": "2026-10-15T00:00:00Z",
+    "close": 8.536
+   },
+   "ema": {
+    "price": 8.153,
+    "ema20": 7.7097766034,
+    "above_ema20": true,
+    "slope20_pct": -1.243,
+    "ema50": 7.4258127208,
+    "above_ema50": true,
+    "slope50_pct": 0.296,
+    "ema200": 6.1290066543,
+    "above_ema200": true,
+    "slope200_pct": 1.166,
+    "stack": "bullish"
+   }
+  },
+  "h4": {
+   "trend": "bullish",
+   "last_bos": {
+    "type": "BOS",
+    "direction": "bullish",
+    "level": 8.831,
+    "swing_idx": 188,
+    "swing_time": "2026-10-18T20:00:00Z",
+    "idx": 200,
+    "time": "2026-10-20T20:00:00Z",
+    "close": 8.942
+   },
+   "last_choch": {
+    "type": "CHoCH",
+    "direction": "bullish",
+    "level": 7.306,
+    "swing_idx": 275,
+    "swing_time": "2026-11-02T08:00:00Z",
+    "idx": 282,
+    "time": "2026-11-03T12:00:00Z",
+    "close": 7.331
+   },
+   "ema": {
+    "price": 8.168,
+    "ema20": 7.8766707321,
+    "above_ema20": true,
+    "slope20_pct": 2.893,
+    "ema50": 7.6794439208,
+    "above_ema50": true,
+    "slope50_pct": 1.58,
+    "ema200": 7.6491978293,
+    "above_ema200": true,
+    "slope200_pct": 0.384,
+    "stack": "bullish"
+   },
+   "range": {
+    "range_high": 8.594,
+    "range_low": 6.82,
+    "equilibrium": 7.707,
+    "price": 8.168,
+    "pct": 76.0,
+    "zone": "premium",
+    "from_time": "2026-11-03T00:00:00Z"
+   }
+  },
+  "btc": {
+   "price": 76005.5,
+   "change_1h_pct": -0.14,
+   "dump": false,
+   "pump": false,
+   "trend_1h": "bullish",
+   "trend_4h": "bearish",
+   "fresh_bearish_break": false,
+   "fresh_bullish_break": false,
+   "for_long": "neutral",
+   "for_short": "neutral"
+  },
+  "btc_for_direction": "neutral",
+  "key_levels": {
+   "PDH": 8.594,
+   "PDL": 7.791,
+   "PWH": 8.295,
+   "PWL": 6.856,
+   "day_start": "2026-11-06T00:00:00Z",
+   "week_start": "2026-11-02T00:00:00Z",
+   "MO": 7.225
+  },
+  "text": "HTF BIAS: LONG\n1D: bullish — last BOS 6.721\n4H: bullish — range 6.82–8.594, price in premium (76.0%)\nBTC: neutral\nKey levels: PDH 8.594, PDL 7.791, PWH 8.295, PWL 6.856, MO 7.225"
+ },
+ "setup": {
+  "direction": "LONG",
+  "model": "C",
+  "name": "BOS continuation + OTE retrace",
+  "grade": "A+",
+  "poi": {
+   "kind": "1H OTE",
+   "top": 7.60696,
+   "bottom": 7.33632,
+   "mid": 7.47164,
+   "source": "1H",
+   "time": null
+  },
+  "sl_ref": 7.002,
+  "state": "waiting",
+  "quality": {
+   "htf_aligned": true,
+   "pd_ok": true,
+   "displacement": true,
+   "confluence": true,
+   "ltf_confirmed": false
+  },
+  "reasons": [
+   "htf aligned: yes",
+   "pd ok: yes",
+   "displacement: yes",
+   "confluence: yes",
+   "ltf confirmed: no"
+  ],
+  "candidates": [
+   {
+    "model": "C",
+    "poi": {
+     "kind": "1H OTE",
+     "top": 7.60696,
+     "bottom": 7.33632,
+     "mid": 7.47164,
+     "source": "1H",
+     "time": null
+    },
+    "state": "waiting",
+    "overlap": false,
+    "displacement": {
+     "displacement": true,
+     "body_only": false,
+     "idx": 345,
+     "time": "2026-11-04T06:00:00Z"
+    },
+    "sl_ref": 7.002,
+    "detail": {
+     "ote": {
+      "direction": "bullish",
+      "break_type": "BOS",
+      "break_idx": 345,
+      "start_idx": 342,
+      "start_time": "2026-11-04T03:00:00Z",
+      "end_idx": 373,
+      "end_time": "2026-11-05T10:00:00Z",
+      "low": 7.002,
+      "high": 8.594,
+      "top": 7.60696,
+      "bottom": 7.33632,
+      "sweet": 7.47164,
+      "price": 8.247,
+      "retrace_pct": 21.8,
+      "in_ote": false,
+      "touched": false,
+      "invalid": false
+     }
+    },
+    "ltf": {
+     "confirmed": false,
+     "tap_idx": null,
+     "tap_time": null,
+     "choch": null,
+     "reason": "price has not tapped the POI on 15m"
+    },
+    "quality": {
+     "htf_aligned": true,
+     "pd_ok": true,
+     "displacement": true,
+     "confluence": true,
+     "ltf_confirmed": false
+    },
+    "grade": "A+",
+    "distance_atr": 4.07,
+    "name": "BOS continuation + OTE retrace"
+   }
+  ],
+  "pending": [],
+  "price": 8.247,
+  "atr_1h": 0.1572151099,
+  "ote": {
+   "direction": "bullish",
+   "break_type": "BOS",
+   "break_idx": 345,
+   "start_idx": 342,
+   "start_time": "2026-11-04T03:00:00Z",
+   "end_idx": 373,
+   "end_time": "2026-11-05T10:00:00Z",
+   "low": 7.002,
+   "high": 8.594,
+   "top": 7.60696,
+   "bottom": 7.33632,
+   "sweet": 7.47164,
+   "price": 8.247,
+   "retrace_pct": 21.8,
+   "in_ote": false,
+   "touched": false,
+   "invalid": false
+  },
+  "trend_4h": "bullish",
+  "trend_1h": "bullish",
+  "premium_discount_4h": {
+   "range_high": 8.594,
+   "range_low": 6.82,
+   "equilibrium": 7.707,
+   "price": 8.168,
+   "pct": 76.0,
+   "zone": "premium",
+   "from_time": "2026-11-03T00:00:00Z"
+  },
+  "ltf": {
+   "confirmed": false,
+   "tap_idx": null,
+   "tap_time": null,
+   "choch": null,
+   "reason": "price has not tapped the POI on 15m"
+  },
+  "displacement": {
+   "displacement": true,
+   "body_only": false,
+   "idx": 345,
+   "time": "2026-11-04T06:00:00Z"
+  },
+  "distance_atr": 4.07
+ },
+ "session": {
+  "now_utc": "2026-11-06T13:16:37Z",
+  "in_killzone": true,
+  "killzone": "new_york",
+  "next_killzone": "london",
+  "next_start_utc": "2026-11-07T07:00:00Z",
+  "hours_to_next": 17.72,
+  "zones_utc": {
+   "asia": [
+    0,
+    6
+   ],
+   "london": [
+    7,
+    10
+   ],
+   "new_york": [
+    12,
+    15
+   ]
+  }
+ },
+ "asia_range": {
+  "start_utc": "2026-11-06T00:00:00Z",
+  "end_utc": "2026-11-06T06:00:00Z",
+  "high": 8.456,
+  "low": 8.128,
+  "complete": true,
+  "swept_high": false,
+  "swept_low": true
+ },
+ "futures": {
+  "symbol": "INJ/USDT:USDT",
+  "side": "long",
+  "funding": {
+   "source": "mexc",
+   "current_pct": 0.0255,
+   "history_pct": [
+    0.0208,
+    0.0248,
+    0.0221,
+    0.0207,
+    0.0262,
+    0.0204,
+    0.0288,
+    0.0232
+   ],
+   "interval": "8h",
+   "next_funding_utc": "2026-11-06T16:00:00.000Z",
+   "level": "elevated",
+   "crowd": "long"
+  },
+  "open_interest": {
+   "source": "okx",
+   "latest": 6686353.0,
+   "change_1h_pct": -0.33,
+   "change_4h_pct": -0.86,
+   "reading_1h": "short covering (weaker up move)",
+   "reading_4h": "short covering (weaker up move)",
+   "mexc_now": 2507008.0
+  },
+  "long_short": {
+   "source": "okx",
+   "ratio": 1.84,
+   "prev": 1.821,
+   "note": "balanced"
+  },
+  "liquidity": {
+   "quote_volume_24h": 43097905.843,
+   "spread_pct": 0.012,
+   "ok": true,
+   "source": "mexc"
+  },
+  "price_change": {
+   "1h_pct": 0.967,
+   "4h_pct": 2.46
+  },
+  "verdicts": {
+   "long": {
+    "verdict": "neutral",
+    "reason": "funding elevated, longs leaning in"
+   },
+   "short": {
+    "verdict": "supportive",
+    "reason": "longs crowded — squeeze fuel for the short"
+   }
+  },
+  "verdict": "neutral",
+  "reason": "funding elevated, longs leaning in",
+  "text": "Funding: 0.0255% (elevated, crowd: long) [mexc]\nOI: 1H -0.33%, 4H -0.86% → short covering (weaker up move) [okx]\nL/S ratio: 1.84 (balanced) [okx]\nLiquidity: 24h vol $43.1M, spread 0.012%\nVerdict: neutral (funding elevated, longs leaning in)"
+ },
+ "plan": {
+  "ok": true,
+  "rejects": [],
+  "notes": [
+   "market entry blocked (TP1 blocked by PDH at 8.594 (only 1:0.27); TP1 only 1:2.00 (< 1:2)) — LIMIT order at the POI instead"
+  ],
+  "side": "long",
+  "order": "limit",
+  "entry": 7.472,
+  "sl": 6.954,
+  "tps": [
+   8.593,
+   8.87,
+   9.411
+  ],
+  "sl_pct": 6.928,
+  "rr": [
+   2.17,
+   2.7,
+   3.75
+  ],
+  "contracts": 3.0,
+  "qty": 3.0,
+  "notional_usd": 22.4149,
+  "leverage": 3,
+  "max_safe_leverage": 11,
+  "margin_usd": 7.4716,
+  "margin_mode": "isolated",
+  "liquidation": 4.993,
+  "liq_beyond_sl_pct": 28.21,
+  "liq_ok": true,
+  "risk_target_usd": 2.0,
+  "risk_usd": 1.5529,
+  "fees_usd": {
+   "entry": 0.0,
+   "sl_exit": 0.0
+  },
+  "net_reward_usd": [
+   3.3641,
+   4.1951,
+   5.8181
+  ],
+  "net_reward_partial_usd": 4.1853,
+  "partial_schedule": [
+   50,
+   25,
+   25
+  ],
+  "spec": {
+   "symbol": "INJ/USDT:USDT",
+   "contract_size": 1.0,
+   "min_qty": 1.0,
+   "qty_step": 1.0,
+   "tick_size": 0.001,
+   "maker_fee": 0.0,
+   "taker_fee": 0.0,
+   "mmr": 0.0023,
+   "max_leverage": 300.0,
+   "source": "mexc live"
+  },
+  "text": "Entry 7.472 | SL 6.954 (6.93%, 1 R)\nTP1 8.593 (1:2.17) | TP2 8.87 (1:2.7) | TP3 9.411 (1:3.75)\nQty 3 contracts | Notional $22.41 | Leverage 3x isolated | Margin $7.47\nLiquidation ≈ 4.993 (SL se 28.21% door) ✅\nRisk $1.55 | Net reward TP1 $3.36 / TP2 $4.20 / TP3 $5.82 (fees ke baad)",
+  "entry_zone": [
+   7.33632,
+   7.60696
+  ],
+  "targets": [
+   {
+    "name": "PDH",
+    "level": 8.594,
+    "strength": "key"
+   },
+   {
+    "name": "4H bearish FVG",
+    "level": 8.871,
+    "strength": "htf"
+   },
+   {
+    "name": "4H EQH",
+    "level": 9.412,
+    "strength": "key"
+   }
+  ],
+  "levels_considered": [
+   {
+    "name": "PWH",
+    "price": 8.295,
+    "strength": "key"
+   },
+   {
+    "name": "1H PWH",
+    "price": 8.295,
+    "strength": "key"
+   },
+   {
+    "name": "4H PWH",
+    "price": 8.295,
+    "strength": "key"
+   },
+   {
+    "name": "1H swing high",
+    "price": 8.456,
+    "strength": "minor"
+   },
+   {
+    "name": "Asia high",
+    "price": 8.456,
+    "strength": "minor"
+   },
+   {
+    "name": "PDH",
+    "price": 8.594,
+    "strength": "key"
+   },
+   {
+    "name": "1H PDH",
+    "price": 8.594,
+    "strength": "key"
+   },
+   {
+    "name": "1H swing high",
+    "price": 8.594,
+    "strength": "minor"
+   },
+   {
+    "name": "4H PDH",
+    "price": 8.594,
+    "strength": "key"
+   },
+   {
+    "name": "4H swing high",
+    "price": 8.594,
+    "strength": "htf"
+   },
+   {
+    "name": "4H range high",
+    "price": 8.594,
+    "strength": "htf"
+   },
+   {
+    "name": "4H bearish FVG",
+    "price": 8.871,
+    "strength": "htf"
+   },
+   {
+    "name": "4H bearish OB",
+    "price": 8.911,
+    "strength": "htf"
+   },
+   {
+    "name": "4H swing high",
+    "price": 9.412,
+    "strength": "htf"
+   },
+   {
+    "name": "4H EQH",
+    "price": 9.415,
+    "strength": "key"
+   }
+  ]
+ },
+ "stats": {
+  "trades": 28,
+  "candidates": 430,
+  "fill_rate": 6.5,
+  "win_rate": 25.0,
+  "sl_rate": 64.3,
+  "avg_r": -0.11,
+  "expectancy_r": -0.11,
+  "total_r": -3.08,
+  "profit_factor": 0.84,
+  "max_dd_r": 14.71,
+  "max_losing_streak": 9,
+  "avg_hours": 47.1,
+  "trades_per_week": 0.56,
+  "low_sample": true,
+  "source": "backtest (all data)",
+  "sample_size": 28,
+  "oos": {
+   "trades": 13,
+   "candidates": 131,
+   "fill_rate": 9.9,
+   "win_rate": 7.7,
+   "sl_rate": 76.9,
+   "avg_r": -0.658,
+   "expectancy_r": -0.658,
+   "total_r": -8.55,
+   "profit_factor": 0.2,
+   "max_dd_r": 7.54,
+   "max_losing_streak": 4,
+   "avg_hours": 37.0,
+   "trades_per_week": 1.32,
+   "low_sample": true
+  },
+  "in_sample": {
+   "trades": 15,
+   "candidates": 299,
+   "fill_rate": 5.0,
+   "win_rate": 40.0,
+   "sl_rate": 53.3,
+   "avg_r": 0.365,
+   "expectancy_r": 0.365,
+   "total_r": 5.47,
+   "profit_factor": 1.66,
+   "max_dd_r": 6.16,
+   "max_losing_streak": 6,
+   "avg_hours": 56.0,
+   "trades_per_week": 0.44,
+   "low_sample": true
+  },
+  "period": "2025-11-10 → 2026-10-31"
+ },
+ "score": {
+  "total": 74.7,
+  "threshold": 65.0,
+  "news": "pending",
+  "breakdown": [
+   {
+    "category": "htf_bias",
+    "weight": 25.0,
+    "fraction": 0.85,
+    "points": 21.2,
+    "reason": "1D + 4H aligned; BTC neutral"
+   },
+   {
+    "category": "smc_setup",
+    "weight": 25.0,
+    "fraction": 1.0,
+    "points": 25.0,
+    "reason": "model C (BOS continuation + OTE retrace) grade A+"
+   },
+   {
+    "category": "entry_precision",
+    "weight": 15.0,
+    "fraction": 0.4,
+    "points": 6.0,
+    "reason": "15m CHoCH no, confluence yes"
+   },
+   {
+    "category": "displacement_volume",
+    "weight": 10.0,
+    "fraction": 1.0,
+    "points": 10.0,
+    "reason": "displacement candle with volume"
+   },
+   {
+    "category": "futures_data",
+    "weight": 10.0,
+    "fraction": 0.5,
+    "points": 5.0,
+    "reason": "neutral — funding elevated, longs leaning in"
+   },
+   {
+    "category": "session_timing",
+    "weight": 5.0,
+    "fraction": 1.0,
+    "points": 5.0,
+    "reason": "inside new_york killzone"
+   },
+   {
+    "category": "news",
+    "weight": 5.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "not checked yet (run news-check)"
+   },
+   {
+    "category": "backtest_edge",
+    "weight": 5.0,
+    "fraction": 0.5,
+    "points": 2.5,
+    "reason": "not enough data yet (28 trades)"
+   }
+  ],
+  "blocks": [],
+  "decision": "TRADE",
+  "soft_blocks": [],
+  "max_without_news": 95.0
+ },
+ "score_inputs": {
+  "direction": "LONG",
+  "bias": {
+   "d1": {
+    "trend": "bullish"
+   },
+   "btc_for_direction": "neutral"
+  },
+  "setup": {
+   "model": "C",
+   "name": "BOS continuation + OTE retrace",
+   "grade": "A+",
+   "quality": {
+    "htf_aligned": true,
+    "pd_ok": true,
+    "displacement": true,
+    "confluence": true,
+    "ltf_confirmed": false
+   },
+   "displacement": {
+    "displacement": true,
+    "body_only": false,
+    "idx": 345,
+    "time": "2026-11-04T06:00:00Z"
+   }
+  },
+  "futures": {
+   "verdict": "neutral",
+   "reason": "funding elevated, longs leaning in",
+   "liquidity": {
+    "quote_volume_24h": 43097905.843,
+    "spread_pct": 0.012,
+    "ok": true,
+    "source": "mexc"
+   }
+  },
+  "session": {
+   "now_utc": "2026-11-06T13:16:37Z",
+   "in_killzone": true,
+   "killzone": "new_york",
+   "next_killzone": "london",
+   "next_start_utc": "2026-11-07T07:00:00Z",
+   "hours_to_next": 17.72,
+   "zones_utc": {
+    "asia": [
+     0,
+     6
+    ],
+    "london": [
+     7,
+     10
+    ],
+    "new_york": [
+     12,
+     15
+    ]
+   }
+  },
+  "news": "pending",
+  "stats": {
+   "trades": 28,
+   "candidates": 430,
+   "fill_rate": 6.5,
+   "win_rate": 25.0,
+   "sl_rate": 64.3,
+   "avg_r": -0.11,
+   "expectancy_r": -0.11,
+   "total_r": -3.08,
+   "profit_factor": 0.84,
+   "max_dd_r": 14.71,
+   "max_losing_streak": 9,
+   "avg_hours": 47.1,
+   "trades_per_week": 0.56,
+   "low_sample": true,
+   "source": "backtest (all data)",
+   "sample_size": 28,
+   "oos": {
+    "trades": 13,
+    "candidates": 131,
+    "fill_rate": 9.9,
+    "win_rate": 7.7,
+    "sl_rate": 76.9,
+    "avg_r": -0.658,
+    "expectancy_r": -0.658,
+    "total_r": -8.55,
+    "profit_factor": 0.2,
+    "max_dd_r": 7.54,
+    "max_losing_streak": 4,
+    "avg_hours": 37.0,
+    "trades_per_week": 1.32,
+    "low_sample": true
+   },
+   "in_sample": {
+    "trades": 15,
+    "candidates": 299,
+    "fill_rate": 5.0,
+    "win_rate": 40.0,
+    "sl_rate": 53.3,
+    "avg_r": 0.365,
+    "expectancy_r": 0.365,
+    "total_r": 5.47,
+    "profit_factor": 1.66,
+    "max_dd_r": 6.16,
+    "max_losing_streak": 6,
+    "avg_hours": 56.0,
+    "trades_per_week": 0.44,
+    "low_sample": true
+   },
+   "period": "2025-11-10 → 2026-10-31"
+  },
+  "plan": {
+   "ok": true,
+   "rejects": []
+  },
+  "limits": {
+   "trades_today": 1,
+   "losses_today": 0,
+   "max_trades": 0,
+   "max_losses": 3,
+   "blocked": false,
+   "reason": null
+  }
+ },
+ "charts": {
+  "1d": "/home/runner/work/trading-agent/trading-agent/charts/INJ/20261106-1316_1d.png",
+  "4h": "/home/runner/work/trading-agent/trading-agent/charts/INJ/20261106-1316_4h.png",
+  "1h": "/home/runner/work/trading-agent/trading-agent/charts/INJ/20261106-1316_1h.png",
+  "15m": "/home/runner/work/trading-agent/trading-agent/charts/INJ/20261106-1316_15m.png"
+ },
+ "news": "pending",
+ "news_note": null,
+ "no_trade_reasons": [],
+ "answer": "⚠️ PROVISIONAL — news-check abhi baqi hai (phir: python lib/deep_scan.py --finalize reports/INJ/latest.json --news clear|caution|block)\n🟢 LONG — INJ/USDT (1H) | Setup: C — BOS continuation + OTE retrace (A+)\nScore: 74.7/100\n\n📍 Entry: 7.472 (limit, zone 7.33632–7.60696)\n🛑 Stop Loss: 6.954  (6.93%)\n🎯 TP1: 8.593 (1:2.17) → 50% close, SL entry par\n🎯 TP2: 8.87 (1:2.7)\n🎯 TP3: 9.411 (1:3.75) — runner / 4H EQH\n\n⚙️ Leverage: 3x (Isolated) | Margin: $7.47\n💀 Liquidation: 4.993 ✅ SL se 28.21% door\n💵 Risk: $1.55 | Reward: TP1 $3.36 / TP2 $4.20 / TP3 $5.82\n👤 Aapke size par ($24 × 20x = $480): SL loss −$33.28 | TP1 +$72.01 / TP2 +$89.81 / TP3 +$124.56\n⚠️ 20x par liquidation SL se PEHLE aa sakta hai — is trade mein leverage max 12x rakho\n📊 Is setup ka win rate: 25.0% (28 trades backtest (all data) — low sample) | Avg R: -0.11\n\n🧠 Wajah:\n- HTF: LONG — 1D bullish, 4H bullish, price 4H premium (76.0%), BTC neutral\n- SMC: BOS continuation + OTE retrace — POI 1H OTE 7.33632–7.60696, htf aligned, pd ok, displacement, confluence\n- Futures data: neutral (funding elevated, longs leaning in)\n- News: abhi check nahi hui (news-check)\n\n❌ Invalidation: 1H candle close 6.954 ke neeche (POI fail)\n⏳ Valid until: 2026-11-07 00:16 PKT (entry na mile to cancel)",
+ "report_path": "/home/runner/work/trading-agent/trading-agent/reports/INJ/20261106T1316.json"
+}

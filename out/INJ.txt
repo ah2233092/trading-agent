@@ -1,0 +1,58 @@
+⚠️ PROVISIONAL — news-check abhi baqi hai (phir: python lib/deep_scan.py --finalize reports/INJ/latest.json --news clear|caution|block)
+🟢 LONG — INJ/USDT (1H) | Setup: C — BOS continuation + OTE retrace (A+)
+Score: 74.7/100
+
+📍 Entry: 7.472 (limit, zone 7.33632–7.60696)
+🛑 Stop Loss: 6.954  (6.93%)
+🎯 TP1: 8.593 (1:2.17) → 50% close, SL entry par
+🎯 TP2: 8.87 (1:2.7)
+🎯 TP3: 9.411 (1:3.75) — runner / 4H EQH
+
+⚙️ Leverage: 3x (Isolated) | Margin: $7.47
+💀 Liquidation: 4.993 ✅ SL se 28.21% door
+💵 Risk: $1.55 | Reward: TP1 $3.36 / TP2 $4.20 / TP3 $5.82
+👤 Aapke size par ($24 × 20x = $480): SL loss −$33.28 | TP1 +$72.01 / TP2 +$89.81 / TP3 +$124.56
+⚠️ 20x par liquidation SL se PEHLE aa sakta hai — is trade mein leverage max 12x rakho
+📊 Is setup ka win rate: 25.0% (28 trades backtest (all data) — low sample) | Avg R: -0.11
+
+🧠 Wajah:
+- HTF: LONG — 1D bullish, 4H bullish, price 4H premium (76.0%), BTC neutral
+- SMC: BOS continuation + OTE retrace — POI 1H OTE 7.33632–7.60696, htf aligned, pd ok, displacement, confluence
+- Futures data: neutral (funding elevated, longs leaning in)
+- News: abhi check nahi hui (news-check)
+
+❌ Invalidation: 1H candle close 6.954 ke neeche (POI fail)
+⏳ Valid until: 2026-11-07 00:16 PKT (entry na mile to cancel)
+
+--- details ---
+HTF BIAS: LONG
+1D: bullish — last BOS 6.721
+4H: bullish — range 6.82–8.594, price in premium (76.0%)
+BTC: neutral
+Key levels: PDH 8.594, PDL 7.791, PWH 8.295, PWL 6.856, MO 7.225
+Setup: C BOS continuation + OTE retrace grade A+
+Funding: 0.0255% (elevated, crowd: long) [mexc]
+OI: 1H -0.33%, 4H -0.86% → short covering (weaker up move) [okx]
+L/S ratio: 1.84 (balanced) [okx]
+Liquidity: 24h vol $43.1M, spread 0.012%
+Verdict: neutral (funding elevated, longs leaning in)
+Entry 7.472 | SL 6.954 (6.93%, 1 R)
+TP1 8.593 (1:2.17) | TP2 8.87 (1:2.7) | TP3 9.411 (1:3.75)
+Qty 3 contracts | Notional $22.41 | Leverage 3x isolated | Margin $7.47
+Liquidation ≈ 4.993 (SL se 28.21% door) ✅
+Risk $1.55 | Net reward TP1 $3.36 / TP2 $4.20 / TP3 $5.82 (fees ke baad)
+Score: 74.7/100 (min 65) → TRADE
+  htf_bias              21.2 / 25   1D + 4H aligned; BTC neutral
+  smc_setup             25.0 / 25   model C (BOS continuation + OTE retrace) grade A+
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           5.0 / 10   neutral — funding elevated, longs leaning in
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          2.5 / 5    not enough data yet (28 trades)
+Alert 20261106-0706-INJ: expired (age 6.18h)
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/INJ/20261106-1316_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/INJ/20261106-1316_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/INJ/20261106-1316_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/INJ/20261106-1316_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/INJ/20261106T1316.json

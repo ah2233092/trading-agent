@@ -1,0 +1,416 @@
+{
+ "symbol": "TAO/USDT:USDT",
+ "coin": "TAO",
+ "pair": "TAO/USDT",
+ "exchange": "mexc",
+ "created_at": "2026-11-06T13:17:55Z",
+ "created_at_pkt": "2026-11-06 18:17 PKT",
+ "valid_until": "2026-11-06T19:17:55Z",
+ "price": 223.15,
+ "last_1h_candle": "2026-11-06T12:00:00Z",
+ "alert": null,
+ "direction": "SHORT",
+ "decision": "NO TRADE",
+ "bias": {
+  "symbol": "TAO/USDT:USDT",
+  "direction": "SHORT",
+  "strong_poi_only": false,
+  "pd_ok": false,
+  "reasons": [
+   "1D and 4H both bearish",
+   "price in 4H discount (40.9%) — wait for a premium POI, do not chase",
+   "EMA stack bearish on 4H"
+  ],
+  "d1": {
+   "trend": "bearish",
+   "last_bos": {
+    "type": "BOS",
+    "direction": "bearish",
+    "level": 254.21,
+    "swing_idx": 371,
+    "swing_time": "2026-10-08T00:00:00Z",
+    "idx": 387,
+    "time": "2026-10-24T00:00:00Z",
+    "close": 250.9
+   },
+   "last_choch": {
+    "type": "CHoCH",
+    "direction": "bearish",
+    "level": 281.59,
+    "swing_idx": 365,
+    "swing_time": "2026-10-02T00:00:00Z",
+    "idx": 371,
+    "time": "2026-10-08T00:00:00Z",
+    "close": 268.44
+   },
+   "ema": {
+    "price": 215.48,
+    "ema20": 245.8190129726,
+    "above_ema20": false,
+    "slope20_pct": -4.981,
+    "ema50": 256.1948944468,
+    "above_ema50": false,
+    "slope50_pct": -2.52,
+    "ema200": 249.0547618714,
+    "above_ema200": false,
+    "slope200_pct": -0.463,
+    "stack": "mixed"
+   }
+  },
+  "h4": {
+   "trend": "bearish",
+   "last_bos": {
+    "type": "BOS",
+    "direction": "bearish",
+    "level": 217.77,
+    "swing_idx": 285,
+    "swing_time": "2026-11-04T00:00:00Z",
+    "idx": 294,
+    "time": "2026-11-05T12:00:00Z",
+    "close": 217.19
+   },
+   "last_choch": {
+    "type": "CHoCH",
+    "direction": "bearish",
+    "level": 245.49,
+    "swing_idx": 239,
+    "swing_time": "2026-10-27T08:00:00Z",
+    "idx": 254,
+    "time": "2026-10-29T20:00:00Z",
+    "close": 234.2
+   },
+   "ema": {
+    "price": 223.47,
+    "ema20": 226.1222436813,
+    "above_ema20": false,
+    "slope20_pct": -1.726,
+    "ema50": 232.6580301898,
+    "above_ema50": false,
+    "slope50_pct": -1.202,
+    "ema200": 253.7351915521,
+    "above_ema200": false,
+    "slope200_pct": -0.681,
+    "stack": "bearish"
+   },
+   "range": {
+    "range_high": 240.13,
+    "range_low": 211.92,
+    "equilibrium": 226.025,
+    "price": 223.47,
+    "pct": 40.9,
+    "zone": "discount",
+    "from_time": "2026-11-04T00:00:00Z"
+   }
+  },
+  "btc": {
+   "price": 76005.5,
+   "change_1h_pct": -0.14,
+   "dump": false,
+   "pump": false,
+   "trend_1h": "bullish",
+   "trend_4h": "bearish",
+   "fresh_bearish_break": false,
+   "fresh_bullish_break": false,
+   "for_long": "neutral",
+   "for_short": "neutral"
+  },
+  "btc_for_direction": "neutral",
+  "key_levels": {
+   "PDH": 238.17,
+   "PDL": 211.92,
+   "PWH": 262.41,
+   "PWL": 219.7,
+   "day_start": "2026-11-06T00:00:00Z",
+   "week_start": "2026-11-02T00:00:00Z",
+   "MO": 236.93
+  },
+  "text": "HTF BIAS: SHORT\n1D: bearish — last BOS 254.21\n4H: bearish — range 211.92–240.13, price in discount (40.9%)\nBTC: neutral\nKey levels: PDH 238.17, PDL 211.92, PWH 262.41, PWL 219.7, MO 236.93"
+ },
+ "setup": {
+  "direction": "SHORT",
+  "model": null,
+  "name": null,
+  "grade": "reject",
+  "poi": null,
+  "sl_ref": null,
+  "state": null,
+  "quality": {},
+  "reasons": [
+   "no A/B/C/D entry model found on 1H/15m for this direction"
+  ],
+  "candidates": [],
+  "pending": [
+   "B: 4H FVG 222.02–233.91 tapped, waiting: no 15m CHoCH yet after the tap"
+  ],
+  "price": 223.15,
+  "atr_1h": 2.7994781199,
+  "ote": {
+   "direction": "bullish",
+   "break_type": "CHoCH",
+   "break_idx": 396,
+   "start_idx": 393,
+   "start_time": "2026-11-06T06:00:00Z",
+   "end_idx": 398,
+   "end_time": "2026-11-06T11:00:00Z",
+   "low": 217.16,
+   "high": 225.79,
+   "top": 220.4394,
+   "bottom": 218.9723,
+   "sweet": 219.70585,
+   "price": 223.15,
+   "retrace_pct": 30.6,
+   "in_ote": false,
+   "touched": false,
+   "invalid": false
+  },
+  "trend_4h": "bearish",
+  "trend_1h": "bullish",
+  "premium_discount_4h": {
+   "range_high": 240.13,
+   "range_low": 211.92,
+   "equilibrium": 226.025,
+   "price": 223.47,
+   "pct": 40.9,
+   "zone": "discount",
+   "from_time": "2026-11-04T00:00:00Z"
+  }
+ },
+ "session": {
+  "now_utc": "2026-11-06T13:17:55Z",
+  "in_killzone": true,
+  "killzone": "new_york",
+  "next_killzone": "london",
+  "next_start_utc": "2026-11-07T07:00:00Z",
+  "hours_to_next": 17.7,
+  "zones_utc": {
+   "asia": [
+    0,
+    6
+   ],
+   "london": [
+    7,
+    10
+   ],
+   "new_york": [
+    12,
+    15
+   ]
+  }
+ },
+ "asia_range": {
+  "start_utc": "2026-11-06T00:00:00Z",
+  "end_utc": "2026-11-06T06:00:00Z",
+  "high": 221.28,
+  "low": 215.35,
+  "complete": true,
+  "swept_high": true,
+  "swept_low": false
+ },
+ "futures": {
+  "symbol": "TAO/USDT:USDT",
+  "side": "short",
+  "funding": {
+   "source": "mexc",
+   "current_pct": 0.005,
+   "history_pct": [
+    0.005,
+    0.005,
+    0.005,
+    0.0047,
+    0.0049,
+    0.005,
+    0.005,
+    0.005
+   ],
+   "interval": "4h",
+   "next_funding_utc": "2026-11-06T16:00:00.000Z",
+   "level": "normal",
+   "crowd": "none"
+  },
+  "open_interest": {
+   "source": "okx",
+   "latest": 6707760.0,
+   "change_1h_pct": 0.19,
+   "change_4h_pct": 1.67,
+   "reading_1h": "OI flat — no new positioning",
+   "reading_4h": "new longs (healthy up move)",
+   "mexc_now": 312642.08
+  },
+  "long_short": {
+   "source": "okx",
+   "ratio": 2.176,
+   "prev": 2.148,
+   "note": "balanced"
+  },
+  "liquidity": {
+   "quote_volume_24h": 64733663.7343,
+   "spread_pct": 0.0135,
+   "ok": true,
+   "source": "mexc"
+  },
+  "price_change": {
+   "1h_pct": -0.143,
+   "4h_pct": 1.487
+  },
+  "verdicts": {
+   "long": {
+    "verdict": "supportive",
+    "reason": "new longs (price + OI agree)"
+   },
+   "short": {
+    "verdict": "neutral",
+    "reason": "nothing unusual"
+   }
+  },
+  "verdict": "neutral",
+  "reason": "nothing unusual",
+  "text": "Funding: 0.0050% (normal, crowd: none) [mexc]\nOI: 1H +0.19%, 4H +1.67% → OI flat — no new positioning [okx]\nL/S ratio: 2.176 (balanced) [okx]\nLiquidity: 24h vol $64.7M, spread 0.013%\nVerdict: neutral (nothing unusual)"
+ },
+ "plan": null,
+ "stats": null,
+ "score": {
+  "total": 33.7,
+  "threshold": 65.0,
+  "news": "pending",
+  "breakdown": [
+   {
+    "category": "htf_bias",
+    "weight": 25.0,
+    "fraction": 0.85,
+    "points": 21.2,
+    "reason": "1D + 4H aligned; BTC neutral"
+   },
+   {
+    "category": "smc_setup",
+    "weight": 25.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "no valid entry model"
+   },
+   {
+    "category": "entry_precision",
+    "weight": 15.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "15m CHoCH no, confluence no"
+   },
+   {
+    "category": "displacement_volume",
+    "weight": 10.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "no displacement"
+   },
+   {
+    "category": "futures_data",
+    "weight": 10.0,
+    "fraction": 0.5,
+    "points": 5.0,
+    "reason": "neutral — nothing unusual"
+   },
+   {
+    "category": "session_timing",
+    "weight": 5.0,
+    "fraction": 1.0,
+    "points": 5.0,
+    "reason": "inside new_york killzone"
+   },
+   {
+    "category": "news",
+    "weight": 5.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "not checked yet (run news-check)"
+   },
+   {
+    "category": "backtest_edge",
+    "weight": 5.0,
+    "fraction": 0.5,
+    "points": 2.5,
+    "reason": "not enough data yet (0 trades)"
+   }
+  ],
+  "blocks": [
+   "no valid SMC setup",
+   "score 33.7 < 65"
+  ],
+  "decision": "NO TRADE",
+  "soft_blocks": [
+   "score 33.7 < 65"
+  ],
+  "max_without_news": 95.0
+ },
+ "score_inputs": {
+  "direction": "SHORT",
+  "bias": {
+   "d1": {
+    "trend": "bearish"
+   },
+   "btc_for_direction": "neutral"
+  },
+  "setup": {
+   "model": null,
+   "name": null,
+   "grade": "reject",
+   "quality": {},
+   "displacement": null
+  },
+  "futures": {
+   "verdict": "neutral",
+   "reason": "nothing unusual",
+   "liquidity": {
+    "quote_volume_24h": 64733663.7343,
+    "spread_pct": 0.0135,
+    "ok": true,
+    "source": "mexc"
+   }
+  },
+  "session": {
+   "now_utc": "2026-11-06T13:17:55Z",
+   "in_killzone": true,
+   "killzone": "new_york",
+   "next_killzone": "london",
+   "next_start_utc": "2026-11-07T07:00:00Z",
+   "hours_to_next": 17.7,
+   "zones_utc": {
+    "asia": [
+     0,
+     6
+    ],
+    "london": [
+     7,
+     10
+    ],
+    "new_york": [
+     12,
+     15
+    ]
+   }
+  },
+  "news": "pending",
+  "stats": null,
+  "plan": null,
+  "limits": {
+   "trades_today": 1,
+   "losses_today": 0,
+   "max_trades": 0,
+   "max_losses": 3,
+   "blocked": false,
+   "reason": null
+  }
+ },
+ "charts": {
+  "1d": "/home/runner/work/trading-agent/trading-agent/charts/TAO/20261106-1317_1d.png",
+  "4h": "/home/runner/work/trading-agent/trading-agent/charts/TAO/20261106-1317_4h.png",
+  "1h": "/home/runner/work/trading-agent/trading-agent/charts/TAO/20261106-1317_1h.png",
+  "15m": "/home/runner/work/trading-agent/trading-agent/charts/TAO/20261106-1317_15m.png"
+ },
+ "news": "pending",
+ "news_note": null,
+ "no_trade_reasons": [
+  "koi A/B/C/D entry model nahi bana",
+  "score 33.7 < 65"
+ ],
+ "answer": "❌ NO TRADE — TAO/USDT\nWajah: koi A/B/C/D entry model nahi bana; score 33.7 < 65\nKya dekhna hai: 4H FVG 222.02–233.91 tapped, waiting: no 15m CHoCH yet after the tap; 1H par liquidity sweep + CHoCH, ya 4H POI tap + 15m CHoCH",
+ "report_path": "/home/runner/work/trading-agent/trading-agent/reports/TAO/20261106T1317.json"
+}

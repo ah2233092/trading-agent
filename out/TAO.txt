@@ -1,0 +1,32 @@
+❌ NO TRADE — TAO/USDT
+Wajah: koi A/B/C/D entry model nahi bana; score 33.7 < 65
+Kya dekhna hai: 4H FVG 222.02–233.91 tapped, waiting: no 15m CHoCH yet after the tap; 1H par liquidity sweep + CHoCH, ya 4H POI tap + 15m CHoCH
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 254.21
+4H: bearish — range 211.92–240.13, price in discount (40.9%)
+BTC: neutral
+Key levels: PDH 238.17, PDL 211.92, PWH 262.41, PWL 219.7, MO 236.93
+Setup: -  grade reject
+Funding: 0.0050% (normal, crowd: none) [mexc]
+OI: 1H +0.19%, 4H +1.67% → OI flat — no new positioning [okx]
+L/S ratio: 2.176 (balanced) [okx]
+Liquidity: 24h vol $64.7M, spread 0.013%
+Verdict: neutral (nothing unusual)
+Score: 33.7/100 (min 65) → NO TRADE
+  htf_bias              21.2 / 25   1D + 4H aligned; BTC neutral
+  smc_setup              0.0 / 25   no valid entry model
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume    0.0 / 10   no displacement
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          2.5 / 5    not enough data yet (0 trades)
+  ✖ no valid SMC setup
+  ✖ score 33.7 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/TAO/20261106-1317_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/TAO/20261106-1317_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/TAO/20261106-1317_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/TAO/20261106-1317_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/TAO/20261106T1317.json

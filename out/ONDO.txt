@@ -1,0 +1,58 @@
+⚠️ PROVISIONAL — news-check abhi baqi hai (phir: python lib/deep_scan.py --finalize reports/ONDO/latest.json --news clear|caution|block)
+🟡 B-PLAN (kam confidence: score 51 < 65). Chaho to risk aadha ($0.5) rakho.
+🔴 SHORT — ONDO/USDT (1H) | Setup: D — Breaker retest (B)
+Score: 51/100
+
+📍 Entry: 0.3748 (market, zone 0.3792–0.3861)
+🛑 Stop Loss: 0.3877  (3.44%)
+🎯 TP1: 0.3227 (1:4.04) → 50% close, SL entry par
+🎯 TP2: 0.3072 (1:5.24)
+🎯 TP3: 0.2932 (1:6.33) — runner / 1D swing low
+
+⚙️ Leverage: 6x (Isolated) | Margin: $9.37
+💀 Liquidation: 0.4355 ✅ SL se 12.34% door
+💵 Risk: $1.94 | Reward: TP1 $7.82 / TP2 $10.14 / TP3 $12.24
+👤 Aapke size par ($24 × 20x = $480): SL loss −$16.52 | TP1 +$66.72 / TP2 +$86.57 / TP3 +$104.50
+📊 Is setup ka win rate: 17.3% (52 trades backtest (all data)) | Avg R: -0.271
+
+🧠 Wajah:
+- HTF: SHORT — 1D bearish, 4H bearish, price 4H discount (28.6%), BTC neutral
+- SMC: Breaker retest — POI 1H breaker 0.3792–0.3861, htf aligned, confluence
+- Futures data: neutral (nothing unusual)
+- News: abhi check nahi hui (news-check)
+
+❌ Invalidation: 1H candle close 0.3877 ke upar (POI fail)
+⏳ Valid until: 2026-11-07 00:17 PKT (entry na mile to cancel)
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.4111
+4H: bearish — range 0.3595–0.4204, price in discount (28.6%)
+BTC: neutral
+Key levels: PDH 0.4165, PDL 0.3595, PWH 0.4357, PWL 0.3608, MO 0.4097
+Setup: D Breaker retest grade B
+Funding: 0.0050% (normal, crowd: none) [mexc]
+OI: 1H -0.11%, 4H +1.37% → OI flat — no new positioning [okx]
+L/S ratio: 2.533 (balanced) [okx]
+Liquidity: 24h vol $26.0M, spread 0.027%
+Verdict: neutral (nothing unusual)
+Entry 0.3748 | SL 0.3877 (3.44%, 1 R)
+TP1 0.3227 (1:4.04) | TP2 0.3072 (1:5.24) | TP3 0.2932 (1:6.33)
+Qty 15 contracts | Notional $56.22 | Leverage 6x isolated | Margin $9.37
+Liquidation ≈ 0.4355 (SL se 12.34% door) ✅
+Risk $1.94 | Net reward TP1 $7.82 / TP2 $10.14 / TP3 $12.24 (fees ke baad)
+Score: 51/100 (min 65) → B-TRADE
+  htf_bias              21.2 / 25   1D + 4H aligned; BTC neutral
+  smc_setup             13.8 / 25   model D (Breaker retest) grade B
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume    0.0 / 10   no displacement
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    52 trades, win 17.3%, avg R -0.271
+  ✖ score 51 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/ONDO/20261106-1317_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/ONDO/20261106-1317_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/ONDO/20261106-1317_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/ONDO/20261106-1317_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/ONDO/20261106T1317.json

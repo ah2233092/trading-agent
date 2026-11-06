@@ -1,0 +1,38 @@
+❌ NO TRADE — BNB/USDT
+Wajah: TP1 blocked by MO at 704.8 (only 1:0.40)
+Kya dekhna hai: blocking level ke paar 1H close, ya POI ke andar behtar entry
+
+--- details ---
+HTF BIAS: LONG (strong POIs only)
+1D: bearish — last BOS 783.4
+4H: bullish — range 681.1–724.6, price in discount (39.8%)
+BTC: neutral
+Key levels: PDH 722.9, PDL 685.1, PWH 763.6, PWL 679, MO 704.8
+Setup: B HTF POI tap + 15m CHoCH grade A+
+Funding: 0.0000% (normal, crowd: none) [mexc]
+OI: 1H +0.07%, 4H -1.23% → OI flat — no new positioning [okx]
+L/S ratio: 2.383 (balanced) [okx]
+Liquidity: 24h vol $12.3M, spread 0.029% ❌
+Verdict: against (low volume / wide spread)
+Entry 697.6 | SL 679.8 (2.55%, 1 R)
+TP1 747.9 (1:2.83) | TP2 759.8 (1:3.49) | TP3 810.7 (1:6.35)
+Qty 11 contracts | Notional $76.74 | Leverage 8x isolated | Margin $9.59
+Liquidation ≈ 613 (SL se 9.83% door) ✅
+Risk $1.99 | Net reward TP1 $5.52 / TP2 $6.83 / TP3 $12.43 (fees ke baad)
+❌ TP1 blocked by MO at 704.8 (only 1:0.40)
+Score: 67.8/100 (min 65) → NO TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup             25.0 / 25   model B (HTF POI tap + 15m CHoCH) grade A+
+  entry_precision       15.0 / 15   15m CHoCH yes, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    47 trades, win 23.4%, avg R -0.181
+  ✖ coin fails volume / spread filter
+  ✖ risk plan rejected: TP1 blocked by MO at 704.8 (only 1:0.40)
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/BNB/20261106-1315_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/BNB/20261106-1315_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/BNB/20261106-1315_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/BNB/20261106-1315_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/BNB/20261106T1315.json

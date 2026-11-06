@@ -1,0 +1,32 @@
+❌ NO TRADE — XLM/USDT
+Wajah: koi A/B/C/D entry model nahi bana; score 33.7 < 65
+Kya dekhna hai: 1H par liquidity sweep + CHoCH, ya 4H POI tap + 15m CHoCH
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.19632
+4H: bearish — range 0.15115–0.17096, price in discount (15.7%)
+BTC: neutral
+Key levels: PDH 0.16918, PDL 0.15115, PWH 0.17524, PWL 0.15758, MO 0.1695
+Setup: -  grade reject
+Funding: -0.0124% (normal, crowd: none) [mexc]
+OI: 1H +0.22%, 4H +0.77% → OI flat — no new positioning [okx]
+L/S ratio: 2.155 (balanced) [okx]
+Liquidity: 24h vol $37.2M, spread 0.026%
+Verdict: neutral (nothing unusual)
+Score: 33.7/100 (min 65) → NO TRADE
+  htf_bias              21.2 / 25   1D + 4H aligned; BTC neutral
+  smc_setup              0.0 / 25   no valid entry model
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume    0.0 / 10   no displacement
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          2.5 / 5    not enough data yet (0 trades)
+  ✖ no valid SMC setup
+  ✖ score 33.7 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/XLM/20261106-1318_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/XLM/20261106-1318_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/XLM/20261106-1318_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/XLM/20261106-1318_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/XLM/20261106T1318.json

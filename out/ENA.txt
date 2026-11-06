@@ -1,0 +1,60 @@
+⚠️ PROVISIONAL — news-check abhi baqi hai (phir: python lib/deep_scan.py --finalize reports/ENA/latest.json --news clear|caution|block)
+🟡 B-PLAN (kam confidence: score 51 < 65). Chaho to risk aadha ($0.5) rakho.
+🔴 SHORT — ENA/USDT (1H) | Setup: D — Breaker retest (B)
+Score: 51/100
+
+📍 Entry: 0.16564 (market, zone 0.16897–0.17208)
+🛑 Stop Loss: 0.17296  (4.42%)
+🎯 TP1: 0.13461 (1:4.24) → 50% close, SL entry par
+🎯 TP2: 0.08101 (1:11.56)
+🎯 TP3: 0.07221 (1:12.76) — runner / 1D swing low
+
+⚙️ Leverage: 5x (Isolated) | Margin: $8.94
+💀 Liquidation: 0.19798 ✅ SL se 14.46% door
+💵 Risk: $1.98 | Reward: TP1 $8.38 / TP2 $22.85 / TP3 $25.23
+👤 Aapke size par ($24 × 20x = $480): SL loss −$21.21 | TP1 +$89.92 / TP2 +$245.25 / TP3 +$270.75
+⚠️ 20x par liquidation SL se PEHLE aa sakta hai — is trade mein leverage max 18x rakho
+📊 Is setup ka win rate: 17.3% (52 trades backtest (all data)) | Avg R: -0.271
+
+🧠 Wajah:
+- HTF: SHORT — 1D bearish, 4H bearish, price 4H discount (29.6%), BTC neutral
+- SMC: Breaker retest — POI 1H breaker 0.16897–0.17208, htf aligned, confluence
+- Futures data: neutral (nothing unusual)
+- News: abhi check nahi hui (news-check)
+
+❌ Invalidation: 1H candle close 0.17296 ke upar (POI fail)
+⏳ Valid until: 2026-11-07 00:16 PKT (entry na mile to cancel)
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.16568
+4H: bearish — range 0.15592–0.19038, price in discount (29.6%)
+BTC: neutral
+Key levels: PDH 0.18398, PDL 0.15592, PWH 0.21775, PWL 0.16568, MO 0.18872
+Setup: D Breaker retest grade B
+Funding: 0.0050% (normal, crowd: none) [mexc]
+OI: 1H +0.01%, 4H -0.98% → OI flat — no new positioning [okx]
+L/S ratio: 1.556 (balanced) [okx]
+Liquidity: 24h vol $54.3M, spread 0.006%
+Verdict: neutral (nothing unusual)
+Entry 0.16564 | SL 0.17296 (4.42%, 1 R)
+TP1 0.13461 (1:4.24) | TP2 0.08101 (1:11.56) | TP3 0.07221 (1:12.76)
+Qty 27 contracts | Notional $44.72 | Leverage 5x isolated | Margin $8.94
+Liquidation ≈ 0.19798 (SL se 14.46% door) ✅
+Risk $1.98 | Net reward TP1 $8.38 / TP2 $22.85 / TP3 $25.23 (fees ke baad)
+Score: 51/100 (min 65) → B-TRADE
+  htf_bias              21.2 / 25   1D + 4H aligned; BTC neutral
+  smc_setup             13.8 / 25   model D (Breaker retest) grade B
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume    0.0 / 10   no displacement
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    52 trades, win 17.3%, avg R -0.271
+  ✖ score 51 < 65
+Alert 20261105-1402-ENA: revalidated (age 23.24h)
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/ENA/20261106-1316_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/ENA/20261106-1316_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/ENA/20261106-1316_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/ENA/20261106-1316_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/ENA/20261106T1316.json

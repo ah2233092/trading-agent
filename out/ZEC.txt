@@ -1,0 +1,32 @@
+❌ NO TRADE — ZEC/USDT
+Wajah: koi A/B/C/D entry model nahi bana; score 30.3 < 65
+Kya dekhna hai: 1H par liquidity sweep + CHoCH, ya 4H POI tap + 15m CHoCH
+
+--- details ---
+HTF BIAS: LONG (strong POIs only)
+1D: bearish — last BOS 1296.37
+4H: bullish — range 1212.67–1351.65, price in premium (56.3%)
+BTC: neutral
+Key levels: PDH 1334.52, PDL 1212.67, PWH 1397.12, PWL 1177.2, MO 1250.97
+Setup: -  grade reject
+Funding: 0.0100% (normal, crowd: none) [mexc]
+OI: 1H +0.11%, 4H +1.87% → OI flat — no new positioning [okx]
+L/S ratio: 0.595 (balanced) [okx]
+Liquidity: 24h vol $2,132.1M, spread 0.001%
+Verdict: supportive (new longs (price + OI agree))
+Score: 30.3/100 (min 65) → NO TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup              0.0 / 25   no valid entry model
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume    0.0 / 10   no displacement
+  futures_data          10.0 / 10   supportive — new longs (price + OI agree)
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          2.5 / 5    not enough data yet (0 trades)
+  ✖ no valid SMC setup
+  ✖ score 30.3 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/ZEC/20261106-1318_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/ZEC/20261106-1318_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/ZEC/20261106-1318_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/ZEC/20261106-1318_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/ZEC/20261106T1318.json
