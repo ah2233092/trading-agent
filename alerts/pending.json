@@ -1,120 +1,6 @@
 {
   "alerts": [
     {
-      "id": "20261106-0706-QNT",
-      "coin": "QNT",
-      "symbol": "QNT/USDT:USDT",
-      "pair": "QNT/USDT",
-      "direction_hint": "LONG",
-      "triggers": [
-        "near_poi"
-      ],
-      "trigger_labels": [
-        "in 4H FVG"
-      ],
-      "light_score": 40,
-      "price": 189.21,
-      "candle_time": "2026-11-06T06:00:00Z",
-      "created_at": "2026-11-06T07:06:00Z",
-      "created_at_pkt": "2026-11-06 12:06 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bullish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 211.23,
-          "range_low": 185.4,
-          "equilibrium": 198.315,
-          "price": 189.81,
-          "pct": 17.1,
-          "zone": "discount",
-          "from_time": "2026-11-04T00:00:00Z"
-        },
-        "pd_bonus": 5,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 75670.0,
-        "change_1h_pct": 0.0,
-        "dump": false,
-        "trend_1h": "bullish",
-        "trend_4h": "bullish",
-        "candle_time": "2026-11-06T06:00:00Z"
-      },
-      "ready": {
-        "symbol": "QNT/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 167.7,
-        "side": "long",
-        "model": "B",
-        "grade": "A+",
-        "score": 86.5,
-        "market_rr": 2.23,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "digest",
-      "status": "pending"
-    },
-    {
-      "id": "20261106-0706-INJ",
-      "coin": "INJ",
-      "symbol": "INJ/USDT:USDT",
-      "pair": "INJ/USDT",
-      "direction_hint": "LONG",
-      "triggers": [],
-      "trigger_labels": [],
-      "light_score": 0,
-      "price": 8.172,
-      "candle_time": "2026-11-06T06:00:00Z",
-      "created_at": "2026-11-06T07:06:00Z",
-      "created_at_pkt": "2026-11-06 12:06 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bullish",
-        "trend_1h": "bullish",
-        "premium_discount_4h": {
-          "range_high": 8.594,
-          "range_low": 6.82,
-          "equilibrium": 7.707,
-          "price": 8.394,
-          "pct": 88.7,
-          "zone": "premium",
-          "from_time": "2026-11-02T08:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 75670.0,
-        "change_1h_pct": 0.0,
-        "dump": false,
-        "trend_1h": "bullish",
-        "trend_4h": "bullish",
-        "candle_time": "2026-11-06T06:00:00Z"
-      },
-      "ready": {
-        "symbol": "INJ/USDT:USDT",
-        "candidate": true,
-        "ready": false,
-        "rank": 62.4,
-        "side": "long",
-        "model": "C",
-        "grade": "A+",
-        "score": 83.5,
-        "market_rr": 0.34,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "TP1 only 1:0.3 from current price"
-      },
-      "kind": "digest",
-      "status": "pending"
-    },
-    {
       "id": "20261106-1202-AAVE",
       "coin": "AAVE",
       "symbol": "AAVE/USDT:USDT",
@@ -406,6 +292,120 @@
         "why": "ready"
       },
       "kind": "ready",
+      "status": "pending"
+    },
+    {
+      "id": "20261107-0706-WLD",
+      "coin": "WLD",
+      "symbol": "WLD/USDT:USDT",
+      "pair": "WLD/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 0.3416,
+      "candle_time": "2026-11-07T06:00:00Z",
+      "created_at": "2026-11-07T07:06:00Z",
+      "created_at_pkt": "2026-11-07 12:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 0.4019,
+          "range_low": 0.3293,
+          "equilibrium": 0.3656,
+          "price": 0.339,
+          "pct": 13.4,
+          "zone": "discount",
+          "from_time": "2026-11-04T12:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 76011.3,
+        "change_1h_pct": 0.02,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-07T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "WLD/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 68.3,
+        "side": "short",
+        "model": "A",
+        "grade": "A+",
+        "score": 88.7,
+        "market_rr": 1.95,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:2.0 from current price"
+      },
+      "kind": "digest",
+      "status": "pending"
+    },
+    {
+      "id": "20261107-0706-INJ",
+      "coin": "INJ",
+      "symbol": "INJ/USDT:USDT",
+      "pair": "INJ/USDT",
+      "direction_hint": "LONG",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "near PWH"
+      ],
+      "light_score": 35,
+      "price": 8.285,
+      "candle_time": "2026-11-07T06:00:00Z",
+      "created_at": "2026-11-07T07:06:00Z",
+      "created_at_pkt": "2026-11-07 12:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bullish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 8.594,
+          "range_low": 6.82,
+          "equilibrium": 7.707,
+          "price": 8.321,
+          "pct": 84.6,
+          "zone": "premium",
+          "from_time": "2026-11-03T00:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 76011.3,
+        "change_1h_pct": 0.02,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-07T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "INJ/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 60.2,
+        "side": "long",
+        "model": "C",
+        "grade": "A+",
+        "score": 79.7,
+        "market_rr": 0.18,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.2 from current price"
+      },
+      "kind": "digest",
       "status": "pending"
     }
   ]
