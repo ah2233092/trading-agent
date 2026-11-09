@@ -466,6 +466,66 @@
       "kind": "ready",
       "status": "expired",
       "closed_at": "2026-11-09T13:02:01Z"
+    },
+    {
+      "id": "20261108-1402-ETH",
+      "coin": "ETH",
+      "symbol": "ETH/USDT:USDT",
+      "pair": "ETH/USDT",
+      "direction_hint": "LONG",
+      "triggers": [
+        "volume"
+      ],
+      "trigger_labels": [
+        "volume x2.2"
+      ],
+      "light_score": 21,
+      "price": 2235.37,
+      "candle_time": "2026-11-08T13:00:00Z",
+      "created_at": "2026-11-08T14:02:00Z",
+      "created_at_pkt": "2026-11-08 19:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bullish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 2261.27,
+          "range_low": 2205.17,
+          "equilibrium": 2233.22,
+          "price": 2239.49,
+          "pct": 61.2,
+          "zone": "premium",
+          "from_time": "2026-11-05T20:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 75895.8,
+        "change_1h_pct": -0.07,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-08T13:00:00Z"
+      },
+      "ready": {
+        "symbol": "ETH/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 158.8,
+        "side": "long",
+        "model": "B",
+        "grade": "A",
+        "score": 69.3,
+        "market_rr": 2.08,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-09T14:02:00Z"
     }
   ]
 }
