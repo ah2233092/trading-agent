@@ -526,6 +526,116 @@
       },
       "kind": "ready",
       "status": "pending"
+    },
+    {
+      "id": "20261109-1202-SOL",
+      "coin": "SOL",
+      "symbol": "SOL/USDT:USDT",
+      "pair": "SOL/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 86.07,
+      "candle_time": "2026-11-09T11:00:00Z",
+      "created_at": "2026-11-09T12:02:00Z",
+      "created_at_pkt": "2026-11-09 17:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 91.57,
+          "range_low": 84.82,
+          "equilibrium": 88.195,
+          "price": 86.07,
+          "pct": 18.5,
+          "zone": "discount",
+          "from_time": "2026-11-06T12:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 74345.1,
+        "change_1h_pct": 0.3,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-09T11:00:00Z"
+      },
+      "ready": {
+        "symbol": "SOL/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 167.5,
+        "side": "short",
+        "model": "C",
+        "grade": "A+",
+        "score": 83.5,
+        "market_rr": 2.89,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "pending"
+    },
+    {
+      "id": "20261109-1202-BTC",
+      "coin": "BTC",
+      "symbol": "BTC/USDT:USDT",
+      "pair": "BTC/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 74345.1,
+      "candle_time": "2026-11-09T11:00:00Z",
+      "created_at": "2026-11-09T12:02:00Z",
+      "created_at_pkt": "2026-11-09 17:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 76167.1,
+          "range_low": 73435.8,
+          "equilibrium": 74801.45,
+          "price": 74345.1,
+          "pct": 33.3,
+          "zone": "discount",
+          "from_time": "2026-11-07T20:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 74345.1,
+        "change_1h_pct": 0.3,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-09T11:00:00Z"
+      },
+      "ready": {
+        "symbol": "BTC/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 166.2,
+        "side": "short",
+        "model": "C",
+        "grade": "A",
+        "score": 72.5,
+        "market_rr": 5.98,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "pending"
     }
   ]
 }
