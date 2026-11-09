@@ -1,234 +1,6 @@
 {
   "alerts": [
     {
-      "id": "20261108-0702-NEAR",
-      "coin": "NEAR",
-      "symbol": "NEAR/USDT:USDT",
-      "pair": "NEAR/USDT",
-      "direction_hint": "SHORT",
-      "triggers": [],
-      "trigger_labels": [],
-      "light_score": 0,
-      "price": 3.699,
-      "candle_time": "2026-11-08T06:00:00Z",
-      "created_at": "2026-11-08T07:02:01Z",
-      "created_at_pkt": "2026-11-08 12:02 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bearish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 3.825,
-          "range_low": 3.62,
-          "equilibrium": 3.7225,
-          "price": 3.704,
-          "pct": 41.0,
-          "zone": "discount",
-          "from_time": "2026-11-05T20:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 75801.8,
-        "change_1h_pct": 0.0,
-        "dump": false,
-        "trend_1h": "bearish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-08T06:00:00Z"
-      },
-      "ready": {
-        "symbol": "NEAR/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 173.2,
-        "side": "short",
-        "model": "C",
-        "grade": "A+",
-        "score": 86.5,
-        "market_rr": 21.8,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "ready",
-      "status": "pending"
-    },
-    {
-      "id": "20261108-0702-ETH",
-      "coin": "ETH",
-      "symbol": "ETH/USDT:USDT",
-      "pair": "ETH/USDT",
-      "direction_hint": "LONG",
-      "triggers": [
-        "near_poi"
-      ],
-      "trigger_labels": [
-        "near PDL"
-      ],
-      "light_score": 30,
-      "price": 2233.06,
-      "candle_time": "2026-11-08T06:00:00Z",
-      "created_at": "2026-11-08T07:02:01Z",
-      "created_at_pkt": "2026-11-08 12:02 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bullish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 2261.27,
-          "range_low": 2205.17,
-          "equilibrium": 2233.22,
-          "price": 2237.41,
-          "pct": 57.5,
-          "zone": "premium",
-          "from_time": "2026-11-05T20:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 75801.8,
-        "change_1h_pct": 0.0,
-        "dump": false,
-        "trend_1h": "bearish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-08T06:00:00Z"
-      },
-      "ready": {
-        "symbol": "ETH/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 158.9,
-        "side": "long",
-        "model": "B",
-        "grade": "A",
-        "score": 69.3,
-        "market_rr": 2.11,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "ready",
-      "status": "pending"
-    },
-    {
-      "id": "20261108-0706-NEAR",
-      "coin": "NEAR",
-      "symbol": "NEAR/USDT:USDT",
-      "pair": "NEAR/USDT",
-      "direction_hint": "SHORT",
-      "triggers": [],
-      "trigger_labels": [],
-      "light_score": 0,
-      "price": 3.699,
-      "candle_time": "2026-11-08T06:00:00Z",
-      "created_at": "2026-11-08T07:06:00Z",
-      "created_at_pkt": "2026-11-08 12:06 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bearish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 3.825,
-          "range_low": 3.62,
-          "equilibrium": 3.7225,
-          "price": 3.704,
-          "pct": 41.0,
-          "zone": "discount",
-          "from_time": "2026-11-05T20:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 75801.8,
-        "change_1h_pct": 0.0,
-        "dump": false,
-        "trend_1h": "bearish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-08T06:00:00Z"
-      },
-      "ready": {
-        "symbol": "NEAR/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 173.2,
-        "side": "short",
-        "model": "C",
-        "grade": "A+",
-        "score": 86.5,
-        "market_rr": 21.8,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "digest",
-      "status": "pending"
-    },
-    {
-      "id": "20261108-0706-ETH",
-      "coin": "ETH",
-      "symbol": "ETH/USDT:USDT",
-      "pair": "ETH/USDT",
-      "direction_hint": "LONG",
-      "triggers": [
-        "near_poi"
-      ],
-      "trigger_labels": [
-        "near PDL"
-      ],
-      "light_score": 30,
-      "price": 2233.06,
-      "candle_time": "2026-11-08T06:00:00Z",
-      "created_at": "2026-11-08T07:06:00Z",
-      "created_at_pkt": "2026-11-08 12:06 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bullish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 2261.27,
-          "range_low": 2205.17,
-          "equilibrium": 2233.22,
-          "price": 2237.41,
-          "pct": 57.5,
-          "zone": "premium",
-          "from_time": "2026-11-05T20:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 75801.8,
-        "change_1h_pct": 0.0,
-        "dump": false,
-        "trend_1h": "bearish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-08T06:00:00Z"
-      },
-      "ready": {
-        "symbol": "ETH/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 158.9,
-        "side": "long",
-        "model": "B",
-        "grade": "A",
-        "score": 69.3,
-        "market_rr": 2.11,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "digest",
-      "status": "pending"
-    },
-    {
       "id": "20261108-1202-ONE",
       "coin": "ONE",
       "symbol": "ONE/USDT:USDT",
@@ -516,6 +288,125 @@
         "why": "ready"
       },
       "kind": "ready",
+      "status": "pending"
+    },
+    {
+      "id": "20261109-0706-ENA",
+      "coin": "ENA",
+      "symbol": "ENA/USDT:USDT",
+      "pair": "ENA/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 0.14956,
+      "candle_time": "2026-11-09T06:00:00Z",
+      "created_at": "2026-11-09T07:06:00Z",
+      "created_at_pkt": "2026-11-09 12:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 0.17172,
+          "range_low": 0.14423,
+          "equilibrium": 0.157975,
+          "price": 0.15308,
+          "pct": 32.2,
+          "zone": "discount",
+          "from_time": "2026-11-05T20:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 74275.3,
+        "change_1h_pct": -0.22,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-09T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "ENA/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 69.2,
+        "side": "short",
+        "model": "A",
+        "grade": "A+",
+        "score": 92.5,
+        "market_rr": 1.45,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:1.5 from current price"
+      },
+      "kind": "digest",
+      "status": "pending"
+    },
+    {
+      "id": "20261109-0706-XRP",
+      "coin": "XRP",
+      "symbol": "XRP/USDT:USDT",
+      "pair": "XRP/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "sweep",
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "1H sweep of PWL",
+        "near PDL + PWL"
+      ],
+      "light_score": 81,
+      "price": 1.0913,
+      "candle_time": "2026-11-09T06:00:00Z",
+      "created_at": "2026-11-09T07:06:00Z",
+      "created_at_pkt": "2026-11-09 12:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 1.3422,
+          "range_low": 1.0888,
+          "equilibrium": 1.2155,
+          "price": 1.1105,
+          "pct": 8.6,
+          "zone": "discount",
+          "from_time": "2026-11-04T12:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {
+        "sweep_level": 1.0888,
+        "sweep_wick": 1.0846
+      },
+      "btc": {
+        "price": 74275.3,
+        "change_1h_pct": -0.22,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-09T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "XRP/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 59.3,
+        "side": "short",
+        "model": "A",
+        "grade": "A",
+        "score": 78.5,
+        "market_rr": 0.03,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.0 from current price"
+      },
+      "kind": "digest",
       "status": "pending"
     }
   ]
