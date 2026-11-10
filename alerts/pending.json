@@ -631,6 +631,65 @@
       },
       "kind": "digest",
       "status": "pending"
+    },
+    {
+      "id": "20261110-0802-XLM",
+      "coin": "XLM",
+      "symbol": "XLM/USDT:USDT",
+      "pair": "XLM/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "near PDH"
+      ],
+      "light_score": 30,
+      "price": 0.14919,
+      "candle_time": "2026-11-10T07:00:00Z",
+      "created_at": "2026-11-10T08:02:00Z",
+      "created_at_pkt": "2026-11-10 13:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 0.1575,
+          "range_low": 0.14298,
+          "equilibrium": 0.15024,
+          "price": 0.14919,
+          "pct": 42.8,
+          "zone": "discount",
+          "from_time": "2026-11-06T16:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 74805.5,
+        "change_1h_pct": 0.24,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-10T07:00:00Z"
+      },
+      "ready": {
+        "symbol": "XLM/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 157.3,
+        "side": "short",
+        "model": "C",
+        "grade": "B",
+        "score": 66.3,
+        "market_rr": 2.06,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "pending"
     }
   ]
 }
