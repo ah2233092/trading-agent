@@ -231,6 +231,136 @@
       "kind": "ready",
       "status": "expired",
       "closed_at": "2026-11-11T08:02:00Z"
+    },
+    {
+      "id": "20261110-1202-SOL",
+      "coin": "SOL",
+      "symbol": "SOL/USDT:USDT",
+      "pair": "SOL/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "sweep",
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "1H sweep of PDL",
+        "near PWL + PDL"
+      ],
+      "light_score": 78,
+      "price": 84.66,
+      "candle_time": "2026-11-10T11:00:00Z",
+      "created_at": "2026-11-10T12:02:00Z",
+      "created_at_pkt": "2026-11-10 17:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 89.95,
+          "range_low": 84.17,
+          "equilibrium": 87.06,
+          "price": 84.66,
+          "pct": 8.5,
+          "zone": "discount",
+          "from_time": "2026-11-08T16:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 30
+      },
+      "levels": {
+        "sweep_level": 85.09,
+        "sweep_wick": 84.88
+      },
+      "btc": {
+        "price": 74389.8,
+        "change_1h_pct": 0.26,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-10T11:00:00Z"
+      },
+      "ready": {
+        "symbol": "SOL/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 167.3,
+        "side": "short",
+        "model": "C",
+        "grade": "A",
+        "score": 78.5,
+        "market_rr": 4.01,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-11T12:02:00Z"
+    },
+    {
+      "id": "20261110-1202-XRP",
+      "coin": "XRP",
+      "symbol": "XRP/USDT:USDT",
+      "pair": "XRP/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "sweep",
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "1H sweep of PDL",
+        "near PDL"
+      ],
+      "light_score": 78,
+      "price": 1.0787,
+      "candle_time": "2026-11-10T11:00:00Z",
+      "created_at": "2026-11-10T12:02:00Z",
+      "created_at_pkt": "2026-11-10 17:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 1.1693,
+          "range_low": 1.0743,
+          "equilibrium": 1.1218,
+          "price": 1.0787,
+          "pct": 4.6,
+          "zone": "discount",
+          "from_time": "2026-11-08T12:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 33
+      },
+      "levels": {
+        "sweep_level": 1.0762,
+        "sweep_wick": 1.0743
+      },
+      "btc": {
+        "price": 74389.8,
+        "change_1h_pct": 0.26,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-10T11:00:00Z"
+      },
+      "ready": {
+        "symbol": "XRP/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 159.1,
+        "side": "short",
+        "model": "C",
+        "grade": "B",
+        "score": 66.3,
+        "market_rr": 2.97,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-11T12:02:00Z"
     }
   ]
 }
