@@ -523,6 +523,122 @@
       "kind": "digest",
       "status": "expired",
       "closed_at": "2026-11-12T12:06:00Z"
+    },
+    {
+      "id": "20261111-1402-ENA",
+      "coin": "ENA",
+      "symbol": "ENA/USDT:USDT",
+      "pair": "ENA/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 0.15359,
+      "candle_time": "2026-11-11T13:00:00Z",
+      "created_at": "2026-11-11T14:02:00Z",
+      "created_at_pkt": "2026-11-11 19:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 0.15859,
+          "range_low": 0.14423,
+          "equilibrium": 0.15141,
+          "price": 0.15277,
+          "pct": 59.5,
+          "zone": "premium",
+          "from_time": "2026-11-08T20:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 73773.7,
+        "change_1h_pct": -0.11,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-11T13:00:00Z"
+      },
+      "ready": {
+        "symbol": "ENA/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 170.7,
+        "side": "short",
+        "model": "D",
+        "grade": "A+",
+        "score": 88.7,
+        "market_rr": 3.19,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-12T14:02:00Z"
+    },
+    {
+      "id": "20261111-1402-HYPE",
+      "coin": "HYPE",
+      "symbol": "HYPE/USDT:USDT",
+      "pair": "HYPE/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "in 4H OB + 4H FVG"
+      ],
+      "light_score": 38,
+      "price": 73.278,
+      "candle_time": "2026-11-11T13:00:00Z",
+      "created_at": "2026-11-11T14:02:00Z",
+      "created_at_pkt": "2026-11-11 19:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 78.135,
+          "range_low": 70.375,
+          "equilibrium": 74.255,
+          "price": 72.341,
+          "pct": 25.3,
+          "zone": "discount",
+          "from_time": "2026-11-08T12:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 30
+      },
+      "levels": {},
+      "btc": {
+        "price": 73773.7,
+        "change_1h_pct": -0.11,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-11T13:00:00Z"
+      },
+      "ready": {
+        "symbol": "HYPE/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 163.2,
+        "side": "short",
+        "model": "B",
+        "grade": "B",
+        "score": 66.5,
+        "market_rr": 5.46,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-12T14:02:00Z"
     }
   ]
 }
