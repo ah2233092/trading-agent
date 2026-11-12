@@ -286,5 +286,5 @@
     "errors": 0,
     "assumptions": "news clear, futures neutral, fees+slippage, SL first in same candle, 15m fills"
   },
-  "updated_at": "2026-11-12T04:02:21Z"
+  "updated_at": "2026-11-12T05:02:15Z"
 }
