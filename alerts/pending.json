@@ -1,186 +1,6 @@
 {
   "alerts": [
     {
-      "id": "20261112-1202-NEAR",
-      "coin": "NEAR",
-      "symbol": "NEAR/USDT:USDT",
-      "pair": "NEAR/USDT",
-      "direction_hint": "SHORT",
-      "triggers": [
-        "sweep",
-        "near_poi"
-      ],
-      "trigger_labels": [
-        "1H sweep of PWL",
-        "near PWL"
-      ],
-      "light_score": 78,
-      "price": 3.447,
-      "candle_time": "2026-11-12T11:00:00Z",
-      "created_at": "2026-11-12T12:02:00Z",
-      "created_at_pkt": "2026-11-12 17:02 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bearish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 3.812,
-          "range_low": 3.423,
-          "equilibrium": 3.6175,
-          "price": 3.447,
-          "pct": 6.2,
-          "zone": "discount",
-          "from_time": "2026-11-08T08:00:00Z"
-        },
-        "pd_bonus": 5,
-        "opposite_side_points": 0
-      },
-      "levels": {
-        "sweep_level": 3.443,
-        "sweep_wick": 3.423
-      },
-      "btc": {
-        "price": 72930.4,
-        "change_1h_pct": -0.68,
-        "dump": false,
-        "trend_1h": "bearish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-12T11:00:00Z"
-      },
-      "ready": {
-        "symbol": "NEAR/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 169.2,
-        "side": "short",
-        "model": "C",
-        "grade": "A",
-        "score": 78.5,
-        "market_rr": 8.46,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "ready",
-      "status": "pending"
-    },
-    {
-      "id": "20261112-1202-LINK",
-      "coin": "LINK",
-      "symbol": "LINK/USDT:USDT",
-      "pair": "LINK/USDT",
-      "direction_hint": "SHORT",
-      "triggers": [
-        "structure"
-      ],
-      "trigger_labels": [
-        "1H BOS"
-      ],
-      "light_score": 30,
-      "price": 9.993,
-      "candle_time": "2026-11-12T11:00:00Z",
-      "created_at": "2026-11-12T12:02:00Z",
-      "created_at_pkt": "2026-11-12 17:02 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bearish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 10.827,
-          "range_low": 9.927,
-          "equilibrium": 10.377,
-          "price": 9.993,
-          "pct": 7.3,
-          "zone": "discount",
-          "from_time": "2026-11-09T12:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 30
-      },
-      "levels": {
-        "structure_level": 10.009
-      },
-      "btc": {
-        "price": 72930.4,
-        "change_1h_pct": -0.68,
-        "dump": false,
-        "trend_1h": "bearish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-12T11:00:00Z"
-      },
-      "ready": {
-        "symbol": "LINK/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 172.8,
-        "side": "short",
-        "model": "B",
-        "grade": "A+",
-        "score": 92.5,
-        "market_rr": 3.29,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "ready",
-      "status": "pending"
-    },
-    {
-      "id": "20261112-1202-ZEC",
-      "coin": "ZEC",
-      "symbol": "ZEC/USDT:USDT",
-      "pair": "ZEC/USDT",
-      "direction_hint": "SHORT",
-      "triggers": [],
-      "trigger_labels": [],
-      "light_score": 0,
-      "price": 970.29,
-      "candle_time": "2026-11-12T11:00:00Z",
-      "created_at": "2026-11-12T12:02:00Z",
-      "created_at_pkt": "2026-11-12 17:02 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bearish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 1387.85,
-          "range_low": 951.14,
-          "equilibrium": 1169.495,
-          "price": 970.29,
-          "pct": 4.4,
-          "zone": "discount",
-          "from_time": "2026-11-06T12:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 72930.4,
-        "change_1h_pct": -0.68,
-        "dump": false,
-        "trend_1h": "bearish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-12T11:00:00Z"
-      },
-      "ready": {
-        "symbol": "ZEC/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 162.7,
-        "side": "short",
-        "model": "C",
-        "grade": "B",
-        "score": 65.3,
-        "market_rr": 8.41,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "ready",
-      "status": "pending"
-    },
-    {
       "id": "20261112-1206-NEAR",
       "coin": "NEAR",
       "symbol": "NEAR/USDT:USDT",
@@ -824,6 +644,61 @@
         "grade": "A+",
         "score": 86.5,
         "market_rr": 2.04,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "pending"
+    },
+    {
+      "id": "20261113-1202-LINK",
+      "coin": "LINK",
+      "symbol": "LINK/USDT:USDT",
+      "pair": "LINK/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 10.001,
+      "candle_time": "2026-11-13T11:00:00Z",
+      "created_at": "2026-11-13T12:02:01Z",
+      "created_at_pkt": "2026-11-13 17:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 10.602,
+          "range_low": 9.618,
+          "equilibrium": 10.11,
+          "price": 10.001,
+          "pct": 38.9,
+          "zone": "discount",
+          "from_time": "2026-11-10T12:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 69290.2,
+        "change_1h_pct": -0.01,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-13T11:00:00Z"
+      },
+      "ready": {
+        "symbol": "LINK/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 163.2,
+        "side": "short",
+        "model": "C",
+        "grade": "B",
+        "score": 66.3,
+        "market_rr": 10.81,
         "killzone": true,
         "plan_ok": true,
         "why": "ready"
