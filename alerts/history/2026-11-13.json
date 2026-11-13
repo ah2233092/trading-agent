@@ -542,6 +542,128 @@
       "kind": "ready",
       "status": "expired",
       "closed_at": "2026-11-13T13:02:00Z"
+    },
+    {
+      "id": "20261112-1402-BTC",
+      "coin": "BTC",
+      "symbol": "BTC/USDT:USDT",
+      "pair": "BTC/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "volume"
+      ],
+      "trigger_labels": [
+        "volume x2.6"
+      ],
+      "light_score": 22,
+      "price": 72476.1,
+      "candle_time": "2026-11-12T13:00:00Z",
+      "created_at": "2026-11-12T14:02:00Z",
+      "created_at_pkt": "2026-11-12 19:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 76167.1,
+          "range_low": 72691.2,
+          "equilibrium": 74429.15,
+          "price": 72930.4,
+          "pct": 6.9,
+          "zone": "discount",
+          "from_time": "2026-11-08T12:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 72476.1,
+        "change_1h_pct": -0.56,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-12T13:00:00Z"
+      },
+      "ready": {
+        "symbol": "BTC/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 168.7,
+        "side": "short",
+        "model": "A",
+        "grade": "A",
+        "score": 78.5,
+        "market_rr": 4.75,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-13T14:02:00Z"
+    },
+    {
+      "id": "20261112-1402-SNXX",
+      "coin": "SNXX",
+      "symbol": "SNXX/USDT:USDT",
+      "pair": "SNXX/USDT",
+      "direction_hint": "LONG",
+      "triggers": [
+        "near_poi",
+        "volume"
+      ],
+      "trigger_labels": [
+        "in 4H FVG",
+        "volume x4.3"
+      ],
+      "light_score": 63,
+      "price": 3.703,
+      "candle_time": "2026-11-12T13:00:00Z",
+      "created_at": "2026-11-12T14:02:00Z",
+      "created_at_pkt": "2026-11-12 19:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bullish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 4.664,
+          "range_low": 2.93,
+          "equilibrium": 3.797,
+          "price": 4.015,
+          "pct": 62.6,
+          "zone": "premium",
+          "from_time": "2026-11-06T12:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 72476.1,
+        "change_1h_pct": -0.56,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-12T13:00:00Z"
+      },
+      "ready": {
+        "symbol": "SNXX/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 160.6,
+        "side": "long",
+        "model": "D",
+        "grade": "A+",
+        "score": 71.3,
+        "market_rr": 2.47,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-13T14:02:00Z"
     }
   ]
 }
