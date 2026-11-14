@@ -287,6 +287,66 @@
       "kind": "ready",
       "status": "expired",
       "closed_at": "2026-11-14T08:02:02Z"
+    },
+    {
+      "id": "20261113-0902-NVIDIA",
+      "coin": "NVIDIA",
+      "symbol": "NVIDIA/USDT:USDT",
+      "pair": "NVIDIA/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "in 4H FVG"
+      ],
+      "light_score": 40,
+      "price": 166.88,
+      "candle_time": "2026-11-13T08:00:00Z",
+      "created_at": "2026-11-13T09:02:00Z",
+      "created_at_pkt": "2026-11-13 14:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 183.54,
+          "range_low": 149.25,
+          "equilibrium": 166.395,
+          "price": 166.6,
+          "pct": 50.6,
+          "zone": "premium",
+          "from_time": "2026-11-10T08:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 68680.3,
+        "change_1h_pct": 0.18,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-13T08:00:00Z"
+      },
+      "ready": {
+        "symbol": "NVIDIA/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 167.3,
+        "side": "short",
+        "model": "B",
+        "grade": "A+",
+        "score": 86.5,
+        "market_rr": 2.04,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-14T09:02:01Z"
     }
   ]
 }
