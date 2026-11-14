@@ -1,0 +1,236 @@
+{
+  "alerts": [
+    {
+      "id": "20261113-0702-AVAX",
+      "coin": "AVAX",
+      "symbol": "AVAX/USDT:USDT",
+      "pair": "AVAX/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "near PDL"
+      ],
+      "light_score": 35,
+      "price": 8.267,
+      "candle_time": "2026-11-13T06:00:00Z",
+      "created_at": "2026-11-13T07:02:02Z",
+      "created_at_pkt": "2026-11-13 12:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 8.739,
+          "range_low": 7.996,
+          "equilibrium": 8.3675,
+          "price": 8.056,
+          "pct": 8.1,
+          "zone": "discount",
+          "from_time": "2026-11-10T12:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 69040.8,
+        "change_1h_pct": 1.36,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-13T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "AVAX/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 162.8,
+        "side": "short",
+        "model": "D",
+        "grade": "A",
+        "score": 77.5,
+        "market_rr": 2.04,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-14T07:06:00Z"
+    },
+    {
+      "id": "20261113-0702-PEPE",
+      "coin": "PEPE",
+      "symbol": "PEPE/USDT:USDT",
+      "pair": "PEPE/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 4.548e-06,
+      "candle_time": "2026-11-13T06:00:00Z",
+      "created_at": "2026-11-13T07:02:02Z",
+      "created_at_pkt": "2026-11-13 12:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 5.6268e-06,
+          "range_low": 4.2888e-06,
+          "equilibrium": 4.9578e-06,
+          "price": 4.5624e-06,
+          "pct": 20.4,
+          "zone": "discount",
+          "from_time": "2026-11-08T20:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 69040.8,
+        "change_1h_pct": 1.36,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-13T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "PEPE/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 165.3,
+        "side": "short",
+        "model": "A",
+        "grade": "A+",
+        "score": 82.5,
+        "market_rr": 2.04,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-14T07:06:00Z"
+    },
+    {
+      "id": "20261113-0706-AVAX",
+      "coin": "AVAX",
+      "symbol": "AVAX/USDT:USDT",
+      "pair": "AVAX/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "near PDL"
+      ],
+      "light_score": 35,
+      "price": 8.267,
+      "candle_time": "2026-11-13T06:00:00Z",
+      "created_at": "2026-11-13T07:06:00Z",
+      "created_at_pkt": "2026-11-13 12:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 8.739,
+          "range_low": 7.996,
+          "equilibrium": 8.3675,
+          "price": 8.056,
+          "pct": 8.1,
+          "zone": "discount",
+          "from_time": "2026-11-10T12:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 69040.8,
+        "change_1h_pct": 1.36,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-13T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "AVAX/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 162.8,
+        "side": "short",
+        "model": "D",
+        "grade": "A",
+        "score": 77.5,
+        "market_rr": 2.04,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "digest",
+      "status": "expired",
+      "closed_at": "2026-11-14T07:06:00Z"
+    },
+    {
+      "id": "20261113-0706-PEPE",
+      "coin": "PEPE",
+      "symbol": "PEPE/USDT:USDT",
+      "pair": "PEPE/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 4.548e-06,
+      "candle_time": "2026-11-13T06:00:00Z",
+      "created_at": "2026-11-13T07:06:00Z",
+      "created_at_pkt": "2026-11-13 12:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 5.6268e-06,
+          "range_low": 4.2888e-06,
+          "equilibrium": 4.9578e-06,
+          "price": 4.5624e-06,
+          "pct": 20.4,
+          "zone": "discount",
+          "from_time": "2026-11-08T20:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 69040.8,
+        "change_1h_pct": 1.36,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-13T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "PEPE/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 165.3,
+        "side": "short",
+        "model": "A",
+        "grade": "A+",
+        "score": 82.5,
+        "market_rr": 2.04,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "digest",
+      "status": "expired",
+      "closed_at": "2026-11-14T07:06:00Z"
+    }
+  ]
+}
