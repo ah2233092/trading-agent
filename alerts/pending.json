@@ -1,124 +1,6 @@
 {
   "alerts": [
     {
-      "id": "20261114-1206-LINK",
-      "coin": "LINK",
-      "symbol": "LINK/USDT:USDT",
-      "pair": "LINK/USDT",
-      "direction_hint": "SHORT",
-      "triggers": [
-        "near_poi"
-      ],
-      "trigger_labels": [
-        "near PDL"
-      ],
-      "light_score": 35,
-      "price": 9.61,
-      "candle_time": "2026-11-14T11:00:00Z",
-      "created_at": "2026-11-14T12:06:00Z",
-      "created_at_pkt": "2026-11-14 17:06 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bearish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 10.248,
-          "range_low": 9.503,
-          "equilibrium": 9.8755,
-          "price": 9.61,
-          "pct": 14.4,
-          "zone": "discount",
-          "from_time": "2026-11-13T00:00:00Z"
-        },
-        "pd_bonus": 5,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 67243.7,
-        "change_1h_pct": -0.04,
-        "dump": false,
-        "trend_1h": "bearish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-14T11:00:00Z"
-      },
-      "ready": {
-        "symbol": "LINK/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 166.9,
-        "side": "short",
-        "model": "A",
-        "grade": "A+",
-        "score": 83.5,
-        "market_rr": 2.57,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "digest",
-      "status": "pending"
-    },
-    {
-      "id": "20261114-1206-BTC",
-      "coin": "BTC",
-      "symbol": "BTC/USDT:USDT",
-      "pair": "BTC/USDT",
-      "direction_hint": "SHORT",
-      "triggers": [
-        "near_poi"
-      ],
-      "trigger_labels": [
-        "near 4H FVG"
-      ],
-      "light_score": 30,
-      "price": 67243.7,
-      "candle_time": "2026-11-14T11:00:00Z",
-      "created_at": "2026-11-14T12:06:00Z",
-      "created_at_pkt": "2026-11-14 17:06 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bearish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 74771.3,
-          "range_low": 66427.6,
-          "equilibrium": 70599.45,
-          "price": 67243.7,
-          "pct": 9.8,
-          "zone": "discount",
-          "from_time": "2026-11-10T16:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 30
-      },
-      "levels": {},
-      "btc": {
-        "price": 67243.7,
-        "change_1h_pct": -0.04,
-        "dump": false,
-        "trend_1h": "bearish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-14T11:00:00Z"
-      },
-      "ready": {
-        "symbol": "BTC/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 157.8,
-        "side": "short",
-        "model": "C",
-        "grade": "B",
-        "score": 66.3,
-        "market_rr": 2.34,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "digest",
-      "status": "pending"
-    },
-    {
       "id": "20261114-1302-UNI",
       "coin": "UNI",
       "symbol": "UNI/USDT:USDT",
@@ -513,6 +395,120 @@
         "why": "ready"
       },
       "kind": "ready",
+      "status": "pending"
+    },
+    {
+      "id": "20261115-1206-ENA",
+      "coin": "ENA",
+      "symbol": "ENA/USDT:USDT",
+      "pair": "ENA/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "in 4H FVG"
+      ],
+      "light_score": 35,
+      "price": 0.12016,
+      "candle_time": "2026-11-15T11:00:00Z",
+      "created_at": "2026-11-15T12:06:00Z",
+      "created_at_pkt": "2026-11-15 17:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 0.15687,
+          "range_low": 0.11,
+          "equilibrium": 0.133435,
+          "price": 0.12016,
+          "pct": 21.7,
+          "zone": "discount",
+          "from_time": "2026-11-10T16:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 65327.5,
+        "change_1h_pct": -0.36,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-15T11:00:00Z"
+      },
+      "ready": {
+        "symbol": "ENA/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 160.8,
+        "side": "short",
+        "model": "B",
+        "grade": "A",
+        "score": 66.5,
+        "market_rr": 3.75,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "digest",
+      "status": "pending"
+    },
+    {
+      "id": "20261115-1206-ZEC",
+      "coin": "ZEC",
+      "symbol": "ZEC/USDT:USDT",
+      "pair": "ZEC/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 918.56,
+      "candle_time": "2026-11-15T11:00:00Z",
+      "created_at": "2026-11-15T12:06:00Z",
+      "created_at_pkt": "2026-11-15 17:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 991.84,
+          "range_low": 801.0,
+          "equilibrium": 896.42,
+          "price": 918.56,
+          "pct": 61.6,
+          "zone": "premium",
+          "from_time": "2026-11-13T04:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 65327.5,
+        "change_1h_pct": -0.36,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-15T11:00:00Z"
+      },
+      "ready": {
+        "symbol": "ZEC/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 160.2,
+        "side": "short",
+        "model": "D",
+        "grade": "A+",
+        "score": 67.5,
+        "market_rr": 3.24,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "digest",
       "status": "pending"
     }
   ]
