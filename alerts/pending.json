@@ -1,116 +1,6 @@
 {
   "alerts": [
     {
-      "id": "20261115-0706-ZEC",
-      "coin": "ZEC",
-      "symbol": "ZEC/USDT:USDT",
-      "pair": "ZEC/USDT",
-      "direction_hint": "SHORT",
-      "triggers": [],
-      "trigger_labels": [],
-      "light_score": 0,
-      "price": 896.31,
-      "candle_time": "2026-11-15T06:00:00Z",
-      "created_at": "2026-11-15T07:06:00Z",
-      "created_at_pkt": "2026-11-15 12:06 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bearish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 991.84,
-          "range_low": 801.0,
-          "equilibrium": 896.42,
-          "price": 911.64,
-          "pct": 58.0,
-          "zone": "premium",
-          "from_time": "2026-11-13T04:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 64434.1,
-        "change_1h_pct": -0.09,
-        "dump": false,
-        "trend_1h": "bearish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-15T06:00:00Z"
-      },
-      "ready": {
-        "symbol": "ZEC/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 165.3,
-        "side": "short",
-        "model": "D",
-        "grade": "A+",
-        "score": 82.5,
-        "market_rr": 2.01,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "digest",
-      "status": "pending"
-    },
-    {
-      "id": "20261115-0706-BTC",
-      "coin": "BTC",
-      "symbol": "BTC/USDT:USDT",
-      "pair": "BTC/USDT",
-      "direction_hint": "SHORT",
-      "triggers": [],
-      "trigger_labels": [],
-      "light_score": 0,
-      "price": 64434.1,
-      "candle_time": "2026-11-15T06:00:00Z",
-      "created_at": "2026-11-15T07:06:00Z",
-      "created_at_pkt": "2026-11-15 12:06 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bearish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 74771.3,
-          "range_low": 61968.2,
-          "equilibrium": 68369.75,
-          "price": 64798.4,
-          "pct": 22.1,
-          "zone": "discount",
-          "from_time": "2026-11-10T16:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 64434.1,
-        "change_1h_pct": -0.09,
-        "dump": false,
-        "trend_1h": "bearish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-15T06:00:00Z"
-      },
-      "ready": {
-        "symbol": "BTC/USDT:USDT",
-        "candidate": true,
-        "ready": false,
-        "rank": 67.7,
-        "side": "short",
-        "model": "C",
-        "grade": "A+",
-        "score": 92.5,
-        "market_rr": 0.74,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "TP1 only 1:0.7 from current price"
-      },
-      "kind": "digest",
-      "status": "pending"
-    },
-    {
       "id": "20261115-0802-UNI",
       "coin": "UNI",
       "symbol": "UNI/USDT:USDT",
@@ -458,6 +348,125 @@
         "why": "ready"
       },
       "kind": "ready",
+      "status": "pending"
+    },
+    {
+      "id": "20261116-0706-NVIDIA",
+      "coin": "NVIDIA",
+      "symbol": "NVIDIA/USDT:USDT",
+      "pair": "NVIDIA/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "sweep",
+        "volume"
+      ],
+      "trigger_labels": [
+        "1H sweep of swing low",
+        "volume x2.1"
+      ],
+      "light_score": 61,
+      "price": 161.23,
+      "candle_time": "2026-11-16T06:00:00Z",
+      "created_at": "2026-11-16T07:06:01Z",
+      "created_at_pkt": "2026-11-16 12:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 171.82,
+          "range_low": 156.16,
+          "equilibrium": 163.99,
+          "price": 162.78,
+          "pct": 42.3,
+          "zone": "discount",
+          "from_time": "2026-11-13T12:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {
+        "sweep_level": 159.7,
+        "sweep_wick": 159.52
+      },
+      "btc": {
+        "price": 64681.6,
+        "change_1h_pct": 0.37,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-16T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "NVIDIA/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 61.8,
+        "side": "short",
+        "model": "B",
+        "grade": "A+",
+        "score": 82.7,
+        "market_rr": 0.23,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.2 from current price"
+      },
+      "kind": "digest",
+      "status": "pending"
+    },
+    {
+      "id": "20261116-0706-XRP",
+      "coin": "XRP",
+      "symbol": "XRP/USDT:USDT",
+      "pair": "XRP/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 0.955,
+      "candle_time": "2026-11-16T06:00:00Z",
+      "created_at": "2026-11-16T07:06:01Z",
+      "created_at_pkt": "2026-11-16 12:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 1.0804,
+          "range_low": 0.8926,
+          "equilibrium": 0.9865,
+          "price": 0.9632,
+          "pct": 37.6,
+          "zone": "discount",
+          "from_time": "2026-11-11T16:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 64681.6,
+        "change_1h_pct": 0.37,
+        "dump": false,
+        "trend_1h": "bullish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-16T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "XRP/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 64.5,
+        "side": "short",
+        "model": "B",
+        "grade": "A+",
+        "score": 88.7,
+        "market_rr": 0.06,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.1 from current price"
+      },
+      "kind": "digest",
       "status": "pending"
     }
   ]
