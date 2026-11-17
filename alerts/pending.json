@@ -1,61 +1,6 @@
 {
   "alerts": [
     {
-      "id": "20261116-0802-QNT",
-      "coin": "QNT",
-      "symbol": "QNT/USDT:USDT",
-      "pair": "QNT/USDT",
-      "direction_hint": "SHORT",
-      "triggers": [],
-      "trigger_labels": [],
-      "light_score": 0,
-      "price": 156.26,
-      "candle_time": "2026-11-16T07:00:00Z",
-      "created_at": "2026-11-16T08:02:01Z",
-      "created_at_pkt": "2026-11-16 13:02 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bearish",
-        "trend_1h": "bullish",
-        "premium_discount_4h": {
-          "range_high": 168.68,
-          "range_low": 138.84,
-          "equilibrium": 153.76,
-          "price": 156.26,
-          "pct": 58.4,
-          "zone": "premium",
-          "from_time": "2026-11-13T12:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 64954.5,
-        "change_1h_pct": 0.42,
-        "dump": false,
-        "trend_1h": "bullish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-16T07:00:00Z"
-      },
-      "ready": {
-        "symbol": "QNT/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 168.9,
-        "side": "short",
-        "model": "D",
-        "grade": "A+",
-        "score": 88.7,
-        "market_rr": 2.27,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "ready",
-      "status": "pending"
-    },
-    {
       "id": "20261116-1202-UNI",
       "coin": "UNI",
       "symbol": "UNI/USDT:USDT",
