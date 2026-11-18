@@ -1,0 +1,69 @@
+{
+  "alerts": [
+    {
+      "id": "20261117-0702-ZEC",
+      "coin": "ZEC",
+      "symbol": "ZEC/USDT:USDT",
+      "pair": "ZEC/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "sweep",
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "1H sweep of swing high",
+        "near PDH"
+      ],
+      "light_score": 70,
+      "price": 918.43,
+      "candle_time": "2026-11-17T06:00:00Z",
+      "created_at": "2026-11-17T07:02:00Z",
+      "created_at_pkt": "2026-11-17 12:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 929.9,
+          "range_low": 801.0,
+          "equilibrium": 865.45,
+          "price": 922.31,
+          "pct": 94.1,
+          "zone": "premium",
+          "from_time": "2026-11-14T20:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {
+        "sweep_level": 929.9,
+        "sweep_wick": 933.93
+      },
+      "btc": {
+        "price": 64526.3,
+        "change_1h_pct": -0.38,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-17T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "ZEC/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 160.6,
+        "side": "short",
+        "model": "D",
+        "grade": "A",
+        "score": 68.5,
+        "market_rr": 3.19,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-18T07:02:02Z"
+    }
+  ]
+}
