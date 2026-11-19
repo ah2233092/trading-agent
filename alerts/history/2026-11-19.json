@@ -470,6 +470,127 @@
       "kind": "digest",
       "status": "expired",
       "closed_at": "2026-11-19T12:06:00Z"
+    },
+    {
+      "id": "20261118-1302-TAO",
+      "coin": "TAO",
+      "symbol": "TAO/USDT:USDT",
+      "pair": "TAO/USDT",
+      "direction_hint": "LONG",
+      "triggers": [
+        "sweep",
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "1H sweep of swing low",
+        "in 4H FVG"
+      ],
+      "light_score": 70,
+      "price": 194.37,
+      "candle_time": "2026-11-18T12:00:00Z",
+      "created_at": "2026-11-18T13:02:00Z",
+      "created_at_pkt": "2026-11-18 18:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bullish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 198.99,
+          "range_low": 185.69,
+          "equilibrium": 192.34,
+          "price": 195.48,
+          "pct": 73.6,
+          "zone": "premium",
+          "from_time": "2026-11-15T20:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {
+        "sweep_level": 194.13,
+        "sweep_wick": 193.85
+      },
+      "btc": {
+        "price": 64056.3,
+        "change_1h_pct": -0.23,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-18T12:00:00Z"
+      },
+      "ready": {
+        "symbol": "TAO/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 159.8,
+        "side": "long",
+        "model": "C",
+        "grade": "A+",
+        "score": 71.3,
+        "market_rr": 2.05,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-19T13:02:01Z"
+    },
+    {
+      "id": "20261118-1302-ZEC",
+      "coin": "ZEC",
+      "symbol": "ZEC/USDT:USDT",
+      "pair": "ZEC/USDT",
+      "direction_hint": "LONG",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 932.85,
+      "candle_time": "2026-11-18T12:00:00Z",
+      "created_at": "2026-11-18T13:02:00Z",
+      "created_at_pkt": "2026-11-18 18:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bullish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 972.95,
+          "range_low": 840.08,
+          "equilibrium": 906.515,
+          "price": 939.13,
+          "pct": 74.5,
+          "zone": "premium",
+          "from_time": "2026-11-15T00:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 64056.3,
+        "change_1h_pct": -0.23,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-18T12:00:00Z"
+      },
+      "ready": {
+        "symbol": "ZEC/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 158.1,
+        "side": "long",
+        "model": "C",
+        "grade": "A",
+        "score": 66.3,
+        "market_rr": 2.49,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-19T13:02:01Z"
     }
   ]
 }
