@@ -287,6 +287,189 @@
       "kind": "ready",
       "status": "expired",
       "closed_at": "2026-11-19T08:02:01Z"
+    },
+    {
+      "id": "20261118-1202-BLESS",
+      "coin": "BLESS",
+      "symbol": "BLESS/USDT:USDT",
+      "pair": "BLESS/USDT",
+      "direction_hint": "LONG",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "in 4H FVG"
+      ],
+      "light_score": 40,
+      "price": 0.011293,
+      "candle_time": "2026-11-18T11:00:00Z",
+      "created_at": "2026-11-18T12:02:01Z",
+      "created_at_pkt": "2026-11-18 17:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bullish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 0.0197,
+          "range_low": 0.009566,
+          "equilibrium": 0.014633,
+          "price": 0.011293,
+          "pct": 17.0,
+          "zone": "discount",
+          "from_time": "2026-11-16T16:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 64205.0,
+        "change_1h_pct": -0.21,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-18T11:00:00Z"
+      },
+      "ready": {
+        "symbol": "BLESS/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 165.8,
+        "side": "long",
+        "model": "C",
+        "grade": "A+",
+        "score": 79.7,
+        "market_rr": 2.97,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "expired",
+      "closed_at": "2026-11-19T12:06:00Z"
+    },
+    {
+      "id": "20261118-1206-BLESS",
+      "coin": "BLESS",
+      "symbol": "BLESS/USDT:USDT",
+      "pair": "BLESS/USDT",
+      "direction_hint": "LONG",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "in 4H FVG"
+      ],
+      "light_score": 40,
+      "price": 0.011293,
+      "candle_time": "2026-11-18T11:00:00Z",
+      "created_at": "2026-11-18T12:06:00Z",
+      "created_at_pkt": "2026-11-18 17:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bullish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 0.0197,
+          "range_low": 0.009566,
+          "equilibrium": 0.014633,
+          "price": 0.011293,
+          "pct": 17.0,
+          "zone": "discount",
+          "from_time": "2026-11-16T16:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 64205.0,
+        "change_1h_pct": -0.21,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-18T11:00:00Z"
+      },
+      "ready": {
+        "symbol": "BLESS/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 165.8,
+        "side": "long",
+        "model": "C",
+        "grade": "A+",
+        "score": 79.7,
+        "market_rr": 2.97,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "digest",
+      "status": "expired",
+      "closed_at": "2026-11-19T12:06:00Z"
+    },
+    {
+      "id": "20261118-1206-LINK",
+      "coin": "LINK",
+      "symbol": "LINK/USDT:USDT",
+      "pair": "LINK/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "sweep"
+      ],
+      "trigger_labels": [
+        "1H sweep of swing low"
+      ],
+      "light_score": 43,
+      "price": 9.152,
+      "candle_time": "2026-11-18T11:00:00Z",
+      "created_at": "2026-11-18T12:06:00Z",
+      "created_at_pkt": "2026-11-18 17:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 9.404,
+          "range_low": 8.931,
+          "equilibrium": 9.1675,
+          "price": 9.152,
+          "pct": 46.7,
+          "zone": "discount",
+          "from_time": "2026-11-16T12:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {
+        "sweep_level": 9.132,
+        "sweep_wick": 9.117
+      },
+      "btc": {
+        "price": 64205.0,
+        "change_1h_pct": -0.21,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-18T11:00:00Z"
+      },
+      "ready": {
+        "symbol": "LINK/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 68.0,
+        "side": "short",
+        "model": "A",
+        "grade": "A+",
+        "score": 92.5,
+        "market_rr": 0.88,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.9 from current price"
+      },
+      "kind": "digest",
+      "status": "expired",
+      "closed_at": "2026-11-19T12:06:00Z"
     }
   ]
 }
