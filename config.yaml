@@ -67,17 +67,19 @@ news_block_hours: 2
 entry_mode: market_in_killzone   # market entry from the current price, only in London / NY killzones
 max_trades_per_day: 0            # 0 = no maximum (Rans: trades jitni marzi)
 min_signals_per_day: 2           # 2 killzone digests a day with the top 2 coins
-allow_b_plan: true               # plan ok but score / killzone short -> 🟡 B-PLAN instead of NO TRADE
+allow_b_plan: false              # Nov 19 plan: only full TRADE decisions (no B-plans)
 b_plan_min_score: 45           # more B-plans -> more trade options a day
-max_losses_per_day: 3            # safety: stop for the day after 3 stop-losses
+max_losses_per_day: 2            # safety: stop for the day after 2 stop-losses
 
 # --- Rans's own sizing (shown in every answer) ---
 user_sizing:
-  margin_usd: 24          # full balance as margin
+  margin_usd: 10          # Rans (Nov 19): full $10 balance as margin
   leverage: 20
+  daily_profit_target_usd: 5   # stop for the day once today's P/L (at this size) >= +$5
+  daily_loss_limit_usd: 5      # stop for the day once today's P/L <= -$5 (50% of the account)
 
 # --- Risk ---
-account_balance: 20
+account_balance: 10
 risk_per_trade_usd: 2.0     # Rans chose $2 risk -> ~$6 per winning trade
 risk_per_trade_pct: 10
 max_margin_per_trade: 10

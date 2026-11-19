@@ -166,6 +166,27 @@ def daily_limits(cfg: dict, now) -> dict:
     losses = [r for r in rows if r.get("status") == "sl" and day(r.get("closed_at") or r.get("created_at")) == today]
     out = {"trades_today": len(trades), "losses_today": len(losses), "max_trades": max_trades,
            "max_losses": max_losses, "blocked": False, "reason": None}
+    # Rans's own dollar rules (user_sizing): today's P/L at his size from the journal R multiples
+    us = cfg_get(cfg, "user_sizing", {}) or {}
+    notional = float(us.get("margin_usd") or 0) * float(us.get("leverage") or 0)
+    pnl = 0.0
+    for r in rows:
+        try:
+            rm = float(r.get("r_multiple") or "nan")
+            e, sl = float(r["entry"]), float(r["sl"])
+        except (TypeError, ValueError, KeyError):
+            continue
+        if rm == rm and day(r.get("closed_at") or r.get("created_at")) == today:
+            pnl += rm * notional * abs(e - sl) / e
+    target = float(us.get("daily_profit_target_usd") or 0)
+    loss_lim = float(us.get("daily_loss_limit_usd") or 0)
+    out["user_pnl_today"] = round(pnl, 2)
+    if target and pnl >= target:
+        out.update(blocked=True, reason=f"aaj ka target hit (+${pnl:.2f}) — aaj trading band ✅ (kal phir)")
+        return out
+    if loss_lim and pnl <= -loss_lim:
+        out.update(blocked=True, reason=f"aaj ka loss limit hit (−${-pnl:.2f}) — aaj trading band (kal phir)")
+        return out
     if len(losses) >= max_losses:
         out.update(blocked=True, reason=f"aaj {len(losses)} loss ho chuke — aaj ke liye trading band (kal phir)")
     elif max_trades > 0 and len(trades) >= max_trades:
@@ -421,6 +442,9 @@ def user_size_lines(p: dict, cfg: dict) -> list[str]:
     liq_pct = 1 / lev - 0.005  # isolated, ~0.5% maintenance margin
     out = [f"👤 Aapke size par (${m:g} × {lev:g}x = ${notional:.0f}): SL loss −${loss:.2f} | "
            f"TP1 +${profs[0]:.2f} / TP2 +${profs[1]:.2f} / TP3 +${profs[2]:.2f}"]
+    lim = float(us.get("daily_loss_limit_usd") or 0)
+    if lim and loss > lim:
+        out.append(f"⚠️ Is trade ka SL loss (${loss:.2f}) aap ke din ke loss limit (${lim:g}) se zyada hai")
     if sl_pct >= liq_pct * 0.9:
         safe = max(1, int(0.9 / (sl_pct + 0.005)))
         out.append(f"⚠️ {lev:g}x par liquidation SL se PEHLE aa sakta hai — is trade mein leverage max {safe}x rakho")
