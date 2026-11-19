@@ -119,6 +119,118 @@
       "kind": "digest",
       "status": "expired",
       "closed_at": "2026-11-19T07:06:01Z"
+    },
+    {
+      "id": "20261118-0802-ADA",
+      "coin": "ADA",
+      "symbol": "ADA/USDT:USDT",
+      "pair": "ADA/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 0.1546,
+      "candle_time": "2026-11-18T07:00:00Z",
+      "created_at": "2026-11-18T08:02:00Z",
+      "created_at_pkt": "2026-11-18 13:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 0.1565,
+          "range_low": 0.1491,
+          "equilibrium": 0.1528,
+          "price": 0.1546,
+          "pct": 74.3,
+          "zone": "premium",
+          "from_time": "2026-11-16T12:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 64853.9,
+        "change_1h_pct": 0.43,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-18T07:00:00Z"
+      },
+      "ready": {
+        "symbol": "ADA/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 171.6,
+        "side": "short",
+        "model": "A",
+        "grade": "A+",
+        "score": 92.5,
+        "market_rr": 2.7,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "handled",
+      "closed_at": "2026-11-19T07:07:54Z"
+    },
+    {
+      "id": "20261118-1402-ADA",
+      "coin": "ADA",
+      "symbol": "ADA/USDT:USDT",
+      "pair": "ADA/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [],
+      "trigger_labels": [],
+      "light_score": 0,
+      "price": 0.1539,
+      "candle_time": "2026-11-18T13:00:00Z",
+      "created_at": "2026-11-18T14:02:00Z",
+      "created_at_pkt": "2026-11-18 19:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 0.1565,
+          "range_low": 0.1491,
+          "equilibrium": 0.1528,
+          "price": 0.153,
+          "pct": 52.7,
+          "zone": "premium",
+          "from_time": "2026-11-16T12:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 63911.3,
+        "change_1h_pct": -0.23,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-18T13:00:00Z"
+      },
+      "ready": {
+        "symbol": "ADA/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 174.6,
+        "side": "short",
+        "model": "A",
+        "grade": "A+",
+        "score": 92.5,
+        "market_rr": 4.19,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "handled",
+      "closed_at": "2026-11-19T07:07:54Z"
     }
   ]
 }
