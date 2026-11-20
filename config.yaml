@@ -57,6 +57,13 @@ score_weights:
   session_timing: 5
   news: 5
   backtest_edge: 5
+  pro_confluence: 10           # Nov 21: VWAP, RSI, divergence, overextension, volume climax, weekend, correlation
+pro_checks:
+  rsi_oversold: 25
+  rsi_overbought: 75
+  max_ext_atr: 2.5             # distance from 1H EMA20 (ATRs) that counts as chasing
+  climax_volume_x: 3.0
+  exhaustion_block_count: 2    # 2+ exhaustion warnings = NO TRADE (don't sell the hole / buy the top)
 btc_dump_pct: 2.0            # BTC 1H drop % that blocks alt longs
 funding_extreme: 0.05        # % per funding period
 long_short_extreme: 3.0      # L/S account ratio above this (or below 1/this) = crowded

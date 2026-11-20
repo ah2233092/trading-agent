@@ -24,7 +24,7 @@ if __package__ in (None, ""):
 import numpy as np
 import pandas as pd
 
-from lib import chart, data, futures, risk, smc
+from lib import chart, data, futures, pro_checks, risk, smc
 from lib.bias import BTC, analyze_bias
 from lib.config import ROOT, cfg_get, fmt_local, iso_utc, load_config, utc_now
 from lib.journal import read_setup_stats
@@ -278,8 +278,14 @@ def analyze_symbol(symbol: str, cfg: dict | None = None, news: str | None = None
                 plan["notes"].append("momentum entry not possible (" + "; ".join(mom.get("rejects") or [])[:100] + ")")
         plan["levels_considered"] = sorted(levels, key=lambda x: abs(x["price"] - price))[:15]
 
-    # 5) setup stats
+    # 5) setup stats + pro checks
     stats = read_setup_stats(setup.get("model"))
+    pro = None
+    if side:
+        try:
+            pro = pro_checks.analyze(side, frames, price, cfg, pd.Timestamp(now), coin)
+        except Exception as e:  # noqa: BLE001
+            log.warning("pro checks failed: %s", e)
 
     # 6) score
     score_inputs = {
@@ -292,6 +298,7 @@ def analyze_symbol(symbol: str, cfg: dict | None = None, news: str | None = None
         "stats": stats,
         "plan": {"ok": plan.get("ok"), "rejects": plan.get("rejects")} if plan else None,
         "limits": daily_limits(cfg, now),
+        "pro": pro,
     }
     score = compute_score(score_inputs, cfg)
 
@@ -433,6 +440,7 @@ def format_answer(rep: dict, cfg: dict | None = None) -> str:
         f"- SMC: {s['name']} — POI {poi.get('kind')} {_g(poi.get('bottom'))}–{_g(poi.get('top'))}, "
         + ", ".join(k.replace('_', ' ') for k, v in (s.get('quality') or {}).items() if v),
         f"- Futures data: {fut.get('verdict') or 'n/a'}" + (f" ({fut['reason']})" if fut.get("reason") else ""),
+        *pro_checks.lines(rep.get("score_inputs", {}).get("pro") or {}),
         f"- News: {news_line}",
         "",
         f"❌ Invalidation: 1H candle close {_g(p['sl'])} ke {inv_dir} (POI fail)",

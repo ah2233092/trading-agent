@@ -130,6 +130,16 @@ def compute_score(inp: dict, cfg: dict | None = None) -> dict:
         n = (stats or {}).get("trades") or 0
         add("backtest_edge", 0.5, f"not enough data yet ({n} trades)")
 
+    # Pro checks (VWAP, RSI room / divergence, overextension, volume climax, weekend, correlation)
+    pro = inp.get("pro")
+    if pro and pro.get("ok"):
+        add("pro_confluence", pro.get("fraction", 0.5),
+            "; ".join((pro.get("good") or [])[:2] + [f"⚠️ {x}" for x in (pro.get("warnings") or [])][:3]) or "neutral")
+        if pro.get("exhausted"):
+            blocks.append("exhaustion: move already stretched — "
+                          + "; ".join(x for x in pro["warnings"] if any(k in x for k in
+                                      ("oversold", "overbought", "divergence", "overextended", "climax")))[:160])
+
     # Live entry rule (backtest: only market entries inside London / NY killzones were profitable)
     if cfg_get(cfg, "entry_mode", "limit") == "market_in_killzone" and sess and not sess.get("in_killzone"):
         blocks.append("outside killzone — trade sirf London 12:00–15:00 PKT ya New York 17:00–20:00 PKT mein")
@@ -141,7 +151,8 @@ def compute_score(inp: dict, cfg: dict | None = None) -> dict:
     if plan is not None and not plan.get("ok"):
         blocks.append("risk plan rejected: " + "; ".join(plan.get("rejects") or []))
 
-    total = round(sum(p["points"] for p in parts), 1)
+    wsum = sum(p["weight"] for p in parts) or 100.0
+    total = round(sum(p["points"] for p in parts) * 100.0 / wsum, 1)   # always on a 0-100 scale
     threshold = float(cfg_get(cfg, "min_trade_score", 75))
     if total < threshold:
         blocks.append(f"score {total:g} < {threshold:g}")

@@ -55,12 +55,14 @@ Every script has `--json`. Symbols accept `SOL`, `SOL/USDT` or `SOL/USDT:USDT`.
 - Charts: `python lib/chart.py --symbol SOL --tf 1d,4h,1h,15m --marks auto [--plan report.json]` → `charts/<COIN>/`
 - Futures: `python lib/futures.py --symbol SOL --side long --json` (MEXC + Binance/Bybit/OKX fallbacks)
 - Risk: `python lib/risk.py --symbol SOL --side long --entry .. --sl .. --tp a,b,c --json`
+- Pro checks: `python lib/pro_checks.py --symbol SOL --side short` (VWAP, RSI room/divergence, overextension,
+  volume climax, weekend, correlation; feeds `pro_confluence` + an exhaustion block)
 - Score: `python lib/score.py --report reports/SOL/latest.json [--news clear] --json`
 - Journal: `python lib/journal.py add|update|autocheck|report|list` (`journal/trades.csv`)
 - **Deep scan engine**: `python lib/deep_scan.py --symbol SOL --json` / `--all-pending` /
   `--finalize <report> --news clear|caution|block` / `--close-alerts [--coin SOL]` → reports in `reports/<COIN>/`
 - Watchman: `python scanner/run_scan.py [--dry-run] [--coins SOL,ETH]`
-- Tests (offline): `python tests/test_smc.py`, `python tests/test_phase2.py`
+- Tests (offline): `python tests/test_smc.py`, `python tests/test_phase2.py`, `python tests/test_pro.py`
 - Alerts: `alerts/pending.json` = `{"alerts": [...]}`; each alert has `id, coin, symbol, pair, direction_hint,
   triggers, trigger_labels, light_score, price, candle_time, created_at (UTC), created_at_pkt, exchange, context,
   levels, btc`. History: `alerts/history/YYYY-MM-DD.json` (same shape + `status`, `closed_at`).

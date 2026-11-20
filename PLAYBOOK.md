@@ -26,6 +26,8 @@ Agar GitHub ya MEXC data mein masla ho: main aapke Chrome mein TradingView (MEXC
 4. **Chart vision** — 1D/4H/1H/15m charts dekh kar confirm.
 5. **Futures data** — funding, open interest, long/short ratio (crowd trap check).
 6. **News** — coin news, token unlocks, CPI/FOMC/NFP; bari news 2 ghante ke andar ho to trade band.
+6b. **Pro checks** — daily + weekly VWAP (price saath ho), RSI 1H/4H (room ya exhausted), RSI divergence, EMA20 se overextension (chase nahi), volume climax (capitulation), weekend, correlation (ek hi taraf 2 trades nahi). 2+ exhaustion warning = NO TRADE.
+6c. **Momentum entry** — limit POI 1%+ door ho aur 15m trend saath ho to market entry, SL pichle 15m swing ke peeche (max 2%).
 7. **Entry rule (backtest se)** — sirf **London / New York killzone** mein, **market entry** current price se, aur TP1 kam se kam **1:2** ho. Profit fixed nahi — setup jitna achha, target utna door.
 8. **Risk** — SL structure ke peeche, TP1 / TP2 / TP3 liquidity par. TP1 par aadhi position close + SL entry par, baqi TP2/TP3 tak (bara profit).
 
