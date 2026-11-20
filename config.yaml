@@ -64,6 +64,13 @@ futures_data_fallbacks: [okx, binanceusdm, bybit]   # for OI history / L/S ratio
 news_block_hours: 2
 
 # --- Live entry rule (from the Oct 2026 backtest) ---
+momentum:                      # Nov 20: when the POI limit is too far, enter at market with the 15m trend
+  enabled: true
+  min_gap_pct: 1.0             # use it when the limit entry is >= 1% away from price
+  max_sl_pct: 2.0              # SL behind the last 15m swing, max 2% away
+  swing_length: 3
+  max_event_age_bars: 32       # last 15m BOS/CHoCH in the trade direction within 8h
+  sl_atr_buffer: 0.15
 entry_mode: market_in_killzone   # market entry from the current price, only in London / NY killzones
 max_trades_per_day: 0            # 0 = no maximum (Rans: trades jitni marzi)
 min_signals_per_day: 2           # 2 killzone digests a day with the top 2 coins

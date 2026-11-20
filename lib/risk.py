@@ -337,6 +337,56 @@ def plan_from_setup(side: str, setup: dict, levels: list[dict], atr_1h: float, s
     return plan
 
 
+def momentum_plan(side: str, df15, levels: list[dict], atr_1h: float, spec: ContractSpec,
+                  cfg: dict | None = None, price: float | None = None) -> dict:
+    """Trend-continuation MARKET entry (used when the POI limit is too far to fill).
+
+    Needs the 15m structure aligned with the trade (last BOS/CHoCH in the trade direction within
+    `momentum.max_event_age_bars`). SL goes behind the latest confirmed 15m swing beyond price
+    (lower high for shorts / higher low for longs) + a small ATR buffer; TPs from liquidity.
+    """
+    from lib import smc  # local import (smc does not import risk)
+    cfg = cfg or load_config()
+    side = side.lower()
+    m = cfg_get(cfg, "momentum", {}) or {}
+    if df15 is None or len(df15) < 40 or price is None:
+        return {"ok": False, "rejects": ["momentum: no 15m data"], "side": side}
+    length = int(m.get("swing_length", 3))
+    ms = smc.market_structure(df15, length)
+    want = "bearish" if side == "short" else "bullish"
+    ev = ms.get("last_event")
+    if ms["trend"] != want or not ev or ev["direction"] != want:
+        return {"ok": False, "rejects": [f"momentum: 15m structure not {want}"], "side": side}
+    if len(df15) - 1 - ev["idx"] > int(m.get("max_event_age_bars", 32)):
+        return {"ok": False, "rejects": ["momentum: last 15m break too old"], "side": side}
+    kind = "high" if side == "short" else "low"
+    sw = [x for x in ms["swings"] if x["kind"] == kind and x["confirmed_idx"] <= len(df15) - 1
+          and (x["price"] > price if side == "short" else x["price"] < price)]
+    if not sw:
+        return {"ok": False, "rejects": ["momentum: no 15m swing for the SL"], "side": side}
+    ref = sw[-1]["price"]
+    buf = float(m.get("sl_atr_buffer", 0.15)) * (atr_1h or 0)
+    tick = spec.tick_size
+    sl = round_price(ref + buf, tick, "up") if side == "short" else round_price(ref - buf, tick, "down")
+    sl_pct = abs(sl - price) / price * 100
+    if sl_pct > float(m.get("max_sl_pct", 2.0)):
+        return {"ok": False, "rejects": [f"momentum: SL {sl_pct:.2f}% too wide"], "side": side}
+    tg = choose_targets(side, price, sl, levels, cfg)
+    tps = [round_price(t["price"] - tick if side == "long" else t["price"] + tick, tick) for t in tg["tp"]]
+    plan = build_plan(side, price, sl, tps, spec, cfg, "market")
+    plan["entry_zone"] = [price, price]
+    plan["targets"] = [{"name": t["name"], "level": t["price"], "strength": t.get("strength")} for t in tg["tp"]]
+    plan["notes"].append(f"momentum entry: 15m {ev['type']} {want}, SL behind 15m swing {ref:g}")
+    if tg["fallback"]:
+        plan["notes"].append("no liquidity level for TP" + ",".join(map(str, tg["fallback"])) + " — R-multiple used")
+    if tg["blocked_by"]:
+        b = tg["blocked_by"]
+        plan["rejects"].insert(0, f"TP1 blocked by {b['name']} at {b['price']:g} (only 1:{b['r']:.2f})")
+        plan["ok"] = False
+    plan["text"] = plan_text(plan)
+    return plan
+
+
 def _main() -> None:
     from lib.config import fix_console
     from lib.data import to_symbol

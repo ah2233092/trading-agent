@@ -264,6 +264,18 @@ def analyze_symbol(symbol: str, cfg: dict | None = None, news: str | None = None
                 limit["notes"].append("market entry blocked (" + "; ".join(plan.get("rejects") or [])[:120]
                                       + ") — LIMIT order at the POI instead")
                 plan = limit
+        # limit too far from price (strong trend never pulls back) -> momentum market entry instead
+        mcfg = cfg_get(cfg, "momentum", {}) or {}
+        if (mcfg.get("enabled") and plan.get("ok") and plan.get("order") == "limit"
+                and abs(plan["entry"] - price) / price * 100 >= float(mcfg.get("min_gap_pct", 1.0))):
+            mom = risk.momentum_plan(side, frames.get("15m"), levels, setup.get("atr_1h") or 0, spec, cfg, price)
+            if mom.get("ok"):
+                mom["notes"].append(f"POI limit {plan['entry']:g} was {abs(plan['entry'] - price) / price * 100:.1f}% "
+                                    f"away — market entry with the trend instead")
+                mom["alt_limit"] = {"entry": plan["entry"], "sl": plan["sl"]}
+                plan = mom
+            else:
+                plan["notes"].append("momentum entry not possible (" + "; ".join(mom.get("rejects") or [])[:100] + ")")
         plan["levels_considered"] = sorted(levels, key=lambda x: abs(x["price"] - price))[:15]
 
     # 5) setup stats
