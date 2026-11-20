@@ -1,116 +1,6 @@
 {
   "alerts": [
     {
-      "id": "20261119-1206-LINK",
-      "coin": "LINK",
-      "symbol": "LINK/USDT:USDT",
-      "pair": "LINK/USDT",
-      "direction_hint": "SHORT",
-      "triggers": [],
-      "trigger_labels": [],
-      "light_score": 0,
-      "price": 9.194,
-      "candle_time": "2026-11-19T11:00:00Z",
-      "created_at": "2026-11-19T12:06:00Z",
-      "created_at_pkt": "2026-11-19 17:06 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bearish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 9.404,
-          "range_low": 8.878,
-          "equilibrium": 9.141,
-          "price": 9.194,
-          "pct": 60.1,
-          "zone": "premium",
-          "from_time": "2026-11-17T12:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 63917.2,
-        "change_1h_pct": 0.25,
-        "dump": false,
-        "trend_1h": "bearish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-19T11:00:00Z"
-      },
-      "ready": {
-        "symbol": "LINK/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 165.8,
-        "side": "short",
-        "model": "C",
-        "grade": "A",
-        "score": 72.5,
-        "market_rr": 4.78,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "digest",
-      "status": "pending"
-    },
-    {
-      "id": "20261119-1206-PIEVERSE",
-      "coin": "PIEVERSE",
-      "symbol": "PIEVERSE/USDT:USDT",
-      "pair": "PIEVERSE/USDT",
-      "direction_hint": "LONG",
-      "triggers": [],
-      "trigger_labels": [],
-      "light_score": 0,
-      "price": 2.9172,
-      "candle_time": "2026-11-19T11:00:00Z",
-      "created_at": "2026-11-19T12:06:00Z",
-      "created_at_pkt": "2026-11-19 17:06 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bullish",
-        "trend_1h": "bullish",
-        "premium_discount_4h": {
-          "range_high": 3.6527,
-          "range_low": 1.7781,
-          "equilibrium": 2.7154,
-          "price": 2.9172,
-          "pct": 60.8,
-          "zone": "premium",
-          "from_time": "2026-11-16T16:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 0
-      },
-      "levels": {},
-      "btc": {
-        "price": 63917.2,
-        "change_1h_pct": 0.25,
-        "dump": false,
-        "trend_1h": "bearish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-19T11:00:00Z"
-      },
-      "ready": {
-        "symbol": "PIEVERSE/USDT:USDT",
-        "candidate": true,
-        "ready": false,
-        "rank": 64.5,
-        "side": "long",
-        "model": "B",
-        "grade": "A+",
-        "score": 88.7,
-        "market_rr": 0.06,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "TP1 only 1:0.1 from current price"
-      },
-      "kind": "digest",
-      "status": "pending"
-    },
-    {
       "id": "20261120-0706-DOGE",
       "coin": "DOGE",
       "symbol": "DOGE/USDT:USDT",
@@ -287,6 +177,126 @@
         "why": "ready"
       },
       "kind": "ready",
+      "status": "pending"
+    },
+    {
+      "id": "20261120-1206-SOL",
+      "coin": "SOL",
+      "symbol": "SOL/USDT:USDT",
+      "pair": "SOL/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "near PDL"
+      ],
+      "light_score": 35,
+      "price": 71.74,
+      "candle_time": "2026-11-20T11:00:00Z",
+      "created_at": "2026-11-20T12:06:00Z",
+      "created_at_pkt": "2026-11-20 17:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 75.61,
+          "range_low": 71.55,
+          "equilibrium": 73.58,
+          "price": 71.74,
+          "pct": 4.7,
+          "zone": "discount",
+          "from_time": "2026-11-18T16:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 61786.3,
+        "change_1h_pct": -0.39,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-20T11:00:00Z"
+      },
+      "ready": {
+        "symbol": "SOL/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 61.8,
+        "side": "short",
+        "model": "A",
+        "grade": "A+",
+        "score": 83.5,
+        "market_rr": 0.04,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.0 from current price"
+      },
+      "kind": "digest",
+      "status": "pending"
+    },
+    {
+      "id": "20261120-1206-HYPE",
+      "coin": "HYPE",
+      "symbol": "HYPE/USDT:USDT",
+      "pair": "HYPE/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "structure"
+      ],
+      "trigger_labels": [
+        "1H BOS"
+      ],
+      "light_score": 33,
+      "price": 63.892,
+      "candle_time": "2026-11-20T11:00:00Z",
+      "created_at": "2026-11-20T12:06:00Z",
+      "created_at_pkt": "2026-11-20 17:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 71.01,
+          "range_low": 63.832,
+          "equilibrium": 67.421,
+          "price": 63.892,
+          "pct": 0.8,
+          "zone": "discount",
+          "from_time": "2026-11-16T20:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 0
+      },
+      "levels": {
+        "structure_level": 64.481
+      },
+      "btc": {
+        "price": 61786.3,
+        "change_1h_pct": -0.39,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-20T11:00:00Z"
+      },
+      "ready": {
+        "symbol": "HYPE/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 61.8,
+        "side": "short",
+        "model": "A",
+        "grade": "A+",
+        "score": 83.5,
+        "market_rr": 0.01,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.0 from current price"
+      },
+      "kind": "digest",
       "status": "pending"
     }
   ]
