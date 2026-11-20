@@ -53,16 +53,16 @@
         "period": "2025-11-10 \u2192 2026-10-31"
       },
       "journal": {
-        "trades": 1,
-        "wins": 0,
+        "trades": 2,
+        "wins": 1,
         "losses": 1,
         "be": 0,
-        "sum_r": -1.0,
-        "pos_r": 0.0,
+        "sum_r": 0.618,
+        "pos_r": 1.618,
         "neg_r": 1.0,
-        "win_rate": 0.0,
-        "avg_r": -1.0,
-        "profit_factor": 0.0,
+        "win_rate": 50.0,
+        "avg_r": 0.309,
+        "profit_factor": 1.62,
         "source": "journal"
       }
     },
@@ -286,5 +286,5 @@
     "errors": 0,
     "assumptions": "news clear, futures neutral, fees+slippage, SL first in same candle, 15m fills"
   },
-  "updated_at": "2026-11-20T06:02:21Z"
+  "updated_at": "2026-11-20T07:02:18Z"
 }
