@@ -278,6 +278,126 @@
       },
       "kind": "digest",
       "status": "pending"
+    },
+    {
+      "id": "20261120-0706-DOGE",
+      "coin": "DOGE",
+      "symbol": "DOGE/USDT:USDT",
+      "pair": "DOGE/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "near PDL"
+      ],
+      "light_score": 35,
+      "price": 0.0577,
+      "candle_time": "2026-11-20T06:00:00Z",
+      "created_at": "2026-11-20T07:06:00Z",
+      "created_at_pkt": "2026-11-20 12:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 0.06044,
+          "range_low": 0.05676,
+          "equilibrium": 0.0586,
+          "price": 0.05746,
+          "pct": 19.0,
+          "zone": "discount",
+          "from_time": "2026-11-17T20:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {},
+      "btc": {
+        "price": 62029.8,
+        "change_1h_pct": 0.21,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-20T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "DOGE/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 62.5,
+        "side": "short",
+        "model": "C",
+        "grade": "A+",
+        "score": 83.5,
+        "market_rr": 0.39,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.4 from current price"
+      },
+      "kind": "digest",
+      "status": "pending"
+    },
+    {
+      "id": "20261120-0706-HYPE",
+      "coin": "HYPE",
+      "symbol": "HYPE/USDT:USDT",
+      "pair": "HYPE/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "structure"
+      ],
+      "trigger_labels": [
+        "1H BOS"
+      ],
+      "light_score": 33,
+      "price": 65.822,
+      "candle_time": "2026-11-20T06:00:00Z",
+      "created_at": "2026-11-20T07:06:00Z",
+      "created_at_pkt": "2026-11-20 12:06 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bearish",
+        "premium_discount_4h": {
+          "range_high": 71.01,
+          "range_low": 64.481,
+          "equilibrium": 67.7455,
+          "price": 65.955,
+          "pct": 22.6,
+          "zone": "discount",
+          "from_time": "2026-11-16T20:00:00Z"
+        },
+        "pd_bonus": 0,
+        "opposite_side_points": 30
+      },
+      "levels": {
+        "structure_level": 65.061
+      },
+      "btc": {
+        "price": 62029.8,
+        "change_1h_pct": 0.21,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-20T06:00:00Z"
+      },
+      "ready": {
+        "symbol": "HYPE/USDT:USDT",
+        "candidate": true,
+        "ready": false,
+        "rank": 62.4,
+        "side": "short",
+        "model": "A",
+        "grade": "A+",
+        "score": 83.5,
+        "market_rr": 0.33,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "TP1 only 1:0.3 from current price"
+      },
+      "kind": "digest",
+      "status": "pending"
     }
   ]
 }
