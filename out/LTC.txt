@@ -1,0 +1,39 @@
+❌ NO TRADE — LTC/USDT
+Wajah: score 46.4 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 59.4
+4H: bearish — range 38.35–44.78, price in discount (6.4%)
+BTC: against
+Key levels: PDH 42.46, PDL 39.42, PWH 52.24, PWL 42.65, MO 55.72
+Setup: A Sweep + CHoCH + FVG/OB retest grade A
+Funding: 0.0035% (normal, crowd: none) [mexc]
+OI: 1H -0.10%, 4H -1.51% → OI flat — no new positioning [okx]
+L/S ratio: 2.701 (balanced) [okx]
+Liquidity: 24h vol $5.9M, spread 0.026% ❌
+Verdict: against (low volume / wide spread)
+Entry 41.72 | SL 43.14 (3.42%, 1 R)
+TP1 38.36 (1:2.35) | TP2 36.94 (1:3.35) | TP3 35.51 (1:4.35)
+Qty 125 contracts | Notional $52.14 | Leverage 6x isolated | Margin $8.69
+Liquidation ≈ 48.46 (SL se 12.34% door) ✅
+Risk $1.79 | Net reward TP1 $4.19 / TP2 $5.97 / TP3 $7.76 (fees ke baad)
+ℹ️ no liquidity level for TP2,3 — R-multiple used
+Score: 46.4/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             20.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         2.5 / 10   price below weekly VWAP 41.8166; 1H RSI 37 with the trade, room left; ⚠️ price above daily VWAP 38.838 (against); ⚠️ 4H RSI 23 — oversold on 4H; ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ coin fails volume / spread filter
+  ✖ score 46.4 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/LTC/20261121-0708_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/LTC/20261121-0708_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/LTC/20261121-0708_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/LTC/20261121-0708_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/LTC/20261121T0708.json

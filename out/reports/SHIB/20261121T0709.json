@@ -1,0 +1,835 @@
+{
+ "symbol": "SHIB/USDT:USDT",
+ "coin": "SHIB",
+ "pair": "SHIB/USDT",
+ "exchange": "mexc",
+ "created_at": "2026-11-21T07:09:53Z",
+ "created_at_pkt": "2026-11-21 12:09 PKT",
+ "valid_until": "2026-11-21T13:09:53Z",
+ "price": 3.532e-06,
+ "last_1h_candle": "2026-11-21T06:00:00Z",
+ "alert": null,
+ "direction": "SHORT",
+ "decision": "NO TRADE",
+ "bias": {
+  "symbol": "SHIB/USDT:USDT",
+  "direction": "SHORT",
+  "strong_poi_only": false,
+  "pd_ok": false,
+  "reasons": [
+   "1D and 4H both bearish",
+   "BTC is pushing up — caution for alt shorts",
+   "price in 4H discount (9.4%) — wait for a premium POI, do not chase",
+   "EMA stack bearish on 1D, 4H"
+  ],
+  "d1": {
+   "trend": "bearish",
+   "last_bos": {
+    "type": "BOS",
+    "direction": "bearish",
+    "level": 3.688e-06,
+    "swing_idx": 393,
+    "swing_time": "2026-11-14T00:00:00Z",
+    "idx": 399,
+    "time": "2026-11-20T00:00:00Z",
+    "close": 3.585e-06
+   },
+   "last_choch": {
+    "type": "CHoCH",
+    "direction": "bearish",
+    "level": 5.469e-06,
+    "swing_idx": 347,
+    "swing_time": "2026-09-29T00:00:00Z",
+    "idx": 355,
+    "time": "2026-10-07T00:00:00Z",
+    "close": 5.435e-06
+   },
+   "ema": {
+    "price": 3.585e-06,
+    "ema20": 4.1932e-06,
+    "above_ema20": false,
+    "slope20_pct": -6.153,
+    "ema50": 4.6212e-06,
+    "above_ema50": false,
+    "slope50_pct": -3.884,
+    "ema200": 5.22e-06,
+    "above_ema200": false,
+    "slope200_pct": -1.393,
+    "stack": "bearish"
+   }
+  },
+  "h4": {
+   "trend": "bearish",
+   "last_bos": {
+    "type": "BOS",
+    "direction": "bearish",
+    "level": 3.711e-06,
+    "swing_idx": 286,
+    "swing_time": "2026-11-18T20:00:00Z",
+    "idx": 295,
+    "time": "2026-11-20T08:00:00Z",
+    "close": 3.695e-06
+   },
+   "last_choch": {
+    "type": "CHoCH",
+    "direction": "bearish",
+    "level": 4.476e-06,
+    "swing_idx": 197,
+    "swing_time": "2026-11-04T00:00:00Z",
+    "idx": 206,
+    "time": "2026-11-05T12:00:00Z",
+    "close": 4.472e-06
+   },
+   "ema": {
+    "price": 3.452e-06,
+    "ema20": 3.7207e-06,
+    "above_ema20": false,
+    "slope20_pct": -2.899,
+    "ema50": 3.9004e-06,
+    "above_ema50": false,
+    "slope50_pct": -1.924,
+    "ema200": 4.4673e-06,
+    "above_ema200": false,
+    "slope200_pct": -1.033,
+    "stack": "bearish"
+   },
+   "range": {
+    "range_high": 3.916e-06,
+    "range_low": 3.404e-06,
+    "equilibrium": 3.66e-06,
+    "price": 3.452e-06,
+    "pct": 9.4,
+    "zone": "discount",
+    "from_time": "2026-11-18T20:00:00Z"
+   }
+  },
+  "btc": {
+   "price": 58035.6,
+   "change_1h_pct": 4.07,
+   "dump": false,
+   "pump": true,
+   "trend_1h": "bearish",
+   "trend_4h": "bearish",
+   "fresh_bearish_break": false,
+   "fresh_bullish_break": false,
+   "for_long": "neutral",
+   "for_short": "against"
+  },
+  "btc_for_direction": "against",
+  "key_levels": {
+   "PDH": 3.806e-06,
+   "PDL": 3.479e-06,
+   "PWH": 4.514e-06,
+   "PWL": 3.688e-06,
+   "day_start": "2026-11-21T00:00:00Z",
+   "week_start": "2026-11-16T00:00:00Z",
+   "MO": 4.675e-06
+  },
+  "text": "HTF BIAS: SHORT\n1D: bearish — last BOS 3.688e-06\n4H: bearish — range 3.404e-06–3.916e-06, price in discount (9.4%)\nBTC: against\nKey levels: PDH 3.806e-06, PDL 3.479e-06, PWH 4.514e-06, PWL 3.688e-06, MO 4.675e-06"
+ },
+ "setup": {
+  "direction": "SHORT",
+  "model": "A",
+  "name": "Sweep + CHoCH + FVG/OB retest",
+  "grade": "A",
+  "poi": {
+   "kind": "1H OB",
+   "top": 3.765e-06,
+   "bottom": 3.709e-06,
+   "mid": 3.737e-06,
+   "source": "1H",
+   "time": "2026-11-20T05:00:00Z"
+  },
+  "sl_ref": 3.822e-06,
+  "state": "waiting",
+  "quality": {
+   "htf_aligned": true,
+   "pd_ok": true,
+   "displacement": true,
+   "confluence": false,
+   "ltf_confirmed": false
+  },
+  "reasons": [
+   "htf aligned: yes",
+   "pd ok: yes",
+   "displacement: yes",
+   "confluence: no",
+   "ltf confirmed: no"
+  ],
+  "candidates": [
+   {
+    "model": "A",
+    "poi": {
+     "kind": "1H OB",
+     "top": 3.765e-06,
+     "bottom": 3.709e-06,
+     "mid": 3.737e-06,
+     "source": "1H",
+     "time": "2026-11-20T05:00:00Z"
+    },
+    "state": "waiting",
+    "overlap": false,
+    "displacement": {
+     "displacement": true,
+     "body_only": false,
+     "idx": 366,
+     "time": "2026-11-19T21:00:00Z"
+    },
+    "sl_ref": 3.822e-06,
+    "detail": {
+     "sweep": {
+      "direction": "bearish",
+      "level_name": "PDH",
+      "level": 3.806e-06,
+      "idx": 365,
+      "time": "2026-11-19T20:00:00Z",
+      "age": 34,
+      "wick": 3.822e-06,
+      "close": 3.793e-06,
+      "depth": 1.6e-08,
+      "depth_atr": 0.4,
+      "rank": 3
+     },
+     "break": {
+      "type": "CHoCH",
+      "direction": "bearish",
+      "level": 3.693e-06,
+      "swing_idx": 371,
+      "swing_time": "2026-11-20T02:00:00Z",
+      "idx": 381,
+      "time": "2026-11-20T12:00:00Z",
+      "close": 3.679e-06
+     }
+    },
+    "ltf": {
+     "confirmed": false,
+     "tap_idx": null,
+     "tap_time": null,
+     "choch": null,
+     "reason": "price has not tapped the POI on 15m"
+    },
+    "quality": {
+     "htf_aligned": true,
+     "pd_ok": true,
+     "displacement": true,
+     "confluence": false,
+     "ltf_confirmed": false
+    },
+    "grade": "A",
+    "distance_atr": 2.73,
+    "name": "Sweep + CHoCH + FVG/OB retest"
+   },
+   {
+    "model": "B",
+    "poi": {
+     "kind": "4H FVG",
+     "top": 3.678e-06,
+     "bottom": 3.584e-06,
+     "mid": 3.631e-06,
+     "source": "4H",
+     "time": "2026-11-20T12:00:00Z"
+    },
+    "state": "waiting",
+    "overlap": false,
+    "displacement": {
+     "displacement": true,
+     "body_only": false,
+     "idx": 282,
+     "time": "2026-11-21T02:30:00Z"
+    },
+    "sl_ref": 3.678e-06,
+    "ltf": {
+     "confirmed": true,
+     "tap_idx": 268,
+     "tap_time": "2026-11-20T23:00:00Z",
+     "choch": {
+      "type": "CHoCH",
+      "direction": "bearish",
+      "level": 3.564e-06,
+      "swing_idx": 277,
+      "swing_time": "2026-11-21T01:15:00Z",
+      "idx": 283,
+      "time": "2026-11-21T02:45:00Z",
+      "close": 3.561e-06
+     },
+     "reason": "15m CHoCH at 3.564e-06 (2026-11-21T02:45:00Z)"
+    },
+    "quality": {
+     "htf_aligned": true,
+     "pd_ok": false,
+     "displacement": true,
+     "confluence": false,
+     "ltf_confirmed": true
+    },
+    "grade": "A",
+    "distance_atr": 0.8,
+    "name": "HTF POI tap + 15m CHoCH"
+   },
+   {
+    "model": "C",
+    "poi": {
+     "kind": "1H OTE",
+     "top": 3.5613e-06,
+     "bottom": 3.5195e-06,
+     "mid": 3.5404e-06,
+     "source": "1H",
+     "time": null
+    },
+    "state": "in_zone",
+    "overlap": false,
+    "displacement": {
+     "displacement": true,
+     "body_only": false,
+     "idx": 396,
+     "time": "2026-11-21T03:00:00Z"
+    },
+    "sl_ref": 3.613e-06,
+    "ltf": {
+     "confirmed": false,
+     "tap_idx": 283,
+     "tap_time": "2026-11-21T02:45:00Z",
+     "choch": null,
+     "reason": "no 15m CHoCH yet after the tap"
+    },
+    "quality": {
+     "htf_aligned": true,
+     "pd_ok": false,
+     "displacement": true,
+     "confluence": false,
+     "ltf_confirmed": false
+    },
+    "grade": "B",
+    "distance_atr": 0.0,
+    "name": "BOS continuation + OTE retrace"
+   }
+  ],
+  "pending": [],
+  "price": 3.532e-06,
+  "atr_1h": 6.49e-08,
+  "ote": {
+   "direction": "bearish",
+   "break_type": "BOS",
+   "break_idx": 396,
+   "start_idx": 392,
+   "start_time": "2026-11-20T23:00:00Z",
+   "end_idx": 399,
+   "end_time": "2026-11-21T06:00:00Z",
+   "low": 3.367e-06,
+   "high": 3.613e-06,
+   "top": 3.5613e-06,
+   "bottom": 3.5195e-06,
+   "sweet": 3.5404e-06,
+   "price": 3.532e-06,
+   "retrace_pct": 67.1,
+   "in_ote": true,
+   "touched": false,
+   "invalid": false
+  },
+  "trend_4h": "bearish",
+  "trend_1h": "bearish",
+  "premium_discount_4h": {
+   "range_high": 3.916e-06,
+   "range_low": 3.404e-06,
+   "equilibrium": 3.66e-06,
+   "price": 3.452e-06,
+   "pct": 9.4,
+   "zone": "discount",
+   "from_time": "2026-11-18T20:00:00Z"
+  },
+  "ltf": {
+   "confirmed": false,
+   "tap_idx": null,
+   "tap_time": null,
+   "choch": null,
+   "reason": "price has not tapped the POI on 15m"
+  },
+  "displacement": {
+   "displacement": true,
+   "body_only": false,
+   "idx": 366,
+   "time": "2026-11-19T21:00:00Z"
+  },
+  "distance_atr": 2.73
+ },
+ "session": {
+  "now_utc": "2026-11-21T07:09:53Z",
+  "in_killzone": true,
+  "killzone": "london",
+  "next_killzone": "new_york",
+  "next_start_utc": "2026-11-21T12:00:00Z",
+  "hours_to_next": 4.84,
+  "zones_utc": {
+   "asia": [
+    0,
+    6
+   ],
+   "london": [
+    7,
+    10
+   ],
+   "new_york": [
+    12,
+    15
+   ]
+  }
+ },
+ "asia_range": {
+  "start_utc": "2026-11-21T00:00:00Z",
+  "end_utc": "2026-11-21T06:00:00Z",
+  "high": 3.595e-06,
+  "low": 3.38e-06,
+  "complete": true,
+  "swept_high": false,
+  "swept_low": true
+ },
+ "futures": {
+  "symbol": "SHIB/USDT:USDT",
+  "side": "short",
+  "funding": {
+   "source": "mexc",
+   "current_pct": -0.0107,
+   "history_pct": [
+    0.0086,
+    0.0086,
+    0.008,
+    0.0085,
+    0.0062,
+    -0.0008,
+    -0.0057,
+    -0.0053
+   ],
+   "interval": "8h",
+   "next_funding_utc": "2026-11-21T08:00:00.000Z",
+   "level": "normal",
+   "crowd": "none"
+  },
+  "open_interest": {
+   "source": "okx",
+   "latest": 1413895.0000000005,
+   "change_1h_pct": 0.6,
+   "change_4h_pct": 0.06,
+   "reading_1h": "new longs (healthy up move)",
+   "reading_4h": "OI flat — no new positioning",
+   "mexc_now": 678585489000.0
+  },
+  "long_short": {
+   "source": "okx",
+   "ratio": 1.814,
+   "prev": 1.795,
+   "note": "balanced"
+  },
+  "liquidity": {
+   "quote_volume_24h": 7718135.223841,
+   "spread_pct": 0.0283,
+   "ok": false,
+   "source": "mexc"
+  },
+  "price_change": {
+   "1h_pct": 3.852,
+   "4h_pct": -0.814
+  },
+  "verdicts": {
+   "long": {
+    "verdict": "against",
+    "reason": "low volume / wide spread"
+   },
+   "short": {
+    "verdict": "against",
+    "reason": "low volume / wide spread"
+   }
+  },
+  "verdict": "against",
+  "reason": "low volume / wide spread",
+  "text": "Funding: -0.0107% (normal, crowd: none) [mexc]\nOI: 1H +0.60%, 4H +0.06% → new longs (healthy up move) [okx]\nL/S ratio: 1.814 (balanced) [okx]\nLiquidity: 24h vol $7.7M, spread 0.028% ❌\nVerdict: against (low volume / wide spread)"
+ },
+ "plan": {
+  "ok": true,
+  "rejects": [],
+  "notes": [
+   "no liquidity level for TP3 — R-multiple used",
+   "market entry blocked (TP1 blocked by 4H range low at 3.404e-06 (only 1:0.41); TP1 only 1:1.50 (< 1:1.5)) — LIMIT order at the POI instead",
+   "momentum entry not possible (momentum: SL 2.07% too wide)"
+  ],
+  "side": "short",
+  "order": "limit",
+  "entry": 3.737e-06,
+  "sl": 3.842e-06,
+  "tps": [
+   3.48e-06,
+   3.405e-06,
+   3.3e-06
+  ],
+  "sl_pct": 2.81,
+  "rr": [
+   2.45,
+   3.16,
+   4.16
+  ],
+  "contracts": 17142.0,
+  "qty": 17142000.0,
+  "notional_usd": 64.0597,
+  "leverage": 7,
+  "max_safe_leverage": 20,
+  "margin_usd": 9.1514,
+  "margin_mode": "isolated",
+  "liquidation": 4.261e-06,
+  "liq_beyond_sl_pct": 10.91,
+  "liq_ok": true,
+  "risk_target_usd": 1.8,
+  "risk_usd": 1.7999,
+  "fees_usd": {
+   "entry": 0.0,
+   "sl_exit": 0.0
+  },
+  "net_reward_usd": [
+   4.4055,
+   5.6911,
+   7.4911
+  ],
+  "net_reward_partial_usd": 4.4055,
+  "partial_schedule": [
+   100,
+   0,
+   0
+  ],
+  "spec": {
+   "symbol": "SHIB/USDT:USDT",
+   "contract_size": 1000.0,
+   "min_qty": 1.0,
+   "qty_step": 1.0,
+   "tick_size": 1e-09,
+   "maker_fee": 0.0,
+   "taker_fee": 0.0,
+   "mmr": 0.0023,
+   "max_leverage": 300.0,
+   "source": "mexc live"
+  },
+  "text": "Entry 3.737e-06 | SL 3.842e-06 (2.81%, 1 R)\nTP1 3.48e-06 (1:2.45) | TP2 3.405e-06 (1:3.16) | TP3 3.3e-06 (1:4.16)\nQty 17142 contracts | Notional $64.06 | Leverage 7x isolated | Margin $9.15\nLiquidation ≈ 4.261e-06 (SL se 10.91% door) ✅\nRisk $1.80 | Net reward TP1 $4.41 / TP2 $5.69 / TP3 $7.49 (fees ke baad)\nℹ️ no liquidity level for TP3 — R-multiple used",
+  "entry_zone": [
+   3.709e-06,
+   3.765e-06
+  ],
+  "targets": [
+   {
+    "name": "PDL",
+    "level": 3.479e-06,
+    "strength": "key"
+   },
+   {
+    "name": "4H range low",
+    "level": 3.404e-06,
+    "strength": "htf"
+   },
+   {
+    "name": "4.2R (no level)",
+    "level": 3.299e-06,
+    "strength": "fallback"
+   }
+  ],
+  "levels_considered": [
+   {
+    "name": "PDL",
+    "price": 3.479e-06,
+    "strength": "key"
+   },
+   {
+    "name": "1H PDL",
+    "price": 3.479e-06,
+    "strength": "key"
+   },
+   {
+    "name": "4H range low",
+    "price": 3.404e-06,
+    "strength": "htf"
+   }
+  ]
+ },
+ "stats": {
+  "trades": 78,
+  "candidates": 841,
+  "fill_rate": 9.3,
+  "win_rate": 29.5,
+  "sl_rate": 70.5,
+  "avg_r": 0.078,
+  "expectancy_r": 0.078,
+  "total_r": 6.05,
+  "profit_factor": 1.11,
+  "max_dd_r": 13.97,
+  "max_losing_streak": 9,
+  "avg_hours": 21.0,
+  "trades_per_week": 1.55,
+  "low_sample": false,
+  "source": "backtest (all data)",
+  "sample_size": 78,
+  "oos": {
+   "trades": 22,
+   "candidates": 284,
+   "fill_rate": 7.7,
+   "win_rate": 18.2,
+   "sl_rate": 81.8,
+   "avg_r": -0.589,
+   "expectancy_r": -0.589,
+   "total_r": -12.95,
+   "profit_factor": 0.3,
+   "max_dd_r": 13.97,
+   "max_losing_streak": 6,
+   "avg_hours": 14.4,
+   "trades_per_week": 1.68,
+   "low_sample": true
+  },
+  "in_sample": {
+   "trades": 56,
+   "candidates": 557,
+   "fill_rate": 10.1,
+   "win_rate": 33.9,
+   "sl_rate": 66.1,
+   "avg_r": 0.339,
+   "expectancy_r": 0.339,
+   "total_r": 19.0,
+   "profit_factor": 1.49,
+   "max_dd_r": 13.03,
+   "max_losing_streak": 9,
+   "avg_hours": 23.6,
+   "trades_per_week": 1.59,
+   "low_sample": false
+  },
+  "period": "2025-11-10 → 2026-10-31"
+ },
+ "score": {
+  "total": 48.6,
+  "threshold": 65.0,
+  "news": "pending",
+  "breakdown": [
+   {
+    "category": "htf_bias",
+    "weight": 25.0,
+    "fraction": 0.4,
+    "points": 10.0,
+    "reason": "1D + 4H aligned; BTC against"
+   },
+   {
+    "category": "smc_setup",
+    "weight": 25.0,
+    "fraction": 0.8,
+    "points": 20.0,
+    "reason": "model A (Sweep + CHoCH + FVG/OB retest) grade A"
+   },
+   {
+    "category": "entry_precision",
+    "weight": 15.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "15m CHoCH no, confluence no"
+   },
+   {
+    "category": "displacement_volume",
+    "weight": 10.0,
+    "fraction": 1.0,
+    "points": 10.0,
+    "reason": "displacement candle with volume"
+   },
+   {
+    "category": "futures_data",
+    "weight": 10.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "against — low volume / wide spread"
+   },
+   {
+    "category": "session_timing",
+    "weight": 5.0,
+    "fraction": 1.0,
+    "points": 5.0,
+    "reason": "inside london killzone"
+   },
+   {
+    "category": "news",
+    "weight": 5.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "not checked yet (run news-check)"
+   },
+   {
+    "category": "backtest_edge",
+    "weight": 5.0,
+    "fraction": 0.7,
+    "points": 3.5,
+    "reason": "78 trades, win 29.5%, avg R 0.078"
+   },
+   {
+    "category": "pro_confluence",
+    "weight": 10.0,
+    "fraction": 0.5,
+    "points": 5.0,
+    "reason": "price below weekly VWAP 3.70467e-06; 1H RSI 44 with the trade, room left; ⚠️ price above daily VWAP 3.45828e-06 (against); ⚠️ weekend — thin liquidity, more stop hunts"
+   }
+  ],
+  "blocks": [
+   "coin fails volume / spread filter",
+   "score 48.6 < 65"
+  ],
+  "decision": "NO TRADE",
+  "soft_blocks": [
+   "score 48.6 < 65"
+  ],
+  "max_without_news": 105.0
+ },
+ "score_inputs": {
+  "direction": "SHORT",
+  "bias": {
+   "d1": {
+    "trend": "bearish"
+   },
+   "btc_for_direction": "against"
+  },
+  "setup": {
+   "model": "A",
+   "name": "Sweep + CHoCH + FVG/OB retest",
+   "grade": "A",
+   "quality": {
+    "htf_aligned": true,
+    "pd_ok": true,
+    "displacement": true,
+    "confluence": false,
+    "ltf_confirmed": false
+   },
+   "displacement": {
+    "displacement": true,
+    "body_only": false,
+    "idx": 366,
+    "time": "2026-11-19T21:00:00Z"
+   }
+  },
+  "futures": {
+   "verdict": "against",
+   "reason": "low volume / wide spread",
+   "liquidity": {
+    "quote_volume_24h": 7718135.223841,
+    "spread_pct": 0.0283,
+    "ok": false,
+    "source": "mexc"
+   }
+  },
+  "session": {
+   "now_utc": "2026-11-21T07:09:53Z",
+   "in_killzone": true,
+   "killzone": "london",
+   "next_killzone": "new_york",
+   "next_start_utc": "2026-11-21T12:00:00Z",
+   "hours_to_next": 4.84,
+   "zones_utc": {
+    "asia": [
+     0,
+     6
+    ],
+    "london": [
+     7,
+     10
+    ],
+    "new_york": [
+     12,
+     15
+    ]
+   }
+  },
+  "news": "pending",
+  "stats": {
+   "trades": 78,
+   "candidates": 841,
+   "fill_rate": 9.3,
+   "win_rate": 29.5,
+   "sl_rate": 70.5,
+   "avg_r": 0.078,
+   "expectancy_r": 0.078,
+   "total_r": 6.05,
+   "profit_factor": 1.11,
+   "max_dd_r": 13.97,
+   "max_losing_streak": 9,
+   "avg_hours": 21.0,
+   "trades_per_week": 1.55,
+   "low_sample": false,
+   "source": "backtest (all data)",
+   "sample_size": 78,
+   "oos": {
+    "trades": 22,
+    "candidates": 284,
+    "fill_rate": 7.7,
+    "win_rate": 18.2,
+    "sl_rate": 81.8,
+    "avg_r": -0.589,
+    "expectancy_r": -0.589,
+    "total_r": -12.95,
+    "profit_factor": 0.3,
+    "max_dd_r": 13.97,
+    "max_losing_streak": 6,
+    "avg_hours": 14.4,
+    "trades_per_week": 1.68,
+    "low_sample": true
+   },
+   "in_sample": {
+    "trades": 56,
+    "candidates": 557,
+    "fill_rate": 10.1,
+    "win_rate": 33.9,
+    "sl_rate": 66.1,
+    "avg_r": 0.339,
+    "expectancy_r": 0.339,
+    "total_r": 19.0,
+    "profit_factor": 1.49,
+    "max_dd_r": 13.03,
+    "max_losing_streak": 9,
+    "avg_hours": 23.6,
+    "trades_per_week": 1.59,
+    "low_sample": false
+   },
+   "period": "2025-11-10 → 2026-10-31"
+  },
+  "plan": {
+   "ok": true,
+   "rejects": []
+  },
+  "limits": {
+   "trades_today": 0,
+   "losses_today": 0,
+   "max_trades": 0,
+   "max_losses": 2,
+   "blocked": false,
+   "reason": null,
+   "user_pnl_today": 0.0
+  },
+  "pro": {
+   "ok": true,
+   "good": [
+    "price below weekly VWAP 3.70467e-06",
+    "1H RSI 44 with the trade, room left"
+   ],
+   "warnings": [
+    "price above daily VWAP 3.45828e-06 (against)",
+    "weekend — thin liquidity, more stop hunts"
+   ],
+   "info": {
+    "vwap_day": 3.458277066632502e-06,
+    "vwap_week": 3.7046665486151836e-06,
+    "rsi_1h": 43.6,
+    "rsi_4h": 25.4,
+    "ema20_1h": 3.561505555263421e-06,
+    "ext_atr": 0.45
+   },
+   "fraction": 0.5,
+   "exhausted": false
+  }
+ },
+ "charts": {
+  "1d": "/home/runner/work/trading-agent/trading-agent/charts/SHIB/20261121-0709_1d.png",
+  "4h": "/home/runner/work/trading-agent/trading-agent/charts/SHIB/20261121-0709_4h.png",
+  "1h": "/home/runner/work/trading-agent/trading-agent/charts/SHIB/20261121-0709_1h.png",
+  "15m": "/home/runner/work/trading-agent/trading-agent/charts/SHIB/20261121-0709_15m.png"
+ },
+ "news": "pending",
+ "news_note": null,
+ "no_trade_reasons": [
+  "score 48.6 < 65"
+ ],
+ "answer": "❌ NO TRADE — SHIB/USDT\nWajah: score 48.6 < 65\nKya dekhna hai: POI par 15m CHoCH confirmation",
+ "report_path": "/home/runner/work/trading-agent/trading-agent/reports/SHIB/20261121T0709.json"
+}

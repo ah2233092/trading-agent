@@ -1,0 +1,39 @@
+❌ NO TRADE — BNB/USDT
+Wajah: score 46.4 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 679.0
+4H: bearish — range 515.52–594.2, price in discount (3.5%)
+BTC: against
+Key levels: PDH 582.98, PDL 530.82, PWH 693.7, PWL 566.18, MO 704.8
+Setup: A Sweep + CHoCH + FVG/OB retest grade A
+Funding: 0.0000% (normal, crowd: none) [mexc]
+OI: 1H -0.19%, 4H -1.50% → OI flat — no new positioning [okx]
+L/S ratio: 1.473 (balanced) [okx]
+Liquidity: 24h vol $11.4M, spread 0.002% ❌
+Verdict: against (low volume / wide spread)
+Entry 576.65 | SL 586.56 (1.72%, 1 R)
+TP1 556.86 (1:2) | TP2 515.53 (1:6.17) | TP3 505.62 (1:7.17)
+Qty 17 contracts | Notional $98.03 | Leverage 10x isolated | Margin $9.80
+Liquidation ≈ 631.67 (SL se 7.69% door) ✅
+Risk $1.70 | Net reward TP1 $3.37 / TP2 $10.39 / TP3 $12.08 (fees ke baad)
+ℹ️ no liquidity level for TP3 — R-multiple used
+Score: 46.4/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             20.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         2.5 / 10   price below weekly VWAP 562.49; 1H RSI 35 with the trade, room left; ⚠️ price above daily VWAP 519.275 (against); ⚠️ 4H RSI 19 — oversold on 4H; ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ coin fails volume / spread filter
+  ✖ score 46.4 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/BNB/20261121-0708_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/BNB/20261121-0708_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/BNB/20261121-0708_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/BNB/20261121-0708_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/BNB/20261121T0707.json

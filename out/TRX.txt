@@ -1,0 +1,39 @@
+❌ NO TRADE — TRX/USDT
+Wajah: score 48.6 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.33834
+4H: bearish — range 0.29995–0.31362, price in discount (0.8%)
+BTC: against
+Key levels: PDH 0.3108, PDL 0.30072, PWH 0.32024, PWL 0.30334, MO 0.30344
+Setup: A Sweep + CHoCH + FVG/OB retest grade A
+Funding: -0.0452% (elevated, crowd: short) [mexc]
+OI: 1H -0.75%, 4H +1.79% → short covering (weaker up move) [okx]
+L/S ratio: 1.893 (balanced) [okx]
+Liquidity: 24h vol $2.4M, spread 0.003% ❌
+Verdict: against (low volume / wide spread)
+Entry 0.31062 | SL 0.31149 (0.28%, 1 R)
+TP1 0.30889 (1:1.99) | TP2 0.30802 (1:2.99) | TP3 0.29996 (1:12.25)
+Qty 64 contracts | Notional $198.80 | Leverage 20x isolated | Margin $9.94
+Liquidation ≈ 0.32479 (SL se 4.27% door) ✅
+Risk $0.60 | Net reward TP1 $1.11 / TP2 $1.66 / TP3 $6.82 (fees ke baad)
+ℹ️ size cut to fit $10 margin at max safe leverage 20x — risk below target
+Score: 48.6/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             20.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         5.0 / 10   price below weekly VWAP 0.306249; 1H RSI 45 with the trade, room left; ⚠️ price above daily VWAP 0.30019 (against); ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ coin fails volume / spread filter
+  ✖ score 48.6 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/TRX/20261121-0708_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/TRX/20261121-0708_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/TRX/20261121-0708_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/TRX/20261121-0708_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/TRX/20261121T0708.json

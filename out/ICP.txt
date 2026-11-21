@@ -1,0 +1,39 @@
+❌ NO TRADE — ICP/USDT
+Wajah: score 53.6 < 65
+Kya dekhna hai: agla watchman alert
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 2.102
+4H: bearish — range 1.878–2.283, price in discount (8.6%)
+BTC: against
+Key levels: PDH 2.195, PDL 1.973, PWH 2.653, PWL 2.102, MO 2.516
+Setup: B HTF POI tap + 15m CHoCH grade A
+Funding: -0.0075% (normal, crowd: none) [mexc]
+OI: 1H +0.08%, 4H -1.99% → OI flat — no new positioning [okx]
+L/S ratio: 2.314 (balanced) [okx]
+Liquidity: 24h vol $6.6M, spread 0.052% ❌
+Verdict: against (low volume / wide spread)
+Entry 2.071 | SL 2.108 (1.79%, 1 R)
+TP1 1.998 (1:1.97) | TP2 1.879 (1:5.19) | TP3 1.842 (1:6.19)
+Qty 4864 contracts | Notional $100.73 | Leverage 11x isolated | Margin $9.16
+Liquidation ≈ 2.25 (SL se 6.75% door) ✅
+Risk $1.80 | Net reward TP1 $3.55 / TP2 $9.34 / TP3 $11.14 (fees ke baad)
+ℹ️ no liquidity level for TP3 — R-multiple used
+Score: 53.6/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             20.0 / 25   model B (HTF POI tap + 15m CHoCH) grade A
+  entry_precision        9.0 / 15   15m CHoCH yes, confluence no
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    47 trades, win 23.4%, avg R -0.181
+  pro_confluence         5.0 / 10   price below weekly VWAP 2.11854; 1H RSI 34 with the trade, room left; ⚠️ price above daily VWAP 1.91928 (against); ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ coin fails volume / spread filter
+  ✖ score 53.6 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/ICP/20261121-0709_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/ICP/20261121-0709_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/ICP/20261121-0709_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/ICP/20261121-0709_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/ICP/20261121T0709.json

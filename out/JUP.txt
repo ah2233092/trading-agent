@@ -1,0 +1,38 @@
+❌ NO TRADE — JUP/USDT
+Wajah: score 55 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT (strong POIs only)
+1D: bullish — last BOS 0.2369
+4H: bearish — range 0.2119–0.2726, price in discount (4.6%)
+BTC: against
+Key levels: PDH 0.2515, PDL 0.2189, PWH 0.2702, PWL 0.2289, MO 0.2581
+Setup: A Sweep + CHoCH + FVG/OB retest grade A+
+Funding: -0.0084% (normal, crowd: none) [mexc]
+OI: 1H +3.34%, 4H +2.95% → new longs (healthy up move) [okx]
+L/S ratio: 3.397 (longs crowded (contrarian warning)) [okx]
+Liquidity: 24h vol $4.5M, spread 0.046% ❌
+Verdict: against (low volume / wide spread)
+Entry 0.2431 | SL 0.2563 (5.43%, 1 R)
+TP1 0.212 (1:2.36) | TP2 0.2072 (1:2.72) | TP3 0.2016 (1:3.14)
+Qty 13 contracts | Notional $31.60 | Leverage 4x isolated | Margin $7.90
+Liquidation ≈ 0.3026 (SL se 18.07% door) ✅
+Risk $1.72 | Net reward TP1 $4.04 / TP2 $4.67 / TP3 $5.39 (fees ke baad)
+Score: 55/100 (min 65) → NO TRADE
+  htf_bias               6.0 / 25   4H only (1D disagrees); BTC against
+  smc_setup             25.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A+
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         5.0 / 10   price below daily VWAP 0.216042; price below weekly VWAP 0.242342; ⚠️ bullish RSI divergence (low 0.2189 < 0.2244, RSI 29 > 26); ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ coin fails volume / spread filter
+  ✖ score 55 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/JUP/20261121-0710_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/JUP/20261121-0710_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/JUP/20261121-0710_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/JUP/20261121-0710_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/JUP/20261121T0710.json

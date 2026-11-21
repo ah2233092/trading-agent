@@ -1,0 +1,38 @@
+❌ NO TRADE — RENDER/USDT
+Wajah: score 58.6 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 1.441
+4H: bearish — range 1.202–1.45, price in discount (5.6%)
+BTC: against
+Key levels: PDH 1.388, PDL 1.229, PWH 1.638, PWL 1.312, MO 1.56
+Setup: A Sweep + CHoCH + FVG/OB retest grade A+
+Funding: -0.0093% (normal, crowd: none) [mexc]
+OI: 1H +0.28%, 4H +1.45% → OI flat — no new positioning [okx]
+L/S ratio: 1.267 (balanced) [okx]
+Liquidity: 24h vol $1.4M, spread 0.080% ❌
+Verdict: against (low volume / wide spread)
+Entry 1.388 | SL 1.405 (1.23%, 1 R)
+TP1 1.355 (1:1.94) | TP2 1.23 (1:9.29) | TP3 1.203 (1:10.88)
+Qty 104 contracts | Notional $144.35 | Leverage 15x isolated | Margin $9.62
+Liquidation ≈ 1.474 (SL se 4.94% door) ✅
+Risk $1.80 | Net reward TP1 $3.43 / TP2 $16.43 / TP3 $19.24 (fees ke baad)
+Score: 58.6/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             25.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A+
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         5.0 / 10   price below weekly VWAP 1.34653; 1H RSI 41 with the trade, room left; ⚠️ price above daily VWAP 1.22528 (against); ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ coin fails volume / spread filter
+  ✖ score 58.6 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/RENDER/20261121-0709_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/RENDER/20261121-0709_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/RENDER/20261121-0709_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/RENDER/20261121-0709_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/RENDER/20261121T0709.json

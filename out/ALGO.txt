@@ -1,0 +1,38 @@
+❌ NO TRADE — ALGO/USDT
+Wajah: score 48.6 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.0747
+4H: bearish — range 0.07003–0.08095, price in discount (4.7%)
+BTC: against
+Key levels: PDH 0.07732, PDL 0.07115, PWH 0.09553, PWL 0.0747, MO 0.09519
+Setup: A Sweep + CHoCH + FVG/OB retest grade A
+Funding: -0.0106% (normal, crowd: none) [mexc]
+OI: 1H -0.25%, 4H +0.13% → OI flat — no new positioning [okx]
+L/S ratio: 1.556 (balanced) [okx]
+Liquidity: 24h vol $2.2M, spread 0.014% ❌
+Verdict: against (low volume / wide spread)
+Entry 0.07679 | SL 0.07773 (1.22%, 1 R)
+TP1 0.07492 (1:1.99) | TP2 0.07116 (1:5.99) | TP3 0.07004 (1:7.18)
+Qty 1883 contracts | Notional $144.60 | Leverage 15x isolated | Margin $9.64
+Liquidation ≈ 0.08157 (SL se 4.94% door) ✅
+Risk $1.80 | Net reward TP1 $3.52 / TP2 $10.60 / TP3 $12.71 (fees ke baad)
+Score: 48.6/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             20.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         5.0 / 10   price below weekly VWAP 0.0752257; 1H RSI 44 with the trade, room left; ⚠️ price above daily VWAP 0.0715318 (against); ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ coin fails volume / spread filter
+  ✖ score 48.6 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/ALGO/20261121-0710_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/ALGO/20261121-0710_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/ALGO/20261121-0710_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/ALGO/20261121-0710_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/ALGO/20261121T0710.json

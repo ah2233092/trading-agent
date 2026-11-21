@@ -1,0 +1,39 @@
+❌ NO TRADE — ATOM/USDT
+Wajah: score 60.5 < 65
+Kya dekhna hai: agla watchman alert
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 1.27
+4H: bearish — range 1.157–1.324, price in discount (4.2%)
+BTC: against
+Key levels: PDH 1.274, PDL 1.196, PWH 1.441, PWL 1.218, MO 1.496
+Setup: B HTF POI tap + 15m CHoCH grade A+
+Funding: -0.0180% (normal, crowd: none) [mexc]
+OI: 1H +0.16%, 4H -0.29% → OI flat — no new positioning [okx]
+L/S ratio: 2.406 (balanced) [okx]
+Liquidity: 24h vol $1.5M, spread 0.086% ❌
+Verdict: against (low volume / wide spread)
+Entry 1.242 | SL 1.262 (1.65%, 1 R)
+TP1 1.158 (1:4.07) | TP2 1.138 (1:5.05) | TP3 1.117 (1:6.07)
+Qty 878 contracts | Notional $109.00 | Leverage 11x isolated | Margin $9.91
+Liquidation ≈ 1.349 (SL se 6.89% door) ✅
+Risk $1.80 | Net reward TP1 $7.33 / TP2 $9.09 / TP3 $10.93 (fees ke baad)
+ℹ️ no liquidity level for TP2,3 — R-multiple used
+Score: 60.5/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             25.0 / 25   model B (HTF POI tap + 15m CHoCH) grade A+
+  entry_precision        9.0 / 15   15m CHoCH yes, confluence no
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    47 trades, win 23.4%, avg R -0.181
+  pro_confluence         7.5 / 10   price below daily VWAP 1.16927; price below weekly VWAP 1.24424; ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ coin fails volume / spread filter
+  ✖ score 60.5 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/ATOM/20261121-0709_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/ATOM/20261121-0709_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/ATOM/20261121-0709_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/ATOM/20261121-0709_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/ATOM/20261121T0709.json

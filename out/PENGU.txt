@@ -1,0 +1,39 @@
+❌ NO TRADE — PENGU/USDT
+Wajah: score 54.1 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.006632
+4H: bearish — range 0.004106–0.005075, price in discount (5.4%)
+BTC: against
+Key levels: PDH 0.004623, PDL 0.004137, PWH 0.006451, PWL 0.004606, MO 0.007272
+Setup: A Sweep + CHoCH + FVG/OB retest grade A
+Funding: 0.0021% (normal, crowd: none) [mexc]
+OI: 1H +0.17%, 4H +2.84% → OI flat — no new positioning [okx]
+L/S ratio: 0.521 (balanced) [okx]
+Liquidity: 24h vol $2.5M, spread 0.024% ❌
+Verdict: against (low volume / wide spread)
+Entry 0.00453 | SL 0.004681 (3.33%, 1 R)
+TP1 0.004138 (1:2.6) | TP2 0.003987 (1:3.6) | TP3 0.003836 (1:4.6)
+Qty 1192 contracts | Notional $54.00 | Leverage 6x isolated | Margin $9.00
+Liquidation ≈ 0.005264 (SL se 12.45% door) ✅
+Risk $1.80 | Net reward TP1 $4.67 / TP2 $6.47 / TP3 $8.27 (fees ke baad)
+ℹ️ no liquidity level for TP2,3 — R-multiple used
+Score: 54.1/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             20.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         5.0 / 10   price below weekly VWAP 0.00454085; 1H RSI 42 with the trade, room left; ⚠️ price above daily VWAP 0.00421594 (against); ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ coin fails volume / spread filter
+  ✖ score 54.1 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/PENGU/20261121-0710_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/PENGU/20261121-0710_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/PENGU/20261121-0710_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/PENGU/20261121-0710_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/PENGU/20261121T0710.json

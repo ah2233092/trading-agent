@@ -1,0 +1,40 @@
+❌ NO TRADE — WIF/USDT
+Wajah: score 44.1 < 65
+Kya dekhna hai: 4H FVG 0.1221–0.127 tapped, waiting: no 15m CHoCH yet after the tap; POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.1236
+4H: bearish — range 0.114–0.1362, price in discount (6.8%)
+BTC: against
+Key levels: PDH 0.1321, PDL 0.1178, PWH 0.1618, PWL 0.1236, MO 0.176
+Setup: A Sweep + CHoCH + FVG/OB retest grade A
+Funding: 0.0038% (normal, crowd: none) [mexc]
+OI: 1H -0.01%, 4H -2.17% → OI flat — no new positioning [okx]
+L/S ratio: 2.04 (balanced) [okx]
+Liquidity: 24h vol $1.9M, spread 0.085% ❌
+Verdict: against (low volume / wide spread)
+Entry 0.1303 | SL 0.1335 (2.42%, 1 R)
+TP1 0.1241 (1:1.98) | TP2 0.1141 (1:5.16) | TP3 0.1109 (1:6.17)
+Qty 56 contracts | Notional $73.00 | Leverage 8x isolated | Margin $9.12
+Liquidation ≈ 0.146 (SL se 9.39% door) ✅
+Risk $1.78 | Net reward TP1 $3.50 / TP2 $9.10 / TP3 $10.89 (fees ke baad)
+ℹ️ no liquidity level for TP3 — R-multiple used
+Score: 44.1/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             20.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         0.0 / 10   price below weekly VWAP 0.126699; 1H RSI 38 with the trade, room left; ⚠️ price above daily VWAP 0.116145 (against); ⚠️ 4H RSI 23 — oversold on 4H; ⚠️ bullish RSI divergence (low 0.1178 < 0.1183, RSI 23 > 19)
+  ✖ coin fails volume / spread filter
+  ✖ exhaustion: move already stretched — 4H RSI 23 — oversold on 4H; bullish RSI divergence (low 0.1178 < 0.1183, RSI 23 > 19)
+  ✖ score 44.1 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/WIF/20261121-0709_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/WIF/20261121-0709_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/WIF/20261121-0709_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/WIF/20261121-0709_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/WIF/20261121T0709.json

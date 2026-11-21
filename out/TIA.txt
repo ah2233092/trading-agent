@@ -1,0 +1,38 @@
+❌ NO TRADE — TIA/USDT
+Wajah: score 50.9 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.5378
+4H: bearish — range 0.3091–0.3614, price in discount (7.1%)
+BTC: against
+Key levels: PDH 0.3462, PDL 0.3118, PWH 0.4451, PWL 0.3275, MO 0.4735
+Setup: A Sweep + CHoCH + FVG/OB retest grade A
+Funding: -0.0020% (normal, crowd: none) [mexc]
+OI: 1H -0.29%, 4H -1.16% → OI flat — no new positioning [okx]
+L/S ratio: 1.397 (balanced) [okx]
+Liquidity: 24h vol $5.2M, spread 0.032% ❌
+Verdict: against (low volume / wide spread)
+Entry 0.3452 | SL 0.3498 (1.32%, 1 R)
+TP1 0.3362 (1:1.99) | TP2 0.3119 (1:7.33) | TP3 0.2928 (1:11.53)
+Qty 395 contracts | Notional $136.37 | Leverage 14x isolated | Margin $9.74
+Liquidation ≈ 0.3691 (SL se 5.51% door) ✅
+Risk $1.80 | Net reward TP1 $3.57 / TP2 $13.17 / TP3 $20.72 (fees ke baad)
+Score: 50.9/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             20.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         7.5 / 10   price below daily VWAP 0.316236; price below weekly VWAP 0.339061; ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ coin fails volume / spread filter
+  ✖ score 50.9 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/TIA/20261121-0708_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/TIA/20261121-0708_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/TIA/20261121-0708_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/TIA/20261121-0708_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/TIA/20261121T0708.json

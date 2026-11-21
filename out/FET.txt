@@ -1,0 +1,39 @@
+❌ NO TRADE — FET/USDT
+Wajah: score 46.4 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.1211
+4H: bearish — range 0.1063–0.131, price in discount (6.5%)
+BTC: against
+Key levels: PDH 0.1258, PDL 0.112, PWH 0.1542, PWL 0.1211, MO 0.1597
+Setup: A Sweep + CHoCH + FVG/OB retest grade A
+Funding: -0.0104% (normal, crowd: none) [mexc]
+OI: 1H -0.51%, 4H +0.62% → short covering (weaker up move) [okx]
+L/S ratio: 1.727 (balanced) [okx]
+Liquidity: 24h vol $4.2M, spread 0.091% ❌
+Verdict: against (low volume / wide spread)
+Entry 0.123 | SL 0.1276 (3.70%, 1 R)
+TP1 0.1064 (1:3.66) | TP2 0.1019 (1:4.65) | TP3 0.0973 (1:5.66)
+Qty 39 contracts | Notional $47.99 | Leverage 5x isolated | Margin $9.60
+Liquidation ≈ 0.1471 (SL se 15.26% door) ✅
+Risk $1.77 | Net reward TP1 $6.49 / TP2 $8.25 / TP3 $10.04 (fees ke baad)
+ℹ️ no liquidity level for TP2,3 — R-multiple used
+Score: 46.4/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             20.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         2.5 / 10   price below weekly VWAP 0.122283; 1H RSI 34 with the trade, room left; ⚠️ price above daily VWAP 0.109028 (against); ⚠️ 4H RSI 17 — oversold on 4H; ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ coin fails volume / spread filter
+  ✖ score 46.4 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/FET/20261121-0709_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/FET/20261121-0709_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/FET/20261121-0709_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/FET/20261121-0709_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/FET/20261121T0709.json

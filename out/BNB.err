@@ -1,0 +1,1 @@
+WARNING data: fetch_ticker failed (RateLimitExceeded: mexc {"success":false,"code":510,"message":"Requests are too frequent, please try again later"}) — retry 1/1 in 5s

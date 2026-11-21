@@ -1,0 +1,39 @@
+❌ NO TRADE — VIRTUAL/USDT
+Wajah: score 36.2 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.5408
+4H: bearish — range 0.3546–0.4517, price in discount (4.4%)
+BTC: against
+Key levels: PDH 0.4196, PDL 0.3691, PWH 0.5575, PWL 0.4173, MO 0.5905
+Setup: A Sweep + CHoCH + FVG/OB retest grade B
+Funding: 0.0041% (normal, crowd: none) [mexc]
+OI: 1H +0.39%, 4H +1.07% → new longs (healthy up move) [okx]
+L/S ratio: 1.033 (balanced) [okx]
+Liquidity: 24h vol $1.9M, spread 0.027% ❌
+Verdict: against (low volume / wide spread)
+Entry 0.4049 | SL 0.4227 (4.40%, 1 R)
+TP1 0.3547 (1:2.82) | TP2 0.3369 (1:3.82) | TP3 0.3191 (1:4.82)
+Qty 10 contracts | Notional $40.49 | Leverage 5x isolated | Margin $8.10
+Liquidation ≈ 0.4835 (SL se 14.37% door) ✅
+Risk $1.78 | Net reward TP1 $5.02 / TP2 $6.80 / TP3 $8.58 (fees ke baad)
+ℹ️ no liquidity level for TP2,3 — R-multiple used
+Score: 36.2/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             13.8 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade B
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume    5.0 / 10   big body but no volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         2.5 / 10   price below weekly VWAP 0.402173; 1H RSI 36 with the trade, room left; ⚠️ price above daily VWAP 0.363794 (against); ⚠️ 4H RSI 19 — oversold on 4H; ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ coin fails volume / spread filter
+  ✖ score 36.2 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/VIRTUAL/20261121-0710_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/VIRTUAL/20261121-0710_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/VIRTUAL/20261121-0710_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/VIRTUAL/20261121-0710_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/VIRTUAL/20261121T0710.json

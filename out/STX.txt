@@ -1,0 +1,39 @@
+❌ NO TRADE — STX/USDT
+Wajah: score 45 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.2525
+4H: bearish — range 0.2298–0.2815, price in discount (5.8%)
+BTC: against
+Key levels: PDH 0.2661, PDL 0.2362, PWH 0.329, PWL 0.2525, MO 0.3242
+Setup: A Sweep + CHoCH + FVG/OB retest grade A
+Funding: -0.0041% (normal, crowd: none) [mexc]
+OI: 1H +0.13%, 4H -1.61% → OI flat — no new positioning [okx]
+L/S ratio: 2.589 (balanced) [okx]
+Liquidity: 24h vol $0.4M, spread 0.042% ❌
+Verdict: against (low volume / wide spread)
+Entry 0.2363 | SL 0.2733 (15.66%, 1 R)
+TP1 0.1176 (1:3.21) | TP2 0.0806 (1:4.21) | TP3 0.0436 (1:5.21)
+Qty 4 contracts | Notional $9.45 | Leverage 1x isolated | Margin $9.45
+Liquidation ≈ 0.4706 (SL se 72.20% door) ✅
+Risk $1.48 | Net reward TP1 $4.75 / TP2 $6.23 / TP3 $7.71 (fees ke baad)
+ℹ️ no liquidity level for TP2,3 — R-multiple used
+Score: 45/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             20.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume    0.0 / 10   no displacement
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         5.0 / 10   price below weekly VWAP 0.266226; 1H RSI 37 with the trade, room left; ⚠️ price above daily VWAP 0.234889 (against); ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ coin fails volume / spread filter
+  ✖ score 45 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/STX/20261121-0710_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/STX/20261121-0710_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/STX/20261121-0710_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/STX/20261121-0710_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/STX/20261121T0710.json

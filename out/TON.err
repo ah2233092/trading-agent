@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "/home/runner/work/trading-agent/trading-agent/lib/deep_scan.py", line 627, in <module>
+    _main()
+  File "/home/runner/work/trading-agent/trading-agent/lib/deep_scan.py", line 621, in _main
+    emit(analyze_symbol(data.to_symbol(a.symbol), cfg, a.news, not a.no_charts), _print_report)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/trading-agent/trading-agent/lib/deep_scan.py", line 207, in analyze_symbol
+    frames = data.get_frames(symbol, ex=ex)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/trading-agent/trading-agent/lib/data.py", line 296, in get_frames
+    return {tf: get_ohlcv(symbol, tf, n, ex=ex) for tf, n in limits.items()}
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/trading-agent/trading-agent/lib/data.py", line 271, in get_ohlcv
+    df = pd.DataFrame(_fetch_from(ex, symbol, tf, since, now), columns=cols)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/trading-agent/trading-agent/lib/data.py", line 233, in _fetch_from
+    batch = call(ex.fetch_ohlcv, symbol, tf, since=cursor, limit=per_call)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/trading-agent/trading-agent/lib/data.py", line 65, in call
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/ccxt/mexc.py", line 1833, in fetch_ohlcv
+    market = self.market(symbol)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/ccxt/base/exchange.py", line 6724, in market
+    raise BadSymbol(self.id + ' does not have market symbol ' + symbol)
+ccxt.base.errors.BadSymbol: mexc does not have market symbol TON/USDT:USDT

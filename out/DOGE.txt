@@ -1,0 +1,37 @@
+❌ NO TRADE — DOGE/USDT
+Wajah: score 50.9 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.05539
+4H: bearish — range 0.05166–0.05984, price in discount (5.1%)
+BTC: against
+Key levels: PDH 0.05847, PDL 0.05253, PWH 0.07086, PWL 0.05539, MO 0.07559
+Setup: A Sweep + CHoCH + FVG/OB retest grade A
+Funding: -0.0018% (normal, crowd: none) [mexc]
+OI: 1H +1.08%, 4H -1.88% → new longs (healthy up move) [okx]
+L/S ratio: 3.733 (longs crowded (contrarian warning)) [okx]
+Liquidity: 24h vol $60.4M, spread 0.019%
+Verdict: neutral (nothing unusual)
+Entry 0.05837 | SL 0.05896 (1.01%, 1 R)
+TP1 0.0572 (1:1.98) | TP2 0.05254 (1:9.88) | TP3 0.05167 (1:11.36)
+Qty 29 contracts | Notional $169.27 | Leverage 17x isolated | Margin $9.96
+Liquidation ≈ 0.06165 (SL se 4.56% door) ✅
+Risk $1.75 | Net reward TP1 $3.39 / TP2 $16.91 / TP3 $19.43 (fees ke baad)
+Score: 50.9/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             20.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         2.5 / 10   price below weekly VWAP 0.056591; 1H RSI 43 with the trade, room left; ⚠️ price above daily VWAP 0.0524424 (against); ⚠️ 4H RSI 25 — oversold on 4H; ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ score 50.9 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/DOGE/20261121-0708_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/DOGE/20261121-0708_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/DOGE/20261121-0708_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/DOGE/20261121-0708_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/DOGE/20261121T0708.json

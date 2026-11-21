@@ -1,0 +1,38 @@
+❌ NO TRADE — AAVE/USDT
+Wajah: score 38.5 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 103.71
+4H: bearish — range 92.08–114.43, price in discount (3.3%)
+BTC: against
+Key levels: PDH 104.93, PDL 93.84, PWH 134.62, PWL 96.6, MO 133.76
+Setup: A Sweep + CHoCH + FVG/OB retest grade B
+Funding: 0.0003% (normal, crowd: none) [mexc]
+OI: 1H -0.61%, 4H +0.73% → short covering (weaker up move) [okx]
+L/S ratio: 1.755 (balanced) [okx]
+Liquidity: 24h vol $17.0M, spread 0.011% ❌
+Verdict: against (low volume / wide spread)
+Entry 105.11 | SL 106.82 (1.63%, 1 R)
+TP1 101.7 (1:1.99) | TP2 93.85 (1:6.58) | TP3 92.09 (1:7.61)
+Qty 103 contracts | Notional $108.26 | Leverage 11x isolated | Margin $9.84
+Liquidation ≈ 114.19 (SL se 6.90% door) ✅
+Risk $1.78 | Net reward TP1 $3.51 / TP2 $11.60 / TP3 $13.41 (fees ke baad)
+Score: 38.5/100 (min 65) → NO TRADE
+  htf_bias              10.0 / 25   1D + 4H aligned; BTC against
+  smc_setup             13.8 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade B
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume    5.0 / 10   big body but no volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside london killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         5.0 / 10   price below weekly VWAP 103.543; 1H RSI 42 with the trade, room left; ⚠️ price above daily VWAP 94.2515 (against); ⚠️ weekend — thin liquidity, more stop hunts
+  ✖ coin fails volume / spread filter
+  ✖ score 38.5 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/AAVE/20261121-0711_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/AAVE/20261121-0711_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/AAVE/20261121-0711_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/AAVE/20261121-0711_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/AAVE/20261121T0710.json
