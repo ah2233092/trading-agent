@@ -1,67 +1,6 @@
 {
   "alerts": [
     {
-      "id": "20261120-1302-XRP",
-      "coin": "XRP",
-      "symbol": "XRP/USDT:USDT",
-      "pair": "XRP/USDT",
-      "direction_hint": "SHORT",
-      "triggers": [
-        "structure"
-      ],
-      "trigger_labels": [
-        "1H BOS"
-      ],
-      "light_score": 30,
-      "price": 0.9445,
-      "candle_time": "2026-11-20T12:00:00Z",
-      "created_at": "2026-11-20T13:02:00Z",
-      "created_at_pkt": "2026-11-20 18:02 PKT",
-      "exchange": "mexc",
-      "context": {
-        "trend_4h": "bearish",
-        "trend_1h": "bearish",
-        "premium_discount_4h": {
-          "range_high": 1.0073,
-          "range_low": 0.9454,
-          "equilibrium": 0.97635,
-          "price": 0.952,
-          "pct": 10.7,
-          "zone": "discount",
-          "from_time": "2026-11-17T12:00:00Z"
-        },
-        "pd_bonus": 0,
-        "opposite_side_points": 0
-      },
-      "levels": {
-        "structure_level": 0.9473
-      },
-      "btc": {
-        "price": 61535.0,
-        "change_1h_pct": -0.41,
-        "dump": false,
-        "trend_1h": "bearish",
-        "trend_4h": "bearish",
-        "candle_time": "2026-11-20T12:00:00Z"
-      },
-      "ready": {
-        "symbol": "XRP/USDT:USDT",
-        "candidate": true,
-        "ready": true,
-        "rank": 161.9,
-        "side": "short",
-        "model": "D",
-        "grade": "A",
-        "score": 77.5,
-        "market_rr": 1.55,
-        "killzone": true,
-        "plan_ok": true,
-        "why": "ready"
-      },
-      "kind": "ready",
-      "status": "pending"
-    },
-    {
       "id": "20261121-0706-BLESS",
       "coin": "BLESS",
       "symbol": "BLESS/USDT:USDT",
