@@ -268,6 +268,14 @@ def choose_targets(side: str, entry: float, sl: float, levels: list[dict], cfg: 
             continue
         lv.append(dict(x, r=abs(p - entry) / dist))
     lv.sort(key=lambda x: x["r"])
+    # price discovery (e.g. after a crash): when the first real level is very far, add R-multiple
+    # targets in between so TP1 stays a realistic, reachable target
+    max_rr1 = float(cfg_get(cfg, "max_rr_tp1", 0) or 0)
+    far = [x for x in lv if x["r"] >= min_rr1]
+    if max_rr1 and far and far[0]["r"] > max_rr1:
+        for k in (min_rr1 + 0.5, min_rr1 + 1.5):
+            lv.append({"name": f"{k:g}R (no level)", "price": entry + sgn * k * dist, "strength": "fallback", "r": k})
+        lv.sort(key=lambda x: x["r"])
     out = {"tp": [], "blocked_by": None, "fallback": []}
     # a strong level counts as a blocker only when it sits clearly in the way (blocker_min_r .. blocker_max_r);
     # a level right at the entry (price is testing it) or beyond blocker_max_r does not cancel the trade
@@ -282,7 +290,8 @@ def choose_targets(side: str, entry: float, sl: float, levels: list[dict], cfg: 
         tp1 = beyond[0]
         out["tp"].append(tp1)
         later = [x for x in beyond[1:] if x["r"] > tp1["r"] * 1.1]
-        tp2 = next((x for x in later if x.get("strength") in ("key", "htf")), later[0] if later else None)
+        tp2 = next((x for x in later if x.get("strength") in ("key", "htf")
+                    and (not max_rr1 or x["r"] <= 2 * max_rr1)), later[0] if later else None)
         if tp2:
             out["tp"].append(tp2)
             later3 = [x for x in later if x["r"] > tp2["r"] * 1.1]

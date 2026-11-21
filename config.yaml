@@ -100,6 +100,7 @@ max_margin_per_trade: 10
 max_leverage: 20
 margin_mode: isolated
 min_rr_tp1: 1.5            # Nov 20: quicker trades — TP1 = first good level at >= 1:1.5
+max_rr_tp1: 5.0            # first real level farther than this (price discovery) -> 2R / 3R targets in between
 min_rr_final: 3.0
 tp1_close_pct: 100         # Nov 20: quick trades — close everything at TP1 (TP2/TP3 shown as optional)
 min_profit_usd: 0          # no fixed minimum profit
