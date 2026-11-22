@@ -473,6 +473,70 @@
       },
       "kind": "digest",
       "status": "pending"
+    },
+    {
+      "id": "20261122-0902-TAO",
+      "coin": "TAO",
+      "symbol": "TAO/USDT:USDT",
+      "pair": "TAO/USDT",
+      "direction_hint": "SHORT",
+      "triggers": [
+        "sweep",
+        "near_poi"
+      ],
+      "trigger_labels": [
+        "1H sweep of PDH",
+        "in 4H FVG + PDH"
+      ],
+      "light_score": 86,
+      "price": 189.68,
+      "candle_time": "2026-11-22T08:00:00Z",
+      "created_at": "2026-11-22T09:02:00Z",
+      "created_at_pkt": "2026-11-22 14:02 PKT",
+      "exchange": "mexc",
+      "context": {
+        "trend_4h": "bearish",
+        "trend_1h": "bullish",
+        "premium_discount_4h": {
+          "range_high": 200.38,
+          "range_low": 165.57,
+          "equilibrium": 182.975,
+          "price": 186.66,
+          "pct": 60.6,
+          "zone": "premium",
+          "from_time": "2026-11-19T12:00:00Z"
+        },
+        "pd_bonus": 5,
+        "opposite_side_points": 0
+      },
+      "levels": {
+        "sweep_level": 189.69,
+        "sweep_wick": 190.76
+      },
+      "btc": {
+        "price": 59775.1,
+        "change_1h_pct": 1.07,
+        "dump": false,
+        "trend_1h": "bearish",
+        "trend_4h": "bearish",
+        "candle_time": "2026-11-22T08:00:00Z"
+      },
+      "ready": {
+        "symbol": "TAO/USDT:USDT",
+        "candidate": true,
+        "ready": true,
+        "rank": 161.9,
+        "side": "short",
+        "model": "D",
+        "grade": "A",
+        "score": 73.5,
+        "market_rr": 2.59,
+        "killzone": true,
+        "plan_ok": true,
+        "why": "ready"
+      },
+      "kind": "ready",
+      "status": "pending"
     }
   ]
 }
