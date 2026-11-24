@@ -89,13 +89,13 @@ max_losses_per_day: 2            # safety: stop for the day after 2 stop-losses
 user_sizing:
   margin_usd: 10          # Nov 24: Rans left margin/SL/TP to Claude -> risk-based sizing below
   leverage: 20
-  risk_usd: 2                  # each SL costs ~$2 (10% of $20); margin = risk / (leverage x SL%)
-  max_margin_usd: 10           # never more than half the balance in one trade
+  risk_usd: 1.2                # each SL costs ~$1.2 (10% of $12); margin = risk / (leverage x SL%)
+  max_margin_usd: 6            # never more than half the balance in one trade
   daily_profit_target_usd: 0   # no stop on profit
-  daily_loss_limit_usd: 4      # 2 SLs (-$4) -> stop for the day
+  daily_loss_limit_usd: 2.4    # 2 SLs (-$2.4) -> stop for the day
 
 # --- Risk ---
-account_balance: 20
+account_balance: 12
 risk_per_trade_usd: 2.0     # Rans chose $2 risk -> ~$6 per winning trade
 risk_per_trade_pct: 10
 max_margin_per_trade: 10
