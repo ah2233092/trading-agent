@@ -1,0 +1,37 @@
+❌ NO TRADE — NEAR/USDT
+Wajah: score 37.8 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: LONG (strong POIs only)
+1D: bearish — last BOS 2.868
+4H: bullish — range 2.546–3.273, price in premium (53.9%)
+BTC: neutral
+Key levels: PDH 3.273, PDL 2.933, PWH 3.475, PWL 2.546, MO 4.432
+Setup: D Breaker retest grade B
+Funding: 0.0034% (normal, crowd: none) [mexc]
+OI: 1H -0.50%, 4H +0.35% → long liquidation / exit [okx]
+L/S ratio: 1.577 (balanced) [okx]
+Liquidity: 24h vol $38.1M, spread 0.035%
+Verdict: neutral (nothing unusual)
+Entry 2.86 | SL 2.816 (1.52%, 1 R)
+TP1 2.954 (1:2.17) | TP2 3.057 (1:4.54) | TP3 3.312 (1:10.4)
+Qty 27 contracts | Notional $77.21 | Leverage 8x isolated | Margin $9.65
+Liquidation ≈ 2.513 (SL se 10.77% door) ✅
+Risk $1.19 | Net reward TP1 $2.55 / TP2 $5.33 / TP3 $12.22 (fees ke baad)
+Score: 37.8/100 (min 65) → NO TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup             13.8 / 25   model D (Breaker retest) grade B
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume    5.0 / 10   big body but no volume
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    52 trades, win 17.3%, avg R -0.271
+  pro_confluence         0.0 / 10   ⚠️ price below daily VWAP 2.9582 (against); ⚠️ price below weekly VWAP 3.03186 (against); ⚠️ already long on AVAX, AVAX (correlated — pick one)
+  ✖ score 37.8 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/NEAR/20261124-1339_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/NEAR/20261124-1339_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/NEAR/20261124-1339_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/NEAR/20261124-1339_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/NEAR/20261124T1339.json

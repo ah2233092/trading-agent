@@ -1,0 +1,60 @@
+⚠️ PROVISIONAL — news-check abhi baqi hai (phir: python lib/deep_scan.py --finalize reports/AVAX/latest.json --news clear|caution|block)
+🟢 LONG — AVAX/USDT (1H) | Setup: B — HTF POI tap + 15m CHoCH (A+)
+Score: 66.2/100
+
+📍 Entry: 6.597 (market, zone 6.558–6.724)
+🛑 Stop Loss: 6.533  (0.97%)
+🎯 TP1: 6.761 (1:2.56) → 50% close, SL entry par
+🎯 TP2: 7.039 (1:6.91)
+🎯 TP3: 7.183 (1:9.16) — runner / 4H bearish FVG
+
+⚙️ Leverage: 13x (Isolated) | Margin: $9.49
+💀 Liquidation: 6.114 ✅ SL se 6.41% door
+💵 Risk: $1.20 | Reward: TP1 $3.07 / TP2 $8.27 / TP3 $10.96
+👤 Margin $6 lagao (× 20x = $120 position): SL loss −$1.16 | TP1 +$2.98 / TP2 +$8.04 / TP3 +$10.66
+📊 Is setup ka win rate: 23.4% (47 trades backtest (out-of-sample)) | Avg R: -0.181
+
+🧠 Wajah:
+- HTF: LONG — 1D bearish, 4H bullish, price 4H premium (61.0%), BTC neutral
+- SMC: HTF POI tap + 15m CHoCH — POI 4H OB 6.558–6.724, htf aligned, displacement, confluence, ltf confirmed
+- Futures data: neutral (nothing unusual)
+- Pro checks: ⚠️ price below daily VWAP 6.68187 (against)
+- Pro checks: ⚠️ price below weekly VWAP 6.80608 (against)
+- News: abhi check nahi hui (news-check)
+
+❌ Invalidation: 1H candle close 6.533 ke neeche (POI fail)
+⏳ Valid until: 2026-11-25 00:38 PKT (entry na mile to cancel)
+
+--- details ---
+HTF BIAS: LONG (strong POIs only)
+1D: bearish — last BOS 7.737
+4H: bullish — range 6.006–7.227, price in premium (61.0%)
+BTC: neutral
+Key levels: PDH 7.227, PDL 6.558, PWH 7.312, PWL 6.006, MO 8.566
+Setup: B HTF POI tap + 15m CHoCH grade A+
+Funding: -0.0147% (normal, crowd: none) [mexc]
+OI: 1H -0.76%, 4H -0.41% → long liquidation / exit [okx]
+L/S ratio: 2.067 (balanced) [okx]
+Liquidity: 24h vol $24.4M, spread 0.030%
+Verdict: neutral (nothing unusual)
+Entry 6.597 | SL 6.533 (0.97%, 1 R)
+TP1 6.761 (1:2.56) | TP2 7.039 (1:6.91) | TP3 7.183 (1:9.16)
+Qty 187 contracts | Notional $123.36 | Leverage 13x isolated | Margin $9.49
+Liquidation ≈ 6.114 (SL se 6.41% door) ✅
+Risk $1.20 | Net reward TP1 $3.07 / TP2 $8.27 / TP3 $10.96 (fees ke baad)
+Score: 66.2/100 (min 65) → TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup             25.0 / 25   model B (HTF POI tap + 15m CHoCH) grade A+
+  entry_precision       15.0 / 15   15m CHoCH yes, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    47 trades, win 23.4%, avg R -0.181
+  pro_confluence         0.0 / 10   ⚠️ price below daily VWAP 6.68187 (against); ⚠️ price below weekly VWAP 6.80608 (against)
+Alert 20261121-1206-AVAX: expired (age 73.54h)
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/AVAX/20261124-1338_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/AVAX/20261124-1338_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/AVAX/20261124-1338_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/AVAX/20261124-1338_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/AVAX/20261124T1338.json

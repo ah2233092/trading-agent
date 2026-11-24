@@ -1,0 +1,38 @@
+❌ NO TRADE — TAO/USDT
+Wajah: score 58 < 65
+Kya dekhna hai: 4H FVG 181.81–184.78 tapped, waiting: no 15m CHoCH yet after the tap; POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: LONG (strong POIs only)
+1D: bearish — last BOS 254.21
+4H: bullish — range 165.57–203.88, price in discount (49.3%)
+BTC: neutral
+Key levels: PDH 203.88, PDL 187.46, PWH 200.38, PWL 165.57, MO 236.93
+Setup: D Breaker retest grade A+
+Funding: 0.0050% (normal, crowd: none) [mexc]
+OI: 1H +0.47%, 4H +3.75% → new shorts [okx]
+L/S ratio: 1.854 (balanced) [okx]
+Liquidity: 24h vol $39.0M, spread 0.016%
+Verdict: neutral (nothing unusual)
+Entry 183 | SL 179.88 (1.71%, 1 R)
+TP1 189.32 (1:2.03) | TP2 195.94 (1:4.15) | TP3 198.69 (1:5.03)
+Qty 38 contracts | Notional $69.54 | Leverage 7x isolated | Margin $9.93
+Liquidation ≈ 157.22 (SL se 12.60% door) ✅
+Risk $1.19 | Net reward TP1 $2.40 / TP2 $4.92 / TP3 $5.96 (fees ke baad)
+Score: 58/100 (min 65) → NO TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup             25.0 / 25   model D (Breaker retest) grade A+
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    52 trades, win 17.3%, avg R -0.271
+  pro_confluence         0.0 / 10   ⚠️ price below daily VWAP 186.889 (against); ⚠️ price below weekly VWAP 191.579 (against); ⚠️ already long on AVAX, AVAX (correlated — pick one)
+  ✖ score 58 < 65
+Alert 20261122-0902-TAO: expired (age 52.64h)
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/TAO/20261124-1340_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/TAO/20261124-1340_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/TAO/20261124-1340_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/TAO/20261124-1340_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/TAO/20261124T1340.json

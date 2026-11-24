@@ -1,0 +1,442 @@
+{
+ "symbol": "TRX/USDT:USDT",
+ "coin": "TRX",
+ "pair": "TRX/USDT",
+ "exchange": "mexc",
+ "created_at": "2026-11-24T13:40:44Z",
+ "created_at_pkt": "2026-11-24 18:40 PKT",
+ "valid_until": "2026-11-24T19:40:44Z",
+ "price": 0.30815,
+ "last_1h_candle": "2026-11-24T12:00:00Z",
+ "alert": null,
+ "direction": "LONG",
+ "decision": "NO TRADE",
+ "bias": {
+  "symbol": "TRX/USDT:USDT",
+  "direction": "LONG",
+  "strong_poi_only": true,
+  "pd_ok": false,
+  "reasons": [
+   "1D bearish vs 4H bullish — only LONG from strong POIs",
+   "price in 4H premium (67.2%) — wait for a discount POI, do not chase",
+   "EMAs do not confirm (structure wins)"
+  ],
+  "d1": {
+   "trend": "bearish",
+   "last_bos": {
+    "type": "BOS",
+    "direction": "bullish",
+    "level": 0.33834,
+    "swing_idx": 297,
+    "swing_time": "2026-08-13T00:00:00Z",
+    "idx": 305,
+    "time": "2026-08-21T00:00:00Z",
+    "close": 0.34361
+   },
+   "last_choch": {
+    "type": "CHoCH",
+    "direction": "bearish",
+    "level": 0.32659,
+    "swing_idx": 358,
+    "swing_time": "2026-10-13T00:00:00Z",
+    "idx": 376,
+    "time": "2026-10-31T00:00:00Z",
+    "close": 0.30344
+   },
+   "ema": {
+    "price": 0.30986,
+    "ema20": 0.3118902267,
+    "above_ema20": false,
+    "slope20_pct": -1.074,
+    "ema50": 0.3198230556,
+    "above_ema50": false,
+    "slope50_pct": -0.905,
+    "ema200": 0.3254012698,
+    "above_ema200": false,
+    "slope200_pct": -0.295,
+    "stack": "bearish"
+   }
+  },
+  "h4": {
+   "trend": "bullish",
+   "last_bos": {
+    "type": "BOS",
+    "direction": "bearish",
+    "level": 0.30195,
+    "swing_idx": 250,
+    "swing_time": "2026-11-16T04:00:00Z",
+    "idx": 277,
+    "time": "2026-11-20T16:00:00Z",
+    "close": 0.30105
+   },
+   "last_choch": {
+    "type": "CHoCH",
+    "direction": "bullish",
+    "level": 0.3068,
+    "swing_idx": 282,
+    "swing_time": "2026-11-21T12:00:00Z",
+    "idx": 293,
+    "time": "2026-11-23T08:00:00Z",
+    "close": 0.30723
+   },
+   "ema": {
+    "price": 0.30778,
+    "ema20": 0.3072478883,
+    "above_ema20": true,
+    "slope20_pct": 0.404,
+    "ema50": 0.3076998551,
+    "above_ema50": true,
+    "slope50_pct": 0.108,
+    "ema200": 0.3159991992,
+    "above_ema200": false,
+    "slope200_pct": -0.11,
+    "stack": "bearish"
+   },
+   "range": {
+    "range_high": 0.31246,
+    "range_low": 0.29819,
+    "equilibrium": 0.305325,
+    "price": 0.30778,
+    "pct": 67.2,
+    "zone": "premium",
+    "from_time": "2026-11-21T04:00:00Z"
+   }
+  },
+  "btc": {
+   "price": 60463.2,
+   "change_1h_pct": 0.1,
+   "dump": false,
+   "pump": false,
+   "trend_1h": "bearish",
+   "trend_4h": "bearish",
+   "fresh_bearish_break": false,
+   "fresh_bullish_break": false,
+   "for_long": "neutral",
+   "for_short": "supportive"
+  },
+  "btc_for_direction": "neutral",
+  "key_levels": {
+   "PDH": 0.31246,
+   "PDL": 0.30373,
+   "PWH": 0.31362,
+   "PWL": 0.29819,
+   "day_start": "2026-11-24T00:00:00Z",
+   "week_start": "2026-11-23T00:00:00Z",
+   "MO": 0.30344
+  },
+  "text": "HTF BIAS: LONG (strong POIs only)\n1D: bearish — last BOS 0.33834\n4H: bullish — range 0.29819–0.31246, price in premium (67.2%)\nBTC: neutral\nKey levels: PDH 0.31246, PDL 0.30373, PWH 0.31362, PWL 0.29819, MO 0.30344"
+ },
+ "setup": {
+  "direction": "LONG",
+  "model": null,
+  "name": null,
+  "grade": "reject",
+  "poi": null,
+  "sl_ref": null,
+  "state": null,
+  "quality": {},
+  "reasons": [
+   "no A/B/C/D entry model found on 1H/15m for this direction"
+  ],
+  "candidates": [],
+  "pending": [],
+  "price": 0.30839,
+  "atr_1h": 0.0010186335,
+  "ote": {
+   "direction": "bearish",
+   "break_type": "CHoCH",
+   "break_idx": 397,
+   "start_idx": 393,
+   "start_time": "2026-11-24T06:00:00Z",
+   "end_idx": 398,
+   "end_time": "2026-11-24T11:00:00Z",
+   "low": 0.30728,
+   "high": 0.31025,
+   "top": 0.3096263,
+   "bottom": 0.3091214,
+   "sweet": 0.30937385,
+   "price": 0.30839,
+   "retrace_pct": 37.4,
+   "in_ote": false,
+   "touched": false,
+   "invalid": false
+  },
+  "trend_4h": "bullish",
+  "trend_1h": "bearish",
+  "premium_discount_4h": {
+   "range_high": 0.31246,
+   "range_low": 0.29819,
+   "equilibrium": 0.305325,
+   "price": 0.30778,
+   "pct": 67.2,
+   "zone": "premium",
+   "from_time": "2026-11-21T04:00:00Z"
+  }
+ },
+ "session": {
+  "now_utc": "2026-11-24T13:40:44Z",
+  "in_killzone": true,
+  "killzone": "new_york",
+  "next_killzone": "london",
+  "next_start_utc": "2026-11-25T07:00:00Z",
+  "hours_to_next": 17.32,
+  "zones_utc": {
+   "asia": [
+    0,
+    6
+   ],
+   "london": [
+    7,
+    10
+   ],
+   "new_york": [
+    12,
+    15
+   ]
+  }
+ },
+ "asia_range": {
+  "start_utc": "2026-11-24T00:00:00Z",
+  "end_utc": "2026-11-24T06:00:00Z",
+  "high": 0.31144,
+  "low": 0.30785,
+  "complete": true,
+  "swept_high": false,
+  "swept_low": true
+ },
+ "futures": {
+  "symbol": "TRX/USDT:USDT",
+  "side": "long",
+  "funding": {
+   "source": "mexc",
+   "current_pct": -0.0013,
+   "history_pct": [
+    -0.006,
+    -0.0285,
+    -0.0006,
+    -0.0016,
+    -0.0031,
+    0.01,
+    0.0029,
+    0.0042
+   ],
+   "interval": "8h",
+   "next_funding_utc": "2026-11-24T16:00:00.000Z",
+   "level": "normal",
+   "crowd": "none"
+  },
+  "open_interest": {
+   "source": "okx",
+   "latest": 72495.93,
+   "change_1h_pct": -0.12,
+   "change_4h_pct": -1.39,
+   "reading_1h": "OI flat — no new positioning",
+   "reading_4h": "long liquidation / exit",
+   "mexc_now": 18116960.0
+  },
+  "long_short": {
+   "source": "okx",
+   "ratio": 1.719,
+   "prev": 1.772,
+   "note": "balanced"
+  },
+  "liquidity": {
+   "quote_volume_24h": 1533578.3431,
+   "spread_pct": 0.0032,
+   "ok": false,
+   "source": "mexc"
+  },
+  "price_change": {
+   "1h_pct": 0.198,
+   "4h_pct": -0.107
+  },
+  "verdicts": {
+   "long": {
+    "verdict": "against",
+    "reason": "low volume / wide spread"
+   },
+   "short": {
+    "verdict": "against",
+    "reason": "low volume / wide spread"
+   }
+  },
+  "verdict": "against",
+  "reason": "low volume / wide spread",
+  "text": "Funding: -0.0013% (normal, crowd: none) [mexc]\nOI: 1H -0.12%, 4H -1.39% → OI flat — no new positioning [okx]\nL/S ratio: 1.719 (balanced) [okx]\nLiquidity: 24h vol $1.5M, spread 0.003% ❌\nVerdict: against (low volume / wide spread)"
+ },
+ "plan": null,
+ "stats": null,
+ "score": {
+  "total": 18.5,
+  "threshold": 65.0,
+  "news": "pending",
+  "breakdown": [
+   {
+    "category": "htf_bias",
+    "weight": 25.0,
+    "fraction": 0.51,
+    "points": 12.8,
+    "reason": "4H only (1D disagrees); BTC neutral"
+   },
+   {
+    "category": "smc_setup",
+    "weight": 25.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "no valid entry model"
+   },
+   {
+    "category": "entry_precision",
+    "weight": 15.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "15m CHoCH no, confluence no"
+   },
+   {
+    "category": "displacement_volume",
+    "weight": 10.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "no displacement"
+   },
+   {
+    "category": "futures_data",
+    "weight": 10.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "against — low volume / wide spread"
+   },
+   {
+    "category": "session_timing",
+    "weight": 5.0,
+    "fraction": 1.0,
+    "points": 5.0,
+    "reason": "inside new_york killzone"
+   },
+   {
+    "category": "news",
+    "weight": 5.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "not checked yet (run news-check)"
+   },
+   {
+    "category": "backtest_edge",
+    "weight": 5.0,
+    "fraction": 0.5,
+    "points": 2.5,
+    "reason": "not enough data yet (0 trades)"
+   },
+   {
+    "category": "pro_confluence",
+    "weight": 10.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "⚠️ price below daily VWAP 0.309306 (against); ⚠️ price below weekly VWAP 0.30838 (against); ⚠️ already long on AVAX, AVAX (correlated — pick one)"
+   }
+  ],
+  "blocks": [
+   "no valid SMC setup",
+   "coin fails volume / spread filter",
+   "score 18.5 < 65"
+  ],
+  "decision": "NO TRADE",
+  "soft_blocks": [
+   "score 18.5 < 65"
+  ],
+  "max_without_news": 105.0
+ },
+ "score_inputs": {
+  "direction": "LONG",
+  "bias": {
+   "d1": {
+    "trend": "bearish"
+   },
+   "btc_for_direction": "neutral"
+  },
+  "setup": {
+   "model": null,
+   "name": null,
+   "grade": "reject",
+   "quality": {},
+   "displacement": null
+  },
+  "futures": {
+   "verdict": "against",
+   "reason": "low volume / wide spread",
+   "liquidity": {
+    "quote_volume_24h": 1533578.3431,
+    "spread_pct": 0.0032,
+    "ok": false,
+    "source": "mexc"
+   }
+  },
+  "session": {
+   "now_utc": "2026-11-24T13:40:44Z",
+   "in_killzone": true,
+   "killzone": "new_york",
+   "next_killzone": "london",
+   "next_start_utc": "2026-11-25T07:00:00Z",
+   "hours_to_next": 17.32,
+   "zones_utc": {
+    "asia": [
+     0,
+     6
+    ],
+    "london": [
+     7,
+     10
+    ],
+    "new_york": [
+     12,
+     15
+    ]
+   }
+  },
+  "news": "pending",
+  "stats": null,
+  "plan": null,
+  "limits": {
+   "trades_today": 4,
+   "losses_today": 1,
+   "max_trades": 0,
+   "max_losses": 2,
+   "blocked": false,
+   "reason": null,
+   "user_pnl_today": -1.2
+  },
+  "pro": {
+   "ok": true,
+   "good": [],
+   "warnings": [
+    "price below daily VWAP 0.309306 (against)",
+    "price below weekly VWAP 0.30838 (against)",
+    "already long on AVAX, AVAX (correlated — pick one)"
+   ],
+   "info": {
+    "vwap_day": 0.30930594650987187,
+    "vwap_week": 0.30837993071545483,
+    "rsi_1h": 48.9,
+    "rsi_4h": 52.4,
+    "ema20_1h": 0.30872837971169187,
+    "ext_atr": -0.57
+   },
+   "fraction": 0.0,
+   "exhausted": false
+  }
+ },
+ "charts": {
+  "1d": "/home/runner/work/trading-agent/trading-agent/charts/TRX/20261124-1340_1d.png",
+  "4h": "/home/runner/work/trading-agent/trading-agent/charts/TRX/20261124-1340_4h.png",
+  "1h": "/home/runner/work/trading-agent/trading-agent/charts/TRX/20261124-1340_1h.png",
+  "15m": "/home/runner/work/trading-agent/trading-agent/charts/TRX/20261124-1340_15m.png"
+ },
+ "news": "pending",
+ "news_note": null,
+ "no_trade_reasons": [
+  "koi A/B/C/D entry model nahi bana",
+  "score 18.5 < 65"
+ ],
+ "answer": "❌ NO TRADE — TRX/USDT\nWajah: koi A/B/C/D entry model nahi bana; score 18.5 < 65\nKya dekhna hai: 1H par liquidity sweep + CHoCH, ya 4H POI tap + 15m CHoCH",
+ "report_path": "/home/runner/work/trading-agent/trading-agent/reports/TRX/20261124T1340.json"
+}

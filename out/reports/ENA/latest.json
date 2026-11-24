@@ -1,0 +1,444 @@
+{
+ "symbol": "ENA/USDT:USDT",
+ "coin": "ENA",
+ "pair": "ENA/USDT",
+ "exchange": "mexc",
+ "created_at": "2026-11-24T13:39:12Z",
+ "created_at_pkt": "2026-11-24 18:39 PKT",
+ "valid_until": "2026-11-24T19:39:12Z",
+ "price": 0.09852,
+ "last_1h_candle": "2026-11-24T12:00:00Z",
+ "alert": null,
+ "direction": "SHORT",
+ "decision": "NO TRADE",
+ "bias": {
+  "symbol": "ENA/USDT:USDT",
+  "direction": "SHORT",
+  "strong_poi_only": false,
+  "pd_ok": false,
+  "reasons": [
+   "1D and 4H both bearish",
+   "price in 4H discount (37.2%) — wait for a premium POI, do not chase",
+   "EMA stack bearish on 4H"
+  ],
+  "d1": {
+   "trend": "bearish",
+   "last_bos": {
+    "type": "BOS",
+    "direction": "bearish",
+    "level": 0.16568,
+    "swing_idx": 375,
+    "swing_time": "2026-10-30T00:00:00Z",
+    "idx": 381,
+    "time": "2026-11-05T00:00:00Z",
+    "close": 0.16006
+   },
+   "last_choch": {
+    "type": "CHoCH",
+    "direction": "bearish",
+    "level": 0.194,
+    "swing_idx": 353,
+    "swing_time": "2026-10-08T00:00:00Z",
+    "idx": 362,
+    "time": "2026-10-17T00:00:00Z",
+    "close": 0.18818
+   },
+   "ema": {
+    "price": 0.10111,
+    "ema20": 0.12861856,
+    "above_ema20": false,
+    "slope20_pct": -12.295,
+    "ema50": 0.1563676156,
+    "above_ema50": false,
+    "slope50_pct": -7.282,
+    "ema200": 0.1553743086,
+    "above_ema200": false,
+    "slope200_pct": -1.765,
+    "stack": "mixed"
+   }
+  },
+  "h4": {
+   "trend": "bearish",
+   "last_bos": {
+    "type": "BOS",
+    "direction": "bearish",
+    "level": 0.11,
+    "swing_idx": 242,
+    "swing_time": "2026-11-14T20:00:00Z",
+    "idx": 264,
+    "time": "2026-11-18T12:00:00Z",
+    "close": 0.10896
+   },
+   "last_choch": {
+    "type": "CHoCH",
+    "direction": "bearish",
+    "level": 0.1946,
+    "swing_idx": 103,
+    "swing_time": "2026-10-22T16:00:00Z",
+    "idx": 112,
+    "time": "2026-10-24T04:00:00Z",
+    "close": 0.19007
+   },
+   "ema": {
+    "price": 0.09927,
+    "ema20": 0.1017686707,
+    "above_ema20": false,
+    "slope20_pct": -0.687,
+    "ema50": 0.1082320428,
+    "above_ema50": false,
+    "slope50_pct": -1.506,
+    "ema200": 0.1475935595,
+    "above_ema200": false,
+    "slope200_pct": -1.6,
+    "stack": "bearish"
+   },
+   "range": {
+    "range_high": 0.11549,
+    "range_low": 0.08967,
+    "equilibrium": 0.10258,
+    "price": 0.09927,
+    "pct": 37.2,
+    "zone": "discount",
+    "from_time": "2026-11-21T04:00:00Z"
+   }
+  },
+  "btc": {
+   "price": 60463.2,
+   "change_1h_pct": 0.1,
+   "dump": false,
+   "pump": false,
+   "trend_1h": "bearish",
+   "trend_4h": "bearish",
+   "fresh_bearish_break": false,
+   "fresh_bullish_break": false,
+   "for_long": "neutral",
+   "for_short": "supportive"
+  },
+  "btc_for_direction": "supportive",
+  "key_levels": {
+   "PDH": 0.11549,
+   "PDL": 0.09863,
+   "PWH": 0.12135,
+   "PWL": 0.08967,
+   "day_start": "2026-11-24T00:00:00Z",
+   "week_start": "2026-11-23T00:00:00Z",
+   "MO": 0.18872
+  },
+  "text": "HTF BIAS: SHORT\n1D: bearish — last BOS 0.16568\n4H: bearish — range 0.08967–0.11549, price in discount (37.2%)\nBTC: supportive\nKey levels: PDH 0.11549, PDL 0.09863, PWH 0.12135, PWL 0.08967, MO 0.18872"
+ },
+ "setup": {
+  "direction": "SHORT",
+  "model": null,
+  "name": null,
+  "grade": "reject",
+  "poi": null,
+  "sl_ref": null,
+  "state": null,
+  "quality": {},
+  "reasons": [
+   "no A/B/C/D entry model found on 1H/15m for this direction"
+  ],
+  "candidates": [],
+  "pending": [],
+  "price": 0.09935,
+  "atr_1h": 0.001808209,
+  "ote": {
+   "direction": "bullish",
+   "break_type": "BOS",
+   "break_idx": 368,
+   "start_idx": 365,
+   "start_time": "2026-11-23T02:00:00Z",
+   "end_idx": 377,
+   "end_time": "2026-11-23T14:00:00Z",
+   "low": 0.09863,
+   "high": 0.11549,
+   "top": 0.1050368,
+   "bottom": 0.1021706,
+   "sweet": 0.1036037,
+   "price": 0.09935,
+   "retrace_pct": 95.7,
+   "in_ote": false,
+   "touched": true,
+   "invalid": true
+  },
+  "trend_4h": "bearish",
+  "trend_1h": "bullish",
+  "premium_discount_4h": {
+   "range_high": 0.11549,
+   "range_low": 0.08967,
+   "equilibrium": 0.10258,
+   "price": 0.09927,
+   "pct": 37.2,
+   "zone": "discount",
+   "from_time": "2026-11-21T04:00:00Z"
+  }
+ },
+ "session": {
+  "now_utc": "2026-11-24T13:39:12Z",
+  "in_killzone": true,
+  "killzone": "new_york",
+  "next_killzone": "london",
+  "next_start_utc": "2026-11-25T07:00:00Z",
+  "hours_to_next": 17.35,
+  "zones_utc": {
+   "asia": [
+    0,
+    6
+   ],
+   "london": [
+    7,
+    10
+   ],
+   "new_york": [
+    12,
+    15
+   ]
+  }
+ },
+ "asia_range": {
+  "start_utc": "2026-11-24T00:00:00Z",
+  "end_utc": "2026-11-24T06:00:00Z",
+  "high": 0.10303,
+  "low": 0.09853,
+  "complete": true,
+  "swept_high": false,
+  "swept_low": true
+ },
+ "futures": {
+  "symbol": "ENA/USDT:USDT",
+  "side": "short",
+  "funding": {
+   "source": "mexc",
+   "current_pct": -0.0037,
+   "history_pct": [
+    -0.0002,
+    0.003,
+    0.001,
+    0.0019,
+    -0.0022,
+    -0.0026,
+    0.0005,
+    0.0021
+   ],
+   "interval": "4h",
+   "next_funding_utc": "2026-11-24T16:00:00.000Z",
+   "level": "normal",
+   "crowd": "none"
+  },
+  "open_interest": {
+   "source": "okx",
+   "latest": 8973360.0,
+   "change_1h_pct": -0.57,
+   "change_4h_pct": 0.26,
+   "reading_1h": "short covering (weaker up move)",
+   "reading_4h": "OI flat — no new positioning",
+   "mexc_now": 194231440.0
+  },
+  "long_short": {
+   "source": "okx",
+   "ratio": 1.232,
+   "prev": 1.273,
+   "note": "balanced"
+  },
+  "liquidity": {
+   "quote_volume_24h": 30262378.8598,
+   "spread_pct": 0.0101,
+   "ok": true,
+   "source": "mexc"
+  },
+  "price_change": {
+   "1h_pct": 0.081,
+   "4h_pct": -0.779
+  },
+  "verdicts": {
+   "long": {
+    "verdict": "neutral",
+    "reason": "nothing unusual"
+   },
+   "short": {
+    "verdict": "neutral",
+    "reason": "nothing unusual"
+   }
+  },
+  "verdict": "neutral",
+  "reason": "nothing unusual",
+  "text": "Funding: -0.0037% (normal, crowd: none) [mexc]\nOI: 1H -0.57%, 4H +0.26% → short covering (weaker up move) [okx]\nL/S ratio: 1.232 (balanced) [okx]\nLiquidity: 24h vol $30.3M, spread 0.010%\nVerdict: neutral (nothing unusual)"
+ },
+ "plan": null,
+ "stats": null,
+ "score": {
+  "total": 38.6,
+  "threshold": 65.0,
+  "news": "pending",
+  "breakdown": [
+   {
+    "category": "htf_bias",
+    "weight": 25.0,
+    "fraction": 1.0,
+    "points": 25.0,
+    "reason": "1D + 4H aligned; BTC supportive"
+   },
+   {
+    "category": "smc_setup",
+    "weight": 25.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "no valid entry model"
+   },
+   {
+    "category": "entry_precision",
+    "weight": 15.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "15m CHoCH no, confluence no"
+   },
+   {
+    "category": "displacement_volume",
+    "weight": 10.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "no displacement"
+   },
+   {
+    "category": "futures_data",
+    "weight": 10.0,
+    "fraction": 0.5,
+    "points": 5.0,
+    "reason": "neutral — nothing unusual"
+   },
+   {
+    "category": "session_timing",
+    "weight": 5.0,
+    "fraction": 1.0,
+    "points": 5.0,
+    "reason": "inside new_york killzone"
+   },
+   {
+    "category": "news",
+    "weight": 5.0,
+    "fraction": 0.0,
+    "points": 0.0,
+    "reason": "not checked yet (run news-check)"
+   },
+   {
+    "category": "backtest_edge",
+    "weight": 5.0,
+    "fraction": 0.5,
+    "points": 2.5,
+    "reason": "not enough data yet (0 trades)"
+   },
+   {
+    "category": "pro_confluence",
+    "weight": 10.0,
+    "fraction": 0.5,
+    "points": 5.0,
+    "reason": "price below daily VWAP 0.0997202; price below weekly VWAP 0.103628; ⚠️ bullish RSI divergence (low 0.09853 < 0.0988, RSI 46 > 39); ⚠️ already short on WLD (correlated — pick one)"
+   }
+  ],
+  "blocks": [
+   "no valid SMC setup",
+   "score 38.6 < 65"
+  ],
+  "decision": "NO TRADE",
+  "soft_blocks": [
+   "score 38.6 < 65"
+  ],
+  "max_without_news": 105.0
+ },
+ "score_inputs": {
+  "direction": "SHORT",
+  "bias": {
+   "d1": {
+    "trend": "bearish"
+   },
+   "btc_for_direction": "supportive"
+  },
+  "setup": {
+   "model": null,
+   "name": null,
+   "grade": "reject",
+   "quality": {},
+   "displacement": null
+  },
+  "futures": {
+   "verdict": "neutral",
+   "reason": "nothing unusual",
+   "liquidity": {
+    "quote_volume_24h": 30262378.8598,
+    "spread_pct": 0.0101,
+    "ok": true,
+    "source": "mexc"
+   }
+  },
+  "session": {
+   "now_utc": "2026-11-24T13:39:12Z",
+   "in_killzone": true,
+   "killzone": "new_york",
+   "next_killzone": "london",
+   "next_start_utc": "2026-11-25T07:00:00Z",
+   "hours_to_next": 17.35,
+   "zones_utc": {
+    "asia": [
+     0,
+     6
+    ],
+    "london": [
+     7,
+     10
+    ],
+    "new_york": [
+     12,
+     15
+    ]
+   }
+  },
+  "news": "pending",
+  "stats": null,
+  "plan": null,
+  "limits": {
+   "trades_today": 4,
+   "losses_today": 1,
+   "max_trades": 0,
+   "max_losses": 2,
+   "blocked": false,
+   "reason": null,
+   "user_pnl_today": -1.2
+  },
+  "pro": {
+   "ok": true,
+   "good": [
+    "price below daily VWAP 0.0997202",
+    "price below weekly VWAP 0.103628",
+    "1H RSI 42 with the trade, room left"
+   ],
+   "warnings": [
+    "bullish RSI divergence (low 0.09853 < 0.0988, RSI 46 > 39)",
+    "already short on WLD (correlated — pick one)"
+   ],
+   "info": {
+    "vwap_day": 0.09972019105899604,
+    "vwap_week": 0.10362822726977282,
+    "rsi_1h": 41.9,
+    "rsi_4h": 42.5,
+    "ema20_1h": 0.10087979573414782,
+    "ext_atr": 1.31
+   },
+   "fraction": 0.5,
+   "exhausted": false
+  }
+ },
+ "charts": {
+  "1d": "/home/runner/work/trading-agent/trading-agent/charts/ENA/20261124-1339_1d.png",
+  "4h": "/home/runner/work/trading-agent/trading-agent/charts/ENA/20261124-1339_4h.png",
+  "1h": "/home/runner/work/trading-agent/trading-agent/charts/ENA/20261124-1339_1h.png",
+  "15m": "/home/runner/work/trading-agent/trading-agent/charts/ENA/20261124-1339_15m.png"
+ },
+ "news": "pending",
+ "news_note": null,
+ "no_trade_reasons": [
+  "koi A/B/C/D entry model nahi bana",
+  "score 38.6 < 65"
+ ],
+ "answer": "❌ NO TRADE — ENA/USDT\nWajah: koi A/B/C/D entry model nahi bana; score 38.6 < 65\nKya dekhna hai: 1H par liquidity sweep + CHoCH, ya 4H POI tap + 15m CHoCH",
+ "report_path": "/home/runner/work/trading-agent/trading-agent/reports/ENA/20261124T1339.json"
+}

@@ -1,0 +1,34 @@
+❌ NO TRADE — HBAR/USDT
+Wajah: koi A/B/C/D entry model nahi bana; score 18.5 < 65
+Kya dekhna hai: 4H OB 0.05014–0.0522 tapped, waiting: no 15m CHoCH yet after the tap; 1H par liquidity sweep + CHoCH, ya 4H POI tap + 15m CHoCH
+
+--- details ---
+HTF BIAS: LONG (strong POIs only)
+1D: bearish — last BOS 0.06598
+4H: bullish — range 0.048–0.0565, price in discount (40.5%)
+BTC: neutral
+Key levels: PDH 0.0565, PDL 0.0504, PWH 0.05937, PWL 0.048, MO 0.07181
+Setup: -  grade reject
+Funding: -0.0064% (normal, crowd: none) [mexc]
+OI: 1H +0.26%, 4H +1.12% → OI flat — no new positioning [okx]
+L/S ratio: 1.505 (balanced) [okx]
+Liquidity: 24h vol $18.1M, spread 0.020% ❌
+Verdict: against (low volume / wide spread)
+Score: 18.5/100 (min 65) → NO TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup              0.0 / 25   no valid entry model
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume    0.0 / 10   no displacement
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          2.5 / 5    not enough data yet (0 trades)
+  pro_confluence         0.0 / 10   ⚠️ price below daily VWAP 0.0520185 (against); ⚠️ price below weekly VWAP 0.0528233 (against); ⚠️ already long on AVAX, AVAX (correlated — pick one)
+  ✖ no valid SMC setup
+  ✖ coin fails volume / spread filter
+  ✖ score 18.5 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/HBAR/20261124-1341_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/HBAR/20261124-1341_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/HBAR/20261124-1341_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/HBAR/20261124-1341_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/HBAR/20261124T1341.json

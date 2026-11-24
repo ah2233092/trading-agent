@@ -1,0 +1,33 @@
+❌ NO TRADE — SOL/USDT
+Wajah: koi A/B/C/D entry model nahi bana; score 23 < 65
+Kya dekhna hai: 4H OB 68.69–71.07 tapped, waiting: no 15m CHoCH yet after the tap; 1H par liquidity sweep + CHoCH, ya 4H POI tap + 15m CHoCH
+
+--- details ---
+HTF BIAS: LONG (strong POIs only)
+1D: bearish — last BOS 90.72
+4H: bullish — range 64.85–78.45, price in discount (44.2%)
+BTC: neutral
+Key levels: PDH 78.45, PDL 69.84, PWH 75.73, PWL 64.85, MO 95.45
+Setup: -  grade reject
+Funding: 0.0011% (normal, crowd: none) [mexc]
+OI: 1H -0.50%, 4H +0.19% → long liquidation / exit [okx]
+L/S ratio: 2.676 (balanced) [okx]
+Liquidity: 24h vol $493.0M, spread 0.014%
+Verdict: neutral (nothing unusual)
+Score: 23/100 (min 65) → NO TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup              0.0 / 25   no valid entry model
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume    0.0 / 10   no displacement
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          2.5 / 5    not enough data yet (0 trades)
+  pro_confluence         0.0 / 10   ⚠️ price below daily VWAP 71.1226 (against); ⚠️ price below weekly VWAP 72.7113 (against); ⚠️ already long on AVAX, AVAX (correlated — pick one)
+  ✖ no valid SMC setup
+  ✖ score 23 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/SOL/20261124-1340_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/SOL/20261124-1340_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/SOL/20261124-1340_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/SOL/20261124-1340_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/SOL/20261124T1340.json

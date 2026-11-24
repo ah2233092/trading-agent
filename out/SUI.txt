@@ -1,0 +1,39 @@
+❌ NO TRADE — SUI/USDT
+Wajah: TP1 blocked by PWL at 0.5879 (only 1:0.73)
+Kya dekhna hai: POI par 15m CHoCH confirmation; blocking level ke paar 1H close, ya POI ke andar behtar entry
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.6745
+4H: bearish — range 0.5879–0.7335, price in premium (50.4%)
+BTC: supportive
+Key levels: PDH 0.7335, PDL 0.6403, PWH 0.7438, PWL 0.5879, MO 0.8989
+Setup: A Sweep + CHoCH + FVG/OB retest grade A+
+Funding: -0.0035% (normal, crowd: none) [mexc]
+OI: 1H +0.83%, 4H +2.28% → new shorts [okx]
+L/S ratio: 2.839 (balanced) [okx]
+Liquidity: 24h vol $39.1M, spread 0.015%
+Verdict: supportive (new shorts (price + OI agree))
+Entry 0.6506 | SL 0.7364 (13.19%, 1 R)
+TP1 0.4791 (1:2) | TP2 0.3933 (1:3) | TP3 0.3075 (1:4)
+Qty 13 contracts | Notional $8.46 | Leverage 1x isolated | Margin $8.46
+Liquidation ≈ 1.298 (SL se 76.26% door) ✅
+Risk $1.12 | Net reward TP1 $2.23 / TP2 $3.34 / TP3 $4.46 (fees ke baad)
+❌ TP1 blocked by PWL at 0.5879 (only 1:0.73)
+ℹ️ no liquidity level for TP1,2,3 — R-multiple used
+Score: 83.6/100 (min 65) → NO TRADE
+  htf_bias              25.0 / 25   1D + 4H aligned; BTC supportive
+  smc_setup             25.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A+
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data          10.0 / 10   supportive — new shorts (price + OI agree)
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         7.5 / 10   price below daily VWAP 0.663617; price below weekly VWAP 0.680501; ⚠️ already short on WLD (correlated — pick one)
+  ✖ risk plan rejected: TP1 blocked by PWL at 0.5879 (only 1:0.73)
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/SUI/20261124-1340_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/SUI/20261124-1340_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/SUI/20261124-1340_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/SUI/20261124-1340_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/SUI/20261124T1340.json

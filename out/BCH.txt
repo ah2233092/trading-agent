@@ -1,0 +1,38 @@
+❌ NO TRADE — BCH/USDT
+Wajah: score 53.5 < 65
+Kya dekhna hai: 4H OB 191.66–200.61 tapped, waiting: no 15m CHoCH yet after the tap; POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: LONG (strong POIs only)
+1D: bearish — last BOS 191.85
+4H: bullish — range 193.95–212.82, price in discount (30.6%)
+BTC: neutral
+Key levels: PDH 212.82, PDL 193.95, PWH 213.65, PWL 179.64, MO 285.87
+Setup: D Breaker retest grade A+
+Funding: -0.0162% (normal, crowd: none) [mexc]
+OI: 1H +0.02%, 4H +0.16% → OI flat — no new positioning [okx]
+L/S ratio: 2.381 (balanced) [okx]
+Liquidity: 24h vol $3.4M, spread 0.025% ❌
+Verdict: against (low volume / wide spread)
+Entry 197.79 | SL 191.71 (3.07%, 1 R)
+TP1 212.81 (1:2.47) | TP2 221.6 (1:3.92) | TP3 226.72 (1:4.76)
+Qty 19 contracts | Notional $37.58 | Leverage 4x isolated | Margin $9.39
+Liquidation ≈ 148.97 (SL se 22.30% door) ✅
+Risk $1.17 | Net reward TP1 $2.85 / TP2 $4.52 / TP3 $5.49 (fees ke baad)
+Score: 53.5/100 (min 65) → NO TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup             25.0 / 25   model D (Breaker retest) grade A+
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    52 trades, win 17.3%, avg R -0.271
+  pro_confluence         0.0 / 10   ⚠️ price below daily VWAP 200.75 (against); ⚠️ price below weekly VWAP 202.734 (against); ⚠️ already long on AVAX, AVAX (correlated — pick one)
+  ✖ coin fails volume / spread filter
+  ✖ score 53.5 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/BCH/20261124-1341_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/BCH/20261124-1341_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/BCH/20261124-1341_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/BCH/20261124-1341_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/BCH/20261124T1341.json

@@ -1,0 +1,38 @@
+❌ NO TRADE — XLM/USDT
+Wajah: score 61.2 < 65
+Kya dekhna hai: 4H OB 0.12517–0.12772 tapped, waiting: no 15m CHoCH yet after the tap; POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: LONG (strong POIs only)
+1D: bearish — last BOS 0.1301
+4H: bullish — range 0.12517–0.1384, price in discount (13.5%)
+BTC: neutral
+Key levels: PDH 0.1384, PDL 0.12517, PWH 0.14257, PWL 0.11958, MO 0.1695
+Setup: A Sweep + CHoCH + FVG/OB retest grade A+
+Funding: -0.0109% (normal, crowd: none) [mexc]
+OI: 1H -0.00%, 4H +1.12% → OI flat — no new positioning [okx]
+L/S ratio: 1.783 (balanced) [okx]
+Liquidity: 24h vol $29.4M, spread 0.016%
+Verdict: neutral (nothing unusual)
+Entry 0.12503 | SL 0.12469 (0.27%, 1 R)
+TP1 0.12587 (1:2.47) | TP2 0.12621 (1:3.47) | TP3 0.13971 (1:43.18)
+Qty 159 contracts | Notional $198.80 | Leverage 20x isolated | Margin $9.94
+Liquidation ≈ 0.11905 (SL se 4.52% door) ✅
+Risk $0.54 | Net reward TP1 $1.34 / TP2 $1.88 / TP3 $23.34 (fees ke baad)
+ℹ️ size cut to fit $10 margin at max safe leverage 20x — risk below target
+Score: 61.2/100 (min 65) → NO TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup             25.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A+
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         0.0 / 10   ⚠️ price below daily VWAP 0.128747 (against); ⚠️ price below weekly VWAP 0.130015 (against); ⚠️ already long on AVAX, AVAX (correlated — pick one)
+  ✖ score 61.2 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/XLM/20261124-1341_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/XLM/20261124-1341_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/XLM/20261124-1341_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/XLM/20261124-1341_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/XLM/20261124T1341.json

@@ -1,0 +1,33 @@
+❌ NO TRADE — ENA/USDT
+Wajah: koi A/B/C/D entry model nahi bana; score 38.6 < 65
+Kya dekhna hai: 1H par liquidity sweep + CHoCH, ya 4H POI tap + 15m CHoCH
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.16568
+4H: bearish — range 0.08967–0.11549, price in discount (37.2%)
+BTC: supportive
+Key levels: PDH 0.11549, PDL 0.09863, PWH 0.12135, PWL 0.08967, MO 0.18872
+Setup: -  grade reject
+Funding: -0.0037% (normal, crowd: none) [mexc]
+OI: 1H -0.57%, 4H +0.26% → short covering (weaker up move) [okx]
+L/S ratio: 1.232 (balanced) [okx]
+Liquidity: 24h vol $30.3M, spread 0.010%
+Verdict: neutral (nothing unusual)
+Score: 38.6/100 (min 65) → NO TRADE
+  htf_bias              25.0 / 25   1D + 4H aligned; BTC supportive
+  smc_setup              0.0 / 25   no valid entry model
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume    0.0 / 10   no displacement
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          2.5 / 5    not enough data yet (0 trades)
+  pro_confluence         5.0 / 10   price below daily VWAP 0.0997202; price below weekly VWAP 0.103628; ⚠️ bullish RSI divergence (low 0.09853 < 0.0988, RSI 46 > 39); ⚠️ already short on WLD (correlated — pick one)
+  ✖ no valid SMC setup
+  ✖ score 38.6 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/ENA/20261124-1339_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/ENA/20261124-1339_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/ENA/20261124-1339_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/ENA/20261124-1339_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/ENA/20261124T1339.json

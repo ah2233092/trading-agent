@@ -1,0 +1,37 @@
+❌ NO TRADE — XRP/USDT
+Wajah: score 58 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: LONG (strong POIs only)
+1D: bearish — last BOS 1.1994
+4H: bullish — range 0.8599–1.0258, price in discount (44.3%)
+BTC: neutral
+Key levels: PDH 1.0258, PDL 0.912, PWH 1.0073, PWL 0.8599, MO 1.2513
+Setup: D Breaker retest grade A+
+Funding: -0.0057% (normal, crowd: none) [mexc]
+OI: 1H +0.44%, 4H +1.69% → new shorts [okx]
+L/S ratio: 1.781 (balanced) [okx]
+Liquidity: 24h vol $302.7M, spread 0.011%
+Verdict: neutral (nothing unusual)
+Entry 0.9209 | SL 0.9028 (1.97%, 1 R)
+TP1 0.9587 (1:2.09) | TP2 0.9747 (1:2.97) | TP3 0.9968 (1:4.19)
+Qty 64 contracts | Notional $58.94 | Leverage 6x isolated | Margin $9.82
+Liquidation ≈ 0.7693 (SL se 14.78% door) ✅
+Risk $1.18 | Net reward TP1 $2.41 / TP2 $3.43 / TP3 $4.85 (fees ke baad)
+Score: 58/100 (min 65) → NO TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup             25.0 / 25   model D (Breaker retest) grade A+
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          0.0 / 5    52 trades, win 17.3%, avg R -0.271
+  pro_confluence         0.0 / 10   ⚠️ price below daily VWAP 0.937194 (against); ⚠️ price below weekly VWAP 0.952067 (against); ⚠️ already long on AVAX, AVAX (correlated — pick one)
+  ✖ score 58 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/XRP/20261124-1341_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/XRP/20261124-1341_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/XRP/20261124-1341_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/XRP/20261124-1341_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/XRP/20261124T1341.json

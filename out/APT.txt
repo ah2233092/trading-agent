@@ -1,0 +1,38 @@
+❌ NO TRADE — APT/USDT
+Wajah: score 63.2 < 65
+Kya dekhna hai: POI par 15m CHoCH confirmation
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 0.5748
+4H: bearish — range 0.3352–0.4128, price in premium (57.0%)
+BTC: supportive
+Key levels: PDH 0.4128, PDL 0.3749, PWH 0.4698, PWL 0.3352, MO 0.6326
+Setup: A Sweep + CHoCH + FVG/OB retest grade A
+Funding: -0.0046% (normal, crowd: none) [mexc]
+OI: 1H -0.72%, 4H +1.09% → long liquidation / exit [okx]
+L/S ratio: 1.95 (balanced) [okx]
+Liquidity: 24h vol $4.4M, spread 0.027% ❌
+Verdict: against (low volume / wide spread)
+Entry 0.4036 | SL 0.4145 (2.70%, 1 R)
+TP1 0.3713 (1:2.96) | TP2 0.359 (1:4.09) | TP3 0.3353 (1:6.27)
+Qty 1100 contracts | Notional $44.40 | Leverage 5x isolated | Margin $8.88
+Liquidation ≈ 0.4824 (SL se 16.38% door) ✅
+Risk $1.20 | Net reward TP1 $3.55 / TP2 $4.91 / TP3 $7.51 (fees ke baad)
+Score: 63.2/100 (min 65) → NO TRADE
+  htf_bias              25.0 / 25   1D + 4H aligned; BTC supportive
+  smc_setup             20.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume    5.0 / 10   big body but no volume
+  futures_data           0.0 / 10   against — low volume / wide spread
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         5.0 / 10   price below daily VWAP 0.38151; price below weekly VWAP 0.386043; ⚠️ bullish RSI divergence (low 0.3726 < 0.3749, RSI 46 > 41); ⚠️ already short on WLD (correlated — pick one)
+  ✖ coin fails volume / spread filter
+  ✖ score 63.2 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/APT/20261124-1338_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/APT/20261124-1338_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/APT/20261124-1338_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/APT/20261124-1338_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/APT/20261124T1338.json

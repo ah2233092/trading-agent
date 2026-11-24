@@ -1,0 +1,33 @@
+❌ NO TRADE — ZEC/USDT
+Wajah: koi A/B/C/D entry model nahi bana; score 23 < 65
+Kya dekhna hai: 1H par liquidity sweep + CHoCH, ya 4H POI tap + 15m CHoCH
+
+--- details ---
+HTF BIAS: LONG (strong POIs only)
+1D: bearish — last BOS 801.0
+4H: bullish — range 679.48–903.12, price in discount (28.0%)
+BTC: neutral
+Key levels: PDH 903.12, PDL 766.12, PWH 972.95, PWL 679.48, MO 1250.97
+Setup: -  grade reject
+Funding: 0.0081% (normal, crowd: none) [mexc]
+OI: 1H -2.01%, 4H +2.19% → long liquidation / exit [okx]
+L/S ratio: 1.648 (balanced) [okx]
+Liquidity: 24h vol $1,478.0M, spread 0.001%
+Verdict: neutral (nothing unusual)
+Score: 23/100 (min 65) → NO TRADE
+  htf_bias              12.8 / 25   4H only (1D disagrees); BTC neutral
+  smc_setup              0.0 / 25   no valid entry model
+  entry_precision        0.0 / 15   15m CHoCH no, confluence no
+  displacement_volume    0.0 / 10   no displacement
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          2.5 / 5    not enough data yet (0 trades)
+  pro_confluence         0.0 / 10   ⚠️ price below daily VWAP 753.765 (against); ⚠️ price below weekly VWAP 794.496 (against); ⚠️ already long on AVAX, AVAX (correlated — pick one)
+  ✖ no valid SMC setup
+  ✖ score 23 < 65
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/ZEC/20261124-1341_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/ZEC/20261124-1341_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/ZEC/20261124-1341_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/ZEC/20261124-1341_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/ZEC/20261124T1341.json

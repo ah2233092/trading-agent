@@ -1,0 +1,63 @@
+⚠️ PROVISIONAL — news-check abhi baqi hai (phir: python lib/deep_scan.py --finalize reports/BTC/latest.json --news clear|caution|block)
+🔴 SHORT — BTC/USDT (1H) | Setup: A — Sweep + CHoCH + FVG/OB retest (A+)
+Score: 79.1/100
+
+📍 Entry: 60137.7 (market, zone 60731.3–61746.9)
+🛑 Stop Loss: 64747.9  (7.67%)
+🎯 TP1: 50917.4 (1:2) → 50% close, SL entry par
+🎯 TP2: 46307.2 (1:3)
+🎯 TP3: 41697 (1:4) — runner / 4.0R (no level)
+
+⚙️ Leverage: 2x (Isolated) | Margin: $6.01
+💀 Liquidation: 90107.4 ✅ SL se 39.17% door
+💵 Risk: $0.92 | Reward: TP1 $1.84 / TP2 $2.76 / TP3 $3.69
+👤 Margin $1 lagao (× 20x = $20 position): SL loss −$1.53 | TP1 +$3.07 / TP2 +$4.60 / TP3 +$6.13
+⚠️ 20x par liquidation SL se PEHLE aa sakta hai — is trade mein leverage max 11x rakho
+📊 Is setup ka win rate: 29.5% (78 trades backtest (all data)) | Avg R: 0.078
+
+🧠 Wajah:
+- HTF: SHORT — 1D bearish, 4H bearish, price 4H premium (55.9%), BTC n/a
+- SMC: Sweep + CHoCH + FVG/OB retest — POI 1H OB 60731.3–61746.9, htf aligned, pd ok, displacement, confluence
+- Futures data: neutral (nothing unusual)
+- Pro checks: ✅ price below daily VWAP 60294.1
+- Pro checks: ✅ price below weekly VWAP 61353.5
+- Pro checks: ✅ 1H RSI 46 with the trade, room left
+- Pro checks: ⚠️ already short on WLD (correlated — pick one)
+- News: abhi check nahi hui (news-check)
+
+❌ Invalidation: 1H candle close 64747.9 ke upar (POI fail)
+⏳ Valid until: 2026-11-25 00:38 PKT (entry na mile to cancel)
+
+--- details ---
+HTF BIAS: SHORT
+1D: bearish — last BOS 79737.7
+4H: bearish — range 55129.3–64560.9, price in premium (55.9%)
+BTC: n/a (this is BTC)
+Key levels: PDH 64560.9, PDL 60356.2, PWH 65662.2, PWL 55129.3, MO 77522.7
+Setup: A Sweep + CHoCH + FVG/OB retest grade A+
+Funding: 0.0041% (normal, crowd: none) [mexc]
+OI: 1H -0.24%, 4H +0.54% → OI flat — no new positioning [okx]
+L/S ratio: 2.431 (balanced) [okx]
+Liquidity: 24h vol $4,191.4M, spread 0.000%
+Verdict: neutral (nothing unusual)
+Entry 60137.7 | SL 64747.9 (7.67%, 1 R)
+TP1 50917.4 (1:2) | TP2 46307.2 (1:3) | TP3 41697 (1:4)
+Qty 2 contracts | Notional $12.03 | Leverage 2x isolated | Margin $6.01
+Liquidation ≈ 90107.4 (SL se 39.17% door) ✅
+Risk $0.92 | Net reward TP1 $1.84 / TP2 $2.76 / TP3 $3.69 (fees ke baad)
+ℹ️ no liquidity level for TP1,2,3 — R-multiple used
+Score: 79.1/100 (min 65) → TRADE
+  htf_bias              25.0 / 25   1D + 4H aligned; BTC n/a
+  smc_setup             25.0 / 25   model A (Sweep + CHoCH + FVG/OB retest) grade A+
+  entry_precision        6.0 / 15   15m CHoCH no, confluence yes
+  displacement_volume   10.0 / 10   displacement candle with volume
+  futures_data           5.0 / 10   neutral — nothing unusual
+  session_timing         5.0 / 5    inside new_york killzone
+  news                   0.0 / 5    not checked yet (run news-check)
+  backtest_edge          3.5 / 5    78 trades, win 29.5%, avg R 0.078
+  pro_confluence         7.5 / 10   price below daily VWAP 60294.1; price below weekly VWAP 61353.5; ⚠️ already short on WLD (correlated — pick one)
+chart 1d: /home/runner/work/trading-agent/trading-agent/charts/BTC/20261124-1338_1d.png
+chart 4h: /home/runner/work/trading-agent/trading-agent/charts/BTC/20261124-1338_4h.png
+chart 1h: /home/runner/work/trading-agent/trading-agent/charts/BTC/20261124-1338_1h.png
+chart 15m: /home/runner/work/trading-agent/trading-agent/charts/BTC/20261124-1338_15m.png
+report: /home/runner/work/trading-agent/trading-agent/reports/BTC/20261124T1338.json
