@@ -211,7 +211,18 @@ def analyze_symbol(symbol: str, cfg: dict | None = None, news: str | None = None
     btc_frames = None if symbol == BTC else {"4h": data.get_ohlcv(BTC, "4h", 300, ex=ex),
                                              "1h": data.get_ohlcv(BTC, "1h", 400, ex=ex)}
     h1 = frames["1h"]
+    # live price for market entries: ticker last -> latest 15m close -> 1H close
+    # (the 1H close can be up to an hour old; on Nov 24 AVAX had already dumped 1.6% below it)
     price = float(h1["close"].iloc[-1])
+    try:
+        m15 = frames.get("15m")
+        if m15 is not None and len(m15):
+            price = float(m15["close"].iloc[-1])
+        last = (data.get_ticker(symbol, ex) or {}).get("last")
+        if last:
+            price = float(last)
+    except Exception as e:  # noqa: BLE001
+        log.warning("live price failed, using candle close: %s", e)
 
     # 0) alert age / re-validation
     alert = alert if alert is not None else latest_alert(symbol)
