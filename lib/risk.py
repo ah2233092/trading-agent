@@ -143,9 +143,9 @@ def build_plan(side: str, entry: float, sl: float, tps: list[float], spec: Contr
 
     dist = abs(entry - sl)
     rr = [abs(t - entry) / dist for t in tps]
-    if rr[0] < min_rr1:
+    if rr[0] < min_rr1 - 0.01:   # small tolerance: tick rounding of an exact-R target
         rejects.append(f"TP1 only 1:{rr[0]:.2f} (< 1:{min_rr1:g})")
-    if rr[-1] < min_rr_final:
+    if rr[-1] < min_rr_final - 0.01:
         rejects.append(f"final TP only 1:{rr[-1]:.2f} (< 1:{min_rr_final:g})")
 
     fee_in = spec.maker_fee if order == "limit" else spec.taker_fee
