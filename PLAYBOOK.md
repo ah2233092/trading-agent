@@ -12,12 +12,12 @@
 
 Agar GitHub ya MEXC data mein masla ho: main aapke Chrome mein TradingView (MEXC:COINUSDT.P) khol kar charts dekh ke analysis karunga.
 
-## Naya plan (20 Nov 2026 — Rans ke rules)
-- Size: **poora balance margin × 20x** (abhi $18 × 20 = $360 position).
-- SL aur TP Claude market dekh kar tay karta hai. Trades jaldi khatam hon: TP1 pehla acha level (kam se kam 1:1.5), **poori position TP1 par close**.
-- Roz kam se kam **2 trades**, maximum koi limit nahi — sirf strong (TRADE) setups. Target: **$5+ roz**.
-- Roz ka loss limit: **−$9** (account ka 50%) ya 2 SL — phir us din band.
-- SL order ke saath MEXC par lazmi.
+## Naya plan (24 Nov 2026 — $20 account, sizing Claude ka faisla)
+- Leverage 20x. **Margin har trade ke SL se nikalta hai**: har SL ≈ **−$2** (account ka 10%), margin max $10.
+  (SL 1% → $10 margin · SL 2% → $5 · SL 4% → $2.5)
+- TP1 kam se kam **1:2** (≈ +$4): aadhi position close + SL entry par; baqi TP2 tak (≈ +$6 ya zyada).
+- Roz: 2 SL (−$4) ho jayen to us din band. Profit par koi limit nahi.
+- Sirf full TRADE decision; SL order ke saath MEXC par lazmi.
 
 ## Method (sab kuch ek saath, professional order)
 1. **HTF bias** — 1D + 4H market structure (BOS/CHoCH), EMA 20/50/200, 4H premium/discount, PDH/PDL/PWH/PWL, monthly open.

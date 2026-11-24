@@ -177,7 +177,10 @@ def daily_limits(cfg: dict, now) -> dict:
         except (TypeError, ValueError, KeyError):
             continue
         if rm == rm and day(r.get("closed_at") or r.get("created_at")) == today:
-            pnl += rm * notional * abs(e - sl) / e
+            if float(us.get("risk_usd") or 0):
+                pnl += rm * float(us["risk_usd"])          # risk-based sizing: 1R = risk_usd
+            else:
+                pnl += rm * notional * abs(e - sl) / e
     target = float(us.get("daily_profit_target_usd") or 0)
     loss_lim = float(us.get("daily_loss_limit_usd") or 0)
     out["user_pnl_today"] = round(pnl, 2)
@@ -454,13 +457,18 @@ def user_size_lines(p: dict, cfg: dict) -> list[str]:
     m, lev = float(us.get("margin_usd") or 0), float(us.get("leverage") or 0)
     if not (m and lev and p.get("entry")):
         return []
-    notional = m * lev
     e, sl = float(p["entry"]), float(p["sl"])
     sl_pct = abs(e - sl) / e
+    risk_usd = float(us.get("risk_usd") or 0)
+    if risk_usd and sl_pct > 0:   # risk-based sizing: margin follows the SL distance
+        m = min(float(us.get("max_margin_usd") or m), risk_usd / (lev * sl_pct))
+        m = max(1.0, round(m, 2))
+    notional = m * lev
     loss = notional * sl_pct
     profs = [notional * abs(float(t) - e) / e for t in p["tps"]]
     liq_pct = 1 / lev - 0.005  # isolated, ~0.5% maintenance margin
-    out = [f"👤 Aapke size par (${m:g} × {lev:g}x = ${notional:.0f}): SL loss −${loss:.2f} | "
+    tag = "👤 Margin " + (f"${m:g} lagao" if risk_usd else f"${m:g}")
+    out = [f"{tag} (× {lev:g}x = ${notional:.0f} position): SL loss −${loss:.2f} | "
            f"TP1 +${profs[0]:.2f} / TP2 +${profs[1]:.2f} / TP3 +${profs[2]:.2f}"]
     lim = float(us.get("daily_loss_limit_usd") or 0)
     if lim and loss > lim:

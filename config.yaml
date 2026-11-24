@@ -87,10 +87,12 @@ max_losses_per_day: 2            # safety: stop for the day after 2 stop-losses
 
 # --- Rans's own sizing (shown in every answer) ---
 user_sizing:
-  margin_usd: 20          # Rans (Nov 24): new $20 deposit, full balance as margin
+  margin_usd: 10          # Nov 24: Rans left margin/SL/TP to Claude -> risk-based sizing below
   leverage: 20
-  daily_profit_target_usd: 0   # Nov 20: $5/day is the minimum goal, no stop on profit (0 = off)
-  daily_loss_limit_usd: 10     # stop for the day once today's P/L <= -$10 (50% of the account)
+  risk_usd: 2                  # each SL costs ~$2 (10% of $20); margin = risk / (leverage x SL%)
+  max_margin_usd: 10           # never more than half the balance in one trade
+  daily_profit_target_usd: 0   # no stop on profit
+  daily_loss_limit_usd: 4      # 2 SLs (-$4) -> stop for the day
 
 # --- Risk ---
 account_balance: 20
@@ -99,10 +101,10 @@ risk_per_trade_pct: 10
 max_margin_per_trade: 10
 max_leverage: 20
 margin_mode: isolated
-min_rr_tp1: 1.5            # Nov 20: quicker trades — TP1 = first good level at >= 1:1.5
+min_rr_tp1: 2.0            # Nov 24: TP1 >= 1:2 so one win (+$4) beats one loss (-$2)
 max_rr_tp1: 5.0            # first real level farther than this (price discovery) -> 2R / 3R targets in between
 min_rr_final: 3.0
-tp1_close_pct: 100         # Nov 20: quick trades — close everything at TP1 (TP2/TP3 shown as optional)
+tp1_close_pct: 50          # Nov 24: half at TP1 (+SL to entry), rest to TP2 for a bigger win
 min_profit_usd: 0          # no fixed minimum profit
 blocker_min_r: 0.25         # level closer than this = price already testing it, not a blocker
 blocker_max_r: 1.0          # only a strong level inside 1R blocks the trade
