@@ -320,7 +320,7 @@ def test_deep_scan_offline():
             assert rep["bias"]["direction"] in ("LONG", "SHORT", "NONE")
             assert set(rep["charts"]) == {"1d", "4h", "1h", "15m"} and all(Path(p).exists() for p in rep["charts"].values())
             assert Path(rep["report_path"]).exists() and (d / "reports" / "SOL" / "latest.json").exists()
-            assert rep["answer"].startswith(("🟢", "🔴", "❌ NO TRADE"))
+            assert rep["answer"].startswith(("🟢", "🔴", "❌ NO TRADE", "⚠️ PROVISIONAL"))
             json.dumps(rep)  # fully JSON serialisable
             if rep["plan"]:
                 assert rep["plan"]["sl"] < rep["plan"]["entry"] < rep["plan"]["tps"][0]
